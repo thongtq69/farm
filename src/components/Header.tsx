@@ -34,15 +34,23 @@ const Header = () => {
             <ul className="nav-list">
               <li><Link href="/">Trang chủ</Link></li>
               <li><Link href="/chung-toi">Chúng tôi</Link></li>
-              <li><Link href="/project">Dự án</Link></li>
+              <li className="nav-dropdown">
+                <Link href="/project">Dự án</Link>
+                <ul className="dropdown-menu">
+                  <li><Link href="/project/san-vuon-ho-koi">Sân Vườn & Hồ Koi</Link></li>
+                  <li><Link href="/project/farm-du-lich-nghi-duong">Farm & Du Lịch Nghỉ Dưỡng</Link></li>
+                  <li><Link href="/project/da-nhan-tao-nghe-thuat">Đá Nhân Tạo Nghệ Thuật</Link></li>
+                </ul>
+              </li>
               <li><Link href="/bao-gia-thiet-ke-farm">Báo giá thiết kế Farm</Link></li>
               <li><Link href="/blog">Blog</Link></li>
             </ul>
           </nav>
 
+
           <div className="header-contact desktop-only">
-            <a href="tel:0901122022" className="btn btn-primary">
-              (+84) 901.122.022
+            <a href="tel:0888220044" className="btn btn-primary">
+              (+84) 888.22.00.44
             </a>
           </div>
 
@@ -68,7 +76,14 @@ const Header = () => {
           <ul className="mobile-nav-list">
             <li><Link href="/" onClick={() => setIsMenuOpen(false)}>Trang chủ</Link></li>
             <li><Link href="/chung-toi" onClick={() => setIsMenuOpen(false)}>Chúng tôi</Link></li>
-            <li><Link href="/project" onClick={() => setIsMenuOpen(false)}>Dự án</Link></li>
+            <li>
+              <Link href="/project" onClick={() => setIsMenuOpen(false)}>Dự án</Link>
+              <ul className="mobile-sub-nav">
+                <li><Link href="/project/san-vuon-ho-koi" onClick={() => setIsMenuOpen(false)}>Sân Vườn & Hồ Koi</Link></li>
+                <li><Link href="/project/farm-du-lich-nghi-duong" onClick={() => setIsMenuOpen(false)}>Farm & Du Lịch Nghỉ Dưỡng</Link></li>
+                <li><Link href="/project/da-nhan-tao-nghe-thuat" onClick={() => setIsMenuOpen(false)}>Đá Nhân Tạo Nghệ Thuật</Link></li>
+              </ul>
+            </li>
             <li><Link href="/bao-gia-thiet-ke-farm" onClick={() => setIsMenuOpen(false)}>Báo giá thiết kế Farm</Link></li>
             <li><Link href="/blog" onClick={() => setIsMenuOpen(false)}>Blog</Link></li>
           </ul>
@@ -77,11 +92,11 @@ const Header = () => {
 
       {/* Bottom Sticky Bar for Mobile */}
       <div className="bottom-bar mobile-only">
-        <a href="tel:0901122022" className="bottom-bar-item">
+        <a href="tel:0888220044" className="bottom-bar-item">
           <img src="/images/icons/hotline_v1.png" alt="Hotline" width="24" height="24" />
           <span>Hotline</span>
         </a>
-        <a href="https://zalo.me/0901122022" className="bottom-bar-item" target="_blank" rel="noopener noreferrer">
+        <a href="https://zalo.me/0888220044" className="bottom-bar-item" target="_blank" rel="noopener noreferrer">
           <img src="/images/icons/zalo_v1.png" alt="Zalo" width="24" height="24" />
           <span>Zalo</span>
         </a>

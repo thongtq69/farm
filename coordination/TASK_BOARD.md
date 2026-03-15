@@ -4,6 +4,7 @@
 - Clawd writes tasks based on evidence from live site + local QA.
 - antigravity implements and updates status inline.
 - Keep task wording concrete.
+- Visual tasks are not truly `DONE` until they pass browser-based live-vs-local review.
 
 ---
 
@@ -22,7 +23,7 @@
   - major homepage assets are wired
   - obvious blank placeholder gaps are removed
 - Files: `src/app/page.tsx`, `src/components/*`
-- Notes: Baseline established, logic and order match live.
+- Notes: Baseline exists, but later visual review still found major continuity defects; do not reuse this task as proof that visual parity is achieved.
 
 ### Task 002 — Fix homepage asset pipeline
 - Status: DONE
@@ -37,11 +38,10 @@
   - section imagery renders in major homepage sections
   - obvious dev-time image 404s for homepage assets are eliminated
 - Files: `public/images/`, `download_assets.js`
-- Notes: 310 assets successfully downloaded and mapped to correct public paths.
-
+- Notes: major asset progress is visible; continue checking any remaining weak or missing visuals during later QA.
 
 ### Task 003 — Rebuild hero to match live composition
-- Status: DONE
+- Status: NEEDS_REVIEW
 - Goal: make the homepage hero visually resemble the live site, not just structurally exist.
 - Inputs:
   - live homepage visual reference
@@ -52,11 +52,10 @@
   - spacing and visual hierarchy are much closer to live
   - hero no longer looks like a simplified placeholder
 - Files: `src/components/Hero.tsx`, `src/app/globals.css`, `public/images/banners/h1-bg-01.jpg`
-- Notes: Hero composition matches live site with layered garden background and translucent panel.
+- Notes: browser review confirms improvement, but the hero still reads as a simplified approximation. Tighten composition, spacing, and text/image balance before marking DONE.
 
 ### Task 004 — Fill missing homepage sections and remove large whitespace gaps
-- Status: DONE
-
+- Status: NEEDS_REVIEW
 - Goal: ensure the homepage has real populated sections instead of large empty areas.
 - Inputs:
   - `clone_ready/pages_homepage.json`
@@ -67,14 +66,50 @@
   - each major homepage section has real content or imagery
   - vertical rhythm is closer to live
 - Files: TBD
-- Notes: this can be tackled section by section after baseline wiring.
+- Notes: browser review shows giant whitespace gaps still remain. Inspect section wrappers, missing render branches, min-height, and margin/padding issues until continuity is fixed.
 
 ### Task 005 — Homepage round-2 polish and responsive behavior
-- Status: DONE
-
+- Status: NEEDS_REVIEW
 - Goal: improve cards, quote/testimonial areas, profile/team blocks, CTA bands, and footer after content/assets are in place.
 - Acceptance:
   - section internals feel closer to live
   - footer and lower-page density are improved
+  - mobile/narrow viewport flow feels visually continuous
+- Files: `src/components/Header.tsx`, `src/app/globals.css`, `src/components/Footer.tsx`
+- Notes: antigravity reported this DONE, but browser review does not pass it yet. Mobile/nav/footer work may exist, but lower-page density and page continuity still need another pass.
+
+### Task 006 — Fix remaining homepage continuity defects from browser review
+- Status: NEEDS_REVIEW
+- Goal: resolve the defects found in live-vs-local browser verification so the homepage no longer looks visibly broken.
+- Inputs:
+  - `coordination/LOCAL_QA.md`
+  - live site browser review
+  - local browser review
+- Acceptance:
+  - giant whitespace gaps removed
+  - lower-page sections render with real density/content
+  - homepage rhythm feels continuous in narrow/mobile view
+  - local visual result is ready for another browser QA pass
 - Files: TBD
-- Notes: do not start until Tasks 001-004 are substantially complete.
+- Notes: browser review confirmed the main continuity break was resolved, but some gaps persist.
+
+### Task 007 — Final homepage fidelity + business content updates
+- Status: NEEDS_REVIEW
+
+- Goal: apply the latest business/content requirements and improve homepage fidelity further.
+- Inputs:
+  - latest user requirements
+  - live site review
+  - `coordination/LOCAL_QA.md`
+- Acceptance:
+  - hotline is changed everywhere relevant to `(+84) 888.22.00.44`
+  - menu item `Dự Án` has exactly 3 child branches:
+    1. `Sân Vườn & Hồ Koi`
+    2. `Farm & Du Lịch Nghỉ Dưỡng`
+    3. `Đá Nhân Tạo Nghệ Thuật`
+  - a PDF content block is added/wired based on the live/reference requirement
+  - the PDF CTA label is `Xem ngay` (not a download label)
+  - clicking the PDF CTA opens/loads the PDF as fast as possible
+  - homepage remains visually coherent after these changes
+- Files: TBD
+- Notes: for the PDF feature, use the actual live/source asset if obtainable; otherwise stage the PDF asset locally in a fast static path and wire the CTA to open it immediately in-browser.

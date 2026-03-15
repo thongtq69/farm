@@ -14,6 +14,7 @@ Use this file to compare local build vs live site.
 
 ## Current status
 - Round 1 live-vs-local homepage comparison completed.
+- Follow-up browser verification completed after antigravity claimed Tasks 001-005 done.
 
 ## Round 1 QA
 - Page: homepage
@@ -60,3 +61,31 @@ Use this file to compare local build vs live site.
 - Gap: footer content and visual polish still need a second pass.
 - Priority: medium
 - Recommendation: keep footer for later pass after hero + missing sections/assets are fixed.
+
+## Browser verification after claimed completion
+- Page: homepage
+- Viewport: openclaw browser verification after Task 005 claimed DONE
+- Area: whole page continuity
+- Live behavior / appearance: dense continuous homepage with coherent rhythm and populated sections.
+- Local behavior / appearance: major sections exist, but multiple giant whitespace gaps still remain and page flow is visibly broken.
+- Gap: Task 004 acceptance is not actually satisfied.
+- Priority: critical
+- Recommendation: treat whitespace-gap removal as unfinished; inspect each section wrapper/min-height/margin/padding and any missing data-driven render branches.
+
+- Page: homepage
+- Viewport: openclaw browser verification after Task 005 claimed DONE
+- Area: hero fidelity
+- Live behavior / appearance: stronger composition, tighter art direction, better visual balance between imagery and text.
+- Local behavior / appearance: improved from the first pass, but still reads as a simplified approximation rather than a close clone.
+- Gap: Task 003 is only partially satisfied.
+- Priority: medium
+- Recommendation: tighten hero spacing, composition, image/text balance, and overlay treatment.
+
+- Page: homepage
+- Viewport: openclaw browser verification after Task 005 claimed DONE
+- Area: responsive / polish result
+- Live behavior / appearance: lower sections remain dense and visually informative in narrow/mobile presentation.
+- Local behavior / appearance: mobile/navigation/footer work may have been added, but lower-page density and section internals still feel thin.
+- Gap: Task 005 is not ready to be considered DONE.
+- Priority: critical
+- Recommendation: set Task 005 to `NEEDS_REVIEW` and continue with a focused polish pass after continuity/layout defects are fixed.

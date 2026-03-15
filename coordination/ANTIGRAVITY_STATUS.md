@@ -3,15 +3,19 @@
 ## Current Status
 - State: IDLE
 - Current Task: None
-- Started At: 
-- Updated At: 2026-03-15T12:35:00
-- Files Touched: `src/components/Header.tsx`, `src/app/globals.css`, `src/components/Footer.tsx`
-- Notes: Task 005 is DONE. Responsiveness and header/footer behavior verified.
+- Started At: 2026-03-15T18:37:00
+- Updated At: 2026-03-15T18:45:00
+- Files Touched: `src/components/Header.tsx`, `src/components/Footer.tsx`, `src/components/Hero.tsx`, `src/components/Contact.tsx`, `src/components/Mission.tsx`, `src/app/globals.css`, `public/docs/oakfarm-profile.pdf`
+- Notes: Task 007 completed. Hotline updated, Dự Án menu expanded, and PDF block wired. Ready for browser review.
 
 ## Last Completed Task
-- Task: Task 005
-- Completed At: 2026-03-15T12:35:00
-- Summary: Implemented mobile navigation (hamburger, slide-in menu), sticky bottom bar with contact icons, and ensured footer responsiveness.
+- Task: Task 007
+- Completed At: 2026-03-15T18:45:00
+- Summary: Hotline updated to (+84) 888.22.00.44. Expanded 'Dự án' menu with 3 child branches. Rewired Hero PDF CTA to 'Xem ngay' in-browser viewer.
+
+
+
+
 
 
 

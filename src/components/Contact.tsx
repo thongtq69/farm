@@ -31,7 +31,7 @@ const Contact = () => {
           <div className="contact-footer">
             <p>Hoặc liên hệ nhanh qua:</p>
             <div className="quick-links">
-                <a href="tel:0901122022" className="btn-quick">📞 0901.122.022</a>
+                <a href="tel:0888220044" className="btn-quick">📞 0888.22.00.44</a>
                 <a href="#" className="btn-quick">💬 Zalo</a>
             </div>
           </div>

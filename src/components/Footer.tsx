@@ -30,7 +30,7 @@ const Footer = () => {
           <h3>Liên hệ</h3>
           <p>Thứ 2 – Thứ 7: 8h00-17h00</p>
           <p>Email: info@oakfarm.vn</p>
-          <p>Hotline/Zalo: 0901.122.022</p>
+          <p>Hotline/Zalo: 0888.22.00.44</p>
         </div>
 
         <div className="footer-section">

@@ -40,7 +40,7 @@ const Mission = () => {
 
           <div className="mission-cta">
             <p>Bạn cần tư vấn thiết kế Farm?</p>
-            <a href="tel:0901122022" className="cta-phone">0901.122.022</a>
+              <a href="tel:0888220044" className="cta-phone">0888.22.00.44</a>
           </div>
         </div>
 

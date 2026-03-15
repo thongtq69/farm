@@ -14,6 +14,20 @@ Use this file to store factual observations from the live site (`https://oakfarm
 - Round 1 capture completed for homepage (mobile-ish narrow viewport visual comparison).
 
 ## Round 1 observations
+- Page: homepage / navigation
+- Viewport: live inspection
+- Section / Component: menu `Dự Án`
+- Observation: the project navigation needs 3 child branches for the clone workflow.
+- Evidence: user requirement aligned with live/navigation audit
+- Importance: critical
+
+- Page: homepage / PDF CTA area
+- Viewport: live inspection
+- Section / Component: PDF section / hồ sơ thiết kế farm
+- Observation: there is a PDF-oriented content block on the live experience that should be represented locally with a fast-opening CTA behavior.
+- Evidence: live inspection + user-provided reference image
+- Importance: critical
+
 - Page: homepage
 - Viewport: narrow/mobile-style comparison
 - Section / Component: global visual structure

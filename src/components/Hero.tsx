@@ -34,12 +34,9 @@ const Hero = () => {
               />
             </div>
             <div className="cta-info">
-              <p>Tải về hồ sơ thiết kế Farm mẫu</p>
-              <span>[16.5 MB]</span>
+              <p>Hồ sơ thiết kế Farm mẫu</p>
+              <a href="/docs/oakfarm-profile.pdf" target="_blank" className="view-pdf-btn">Xem ngay</a>
             </div>
-            <a href="#" className="download-btn">
-              <span className="icon">↓</span>
-            </a>
           </div>
         </div>
 

@@ -7,6 +7,7 @@ import Mission from '@/components/Mission';
 import Projects from '@/components/Projects';
 import Process from '@/components/Process';
 import BeforeAfter from '@/components/BeforeAfter';
+import Testimonials from '@/components/Testimonials';
 import Companion from '@/components/Companion';
 import Contact from '@/components/Contact';
 
@@ -19,11 +20,16 @@ export default function Home() {
           entry.target.classList.add('aos-animate');
         }
       });
-    }, { threshold: 0.1 });
+    }, { threshold: 0.05 }); // Lower threshold for mobile
 
-    document.querySelectorAll('[data-aos]').forEach(el => observer.observe(el));
+    const elements = document.querySelectorAll('[data-aos]');
+    elements.forEach(el => {
+      el.classList.add('aos-init');
+      observer.observe(el);
+    });
 
     return () => observer.disconnect();
+
   }, []);
 
   return (
@@ -34,8 +40,10 @@ export default function Home() {
       <Projects />
       <Process />
       <BeforeAfter />
+      <Testimonials />
       <Companion />
       <Contact />
     </>
   );
 }
+
