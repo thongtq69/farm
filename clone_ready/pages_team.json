@@ -1,0 +1,62 @@
+[
+  {
+    "url": "https://oakfarm.vn/team/jay-nguyen/",
+    "title": "Jay Nguyen - Oak Farm",
+    "h1": "Jay Nguyen",
+    "meta_description": "Architect Jay Nguyen - Design team leader for projects working directly with foreign partners and investors",
+    "canonical": "https://oakfarm.vn/team/jay-nguyen/",
+    "image_count": 6,
+    "page_json": "/Users/bephi/data/oakfarm_full_output/pages/team__jay-nguyen.json",
+    "page_type": "team"
+  },
+  {
+    "url": "https://oakfarm.vn/team/thuy-duong/",
+    "title": "Thùy Dương - Oak Farm",
+    "h1": "Thùy Dương",
+    "meta_description": "Kiến trúc sư",
+    "canonical": "https://oakfarm.vn/team/thuy-duong/",
+    "image_count": 6,
+    "page_json": "/Users/bephi/data/oakfarm_full_output/pages/team__thuy-duong.json",
+    "page_type": "team"
+  },
+  {
+    "url": "https://oakfarm.vn/team/be-ngan/",
+    "title": "Bệ Ngạn - Oak Farm",
+    "h1": "Bệ Ngạn",
+    "meta_description": "Kiến trúc sư Bệ Ngạn - Trưởng nhóm thiết kế các dự án làm việc trực tiếp với đối tác, chủ đầu tư trong nước.",
+    "canonical": "https://oakfarm.vn/team/be-ngan/",
+    "image_count": 6,
+    "page_json": "/Users/bephi/data/oakfarm_full_output/pages/team__be-ngan.json",
+    "page_type": "team"
+  },
+  {
+    "url": "https://oakfarm.vn/team/hang-can/",
+    "title": "Hằng Cận - Oak Farm",
+    "h1": "Hằng Cận",
+    "meta_description": "Kiến trúc sư chuyên thiết kế Farmstay, Homestay của nhà Oak Farm. Đứng đầu team thiết kế quy hoạch tổng thể.",
+    "canonical": "https://oakfarm.vn/team/hang-can/",
+    "image_count": 5,
+    "page_json": "/Users/bephi/data/oakfarm_full_output/pages/team__hang-can.json",
+    "page_type": "team"
+  },
+  {
+    "url": "https://oakfarm.vn/team/huong-le/",
+    "title": "Hương Lê - Oak Farm",
+    "h1": "Hương Lê",
+    "meta_description": null,
+    "canonical": "https://oakfarm.vn/team/huong-le/",
+    "image_count": 6,
+    "page_json": "/Users/bephi/data/oakfarm_full_output/pages/team__huong-le.json",
+    "page_type": "team"
+  },
+  {
+    "url": "https://oakfarm.vn/team/quoc-hai/",
+    "title": "Quốc Hải - Oak Farm",
+    "h1": "Quốc Hải",
+    "meta_description": null,
+    "canonical": "https://oakfarm.vn/team/quoc-hai/",
+    "image_count": 5,
+    "page_json": "/Users/bephi/data/oakfarm_full_output/pages/team__quoc-hai.json",
+    "page_type": "team"
+  }
+]

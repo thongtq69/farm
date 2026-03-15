@@ -1,0 +1,996 @@
+[
+  {
+    "page_url": "https://oakfarm.vn/blog/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/08/logo-2025-normal-2.png",
+    "folder": "images/branding",
+    "alt": "default-logo",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-normal-2-86322bdc33ad.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/blog/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/06/logo-2025-light1.png",
+    "folder": "images/branding",
+    "alt": "logo-2025-light1",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-light1-e38c47f5c7e5.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/mo-hinh-farm-stay/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/08/logo-2025-normal-2.png",
+    "folder": "images/branding",
+    "alt": "default-logo",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-normal-2-86322bdc33ad.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/mo-hinh-farm-stay/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/06/logo-2025-light1.png",
+    "folder": "images/branding",
+    "alt": "logo-2025-light1",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-light1-e38c47f5c7e5.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/farmstay-homestay-la-gi/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/08/logo-2025-normal-2.png",
+    "folder": "images/branding",
+    "alt": "default-logo",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-normal-2-86322bdc33ad.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/farmstay-homestay-la-gi/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/06/logo-2025-light1.png",
+    "folder": "images/branding",
+    "alt": "logo-2025-light1",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-light1-e38c47f5c7e5.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/08/logo-2025-normal-2.png",
+    "folder": "images/branding",
+    "alt": "default-logo",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-normal-2-86322bdc33ad.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/06/logo-2025-light1.png",
+    "folder": "images/branding",
+    "alt": "logo-2025-light1",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-light1-e38c47f5c7e5.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/sample-page/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/08/logo-2025-normal-2.png",
+    "folder": "images/branding",
+    "alt": "default-logo",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-normal-2-86322bdc33ad.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/sample-page/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/06/logo-2025-light1.png",
+    "folder": "images/branding",
+    "alt": "logo-2025-light1",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-light1-e38c47f5c7e5.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/my-account/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/08/logo-2025-normal-2.png",
+    "folder": "images/branding",
+    "alt": "default-logo",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-normal-2-86322bdc33ad.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/my-account/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/06/logo-2025-light1.png",
+    "folder": "images/branding",
+    "alt": "logo-2025-light1",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-light1-e38c47f5c7e5.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/services-1/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/08/logo-2025-normal-2.png",
+    "folder": "images/branding",
+    "alt": "default-logo",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-normal-2-86322bdc33ad.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/services-1/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/06/logo-2025-light1.png",
+    "folder": "images/branding",
+    "alt": "logo-2025-light1",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-light1-e38c47f5c7e5.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/services-2/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/08/logo-2025-normal-2.png",
+    "folder": "images/branding",
+    "alt": "default-logo",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-normal-2-86322bdc33ad.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/services-2/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/06/logo-2025-light1.png",
+    "folder": "images/branding",
+    "alt": "logo-2025-light1",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-light1-e38c47f5c7e5.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/services-3/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/08/logo-2025-normal-2.png",
+    "folder": "images/branding",
+    "alt": "default-logo",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-normal-2-86322bdc33ad.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/services-3/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/06/logo-2025-light1.png",
+    "folder": "images/branding",
+    "alt": "logo-2025-light1",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-light1-e38c47f5c7e5.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/projects-2/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/08/logo-2025-normal-2.png",
+    "folder": "images/branding",
+    "alt": "default-logo",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-normal-2-86322bdc33ad.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/projects-2/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/06/logo-2025-light1.png",
+    "folder": "images/branding",
+    "alt": "logo-2025-light1",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-light1-e38c47f5c7e5.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/projects-3/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/08/logo-2025-normal-2.png",
+    "folder": "images/branding",
+    "alt": "default-logo",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-normal-2-86322bdc33ad.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/projects-3/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/06/logo-2025-light1.png",
+    "folder": "images/branding",
+    "alt": "logo-2025-light1",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-light1-e38c47f5c7e5.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/our-team-1/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/08/logo-2025-normal-2.png",
+    "folder": "images/branding",
+    "alt": "default-logo",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-normal-2-86322bdc33ad.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/our-team-1/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/06/logo-2025-light1.png",
+    "folder": "images/branding",
+    "alt": "logo-2025-light1",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-light1-e38c47f5c7e5.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/our-team-2/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/08/logo-2025-normal-2.png",
+    "folder": "images/branding",
+    "alt": "default-logo",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-normal-2-86322bdc33ad.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/our-team-2/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/06/logo-2025-light1.png",
+    "folder": "images/branding",
+    "alt": "logo-2025-light1",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-light1-e38c47f5c7e5.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/our-pricing-1/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/08/logo-2025-normal-2.png",
+    "folder": "images/branding",
+    "alt": "default-logo",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-normal-2-86322bdc33ad.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/our-pricing-1/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/06/logo-2025-light1.png",
+    "folder": "images/branding",
+    "alt": "logo-2025-light1",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-light1-e38c47f5c7e5.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/maintenance-page/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/08/logo-2025-normal-2.png",
+    "folder": "images/branding",
+    "alt": "default-logo",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-normal-2-86322bdc33ad.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/maintenance-page/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/06/logo-2025-light1.png",
+    "folder": "images/branding",
+    "alt": "logo-2025-light1",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-light1-e38c47f5c7e5.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/project/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/08/logo-2025-normal-2.png",
+    "folder": "images/branding",
+    "alt": "default-logo",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-normal-2-86322bdc33ad.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/project/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/06/logo-2025-light1.png",
+    "folder": "images/branding",
+    "alt": "logo-2025-light1",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-light1-e38c47f5c7e5.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/chung-toi/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/08/logo-2025-normal-2.png",
+    "folder": "images/branding",
+    "alt": "default-logo",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-normal-2-86322bdc33ad.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/chung-toi/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/06/logo-2025-light1.png",
+    "folder": "images/branding",
+    "alt": "logo-2025-light1",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-light1-e38c47f5c7e5.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/bao-gia-thiet-ke-farm/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/08/logo-2025-normal-2.png",
+    "folder": "images/branding",
+    "alt": "default-logo",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-normal-2-86322bdc33ad.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/bao-gia-thiet-ke-farm/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/06/logo-2025-light1.png",
+    "folder": "images/branding",
+    "alt": "logo-2025-light1",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-light1-e38c47f5c7e5.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/service/du-lich-trai-nghiem/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/08/logo-2025-normal-2.png",
+    "folder": "images/branding",
+    "alt": "default-logo",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-normal-2-86322bdc33ad.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/service/du-lich-trai-nghiem/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/06/logo-2025-light1.png",
+    "folder": "images/branding",
+    "alt": "logo-2025-light1",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-light1-e38c47f5c7e5.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/service/resort-nghi-duong/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/08/logo-2025-normal-2.png",
+    "folder": "images/branding",
+    "alt": "default-logo",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-normal-2-86322bdc33ad.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/service/resort-nghi-duong/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/06/logo-2025-light1.png",
+    "folder": "images/branding",
+    "alt": "logo-2025-light1",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-light1-e38c47f5c7e5.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/service/canh-quan-nha-vuon/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/08/logo-2025-normal-2.png",
+    "folder": "images/branding",
+    "alt": "default-logo",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-normal-2-86322bdc33ad.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/service/canh-quan-nha-vuon/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/06/logo-2025-light1.png",
+    "folder": "images/branding",
+    "alt": "logo-2025-light1",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-light1-e38c47f5c7e5.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/service/farm-homestay/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/08/logo-2025-normal-2.png",
+    "folder": "images/branding",
+    "alt": "default-logo",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-normal-2-86322bdc33ad.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/service/farm-homestay/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/06/logo-2025-light1.png",
+    "folder": "images/branding",
+    "alt": "logo-2025-light1",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-light1-e38c47f5c7e5.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/service/quy-hoach-du-an/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/08/logo-2025-normal-2.png",
+    "folder": "images/branding",
+    "alt": "default-logo",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-normal-2-86322bdc33ad.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/service/quy-hoach-du-an/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/06/logo-2025-light1.png",
+    "folder": "images/branding",
+    "alt": "logo-2025-light1",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-light1-e38c47f5c7e5.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/project/farm-together/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/08/logo-2025-normal-2.png",
+    "folder": "images/branding",
+    "alt": "default-logo",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-normal-2-86322bdc33ad.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/project/farm-together/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/06/logo-2025-light1.png",
+    "folder": "images/branding",
+    "alt": "logo-2025-light1",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-light1-e38c47f5c7e5.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/project/doi-de-trang/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/08/logo-2025-normal-2.png",
+    "folder": "images/branding",
+    "alt": "default-logo",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-normal-2-86322bdc33ad.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/project/doi-de-trang/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/06/logo-2025-light1.png",
+    "folder": "images/branding",
+    "alt": "logo-2025-light1",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-light1-e38c47f5c7e5.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/project/hoa-phu-villa/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/08/logo-2025-normal-2.png",
+    "folder": "images/branding",
+    "alt": "default-logo",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-normal-2-86322bdc33ad.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/project/hoa-phu-villa/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/06/logo-2025-light1.png",
+    "folder": "images/branding",
+    "alt": "logo-2025-light1",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-light1-e38c47f5c7e5.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/project/an-binh-farm/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/08/logo-2025-normal-2.png",
+    "folder": "images/branding",
+    "alt": "default-logo",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-normal-2-86322bdc33ad.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/project/an-binh-farm/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/06/logo-2025-light1.png",
+    "folder": "images/branding",
+    "alt": "logo-2025-light1",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-light1-e38c47f5c7e5.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/project/happy-life/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/08/logo-2025-normal-2.png",
+    "folder": "images/branding",
+    "alt": "default-logo",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-normal-2-86322bdc33ad.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/project/happy-life/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/06/logo-2025-light1.png",
+    "folder": "images/branding",
+    "alt": "logo-2025-light1",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-light1-e38c47f5c7e5.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/project/haly-farm/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/08/logo-2025-normal-2.png",
+    "folder": "images/branding",
+    "alt": "default-logo",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-normal-2-86322bdc33ad.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/project/haly-farm/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/06/logo-2025-light1.png",
+    "folder": "images/branding",
+    "alt": "logo-2025-light1",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-light1-e38c47f5c7e5.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/project/lang-van-hoa-cong-dong-thon-trlee/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/08/logo-2025-normal-2.png",
+    "folder": "images/branding",
+    "alt": "default-logo",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-normal-2-86322bdc33ad.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/project/lang-van-hoa-cong-dong-thon-trlee/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/06/logo-2025-light1.png",
+    "folder": "images/branding",
+    "alt": "logo-2025-light1",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-light1-e38c47f5c7e5.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/project/hien-garden/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/08/logo-2025-normal-2.png",
+    "folder": "images/branding",
+    "alt": "default-logo",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-normal-2-86322bdc33ad.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/project/hien-garden/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/06/logo-2025-light1.png",
+    "folder": "images/branding",
+    "alt": "logo-2025-light1",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-light1-e38c47f5c7e5.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/project/dai-farm/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/08/logo-2025-normal-2.png",
+    "folder": "images/branding",
+    "alt": "default-logo",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-normal-2-86322bdc33ad.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/project/dai-farm/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/06/logo-2025-light1.png",
+    "folder": "images/branding",
+    "alt": "logo-2025-light1",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-light1-e38c47f5c7e5.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/project/indochine-villa/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/08/logo-2025-normal-2.png",
+    "folder": "images/branding",
+    "alt": "default-logo",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-normal-2-86322bdc33ad.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/project/indochine-villa/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/06/logo-2025-light1.png",
+    "folder": "images/branding",
+    "alt": "logo-2025-light1",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-light1-e38c47f5c7e5.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/project/haos-homestay/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/08/logo-2025-normal-2.png",
+    "folder": "images/branding",
+    "alt": "default-logo",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-normal-2-86322bdc33ad.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/project/haos-homestay/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/06/logo-2025-light1.png",
+    "folder": "images/branding",
+    "alt": "logo-2025-light1",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-light1-e38c47f5c7e5.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/project/cam-ly-view-garder/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/08/logo-2025-normal-2.png",
+    "folder": "images/branding",
+    "alt": "default-logo",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-normal-2-86322bdc33ad.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/project/cam-ly-view-garder/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/06/logo-2025-light1.png",
+    "folder": "images/branding",
+    "alt": "logo-2025-light1",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-light1-e38c47f5c7e5.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/project/holiday-village/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/08/logo-2025-normal-2.png",
+    "folder": "images/branding",
+    "alt": "default-logo",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-normal-2-86322bdc33ad.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/project/holiday-village/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/06/logo-2025-light1.png",
+    "folder": "images/branding",
+    "alt": "logo-2025-light1",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-light1-e38c47f5c7e5.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/project/family-village/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/08/logo-2025-normal-2.png",
+    "folder": "images/branding",
+    "alt": "default-logo",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-normal-2-86322bdc33ad.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/project/family-village/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/06/logo-2025-light1.png",
+    "folder": "images/branding",
+    "alt": "logo-2025-light1",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-light1-e38c47f5c7e5.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/project/tructhuyvien/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/08/logo-2025-normal-2.png",
+    "folder": "images/branding",
+    "alt": "default-logo",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-normal-2-86322bdc33ad.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/project/tructhuyvien/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/06/logo-2025-light1.png",
+    "folder": "images/branding",
+    "alt": "logo-2025-light1",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-light1-e38c47f5c7e5.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/project/rajamaha-country-club/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/08/logo-2025-normal-2.png",
+    "folder": "images/branding",
+    "alt": "default-logo",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-normal-2-86322bdc33ad.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/project/rajamaha-country-club/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/06/logo-2025-light1.png",
+    "folder": "images/branding",
+    "alt": "logo-2025-light1",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-light1-e38c47f5c7e5.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/project/ho-hon-co/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/08/logo-2025-normal-2.png",
+    "folder": "images/branding",
+    "alt": "default-logo",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-normal-2-86322bdc33ad.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/project/ho-hon-co/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/06/logo-2025-light1.png",
+    "folder": "images/branding",
+    "alt": "logo-2025-light1",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-light1-e38c47f5c7e5.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/project/taste-of-issan-farm/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/08/logo-2025-normal-2.png",
+    "folder": "images/branding",
+    "alt": "default-logo",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-normal-2-86322bdc33ad.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/project/taste-of-issan-farm/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/06/logo-2025-light1.png",
+    "folder": "images/branding",
+    "alt": "logo-2025-light1",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-light1-e38c47f5c7e5.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/project/farmstay-nha-minh/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/08/logo-2025-normal-2.png",
+    "folder": "images/branding",
+    "alt": "default-logo",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-normal-2-86322bdc33ad.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/project/farmstay-nha-minh/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/06/logo-2025-light1.png",
+    "folder": "images/branding",
+    "alt": "logo-2025-light1",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-light1-e38c47f5c7e5.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/project/palm-hotel/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/08/logo-2025-normal-2.png",
+    "folder": "images/branding",
+    "alt": "default-logo",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-normal-2-86322bdc33ad.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/project/palm-hotel/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/06/logo-2025-light1.png",
+    "folder": "images/branding",
+    "alt": "logo-2025-light1",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-light1-e38c47f5c7e5.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/project/hali-green/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/08/logo-2025-normal-2.png",
+    "folder": "images/branding",
+    "alt": "default-logo",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-normal-2-86322bdc33ad.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/project/hali-green/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/06/logo-2025-light1.png",
+    "folder": "images/branding",
+    "alt": "logo-2025-light1",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-light1-e38c47f5c7e5.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/project/pleiku-farm/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/08/logo-2025-normal-2.png",
+    "folder": "images/branding",
+    "alt": "default-logo",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-normal-2-86322bdc33ad.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/project/pleiku-farm/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/06/logo-2025-light1.png",
+    "folder": "images/branding",
+    "alt": "logo-2025-light1",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-light1-e38c47f5c7e5.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/project/ta-nung-homestay/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/08/logo-2025-normal-2.png",
+    "folder": "images/branding",
+    "alt": "default-logo",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-normal-2-86322bdc33ad.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/project/ta-nung-homestay/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/06/logo-2025-light1.png",
+    "folder": "images/branding",
+    "alt": "logo-2025-light1",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-light1-e38c47f5c7e5.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/team/jay-nguyen/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/08/logo-2025-normal-2.png",
+    "folder": "images/branding",
+    "alt": "default-logo",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-normal-2-86322bdc33ad.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/team/jay-nguyen/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/06/logo-2025-light1.png",
+    "folder": "images/branding",
+    "alt": "logo-2025-light1",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-light1-e38c47f5c7e5.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/team/thuy-duong/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/08/logo-2025-normal-2.png",
+    "folder": "images/branding",
+    "alt": "default-logo",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-normal-2-86322bdc33ad.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/team/thuy-duong/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/06/logo-2025-light1.png",
+    "folder": "images/branding",
+    "alt": "logo-2025-light1",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-light1-e38c47f5c7e5.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/team/be-ngan/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/08/logo-2025-normal-2.png",
+    "folder": "images/branding",
+    "alt": "default-logo",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-normal-2-86322bdc33ad.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/team/be-ngan/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/06/logo-2025-light1.png",
+    "folder": "images/branding",
+    "alt": "logo-2025-light1",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-light1-e38c47f5c7e5.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/team/hang-can/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/08/logo-2025-normal-2.png",
+    "folder": "images/branding",
+    "alt": "default-logo",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-normal-2-86322bdc33ad.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/team/hang-can/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/06/logo-2025-light1.png",
+    "folder": "images/branding",
+    "alt": "logo-2025-light1",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-light1-e38c47f5c7e5.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/team/huong-le/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/08/logo-2025-normal-2.png",
+    "folder": "images/branding",
+    "alt": "default-logo",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-normal-2-86322bdc33ad.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/team/huong-le/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/06/logo-2025-light1.png",
+    "folder": "images/branding",
+    "alt": "logo-2025-light1",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-light1-e38c47f5c7e5.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/team/quoc-hai/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/08/logo-2025-normal-2.png",
+    "folder": "images/branding",
+    "alt": "default-logo",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-normal-2-86322bdc33ad.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/team/quoc-hai/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/06/logo-2025-light1.png",
+    "folder": "images/branding",
+    "alt": "logo-2025-light1",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-light1-e38c47f5c7e5.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/elementor-hf/header-3/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/08/logo-2025-normal-2.png",
+    "folder": "images/branding",
+    "alt": "default-logo",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-normal-2-86322bdc33ad.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/elementor-hf/header-3/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/06/logo-2025-light1.png",
+    "folder": "images/branding",
+    "alt": "logo-2025-light1",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-light1-e38c47f5c7e5.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/elementor-hf/header-4/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/08/logo-2025-normal-2.png",
+    "folder": "images/branding",
+    "alt": "default-logo",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-normal-2-86322bdc33ad.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/elementor-hf/header-4/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/06/logo-2025-light1.png",
+    "folder": "images/branding",
+    "alt": "logo-2025-light1",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-light1-e38c47f5c7e5.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/elementor-hf/footer-bar/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/08/logo-2025-normal-2.png",
+    "folder": "images/branding",
+    "alt": "default-logo",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-normal-2-86322bdc33ad.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/elementor-hf/footer-bar/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/06/logo-2025-light1.png",
+    "folder": "images/branding",
+    "alt": "logo-2025-light1",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-light1-e38c47f5c7e5.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/elementor-hf/footer-3/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/08/logo-2025-normal-2.png",
+    "folder": "images/branding",
+    "alt": "default-logo",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-normal-2-86322bdc33ad.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/elementor-hf/footer-3/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/06/logo-2025-light1.png",
+    "folder": "images/branding",
+    "alt": "logo-2025-light1",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-light1-e38c47f5c7e5.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/elementor-hf/header-2/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/08/logo-2025-normal-2.png",
+    "folder": "images/branding",
+    "alt": "default-logo",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-normal-2-86322bdc33ad.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/elementor-hf/header-2/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/06/logo-2025-light1.png",
+    "folder": "images/branding",
+    "alt": "logo-2025-light1",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-light1-e38c47f5c7e5.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/elementor-hf/header-1/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/08/logo-2025-normal-2.png",
+    "folder": "images/branding",
+    "alt": "default-logo",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-normal-2-86322bdc33ad.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/elementor-hf/header-1/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/06/logo-2025-light1.png",
+    "folder": "images/branding",
+    "alt": "logo-2025-light1",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-light1-e38c47f5c7e5.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/elementor-hf/footer-1/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/08/logo-2025-normal-2.png",
+    "folder": "images/branding",
+    "alt": "default-logo",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-normal-2-86322bdc33ad.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/elementor-hf/footer-1/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/06/logo-2025-light1.png",
+    "folder": "images/branding",
+    "alt": "logo-2025-light1",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-light1-e38c47f5c7e5.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/elementor-hf/footer-2/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/08/logo-2025-normal-2.png",
+    "folder": "images/branding",
+    "alt": "default-logo",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-normal-2-86322bdc33ad.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/elementor-hf/footer-2/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/06/logo-2025-light1.png",
+    "folder": "images/branding",
+    "alt": "logo-2025-light1",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-light1-e38c47f5c7e5.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/lexus-breadcrumb/breadcrumb-single-post/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/08/logo-2025-normal-2.png",
+    "folder": "images/branding",
+    "alt": "default-logo",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-normal-2-86322bdc33ad.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/lexus-breadcrumb/breadcrumb-single-post/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/06/logo-2025-light1.png",
+    "folder": "images/branding",
+    "alt": "logo-2025-light1",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-light1-e38c47f5c7e5.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/lexus-breadcrumb/breadcrumb-default/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/08/logo-2025-normal-2.png",
+    "folder": "images/branding",
+    "alt": "default-logo",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-normal-2-86322bdc33ad.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/lexus-breadcrumb/breadcrumb-default/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/06/logo-2025-light1.png",
+    "folder": "images/branding",
+    "alt": "logo-2025-light1",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-light1-e38c47f5c7e5.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/category/khong-phan-loai/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/08/logo-2025-normal-2.png",
+    "folder": "images/branding",
+    "alt": "default-logo",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-normal-2-86322bdc33ad.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/category/khong-phan-loai/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/06/logo-2025-light1.png",
+    "folder": "images/branding",
+    "alt": "logo-2025-light1",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-light1-e38c47f5c7e5.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/category/mo-hinh/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/08/logo-2025-normal-2.png",
+    "folder": "images/branding",
+    "alt": "default-logo",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-normal-2-86322bdc33ad.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/category/mo-hinh/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/06/logo-2025-light1.png",
+    "folder": "images/branding",
+    "alt": "logo-2025-light1",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-light1-e38c47f5c7e5.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/tag/farmstay/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/08/logo-2025-normal-2.png",
+    "folder": "images/branding",
+    "alt": "default-logo",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-normal-2-86322bdc33ad.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/tag/farmstay/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/06/logo-2025-light1.png",
+    "folder": "images/branding",
+    "alt": "logo-2025-light1",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-light1-e38c47f5c7e5.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/tag/homestay/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/08/logo-2025-normal-2.png",
+    "folder": "images/branding",
+    "alt": "default-logo",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-normal-2-86322bdc33ad.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/tag/homestay/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/06/logo-2025-light1.png",
+    "folder": "images/branding",
+    "alt": "logo-2025-light1",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-light1-e38c47f5c7e5.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/tag/oak-farm/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/08/logo-2025-normal-2.png",
+    "folder": "images/branding",
+    "alt": "default-logo",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-normal-2-86322bdc33ad.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/tag/oak-farm/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/06/logo-2025-light1.png",
+    "folder": "images/branding",
+    "alt": "logo-2025-light1",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-light1-e38c47f5c7e5.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/project-category/miennam/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/08/logo-2025-normal-2.png",
+    "folder": "images/branding",
+    "alt": "default-logo",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-normal-2-86322bdc33ad.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/project-category/miennam/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/06/logo-2025-light1.png",
+    "folder": "images/branding",
+    "alt": "logo-2025-light1",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-light1-e38c47f5c7e5.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/project-category/mientrung/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/08/logo-2025-normal-2.png",
+    "folder": "images/branding",
+    "alt": "default-logo",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-normal-2-86322bdc33ad.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/project-category/mientrung/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/06/logo-2025-light1.png",
+    "folder": "images/branding",
+    "alt": "logo-2025-light1",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-light1-e38c47f5c7e5.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/project-category/nuocngoai/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/08/logo-2025-normal-2.png",
+    "folder": "images/branding",
+    "alt": "default-logo",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-normal-2-86322bdc33ad.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/project-category/nuocngoai/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/06/logo-2025-light1.png",
+    "folder": "images/branding",
+    "alt": "logo-2025-light1",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-light1-e38c47f5c7e5.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/author/admin/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/08/logo-2025-normal-2.png",
+    "folder": "images/branding",
+    "alt": "default-logo",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-normal-2-86322bdc33ad.png"
+  },
+  {
+    "page_url": "https://oakfarm.vn/author/admin/",
+    "image_url": "https://oakfarm.vn/wp-content/uploads/2025/06/logo-2025-light1.png",
+    "folder": "images/branding",
+    "alt": "logo-2025-light1",
+    "local_path": "/Users/bephi/data/oakfarm_full_output/assets/images/branding/logo-2025-light1-e38c47f5c7e5.png"
+  }
+]

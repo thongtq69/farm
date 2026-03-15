@@ -1,0 +1,52 @@
+[
+  {
+    "url": "https://oakfarm.vn/service/du-lich-trai-nghiem/",
+    "title": "Du lịch trải nghiệm - Oak Farm",
+    "h1": "Du lịch trải nghiệm",
+    "meta_description": "Đa dạng hình thức tùy theo từng vùng, kết hợp du lịch nông nghiệm trải nghiệm, du lịch dưới tán rừng hoặc du lịch chữa lành trồng dược liệu.",
+    "canonical": "https://oakfarm.vn/service/du-lich-trai-nghiem/",
+    "image_count": 4,
+    "page_json": "/Users/bephi/data/oakfarm_full_output/pages/service__du-lich-trai-nghiem.json",
+    "page_type": "services"
+  },
+  {
+    "url": "https://oakfarm.vn/service/resort-nghi-duong/",
+    "title": "Resort nghỉ dưỡng - Oak Farm",
+    "h1": "Resort nghỉ dưỡng",
+    "meta_description": "Quy hoạch, thiết kế chi tiết một khu nghỉ dưỡng với đầy đủ các hạng mục. Quy mô đề xuất từ 8ha đến 20ha cho dự án resort.",
+    "canonical": "https://oakfarm.vn/service/resort-nghi-duong/",
+    "image_count": 4,
+    "page_json": "/Users/bephi/data/oakfarm_full_output/pages/service__resort-nghi-duong.json",
+    "page_type": "services"
+  },
+  {
+    "url": "https://oakfarm.vn/service/canh-quan-nha-vuon/",
+    "title": "Cảnh quan nhà vườn - Oak Farm",
+    "h1": "Cảnh quan nhà vườn",
+    "meta_description": "Thiết kế trọn gói nhà vườn, cảnh quan sân vườn với quy mô gia đình sử dụng. Áp dụng với các khu đất có diện tích dưới 9000m2",
+    "canonical": "https://oakfarm.vn/service/canh-quan-nha-vuon/",
+    "image_count": 4,
+    "page_json": "/Users/bephi/data/oakfarm_full_output/pages/service__canh-quan-nha-vuon.json",
+    "page_type": "services"
+  },
+  {
+    "url": "https://oakfarm.vn/service/farm-homestay/",
+    "title": "Farm-Homestay - Oak Farm",
+    "h1": "Farm-Homestay",
+    "meta_description": "Hoạch định, thiết kế trọn gói mô hình Farmstay, Homestay đặc trưng cho từng vùng miền. Quy mô từ 1-3ha là một đề xuất hợp lý.",
+    "canonical": "https://oakfarm.vn/service/farm-homestay/",
+    "image_count": 4,
+    "page_json": "/Users/bephi/data/oakfarm_full_output/pages/service__farm-homestay.json",
+    "page_type": "services"
+  },
+  {
+    "url": "https://oakfarm.vn/service/quy-hoach-du-an/",
+    "title": "Quy hoạch dự án - Oak Farm",
+    "h1": "Giới thiệu về chúng tôi",
+    "meta_description": "Thực hiện thiết kế, quy hoạch các bước để thực hiện dự án. Từ khảo sát, thiết kế ý tưởng đến quy hoạch hồ sơ 1/500 trình duyệt.",
+    "canonical": "https://oakfarm.vn/service/quy-hoach-du-an/",
+    "image_count": 4,
+    "page_json": "/Users/bephi/data/oakfarm_full_output/pages/service__quy-hoach-du-an.json",
+    "page_type": "services"
+  }
+]
