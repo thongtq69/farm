@@ -1,8 +1,7 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import Image from 'next/image';
-import { motion } from 'framer-motion';
 
 const services = [
   {
@@ -35,6 +34,24 @@ const services = [
 const Services = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+
+  const showCount = 3;
+
+  const goNext = useCallback(() => {
+    setActiveIndex((current) => (current + 1) % services.length);
+  }, []);
+
+  const goPrev = useCallback(() => {
+    setActiveIndex((current) => (current - 1 + services.length) % services.length);
+  }, []);
+
+  const visibleServices = useMemo(
+    () => Array.from({ length: showCount }, (_, offset) => services[(activeIndex + offset) % services.length]),
+    [activeIndex]
+  );
+
+  const featuredIndex = hoveredIndex;
 
   useEffect(() => {
     if (isPaused) {
@@ -42,11 +59,11 @@ const Services = () => {
     }
 
     const interval = window.setInterval(() => {
-      setActiveIndex((current) => (current + 1) % services.length);
+      goNext();
     }, 3200);
 
     return () => window.clearInterval(interval);
-  }, [isPaused]);
+  }, [goNext, isPaused]);
 
   return (
     <section className="services section bg-pattern">
@@ -59,46 +76,65 @@ const Services = () => {
           </p>
         </div>
 
-        <div className="services-grid">
-          {services.map((service, index) => (
-            <motion.div 
-              className={`service-card${activeIndex === index ? ' is-active' : ''}`}
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1, duration: 0.8 }}
-              tabIndex={0}
-              onMouseEnter={() => {
-                setActiveIndex(index);
-                setIsPaused(true);
-              }}
-              onMouseLeave={() => setIsPaused(false)}
-              onFocus={() => {
-                setActiveIndex(index);
-                setIsPaused(true);
-              }}
-              onBlur={() => setIsPaused(false)}
-            >
-              <div className="service-image">
-                <Image 
-                  src={service.image} 
-                  alt={service.title} 
-                  fill
-                  style={{ objectFit: 'cover' }}
-                />
+        <div
+          className="services-carousel"
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => {
+            setIsPaused(false);
+            setHoveredIndex(null);
+          }}
+        >
+          <div className="services-grid">
+            {visibleServices.map((service, index) => (
+              <div
+                className={`service-card${index === featuredIndex ? ' is-featured' : ''}`}
+                key={`${index}-${service.title}`}
+                onMouseEnter={() => setHoveredIndex(index)}
+                onFocus={() => {
+                  setIsPaused(true);
+                  setHoveredIndex(index);
+                }}
+                onBlur={() => {
+                  setIsPaused(false);
+                  setHoveredIndex(null);
+                }}
+                tabIndex={0}
+              >
+                <div className="service-image">
+                  <Image
+                    src={service.image}
+                    alt={service.title}
+                    fill
+                    priority={index === 0}
+                    sizes="(max-width: 991px) 100vw, 33vw"
+                    style={{ objectFit: 'cover' }}
+                  />
+                </div>
+                <div className="service-info service-info-static">
+                  <h3>{service.title}</h3>
+                  {index === featuredIndex && (
+                    <>
+                      <p>{service.desc}</p>
+                      <a href="#" className="service-card-arrow" aria-label={`Chi tiết ${service.title}`}>
+                        &rarr;
+                      </a>
+                    </>
+                  )}
+                </div>
               </div>
-              <div className="service-overlay" />
-              <div className="service-info glass-effect">
-                <h3>{service.title}</h3>
-                <p>{service.desc}</p>
-                <a href="#" className="service-link">
-                  <span>Chi tiết dự án</span>
-                  <i className="arrow-right">&rarr;</i>
-                </a>
-              </div>
-            </motion.div>
-          ))}
+            ))}
+          </div>
+
+          <div className="services-controls">
+            <span className="services-controls-line" />
+            <button type="button" className="services-control-btn" onClick={goPrev} aria-label="Dự án trước">
+              &larr;
+            </button>
+            <button type="button" className="services-control-btn" onClick={goNext} aria-label="Dự án tiếp theo">
+              &rarr;
+            </button>
+            <span className="services-controls-line" />
+          </div>
         </div>
       </div>
     </section>
