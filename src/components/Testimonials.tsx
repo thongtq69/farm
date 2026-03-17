@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const reviews = [
   {
@@ -26,45 +26,88 @@ const reviews = [
 ];
 
 const Testimonials = () => {
+  const [currentIndex, setCurrentIndex] = React.useState(0);
+  const autoPlayRef = React.useRef<NodeJS.Timeout | null>(null);
+
+  const startAutoPlay = React.useCallback(() => {
+    stopAutoPlay();
+    autoPlayRef.current = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % reviews.length);
+    }, 6000);
+  }, []);
+
+  const stopAutoPlay = React.useCallback(() => {
+    if (autoPlayRef.current) clearInterval(autoPlayRef.current);
+  }, []);
+
+  React.useEffect(() => {
+    startAutoPlay();
+    return () => stopAutoPlay();
+  }, [startAutoPlay, stopAutoPlay]);
+
+  const next = () => {
+    stopAutoPlay();
+    setCurrentIndex((prev) => (prev + 1) % reviews.length);
+    startAutoPlay();
+  };
+
+  const prev = () => {
+    stopAutoPlay();
+    setCurrentIndex((prev) => (prev - 1 + reviews.length) % reviews.length);
+    startAutoPlay();
+  };
+
   return (
-    <section className="testimonials section bg-pattern">
+    <section className="testimonials section bg-pattern" style={{ overflow: 'hidden' }}>
       <div className="container">
         <div className="section-header" data-aos="fade-up">
           <span className="subtitle">Khách hàng nói gì</span>
           <h2 className="section-title">Niềm tin gửi trao</h2>
         </div>
 
-        <div className="testimonials-grid">
-          {reviews.map((item, index) => (
-            <motion.div 
-              className="testimonial-card" 
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.15, duration: 0.8 }}
-              whileHover={{ 
-                scale: 1.05, 
-                rotateX: 2, 
-                rotateY: 2, 
-                boxShadow: "0 25px 60px rgba(0,0,0,0.1)",
-                transition: { duration: 0.3 }
-              }}
-              style={{ perspective: 1000 }}
-            >
-              <div className="quote-icon">“</div>
-              <p className="testimonial-content">{item.content}</p>
-              <div className="testimonial-author">
-                <div className="author-image">
-                  <Image src={item.image} alt={item.author} width={60} height={60} />
+        <div className="testimonials-slider-container">
+          <div className="testimonials-track">
+            <AnimatePresence mode="wait">
+              <motion.div 
+                key={currentIndex}
+                className="testimonial-card-single"
+                initial={{ opacity: 0, scale: 0.95, y: 30 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 1.05, y: -30 }}
+                transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+              >
+                <div className="quote-icon">“</div>
+                <p className="testimonial-content">{reviews[currentIndex].content}</p>
+                <div className="testimonial-author">
+                  <div className="author-image">
+                    <Image src={reviews[currentIndex].image} alt={reviews[currentIndex].author} width={80} height={80} />
+                  </div>
+                  <div className="author-info">
+                    <h3>{reviews[currentIndex].author}</h3>
+                    <span>{reviews[currentIndex].role}</span>
+                  </div>
                 </div>
-                <div className="author-info">
-                  <h3>{item.author}</h3>
-                  <span>{item.role}</span>
-                </div>
-              </div>
-            </motion.div>
-          ))}
+              </motion.div>
+            </AnimatePresence>
+          </div>
+
+          <div className="testimonials-controls">
+            <button onClick={prev} className="t-control-btn">←</button>
+            <div className="t-dots">
+              {reviews.map((_, i) => (
+                <div 
+                  key={i} 
+                  className={`t-dot ${i === currentIndex ? 'active' : ''}`}
+                  onClick={() => {
+                    stopAutoPlay();
+                    setCurrentIndex(i);
+                    startAutoPlay();
+                  }}
+                />
+              ))}
+            </div>
+            <button onClick={next} className="t-control-btn">→</button>
+          </div>
         </div>
       </div>
     </section>

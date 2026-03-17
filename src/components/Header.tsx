@@ -3,18 +3,29 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
+import { usePathname } from 'next/navigation';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      setIsScrolled(window.scrollY > 20);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const navLinks = [
+    { name: 'Trang chủ', href: '/' },
+    { name: 'Chúng tôi', href: '/chung-toi' },
+    { name: 'Dự án', href: '/project', dropdown: true },
+    { name: 'Báo giá thiết kế', href: '/bao-gia-thiet-ke-farm' },
+    { name: 'Blog', href: '/blog' },
+  ];
 
   return (
     <>
@@ -32,18 +43,26 @@ const Header = () => {
 
           <nav className="nav desktop-only">
             <ul className="nav-list">
-              <li><Link href="/">Trang chủ</Link></li>
-              <li><Link href="/chung-toi">Chúng tôi</Link></li>
-              <li className="nav-dropdown">
-                <Link href="/project">Dự án</Link>
-                <ul className="dropdown-menu">
-                  <li><Link href="/project/san-vuon-ho-koi">Sân Vườn & Hồ Koi</Link></li>
-                  <li><Link href="/project/farm-du-lich-nghi-duong">Farm & Du Lịch Nghỉ Dưỡng</Link></li>
-                  <li><Link href="/project/da-nhan-tao-nghe-thuat">Đá Nhân Tạo Nghệ Thuật</Link></li>
-                </ul>
-              </li>
-              <li><Link href="/bao-gia-thiet-ke-farm">Báo giá thiết kế Farm</Link></li>
-              <li><Link href="/blog">Blog</Link></li>
+              {navLinks.map((link) => (
+                <li key={link.href} className={link.dropdown ? 'nav-dropdown' : ''}>
+                  <Link href={link.href} className={pathname === link.href ? 'active' : ''}>
+                    {link.name}
+                    {pathname === link.href && (
+                      <motion.div 
+                        layoutId="nav-underline"
+                        className="nav-underline"
+                      />
+                    )}
+                  </Link>
+                  {link.dropdown && (
+                    <ul className="dropdown-menu">
+                      <li><Link href="/project/san-vuon-ho-koi">Sân Vườn & Hồ Koi</Link></li>
+                      <li><Link href="/project/farm-du-lich-nghi-duong">Farm & Du Lịch Nghỉ Dưỡng</Link></li>
+                      <li><Link href="/project/da-nhan-tao-nghe-thuat">Đá Nhân Tạo Nghệ Thuật</Link></li>
+                    </ul>
+                  )}
+                </li>
+              ))}
             </ul>
           </nav>
 

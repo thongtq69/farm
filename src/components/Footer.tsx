@@ -1,26 +1,35 @@
+'use client';
+
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 
 const Footer = () => {
   return (
-    <footer className="footer">
+    <footer className="footer section-dark-alt">
       <div className="container footer-container">
-        <div className="footer-section">
-          <Link href="/" className="footer-logo">
-            <Image 
-              src="/images/branding/logo-2025-light1-e38c47f5c7e5.png" 
-              alt="Oak Farm Light Logo" 
-              width={150} 
-              height={45} 
-            />
-          </Link>
+        <div className="footer-section main">
+          <motion.div 
+            whileHover={{ scale: 1.05 }}
+            className="footer-logo-box"
+          >
+            <Link href="/" className="footer-logo">
+              <Image 
+                src="/images/branding/logo-2025-light1-e38c47f5c7e5.png" 
+                alt="Oak Farm Light Logo" 
+                width={180} 
+                height={55} 
+              />
+            </Link>
+          </motion.div>
           <p className="footer-desc">
-            Oak Farm là một trong những đơn vị thiết kế Farmstay hàng đầu Việt Nam. Với nhiều dự án trải dài trên 20 tỉnh thành Đất Nước và các dự án tại nước bạn Thái Lan.
+            Oak Farm kiến tạo nên những không gian nghỉ dưỡng đẳng cấp, chuẩn mực trong từng nét vẽ quy hoạch Farmstay hàng đầu Việt Nam.
           </p>
-          <div className="social-icons">
-            <a href="https://facebook.com/oakfarm.vn" target="_blank" rel="noopener noreferrer">F</a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">I</a>
+          <div className="social-links-modern">
+            <motion.a whileHover={{ y: -5, backgroundColor: '#3b5998' }} href="https://facebook.com/oakfarm.vn" target="_blank" rel="noopener noreferrer"><i>FB</i></motion.a>
+            <motion.a whileHover={{ y: -5, backgroundColor: '#e1306c' }} href="https://instagram.com" target="_blank" rel="noopener noreferrer"><i>IG</i></motion.a>
+            <motion.a whileHover={{ y: -5, backgroundColor: '#ff0000' }} href="https://youtube.com" target="_blank" rel="noopener noreferrer"><i>YT</i></motion.a>
           </div>
         </div>
 

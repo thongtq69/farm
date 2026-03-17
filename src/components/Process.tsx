@@ -1,7 +1,8 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 
 const steps = [
   {
@@ -87,39 +88,98 @@ const steps = [
 ];
 
 const Process = () => {
+  const [activeStep, setActiveStep] = useState(0);
+
   return (
-    <section className="process section">
+    <section className="process section bg-pattern">
       <div className="container">
         <div className="section-header" data-aos="fade-up">
+          <span className="subtitle">Quy trình Oak Farm</span>
           <h2 className="section-title">7 giai đoạn thiết kế Farm</h2>
-          <p className="section-subtitle">Quy trình làm việc chuyên nghiệp, tận tâm và minh bạch.</p>
+          <p className="section-subtitle">Quy trình làm việc chuyên nghiệp, tận tâm và minh bạch theo tiêu chuẩn Oak Farm.</p>
         </div>
 
-        <div className="steps-container">
-          {steps.map((step, index) => (
-            <div className={`step-item ${index % 2 !== 0 ? 'reverse' : ''}`} key={index} data-aos="fade-up">
-              <div className="step-content">
-                <span className="step-number">{step.number}</span>
-                <h3>{step.title}</h3>
-                <p>{step.desc}</p>
-                {step.bullets && (
-                  <ul className="step-bullets">
-                    {step.bullets.map((bullet, idx) => (
-                      <li key={idx}><span className="bullet"></span>{bullet}</li>
-                    ))}
-                  </ul>
-                )}
+        <div className="stages-wrapper">
+          <div className="stages-accordion">
+            {steps.map((step, index) => (
+              <button
+                key={index} 
+                className={`acc-item ${activeStep === index ? 'active' : ''}`}
+                onClick={() => setActiveStep(index)}
+                type="button"
+                aria-expanded={activeStep === index}
+              >
+                <div className="acc-header">
+                  <div className="acc-header-main">
+                    <span className="acc-num">{step.number}</span>
+                    <h3>{step.title}</h3>
+                  </div>
+                  <span className="acc-icon">{activeStep === index ? '−' : '+'}</span>
+                </div>
+
+                <motion.div
+                  className="acc-content"
+                  initial={false}
+                  animate={{
+                    gridTemplateRows: activeStep === index ? '1fr' : '0fr',
+                    opacity: activeStep === index ? 1 : 0.55
+                  }}
+                  transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
+                >
+                  <div className="acc-inner">
+                    <p>{step.desc}</p>
+                    {step.bullets && (
+                      <ul className="process-bullets">
+                        {step.bullets.map((bullet, idx) => (
+                          <li key={idx}><span className="process-bullet-dot"></span>{bullet}</li>
+                        ))}
+                      </ul>
+                    )}
+                    <div className="mobile-only-image">
+                      <Image
+                        src={step.image}
+                        alt={step.title}
+                        width={900}
+                        height={1100}
+                        style={{ objectFit: 'cover' }}
+                      />
+                    </div>
+                  </div>
+                </motion.div>
+              </button>
+            ))}
+          </div>
+
+          <div className="stages-image-sticky desktop-only">
+            <div className="sticky-image-box">
+              <div className="sticky-image-stack">
+                {steps.map((step, index) => (
+                  <div
+                    key={step.number}
+                    className={`sticky-image-layer ${activeStep === index ? 'active' : ''}`}
+                  >
+                    <Image
+                      src={step.image}
+                      alt={step.title}
+                      fill
+                      priority={index === 0}
+                      sizes="(max-width: 991px) 100vw, 42vw"
+                      style={{ objectFit: 'cover' }}
+                    />
+                  </div>
+                ))}
               </div>
-              <div className="step-image">
-                <Image 
-                  src={step.image} 
-                  alt={step.title} 
-                  fill
-                  style={{ objectFit: 'cover' }}
-                />
+              <div className="sticky-image-shape"></div>
+              <div className="sticky-image-badge">
+                <span>Oak Farm</span>
+                <strong>{steps[activeStep].number}</strong>
+              </div>
+              <div className="sticky-image-caption">
+                <span>Quy trinh thiet ke</span>
+                <h3>{steps[activeStep].title}</h3>
               </div>
             </div>
-          ))}
+          </div>
         </div>
       </div>
     </section>

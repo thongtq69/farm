@@ -1,7 +1,8 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 
 const services = [
   {
@@ -32,6 +33,21 @@ const services = [
 ];
 
 const Services = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+
+  useEffect(() => {
+    if (isPaused) {
+      return undefined;
+    }
+
+    const interval = window.setInterval(() => {
+      setActiveIndex((current) => (current + 1) % services.length);
+    }, 3200);
+
+    return () => window.clearInterval(interval);
+  }, [isPaused]);
+
   return (
     <section className="services section bg-pattern">
       <div className="container">
@@ -45,7 +61,25 @@ const Services = () => {
 
         <div className="services-grid">
           {services.map((service, index) => (
-            <div className="service-card" key={index} data-aos="fade-up" data-aos-delay={index * 150}>
+            <motion.div 
+              className={`service-card${activeIndex === index ? ' is-active' : ''}`}
+              key={index}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1, duration: 0.8 }}
+              tabIndex={0}
+              onMouseEnter={() => {
+                setActiveIndex(index);
+                setIsPaused(true);
+              }}
+              onMouseLeave={() => setIsPaused(false)}
+              onFocus={() => {
+                setActiveIndex(index);
+                setIsPaused(true);
+              }}
+              onBlur={() => setIsPaused(false)}
+            >
               <div className="service-image">
                 <Image 
                   src={service.image} 
@@ -54,12 +88,16 @@ const Services = () => {
                   style={{ objectFit: 'cover' }}
                 />
               </div>
-              <div className="service-info">
+              <div className="service-overlay" />
+              <div className="service-info glass-effect">
                 <h3>{service.title}</h3>
                 <p>{service.desc}</p>
-                <a href="#" className="service-link">Chi tiết dự án</a>
+                <a href="#" className="service-link">
+                  <span>Chi tiết dự án</span>
+                  <i className="arrow-right">&rarr;</i>
+                </a>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
