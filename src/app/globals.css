@@ -1956,6 +1956,12 @@ img {
   max-width: 480px;
 }
 
+.projects .container {
+  max-width: 1760px;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
 /* View Projects Button */
 .btn-view-projects {
   display: inline-flex;
@@ -1994,11 +2000,11 @@ img {
 
 /* Expand Cards */
 .expand-cards {
-  --exp-gap: 18px;
+  --exp-gap: 16px;
   display: flex;
   gap: var(--exp-gap);
   width: 100%;
-  max-width: 1320px;
+  max-width: none;
   margin: 0 auto;
   align-items: stretch;
   justify-content: center;
@@ -2011,8 +2017,8 @@ img {
   width: auto;
   max-width: none;
   min-width: 0;
-  height: 520px;
-  border-radius: 24px;
+  height: 480px;
+  border-radius: 20px;
   overflow: hidden;
   cursor: pointer;
   background: #111;
@@ -2042,17 +2048,13 @@ img {
   transform: translateY(0);
 }
 
-.expand-cards:not(.is-hovering) .exp-card:first-child {
-  flex: 1.8 1 0 !important;
-}
-
 .expand-cards.is-hovering .exp-card {
-  flex: 0.72 1 0;
+  flex: 0.82 1 0;
   opacity: 0.96;
 }
 
 .expand-cards.is-hovering .exp-card.active {
-  flex: 2.8 1 0;
+  flex: 2.45 1 0;
   opacity: 1;
   box-shadow: 0 28px 70px rgba(0, 0, 0, 0.42);
 }
@@ -2062,26 +2064,15 @@ img {
   transition: transform 0.7s ease, opacity 0.35s ease, filter 0.45s ease;
 }
 
-.expand-cards:not(.is-hovering) .exp-card:first-child .exp-info {
-  opacity: 1 !important;
-  transform: translateY(0) !important;
-  pointer-events: auto;
-}
-
-.expand-cards:not(.is-hovering) .exp-card:not(:first-child) .exp-info {
+.expand-cards:not(.is-hovering) .exp-info {
   opacity: 0 !important;
   transform: translateY(20px) !important;
   pointer-events: none;
 }
 
-.expand-cards:not(.is-hovering) .exp-card:first-child .exp-label-vert {
+.expand-cards:not(.is-hovering) .exp-label-vert {
   opacity: 0 !important;
   pointer-events: none !important;
-}
-
-.expand-cards:not(.is-hovering) .exp-card:not(:first-child) .exp-label-vert {
-  opacity: 1 !important;
-  pointer-events: auto !important;
 }
 
 .expand-cards:not(.is-hovering) .exp-tooltip {
@@ -2187,6 +2178,18 @@ img {
   font-weight: 400;
   line-height: 1.1;
   letter-spacing: -0.02em;
+}
+
+.exp-info-desc {
+  margin: 0.75rem 0 0;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.9rem;
+  line-height: 1.55;
+  max-width: 26ch;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .exp-arrow {
@@ -2429,6 +2432,11 @@ img {
 }
 
 @media (max-width: 991px) {
+  .projects .container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
   .projects-split-header {
     grid-template-columns: 1fr;
     gap: 2rem;

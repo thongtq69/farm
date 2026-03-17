@@ -1,67 +1,96 @@
 'use client';
 
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import Image from 'next/image';
+import projectsData from '../../clone_ready/pages_projects.json';
 
-const projects = [
-  {
-    title: 'Farmstay Nhà Mình',
-    location: 'Lâm Đồng',
-    image: '/images/projects/1-4bbf0f0013c9.jpg',
-    category: 'Farm-Homestay'
-  },
-  {
-    title: 'Palm Hotel',
-    location: 'Bà Rịa - Vũng Tàu',
+type CloneReadyProject = {
+  url: string;
+  title: string;
+  meta_description: string | null;
+};
+
+const featuredProjectMeta = {
+  'palm-hotel': {
     image: '/images/projects/1-4-36e82318d518.jpg',
-    category: 'Resort nghỉ dưỡng'
+    location: 'Bà Rịa - Vũng Tàu'
   },
-  {
-    title: 'Rajamaha Country',
-    location: 'Koh Phangan - Thailand',
+  'rajamaha-country-club': {
     image: '/images/projects/3-5-5c6de158d98d.jpg',
-    category: 'Dự án quy hoạch'
+    location: 'Koh Phangan - Thailand'
   },
-  {
-    title: 'Oak Garden View',
-    location: 'Đồng Nai',
-    image: '/images/projects/0-3-06a09ad15004.jpg',
-    category: 'Cảnh quan'
+  'hali-green': {
+    image: '/images/projects/2-2-4018f1a799f1.jpg',
+    location: 'Gia Lai'
+  },
+  'pleiku-farm': {
+    image: '/images/projects/2-1-674c891c1137.jpg',
+    location: 'Pleiku - Gia Lai'
+  },
+  'farmstay-nha-minh': {
+    image: '/images/projects/1-4bbf0f0013c9.jpg',
+    location: 'Lâm Đồng'
   }
-];
+} as const;
+
+const featuredProjectOrder = [
+  'palm-hotel',
+  'rajamaha-country-club',
+  'hali-green',
+  'pleiku-farm',
+  'farmstay-nha-minh'
+] as const;
+
+const projectEntries = projectsData as CloneReadyProject[];
 
 const Projects = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isHovering, setIsHovering] = useState(false);
   const autoPlayRef = useRef<NodeJS.Timeout | null>(null);
 
-  const startAutoPlay = () => {
-    stopAutoPlay();
+  const projects = useMemo(
+    () =>
+      featuredProjectOrder.map((slug) => {
+        const project = projectEntries.find((entry) => entry.url.includes(`/${slug}/`));
+        const meta = featuredProjectMeta[slug];
+
+        return {
+          slug,
+          title: project?.title.replace(/ - Oak Farm$/, '') ?? slug,
+          description: project?.meta_description ?? '',
+          href: project?.url.replace('https://oakfarm.vn', '') ?? '/project',
+          image: meta.image,
+          location: meta.location
+        };
+      }),
+    []
+  );
+
+  useEffect(() => {
+    if (isHovering) {
+      if (autoPlayRef.current) {
+        clearInterval(autoPlayRef.current);
+      }
+      return undefined;
+    }
+
     autoPlayRef.current = setInterval(() => {
       setActiveIndex((prev) => (prev + 1) % projects.length);
     }, 4000);
-  };
 
-  const stopAutoPlay = () => {
-    if (autoPlayRef.current) clearInterval(autoPlayRef.current);
-  };
-
-  useEffect(() => {
-    if (!isHovering) {
-      startAutoPlay();
-    } else {
-      stopAutoPlay();
-    }
-    return () => stopAutoPlay();
-  }, [isHovering]);
+    return () => {
+      if (autoPlayRef.current) {
+        clearInterval(autoPlayRef.current);
+      }
+    };
+  }, [isHovering, projects.length]);
 
   return (
-    <section 
-      className="projects section section-tight" 
+    <section
+      className="projects section section-tight"
       style={{ background: '#1e3318', overflow: 'hidden' }}
     >
       <div className="container">
-        {/* Two-column header like reference */}
         <div className="projects-split-header" data-aos="fade-up">
           <div className="projects-header-left">
             <span className="projects-badge">🌿 Dự Án Mới</span>
@@ -82,18 +111,25 @@ const Projects = () => {
           onMouseLeave={() => setIsHovering(false)}
         >
           {projects.map((project, index) => (
-            <div
-              className={`exp-card ${activeIndex === index ? 'active' : ''}`} 
-              key={index}
+            <a
+              className={`exp-card ${activeIndex === index ? 'active' : ''}`}
+              href={project.href}
+              key={project.slug}
               onMouseEnter={() => setActiveIndex(index)}
+              onFocus={() => {
+                setIsHovering(true);
+                setActiveIndex(index);
+              }}
+              onBlur={() => setIsHovering(false)}
             >
               <div className="exp-card-inner">
                 <Image
                   src={project.image}
                   alt={project.title}
                   fill
-                  style={{ objectFit: 'cover' }}
                   priority={index < 3}
+                  sizes="(max-width: 640px) 100vw, (max-width: 991px) 50vw, 20vw"
+                  style={{ objectFit: 'cover' }}
                 />
 
                 <div className="exp-label-vert">
@@ -104,13 +140,14 @@ const Projects = () => {
                   <div className="exp-info-content">
                     <div className="exp-info-loc">{project.location}</div>
                     <h3 className="exp-info-name">{project.title}</h3>
+                    {project.description && <p className="exp-info-desc">{project.description}</p>}
                   </div>
                   <div className="exp-arrow">→</div>
                 </div>
 
                 <div className="exp-overlay-bottom">OAK FARM</div>
               </div>
-            </div>
+            </a>
           ))}
         </div>
 
