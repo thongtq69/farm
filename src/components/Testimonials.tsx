@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 
 const reviews = [
   {
@@ -35,7 +36,22 @@ const Testimonials = () => {
 
         <div className="testimonials-grid">
           {reviews.map((item, index) => (
-            <div className="testimonial-card" key={index} data-aos="fade-up" data-aos-delay={index * 150}>
+            <motion.div 
+              className="testimonial-card" 
+              key={index}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.15, duration: 0.8 }}
+              whileHover={{ 
+                scale: 1.05, 
+                rotateX: 2, 
+                rotateY: 2, 
+                boxShadow: "0 25px 60px rgba(0,0,0,0.1)",
+                transition: { duration: 0.3 }
+              }}
+              style={{ perspective: 1000 }}
+            >
               <div className="quote-icon">“</div>
               <p className="testimonial-content">{item.content}</p>
               <div className="testimonial-author">
@@ -47,7 +63,7 @@ const Testimonials = () => {
                   <span>{item.role}</span>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
