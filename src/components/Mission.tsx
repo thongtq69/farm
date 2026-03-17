@@ -7,50 +7,50 @@ const Mission = () => {
   return (
     <section className="mission section">
       <div className="container mission-container">
-        <div className="mission-content" data-aos="fade-right">
-          <span className="subtitle">Sứ mệnh</span>
-          <h2>Chúng tôi thiết kế Farm để bạn thực hiện ước mơ</h2>
+        <div className="mission-content" data-aos="fade-right" data-aos-duration="1200">
+          <span className="subtitle">Lý do chọn Oak Farm</span>
+          <h2>Chuẩn mực trong từng nét vẽ Farm</h2>
           <p>
-            Bạn có khu đất và dự định thực hiện ước mơ làm farmstay, homestay, du lịch nghỉ dưỡng hay du lịch trải nghiệm… mà chưa biết bắt đầu từ đâu?
+            Với kinh nghiệm thực chiến trong quy hoạch và vận hành, Oak Farm thấu hiểu những khó khăn của chủ đầu tư để đưa ra giải pháp thiết kế tối ưu nhất.
           </p>
           
           <div className="mission-features">
-            <div className="feature-item">
-              <div className="feature-icon">✓</div>
+            <div className="feature-item" data-aos="fade-up" data-aos-delay="200">
+              <div className="feature-icon">
+                 <Image src="/images/icons/hotline.png" alt="Icon" width={30} height={30} style={{ filter: 'brightness(0) saturate(100%) invert(26%) sepia(35%) saturate(738%) hue-rotate(69deg) brightness(96%) contrast(89%)' }} />
+              </div>
               <div className="feature-text">
-                <h3>Khảo sát tận chỗ</h3>
-                <p>Đội ngũ KTS trực tiếp khảo sát địa hình, địa mạo dự án.</p>
+                <h3>Quản trị rủi ro</h3>
+                <p>Hạn chế sai sót trong xây dựng và tối ưu chi phí vận hành sau này.</p>
               </div>
             </div>
-            <div className="feature-item">
-              <div className="feature-icon">✓</div>
-              <div className="feature-text">
-                <h3>Thiết kế tận tâm</h3>
-                <p>Nhiều giai đoạn thiết kế từ tổng thể đến chi tiết.</p>
+            <div className="feature-item" data-aos="fade-up" data-aos-delay="400">
+               <div className="feature-icon">
+                 <Image src="/images/icons/footer-icon-2-240be6c70168.png" alt="Icon" width={30} height={30} style={{ filter: 'brightness(0) saturate(100%) invert(26%) sepia(35%) saturate(738%) hue-rotate(69deg) brightness(96%) contrast(89%)' }} />
               </div>
-            </div>
-            <div className="feature-item">
-              <div className="feature-icon">✓</div>
               <div className="feature-text">
-                <h3>Tư vấn tận nơi</h3>
-                <p>Kinh nghiệm lâu năm trong quy hoạch và vận hành Farm.</p>
+                <h3>Thẩm mỹ riêng biệt</h3>
+                <p>Mỗi dự án là một câu chuyện độc bản, mang hơi thở của đất và người.</p>
               </div>
             </div>
           </div>
 
-          <div className="mission-cta">
-            <p>Bạn cần tư vấn thiết kế Farm?</p>
-              <a href="tel:0888220044" className="cta-phone">0888.22.00.44</a>
+          <div className="mission-cta" data-aos="zoom-in" data-aos-delay="600">
+            <div className="cta-txt">
+                <p>Tư vấn quy hoạch ngay</p>
+                <span>Sẵn sàng lắng nghe 24/7</span>
+            </div>
+            <a href="tel:0888220044" className="cta-phone">0888.22.00.44</a>
           </div>
         </div>
 
-        <div className="mission-image" data-aos="fade-left">
+        <div className="mission-image" data-aos="fade-left" data-aos-duration="1200">
           <div className="image-wrapper">
             <Image 
               src="/images/other/huong-oak-ba5b2e166c78.png" 
               alt="Oak Farm Mission" 
-              width={500}
-              height={600}
+              width={700}
+              height={800}
               style={{ objectFit: 'cover' }}
             />
             <div className="image-decoration">
@@ -63,7 +63,6 @@ const Mission = () => {
           </div>
         </div>
       </div>
-
     </section>
   );
 };

@@ -20,15 +20,24 @@ export default function Home() {
           entry.target.classList.add('aos-animate');
         }
       });
-    }, { threshold: 0.05 }); // Lower threshold for mobile
-
-    const elements = document.querySelectorAll('[data-aos]');
-    elements.forEach(el => {
-      el.classList.add('aos-init');
-      observer.observe(el);
+    }, { 
+      threshold: 0.05,
+      rootMargin: '0px 0px -50px 0px' // Trigger slightly before it enters fully
     });
 
-    return () => observer.disconnect();
+    // Small delay to ensure styles are applied
+    const timer = setTimeout(() => {
+      const elements = document.querySelectorAll('[data-aos]');
+      elements.forEach(el => {
+        el.classList.add('aos-init');
+        observer.observe(el);
+      });
+    }, 100);
+
+    return () => {
+      observer.disconnect();
+      clearTimeout(timer);
+    };
 
   }, []);
 

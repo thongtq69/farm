@@ -95,7 +95,6 @@
 
 ### Task 007 — Final homepage fidelity + business content updates
 - Status: NEEDS_REVIEW
-
 - Goal: apply the latest business/content requirements and improve homepage fidelity further.
 - Inputs:
   - latest user requirements
@@ -113,3 +112,18 @@
   - homepage remains visually coherent after these changes
 - Files: TBD
 - Notes: for the PDF feature, use the actual live/source asset if obtainable; otherwise stage the PDF asset locally in a fast static path and wire the CTA to open it immediately in-browser.
+
+### Task 008 — Homepage visual parity reconstruction
+- Status: NEEDS_REVIEW
+- Goal: reconstruct the homepage to achieve high visual parity with the live site.
+- Inputs:
+  - `https://oakfarm.vn/`
+  - `coordination/LOCAL_QA.md`
+  - visual reference images
+- Acceptance:
+  - Hero matches live composition (image/text balance, rounded card, layered effect)
+  - Layout rhythm and density match live site (no generic whitespace gaps, tight vertical continuity)
+  - Typography (headings, body, weights) matches live art direction
+  - Section-specific components (cards, testimonials, process) resemble live fidelity
+- Files: `src/app/globals.css`, `src/components/*`
+- Notes: focus on depth, texture, and spacing rhythm rather than just structural placement.

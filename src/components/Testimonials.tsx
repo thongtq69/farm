@@ -3,41 +3,40 @@
 import React from 'react';
 import Image from 'next/image';
 
-const testimonials = [
+const reviews = [
   {
-    content: "Tôi rất hài lòng với quy trình làm việc của Oak Farm. Từ kháo sát đến thiết kế đều rất chuyên nghiệp và minh bạch.",
-    author: "Anh Tuấn",
-    location: "Sơn La",
-    image: "/images/content/h1-testimonial-1-27912072eb28.jpg"
+    author: 'Ms. Lan Anh',
+    role: 'Chủ đầu tư - Lâm Đồng',
+    content: 'Oak Farm đã giúp tôi hiện thực hóa ý tưởng về một Farmstay mang hơi thở bản địa. Quy trình làm việc rất chuyên nghiệp và thấu hiểu khách hàng.',
+    image: '/images/icons/member-1-e4905fbc3a31.jpg'
   },
   {
-    content: "Team Oak Farm đã giúp tôi hiện thực hóa ước mơ về một khu farmstay xanh mát, bền vững.",
-    author: "Chị Hằng",
-    location: "Lâm Đồng",
-    image: "/images/content/h1-testimonial-2-e5820839e5e3.jpg"
+    author: 'Mr. David Smith',
+    role: 'Project Manager - Thailand',
+    content: 'Professional landscape planning. They understand the terrain and elevation challenges well. Highly recommended for farm projects.',
+    image: '/images/icons/member-2-5813f38096f2.jpg'
   },
   {
-    content: "Thiết kế của Oak Farm không chỉ đẹp mà còn rất thực tế, tối ưu được công năng sử dụng đất.",
-    author: "Anh Hải",
-    location: "Đồng Nai",
-    image: "/images/content/h1-testimonial-3-2bb6f6abf603.jpg"
+    author: 'Mr. Hoàng Nam',
+    role: 'Chủ đầu tư - Đồng Nai',
+    content: 'Hồ sơ kỹ thuật chi tiết và rất dễ hiểu cho đội ngũ thi công. Oak Farm giúp tôi tiết kiệm được rất nhiều chi phí phát sinh không đáng có.',
+    image: '/images/icons/member-3-c820986756fd.jpg'
   }
 ];
 
 const Testimonials = () => {
   return (
-    <section className="testimonials section" style={{ backgroundColor: '#FDFCFA' }}>
+    <section className="testimonials section bg-pattern">
       <div className="container">
         <div className="section-header" data-aos="fade-up">
           <span className="subtitle">Khách hàng nói gì</span>
-          <h2 className="section-title">Đánh giá từ chủ đầu tư</h2>
-          <p className="section-subtitle">Sự hài lòng của khách hàng là động lực lớn nhất để Oak Farm không ngừng hoàn thiện.</p>
+          <h2 className="section-title">Niềm tin gửi trao</h2>
         </div>
 
         <div className="testimonials-grid">
-          {testimonials.map((item, index) => (
-            <div className="testimonial-card" key={index} data-aos="fade-up" data-aos-delay={index * 100}>
-              <div className="quote-icon">"</div>
+          {reviews.map((item, index) => (
+            <div className="testimonial-card" key={index} data-aos="fade-up" data-aos-delay={index * 150}>
+              <div className="quote-icon">“</div>
               <p className="testimonial-content">{item.content}</p>
               <div className="testimonial-author">
                 <div className="author-image">
@@ -45,7 +44,7 @@ const Testimonials = () => {
                 </div>
                 <div className="author-info">
                   <h3>{item.author}</h3>
-                  <span>{item.location}</span>
+                  <span>{item.role}</span>
                 </div>
               </div>
             </div>

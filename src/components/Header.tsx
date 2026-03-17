@@ -77,13 +77,20 @@ const Header = () => {
             <li><Link href="/" onClick={() => setIsMenuOpen(false)}>Trang chủ</Link></li>
             <li><Link href="/chung-toi" onClick={() => setIsMenuOpen(false)}>Chúng tôi</Link></li>
             <li>
-              <Link href="/project" onClick={() => setIsMenuOpen(false)}>Dự án</Link>
+              <div className="mobile-dropdown-toggle" onClick={(e) => {
+                e.stopPropagation();
+                // Toggle sub-menu logic could go here if stateful, but for now we'll make it always visible or accessible
+              }}>
+                <Link href="/project" onClick={() => setIsMenuOpen(false)}>Dự án</Link>
+                <span className="mobile-arrow">▾</span>
+              </div>
               <ul className="mobile-sub-nav">
                 <li><Link href="/project/san-vuon-ho-koi" onClick={() => setIsMenuOpen(false)}>Sân Vườn & Hồ Koi</Link></li>
                 <li><Link href="/project/farm-du-lich-nghi-duong" onClick={() => setIsMenuOpen(false)}>Farm & Du Lịch Nghỉ Dưỡng</Link></li>
                 <li><Link href="/project/da-nhan-tao-nghe-thuat" onClick={() => setIsMenuOpen(false)}>Đá Nhân Tạo Nghệ Thuật</Link></li>
               </ul>
             </li>
+
             <li><Link href="/bao-gia-thiet-ke-farm" onClick={() => setIsMenuOpen(false)}>Báo giá thiết kế Farm</Link></li>
             <li><Link href="/blog" onClick={() => setIsMenuOpen(false)}>Blog</Link></li>
           </ul>

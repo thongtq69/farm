@@ -63,6 +63,15 @@ Use this file to compare local build vs live site.
 - Recommendation: keep footer for later pass after hero + missing sections/assets are fixed.
 
 ## Browser verification after claimed completion
+- Page: homepage / PDF CTA
+- Viewport: local browser verification
+- Area: PDF viewer / `Xem ngay`
+- Live behavior / appearance: PDF-oriented CTA should open a valid PDF document in-browser.
+- Local behavior / appearance: opening `oakfarm-profile.pdf` shows a browser PDF error: the document cannot be loaded.
+- Gap: the staged local PDF asset is invalid/corrupted and not a real PDF payload.
+- Priority: critical
+- Recommendation: replace `public/docs/oakfarm-profile.pdf` with a valid PDF binary file copied/downloaded in binary mode, then re-test the browser viewer.
+
 - Page: homepage
 - Viewport: openclaw browser verification after Task 005 claimed DONE
 - Area: whole page continuity
@@ -89,3 +98,67 @@ Use this file to compare local build vs live site.
 - Gap: Task 005 is not ready to be considered DONE.
 - Priority: critical
 - Recommendation: set Task 005 to `NEEDS_REVIEW` and continue with a focused polish pass after continuity/layout defects are fixed.
+
+## Visual parity review — why the current local homepage still fails against live
+- Page: homepage
+- Viewport: live vs local full-page comparison
+- Area: overall art direction
+- Live behavior / appearance: cohesive premium farm-design landing page with strong brand atmosphere, layered imagery, and intentional section rhythm.
+- Local behavior / appearance: assembled functional page with content blocks present but still reading as a generic implementation rather than a close clone.
+- Gap: overall visual identity and polish are still substantially behind the live site.
+- Priority: critical
+- Recommendation: stop treating remaining work as minor polish; rebuild key sections toward visual parity.
+
+- Page: homepage
+- Viewport: live vs local full-page comparison
+- Area: hero
+- Live behavior / appearance: hero has strong layered composition, richer visual balance, more intentional overlay treatment, and premium first-screen impact.
+- Local behavior / appearance: hero is improved but still simplified, flatter, and less visually convincing.
+- Gap: first impression still fails parity.
+- Priority: critical
+- Recommendation: rebuild hero composition, tighten spacing, improve image/text balance, and match overlay/card treatment more closely.
+
+- Page: homepage
+- Viewport: live vs local full-page comparison
+- Area: spacing / vertical rhythm
+- Live behavior / appearance: section spacing is deliberate and fluid; the page breathes without feeling empty.
+- Local behavior / appearance: spacing is inconsistent and still feels template-like; some areas are too loose while others are compressed.
+- Gap: rhythm system is not cloned successfully.
+- Priority: critical
+- Recommendation: define and apply a tighter spacing system section-by-section.
+
+- Page: homepage
+- Viewport: live vs local full-page comparison
+- Area: service / farm type cards
+- Live behavior / appearance: cards feel branded, image-led, and compositionally tight.
+- Local behavior / appearance: cards are serviceable but still generic and less premium.
+- Gap: card system lacks live-site character.
+- Priority: medium
+- Recommendation: refine image ratios, padding, title hierarchy, shadows/borders, and section framing.
+
+- Page: homepage
+- Viewport: live vs local full-page comparison
+- Area: projects / before-after / testimonial / companion sections
+- Live behavior / appearance: these sections act as major visual anchors with confident density and hierarchy.
+- Local behavior / appearance: the sections exist, but several still feel thin or mechanically rendered.
+- Gap: anchor sections do not yet carry the same visual weight.
+- Priority: critical
+- Recommendation: increase section density, refine typography, improve internal spacing, and make each anchor section feel intentional rather than merely present.
+
+- Page: homepage
+- Viewport: live vs local full-page comparison
+- Area: typography hierarchy
+- Live behavior / appearance: headings, body text, and supporting copy follow a stronger hierarchy and rhythm.
+- Local behavior / appearance: typography works functionally but does not match the strength or cadence of the live site.
+- Gap: text system weakens overall fidelity.
+- Priority: medium
+- Recommendation: tune heading sizes, weights, line-height, paragraph width, and spacing between text elements.
+
+- Page: homepage
+- Viewport: live vs local full-page comparison
+- Area: footer / lower-page finish
+- Live behavior / appearance: lower page closes with a denser, more polished, more integrated finish.
+- Local behavior / appearance: lower page is improved, but still lacks some of the integrated premium finish seen on live.
+- Gap: final third of page still underperforms visually.
+- Priority: medium
+- Recommendation: polish footer/contact/lower-page composition after hero and main section rhythm are improved.

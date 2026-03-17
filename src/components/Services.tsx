@@ -33,18 +33,19 @@ const services = [
 
 const Services = () => {
   return (
-    <section className="services section">
+    <section className="services section bg-pattern">
       <div className="container">
         <div className="section-header" data-aos="fade-up">
-          <h2 className="section-title">Đa dạng loại hình thiết kế Farm</h2>
+          <span className="subtitle">Dịch vụ Oak Farm</span>
+          <h2 className="section-title">Nâng tầm mô hình Farmstay</h2>
           <p className="section-subtitle">
-            Oak Farm cung cấp đa dạng các loại hình thiết kế tùy theo nhu cầu mục đích của khách hàng.
+            Chúng tôi không chỉ thiết kế, chúng tôi kiến tạo những giá trị bền vững cho mô hình du lịch nông nghiệp của bạn.
           </p>
         </div>
 
         <div className="services-grid">
           {services.map((service, index) => (
-            <div className="service-card" key={index} data-aos="fade-up" data-aos-delay={index * 100}>
+            <div className="service-card" key={index} data-aos="fade-up" data-aos-delay={index * 150}>
               <div className="service-image">
                 <Image 
                   src={service.image} 
@@ -56,13 +57,12 @@ const Services = () => {
               <div className="service-info">
                 <h3>{service.title}</h3>
                 <p>{service.desc}</p>
-                <a href="#" className="service-link">Xem chi tiết →</a>
+                <a href="#" className="service-link">Chi tiết dự án</a>
               </div>
             </div>
           ))}
         </div>
       </div>
-
     </section>
   );
 };
