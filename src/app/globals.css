@@ -774,7 +774,8 @@ img {
 
 .service-card {
   position: relative;
-  min-height: 680px;
+  aspect-ratio: 4 / 5.1;
+  min-height: 0;
   border-radius: 30px;
   overflow: hidden;
   box-shadow: 0 24px 55px rgba(28, 50, 30, 0.12);
@@ -1848,7 +1849,10 @@ img {
   .services-grid {
     grid-template-columns: 1fr;
   }
-  .service-card { min-height: 540px; }
+  .service-card {
+    aspect-ratio: auto;
+    min-height: 520px;
+  }
   .service-info {
     left: 1rem;
     right: 1rem;
@@ -1886,7 +1890,7 @@ img {
 @media (max-width: 480px) {
   .hero-title { font-size: 2.2rem; }
   .section-title { font-size: 2.2rem; }
-  .service-card { min-height: 460px; }
+  .service-card { min-height: 440px; }
   .service-info h3 { font-size: 1.55rem; }
   .mission-content h2 { font-size: 2.4rem; }
   .cta-phone { font-size: 1.3rem; }
@@ -2425,6 +2429,20 @@ img {
 }
 
 @media (max-width: 991px) {
+  .projects-split-header {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+  }
+  
+  .projects-header-right {
+    padding-top: 0;
+  }
+
+  .projects-main-title {
+    font-size: 2.8rem;
+  }
+
   .expand-cards {
     flex-direction: column;
     max-width: 100%;
@@ -2436,10 +2454,11 @@ img {
     flex: none !important;
     width: 100%;
     max-width: 100%;
+    height: 380px;
   }
 
   .exp-card {
-    aspect-ratio: 9 / 16;
+    aspect-ratio: auto;
   }
 
   .exp-label-vert {
