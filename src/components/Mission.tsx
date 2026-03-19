@@ -63,7 +63,7 @@ const Mission = () => {
         >
           <div className="image-wrapper">
             <Image 
-              src="/images/other/lienhe.png" 
+              src="/images/banners/h1-banner01-c38f6e852c91.png" 
               alt="Võ Hữu Hải - Son Hai Landscape" 
               width={700}
               height={900}

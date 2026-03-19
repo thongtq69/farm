@@ -18,8 +18,8 @@ const Footer = () => {
               <Image 
                 src="/images/branding/logofarm.png" 
                 alt="Son Hai Landscape Light Logo" 
-                width={200} 
-                height={65} 
+                width={280} 
+                height={90} 
               />
             </Link>
           </motion.div>

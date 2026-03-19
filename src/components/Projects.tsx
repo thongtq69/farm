@@ -65,7 +65,7 @@ const Projects = () => {
   return (
     <section
       className="projects section section-tight"
-      style={{ background: '#0d1e19', overflow: 'hidden' }}
+      style={{ background: '#16320a', overflow: 'hidden' }}
     >
       <div className="container">
         <div className="projects-split-header" data-aos="fade-up">
@@ -90,7 +90,7 @@ const Projects = () => {
           {projects.map((project, index) => (
             <a
               className={`exp-card ${activeIndex === index ? 'active' : ''}`}
-              href={project.href}
+              href={`/project/${project.slug}`}
               key={project.slug}
               onMouseEnter={() => setActiveIndex(index)}
               onFocus={() => {
