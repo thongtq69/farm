@@ -30,9 +30,15 @@ export default function PricingPage() {
           <div className="quote-grid-premium">
             {/* Left Column: Branding & Info */}
             <div className="quote-branding-panel section-dark" data-aos="fade-right">
-              <div className="panel-inner-content">
-                <span className="subtitle" style={{ color: '#c5a059' }}>TƯ VẤN CHUYÊN SÂU</span>
-                <h2 className="panel-title">Tại sao chọn <br/>Sơn Hải Landscape?</h2>
+              <div className="quote-left-info">
+                <span className="subtitle" style={{ color: 'var(--secondary)' }}>MINH BẠCH & CHUYÊN NGHIỆP</span>
+                <h1 className="arsenal">NHẬN BÁO GIÁ <br /> THIẾT KẾ & THI CÔNG</h1>
+                <p className="page-desc-panel">
+                  Chúng tôi cung cấp giải pháp quy hoạch tổng thể và thiết kế chi tiết cho mọi mô hình FarmStay, Garden và Nghỉ dưỡng.
+                </p>
+              </div>
+              <div className="coop-badge">
+                <span className="subtitle" style={{ color: 'var(--secondary)' }}>TƯ VẤN CHUYÊN SÂU</span>
                 
                 <div className="benefit-list-modern">
                   <div className="modern-b-item">

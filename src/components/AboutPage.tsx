@@ -92,7 +92,7 @@ const AboutPage = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1 }}
           >
-            <span className="subtitle" style={{ color: '#c5a059', paddingLeft: '0' }}>VỀ CHÚNG TÔI</span>
+            <span className="subtitle" style={{ color: 'var(--secondary)', paddingLeft: '0' }}>VỀ CHÚNG TÔI</span>
             <h1>Sơn Hải Landscape</h1>
             <p>
               Đơn vị dẫn đầu trong lĩnh vực thiết kế và thi công cảnh quan, kiến tạo những không gian sống xanh bền vững và đậm chất nghệ thuật.
@@ -158,7 +158,7 @@ const AboutPage = () => {
         <div className="container">
           <div className="values-v2-header">
             <div className="v-header-left">
-              <span className="subtitle" style={{ color: '#c5a059' }}>OUR VALUES</span>
+              <span className="subtitle" style={{ color: 'var(--secondary)' }}>OUR VALUES</span>
               <h2 style={{ color: 'white' }}>Giá Trị Làm Nên Khác Biệt</h2>
             </div>
             <div className="v-header-right">
@@ -218,7 +218,7 @@ const AboutPage = () => {
         <div className="container">
           <div className="faq-v2-grid">
             <div className="faq-v2-info">
-              <span className="subtitle" style={{ color: '#c5a059' }}>Q&A</span>
+              <span className="subtitle" style={{ color: 'var(--secondary)' }}>Q&A</span>
               <h2>Bạn còn <br/> thắc mắc?</h2>
               <p>Chúng tôi luôn minh bạch trong quy trình làm việc để khách hàng hoàn toàn yên tâm khi đồng hành.</p>
             </div>
