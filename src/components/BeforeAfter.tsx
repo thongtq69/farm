@@ -5,22 +5,22 @@ import Image from 'next/image';
 
 const cases = [
   {
-    name: 'Taste Of Issan Farm',
-    location: 'Udon Thani - Thailand',
-    before: '/images/other/before-1-3eaf349019db.jpg',
-    after: '/images/other/after-1-dce66f94aacb.jpg'
+    name: 'Quy hoạch Farmstay Nghỉ Dưỡng',
+    location: 'Sơn Hải Landscape Execution',
+    before: '/images/beforeafter/dfr.jpg',
+    after: '/images/beforeafter/dfd.jpg'
   },
   {
-    name: 'Farm Together',
-    location: 'Lam Dong, Viet Nam',
-    before: '/images/other/before-2-8fb935ad82c0.jpg',
-    after: '/images/other/after-2-543f0951941f.jpg'
+    name: 'Thiết kế Sân Vườn Biệt Thự',
+    location: 'Dự án thực tế 2025',
+    before: '/images/beforeafter/ChatGPT Image 08_03_18 18 thg 3, 2026.png',
+    after: '/images/beforeafter/ChatGPT Image 08_06_17 18 thg 3, 2026.png'
   },
   {
-    name: 'Maharaja Country Club',
-    location: 'Koh Phangan - Thailand',
-    before: '/images/other/before-3-75031d1cc19a.jpg',
-    after: '/images/other/after-3-720495691273.jpg'
+    name: 'Cảnh quan Hồ Koi & Đá Nghệ Thuật',
+    location: 'Công trình tiêu biểu',
+    before: '/images/beforeafter/ChatGPT Image 08_23_37 18 thg 3, 2026.png',
+    after: '/images/beforeafter/ChatGPT Image 08_19_42 18 thg 3, 2026.png'
   }
 ];
 
@@ -91,7 +91,7 @@ const BeforeAfter = () => {
         </div>
 
         <div 
-          className="ba-comparison-wrapper"
+          className={`ba-comparison-wrapper ${isDragging ? 'is-dragging' : ''}`}
           ref={containerRef}
         >
           <div className="ba-image-after">
@@ -142,7 +142,7 @@ const BeforeAfter = () => {
             </button>
           </div>
 
-          <div className="active-case-info">
+          <div className={`active-case-info ${isDragging ? 'is-hidden' : ''}`}>
             <div className="active-case-meta">
               <span className="active-case-kicker">Dự án</span>
               <h3>{cases[activeTab].name}</h3>

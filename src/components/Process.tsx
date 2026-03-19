@@ -8,7 +8,7 @@ const steps = [
   {
     number: '01',
     title: 'Tư vấn Online',
-    desc: 'Đội ngũ KTS Oak Farm sẽ họp trực tuyến cùng CĐT tìm hiểu về khu đất. Qua đó nắm bắt nhu cầu, mong muốn thiết kế để phân tích, đưa ra những góp ý, định hướng phát triển',
+    desc: 'Đội ngũ KTS Son Hai Landscape sẽ họp trực tuyến cùng CĐT tìm hiểu về khu đất. Qua đó nắm bắt nhu cầu, mong muốn thiết kế để phân tích, đưa ra những góp ý, định hướng phát triển',
     bullets: [
       'Tìm hiểu thông tin dự án',
       'Phân tích, góp ý, định hướng',
@@ -32,7 +32,7 @@ const steps = [
   {
     number: '03',
     title: 'Phác họa ý tưởng',
-    desc: 'Từ báo cáo sau khảo sát, Oak Farm sẽ phác họa ý tưởng, định hướng giao thông, phân khu hạng mục cho dự án.',
+    desc: 'Từ báo cáo sau khảo sát, Son Hai Landscape sẽ phác họa ý tưởng, định hướng giao thông, phân khu hạng mục cho dự án.',
     bullets: [
       'Định hướng ý tưởng',
       'Phác họa vẽ tay định vị phân khu, giao thông',
@@ -43,7 +43,7 @@ const steps = [
   {
     number: '04',
     title: 'Mặt bằng tổng thể',
-    desc: 'Sau khi trao đổi từ bản phác họa ý tưởng, Oak Farm thực hiện hồ sơ quy hoạch mặt bằng tổng thể hoàn chỉnh với đầy đủ các bộ môn liên quan.',
+    desc: 'Sau khi trao đổi từ bản phác họa ý tưởng, Son Hai Landscape thực hiện hồ sơ quy hoạch mặt bằng tổng thể hoàn chỉnh với đầy đủ các bộ môn liên quan.',
     bullets: [
       'Đồ họa layout chi tiết quy hoạch tổng mặt bằng',
       'Bản vẽ quy hoạch kiến trúc cảnh quan',
@@ -94,9 +94,9 @@ const Process = () => {
     <section className="process section bg-pattern">
       <div className="container">
         <div className="section-header" data-aos="fade-up">
-          <span className="subtitle">Quy trình Oak Farm</span>
+          <span className="subtitle">Quy trình Son Hai Landscape</span>
           <h2 className="section-title">7 giai đoạn thiết kế Farm</h2>
-          <p className="section-subtitle">Quy trình làm việc chuyên nghiệp, tận tâm và minh bạch theo tiêu chuẩn Oak Farm.</p>
+          <p className="section-subtitle">Quy trình làm việc chuyên nghiệp, tận tâm và minh bạch theo tiêu chuẩn Son Hai Landscape.</p>
         </div>
 
         <div className="stages-wrapper">
@@ -171,7 +171,7 @@ const Process = () => {
               </div>
               <div className="sticky-image-shape"></div>
               <div className="sticky-image-badge">
-                <span>Oak Farm</span>
+                <span>Son Hai Landscape</span>
                 <strong>{steps[activeStep].number}</strong>
               </div>
               <div className="sticky-image-caption">

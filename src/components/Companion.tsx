@@ -8,7 +8,7 @@ const items = [
   {
     num: '01',
     title: 'Khảo sát',
-    desc: 'Từ bước đầu tiên là khảo sát kỹ lưỡng thực tế, Oak Farm đã nắm rõ được diện mạo khu đất, gặp gỡ CĐT và hiểu hơn về mong muốn của CĐT về dự án để đời của họ.',
+    desc: 'Từ bước đầu tiên là khảo sát kỹ lưỡng thực tế, Son Hai Landscape đã nắm rõ được diện mạo khu đất, gặp gỡ CĐT và hiểu hơn về mong muốn của CĐT về dự án để đời của họ.',
     image: '/images/other/khaosat1-1ff678c29115.jpg'
   },
   {
@@ -20,7 +20,7 @@ const items = [
   {
     num: '03',
     title: 'Thi công',
-    desc: 'Oak Farm luôn đồng hành cùng CĐT trên mọi phương diện từ trao đổi online cho đến giám sát tác giả tại dự án cho đến khi dự án được hoàn thiện.',
+    desc: 'Son Hai Landscape luôn đồng hành cùng CĐT trên mọi phương diện từ trao đổi online cho đến giám sát tác giả tại dự án cho đến khi dự án được hoàn thiện.',
     image: '/images/icons/thicong-152dc7bb4009.jpg'
   }
 ];
@@ -43,7 +43,7 @@ const Companion = () => {
           transition={{ duration: 0.8 }}
         >
           Để hoàn thành được một dự án thiết kế Farm, đều phải trải qua các bước cơ bản nhất là khảo sát, thiết kế và thi công. 
-          Trong 3 bước cơ bản này, Oak Farm luôn đồng hành cùng CĐT trên nhiều phương diện và luôn coi đó là trọng trách của chúng tôi.
+          Trong 3 bước cơ bản này, Son Hai Landscape luôn đồng hành cùng CĐT trên nhiều phương diện và luôn coi đó là trọng trách của chúng tôi.
         </motion.p>
 
         <div className="companion-grid">

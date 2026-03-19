@@ -5,29 +5,19 @@ import Image from 'next/image';
 
 const services = [
   {
-    title: 'Resort nghỉ dưỡng',
-    desc: 'Quy hoạch, thiết kế chi tiết một khu nghỉ dưỡng với đầy đủ các hạng mục. Quy mô đề xuất từ 8ha – 20ha cho dự án resort.',
-    image: '/images/blogs/dichvu-6-bcb63e69dc69.jpg'
+    title: 'Sân Vườn - Hồ Koi',
+    desc: 'Chuyên thiết kế, thi công và vận hành – bảo trì hồ cá Koi cùng cảnh quan sân vườn trên toàn quốc.',
+    image: '/images/home/service-1.jpg'
   },
   {
-    title: 'Du lịch trải nghiệm',
-    desc: 'Đa dạng hình thức tùy theo đặc trưng từng vùng, có thể kết hợp du lịch nông nghiệm trải nghiệm, du lịch dưới tán rừng.',
-    image: '/images/blogs/dichvu-4-60a8762ae7ee.jpg'
+    title: 'Farm & Du Lịch',
+    desc: 'Chuyên tư vấn, thiết kế và thi công farm nghỉ dưỡng, khu du lịch sinh thái và cảnh quan đồng bộ.',
+    image: '/images/home/service-2.jpg'
   },
   {
-    title: 'Quy hoạch dự án',
-    desc: 'Thực hiện thiết kế, quy hoạch các bước để thực hiện dự án. Từ khảo sát, thiết kế ý tưởng đến quy hoạch hồ sơ 1/500.',
-    image: '/images/blogs/dichvu-7-5d957b58a6c9.jpg'
-  },
-  {
-    title: 'Cảnh quan nhà vườn',
-    desc: 'Thiết kế trọn gói nhà vườn, cảnh quan sân vườn với quy mô gia đình sử dụng. Áp dụng với các khu đất dưới 9000m2.',
-    image: '/images/blogs/dichvu-9-6589c292446f.jpg'
-  },
-  {
-    title: 'Farm-Homestay',
-    desc: 'Hoạch định, thiết kế trọn gói mô hình Farmstay, Homestay đặc trưng cho từng vùng miền. Quy mô từ 1-3ha.',
-    image: '/images/blogs/dichvu-5-eeec5f838131.jpg'
+    title: 'Đá Nhân Tạo & Tiểu cảnh',
+    desc: 'Chuyên thiết kế, thi công đá nhân tạo nghệ thuật và tiểu cảnh, tạo điểm nhấn thẩm mỹ cho không gian cảnh quan.',
+    image: '/images/home/service-3.jpg'
   }
 ];
 
@@ -69,10 +59,10 @@ const Services = () => {
     <section className="services section bg-pattern">
       <div className="container">
         <div className="section-header" data-aos="fade-up">
-          <span className="subtitle">Dịch vụ Oak Farm</span>
-          <h2 className="section-title">Nâng tầm mô hình Farmstay</h2>
+          <span className="subtitle">Dịch vụ Son Hai Landscape</span>
+          <h2 className="section-title">Dịch vụ Chuyên nghiệp</h2>
           <p className="section-subtitle">
-            Chúng tôi không chỉ thiết kế, chúng tôi kiến tạo những giá trị bền vững cho mô hình du lịch nông nghiệp của bạn.
+            Chúng tôi kiến tạo những không gian hài hòa giữa thẩm mỹ và công năng, đảm bảo chất lượng cho từng dự án.
           </p>
         </div>
 

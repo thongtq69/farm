@@ -33,10 +33,10 @@ const Header = () => {
         <div className="container header-container">
           <Link href="/" className="logo">
             <Image 
-              src="/images/branding/logo-2025-normal-2-86322bdc33ad.png" 
-              alt="Oak Farm Logo" 
-              width={150} 
-              height={45} 
+              src="/images/branding/logofarm.png" 
+              alt="Son Hai Landscape Logo" 
+              width={180} 
+              height={60} 
               priority
             />
           </Link>

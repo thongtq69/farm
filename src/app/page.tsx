@@ -5,11 +5,9 @@ import Hero from '@/components/Hero';
 import Services from '@/components/Services';
 import Mission from '@/components/Mission';
 import Projects from '@/components/Projects';
-import Process from '@/components/Process';
 import BeforeAfter from '@/components/BeforeAfter';
 import Testimonials from '@/components/Testimonials';
 import Companion from '@/components/Companion';
-import Contact from '@/components/Contact';
 
 export default function Home() {
   useEffect(() => {
@@ -47,12 +45,9 @@ export default function Home() {
       <Services />
       <Mission />
       <Projects />
-      <Process />
       <BeforeAfter />
       <Testimonials />
       <Companion />
-      <Contact />
     </>
   );
 }
-

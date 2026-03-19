@@ -15,10 +15,10 @@ const Mission = () => {
           viewport={{ once: true }}
           transition={{ duration: 1 }}
         >
-          <span className="subtitle">Lý do chọn Oak Farm</span>
-          <h2 className="section-title" style={{ fontSize: '3.5rem', marginBottom: '2rem' }}>Chúng tôi thiết kế Farm <br/>để bạn thực hiện ước mơ</h2>
-          <p style={{ fontSize: '1.2rem', marginBottom: '3rem', color: 'var(--text-muted)' }}>
-            Bạn có khu đất và dự định thực hiện ước mơ làm farmstay, homestay... mà chưa biết bắt đầu từ đâu? Oak Farm sẽ là người bạn đồng hành biến ý tưởng thành hiện thực.
+          <span className="subtitle">Giới thiệu về Sơn Hải Landscape</span>
+          <h2 className="section-title" style={{ fontSize: '3rem', marginBottom: '2rem' }}>Chuyên nghiệp. <br/>Bền vững. Chiều sâu.</h2>
+          <p style={{ fontSize: '1.1rem', lineHeight: '1.8', marginBottom: '3rem', color: 'var(--text-muted)' }}>
+            Sơn Hải Landscape là đơn vị tư vấn, thiết kế và thi công cảnh quan theo định hướng chuyên nghiệp và bền vững. Chúng tôi áp dụng tư duy thiết kế "slow thinking", ưu tiên nghiên cứu chiều sâu và giải pháp phù hợp trong dài hạn cho từng dự án. Mỗi công trình được phát triển theo nguyên tắc "timeless design", hướng đến giá trị thẩm mỹ ổn định, hài hòa giữa công năng và bối cảnh tự nhiên. Sứ mệnh của chúng tôi là kiến tạo những không gian có giá trị bền vững, gia tăng chất lượng sống theo thời gian.
           </p>
           
           <div className="mission-features">
@@ -63,13 +63,12 @@ const Mission = () => {
         >
           <div className="image-wrapper">
             <Image 
-              src="/images/other/huong-oak-ba5b2e166c78.png" 
-              alt="Oak Farm Mission" 
+              src="/images/other/lienhe.png" 
+              alt="Võ Hữu Hải - Son Hai Landscape" 
               width={700}
               height={900}
-              style={{ objectFit: 'cover' }}
+              style={{ objectFit: 'contain', objectPosition: 'bottom' }}
             />
-            <div className="mission-watermark">OAK FARM</div>
             <motion.div 
               className="mission-badge"
               animate={{ y: [0, -15, 0] }}

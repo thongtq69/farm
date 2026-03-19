@@ -2,69 +2,46 @@
 
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import Image from 'next/image';
-import projectsData from '../../clone_ready/pages_projects.json';
 
-type CloneReadyProject = {
-  url: string;
-  title: string;
-  meta_description: string | null;
-};
-
-const featuredProjectMeta = {
-  'palm-hotel': {
-    image: '/images/projects/1-4-36e82318d518.jpg',
-    location: 'Bà Rịa - Vũng Tàu'
+const projects = [
+  {
+    slug: 'vuon-thien-nhien',
+    title: 'Vườn thiên nhiên',
+    location: 'Hồ Tràm, Xuyên Mộc',
+    description: 'Tọa lạc tại Hồ Tràm, Xuyên Mộc, dự án là một farmstay rộng 1000m2 kết hợp vườn cây ăn trái và không gian cảnh quan thư giãn. Thiết kế hướng đến sự gần gũi tự nhiên với suối đá, hồ nước và hệ thực vật nhiệt đới phong phú.',
+    image: '/images/home/project-1.jpg',
+    href: '/project'
   },
-  'rajamaha-country-club': {
-    image: '/images/projects/3-5-5c6de158d98d.jpg',
-    location: 'Koh Phangan - Thailand'
+  {
+    slug: 'san-vuon-nha-lan',
+    title: 'Sân vườn nhà Lan',
+    location: 'Bình Trưng, Hồ Chí Minh',
+    description: 'Dự án là sân vườn nhà phố thiết kế theo phong cách vườn Nhật hiện đại. Không gian tổ chức khéo léo với lối dạo stepping stone, sỏi rải, cụm đá tự nhiên và đèn đá truyền thống, kết hợp cây bonsai tinh tế.',
+    image: '/images/home/project-2.jpg',
+    href: '/project'
   },
-  'hali-green': {
-    image: '/images/projects/2-2-4018f1a799f1.jpg',
-    location: 'Gia Lai'
+  {
+    slug: 'ca-phe-thi',
+    title: 'Cà phê Thị',
+    location: 'Nhơn Trạch, Đồng Nai',
+    description: 'Không gian cà phê sân vườn uốn lượn tự nhiên, kết hợp giữa khu ngồi ngoài trời và cảnh quan mặt nước. Hồ cá trung tâm đóng vai trò điểm nhấn, liên kết các khu vực bàn ngồi và lối dạo xung quanh.',
+    image: '/images/home/project-3.png',
+    href: '/project'
   },
-  'pleiku-farm': {
-    image: '/images/projects/2-1-674c891c1137.jpg',
-    location: 'Pleiku - Gia Lai'
-  },
-  'farmstay-nha-minh': {
-    image: '/images/projects/1-4bbf0f0013c9.jpg',
-    location: 'Lâm Đồng'
+  {
+    slug: 'ho-koi-tri-lam',
+    title: 'Hồ Koi Trí Lâm',
+    location: 'Tp Buôn Ma Thuột',
+    description: 'Thiết kế theo phong cách vườn Nhật hiện đại, tập trung vào sự tinh giản và cân bằng không gian. Hồ koi kết hợp thác đá tự nhiên, đèn đá truyền thống và hệ cây bonsai mang đến không gian thư giãn tinh tế.',
+    image: '/images/home/project-4.png',
+    href: '/project'
   }
-} as const;
-
-const featuredProjectOrder = [
-  'palm-hotel',
-  'rajamaha-country-club',
-  'hali-green',
-  'pleiku-farm',
-  'farmstay-nha-minh'
-] as const;
-
-const projectEntries = projectsData as CloneReadyProject[];
+];
 
 const Projects = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isHovering, setIsHovering] = useState(false);
   const autoPlayRef = useRef<NodeJS.Timeout | null>(null);
-
-  const projects = useMemo(
-    () =>
-      featuredProjectOrder.map((slug) => {
-        const project = projectEntries.find((entry) => entry.url.includes(`/${slug}/`));
-        const meta = featuredProjectMeta[slug];
-
-        return {
-          slug,
-          title: project?.title.replace(/ - Oak Farm$/, '') ?? slug,
-          description: project?.meta_description ?? '',
-          href: project?.url.replace('https://oakfarm.vn', '') ?? '/project',
-          image: meta.image,
-          location: meta.location
-        };
-      }),
-    []
-  );
 
   useEffect(() => {
     if (isHovering) {
@@ -83,24 +60,24 @@ const Projects = () => {
         clearInterval(autoPlayRef.current);
       }
     };
-  }, [isHovering, projects.length]);
+  }, [isHovering]);
 
   return (
     <section
       className="projects section section-tight"
-      style={{ background: '#1e3318', overflow: 'hidden' }}
+      style={{ background: '#0d1e19', overflow: 'hidden' }}
     >
       <div className="container">
         <div className="projects-split-header" data-aos="fade-up">
           <div className="projects-header-left">
-            <span className="projects-badge">🌿 Dự Án Mới</span>
-            <h2 className="projects-main-title">
-              Những dự án thiết kế<br />Farm nổi bật
+            <span className="projects-badge">🌿 Dự Án Tiêu Biểu</span>
+            <h2 className="projects-main-title" style={{ color: 'white' }}>
+              Những công trình <br />đầy tâm huyết
             </h2>
           </div>
           <div className="projects-header-right">
-            <p>
-              Oak Farm vinh hạnh được các chủ đầu tư tin tưởng giao phó thiết kế những dự án tâm huyết của mình. Với nhiều dự án trải dài trên hơn 20 Tỉnh thành dọc miền Đất Nước, dưới đây là một vài dự án nổi bật mà chúng tôi được phép chia sẻ:
+            <p style={{ color: 'rgba(255,255,255,0.7)' }}>
+              Sơn Hải Landscape tự hào được đồng hành cùng các chủ đầu tư để kiến tạo nên những không gian sống và nghỉ dưỡng mang đậm bản sắc riêng. Dưới đây là những dự án tiêu biểu phản ánh tư duy "Timeless Design" của chúng tôi.
             </p>
           </div>
         </div>
@@ -128,7 +105,7 @@ const Projects = () => {
                   alt={project.title}
                   fill
                   priority={index < 3}
-                  sizes="(max-width: 640px) 100vw, (max-width: 991px) 50vw, 20vw"
+                  sizes="(max-width: 640px) 100vw, (max-width: 991px) 50vw, 25vw"
                   style={{ objectFit: 'cover' }}
                 />
 
@@ -140,20 +117,20 @@ const Projects = () => {
                   <div className="exp-info-content">
                     <div className="exp-info-loc">{project.location}</div>
                     <h3 className="exp-info-name">{project.title}</h3>
-                    {project.description && <p className="exp-info-desc">{project.description}</p>}
+                    <p className="exp-info-desc">{project.description}</p>
                   </div>
                   <div className="exp-arrow">→</div>
                 </div>
 
-                <div className="exp-overlay-bottom">OAK FARM</div>
+                <div className="exp-overlay-bottom">SON HAI LANDSCAPE</div>
               </div>
             </a>
           ))}
         </div>
 
         <div className="projects-footer" data-aos="fade-up" data-aos-delay="400" style={{ marginTop: '4rem', textAlign: 'center' }}>
-          <a href="/project" className="btn-view-projects">
-            Xem Thêm Dự Án <span className="btn-arrow">→</span>
+          <a href="/project" className="btn-modern-outline-white">
+            Khám Phá Thêm Dự Án <span className="btn-arrow">→</span>
           </a>
         </div>
       </div>

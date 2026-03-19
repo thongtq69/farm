@@ -16,15 +16,15 @@ const Footer = () => {
           >
             <Link href="/" className="footer-logo">
               <Image 
-                src="/images/branding/logo-2025-light1-e38c47f5c7e5.png" 
-                alt="Oak Farm Light Logo" 
-                width={180} 
-                height={55} 
+                src="/images/branding/logofarm.png" 
+                alt="Son Hai Landscape Light Logo" 
+                width={200} 
+                height={65} 
               />
             </Link>
           </motion.div>
           <p className="footer-desc">
-            Oak Farm kiến tạo nên những không gian nghỉ dưỡng đẳng cấp, chuẩn mực trong từng nét vẽ quy hoạch Farmstay hàng đầu Việt Nam.
+            Son Hai Landscape kiến tạo nên những không gian nghỉ dưỡng đẳng cấp, chuẩn mực trong từng nét vẽ quy hoạch Farmstay hàng đầu Việt Nam.
           </p>
           <div className="social-links-modern">
             <motion.a whileHover={{ y: -5, backgroundColor: '#3b5998' }} href="https://facebook.com/oakfarm.vn" target="_blank" rel="noopener noreferrer"><i>FB</i></motion.a>
@@ -38,7 +38,7 @@ const Footer = () => {
           <p>02 Đỗ Quang, Phường Thanh Khê, Thành phố Đà Nẵng</p>
           <h3>Liên hệ</h3>
           <p>Thứ 2 – Thứ 7: 8h00-17h00</p>
-          <p>Email: info@oakfarm.vn</p>
+          <p>Email: vohuuhai2018@gmail.com</p>
           <p>Hotline/Zalo: 0888.22.00.44</p>
         </div>
 
@@ -56,7 +56,7 @@ const Footer = () => {
 
       <div className="footer-bottom">
         <div className="container">
-          <p>© 2025 Oak Farm . All Rights Reserved</p>
+          <p>© 2025 Son Hai Landscape . All Rights Reserved</p>
         </div>
       </div>
 

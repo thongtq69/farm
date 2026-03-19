@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chúng tôi - Oak Farm</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   RESET & BASE
+   ============================================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', sans-serif; color: #1a1a1a; background: #fff; line-height: 1.6; }
+img { max-width: 100%; display: block; }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+
+/* ============================================================
+   VARIABLES
+   ============================================================ */
+:root {
+  --green:      #2d5a27;
+  --green-mid:  #3d7a30;
+  --green-pale: #eef5e8;
+  --dark:       #1a1a1a;
+  --mid:        #555;
+  --light:      #888;
+  --border:     #e0e0d8;
+  --bg:         #f8f6f0;
+  --max:        1200px;
+  --py:         88px;
+}
+
+/* ============================================================
+   UTILITIES
+   ============================================================ */
+.container { max-width: var(--max); margin: 0 auto; padding: 0 32px; }
+.section { padding: var(--py) 0; }
+.tag-pill {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: #d6eacc; color: var(--green);
+  font-size: 12px; font-weight: 600; letter-spacing: 0.06em;
+  padding: 5px 14px; border-radius: 20px; margin-bottom: 18px;
+}
+.section-title {
+  font-family: 'Lora', serif;
+  font-size: clamp(26px, 4vw, 44px);
+  font-weight: 500; color: var(--dark); line-height: 1.2;
+}
+.section-sub {
+  font-size: 15px; color: var(--mid); line-height: 1.75;
+  max-width: 600px; margin-top: 14px;
+}
+.btn {
+  display: inline-block; padding: 12px 28px;
+  font-size: 13px; font-weight: 600;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  border-radius: 4px; cursor: pointer; transition: all 0.2s;
+  border: 2px solid transparent;
+}
+.btn-green { background: var(--green); color: #fff; border-color: var(--green); }
+.btn-green:hover { background: var(--green-mid); border-color: var(--green-mid); }
+.btn-outline { background: transparent; color: var(--green); border-color: var(--green); }
+.btn-outline:hover { background: var(--green); color: #fff; }
+
+/* ============================================================
+   SCROLL REVEAL
+   ============================================================ */
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.65s ease, transform 0.65s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-delay-1 { transition-delay: 0.08s; }
+.reveal-delay-2 { transition-delay: 0.16s; }
+.reveal-delay-3 { transition-delay: 0.24s; }
+.reveal-delay-4 { transition-delay: 0.32s; }
+.reveal-left  { opacity: 0; transform: translateX(-30px); transition: opacity 0.65s ease, transform 0.65s ease; }
+.reveal-right { opacity: 0; transform: translateX(30px);  transition: opacity 0.65s ease, transform 0.65s ease; }
+.reveal-left.visible, .reveal-right.visible { opacity: 1; transform: translateX(0); }
+
+/* ============================================================
+   TOPBAR
+   ============================================================ */
+.topbar {
+  background: var(--green); color: rgba(255,255,255,0.85);
+  font-size: 12px; padding: 8px 0;
+}
+.topbar-inner {
+  display: flex; align-items: center;
+  justify-content: space-between; gap: 16px; flex-wrap: wrap;
+}
+.topbar-left { display: flex; gap: 20px; align-items: center; flex-wrap: wrap; }
+.topbar-item { display: flex; align-items: center; gap: 6px; }
+.topbar-right { display: flex; gap: 12px; }
+.topbar-social {
+  width: 26px; height: 26px; border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.3);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px; font-weight: 700; color: rgba(255,255,255,0.85);
+  transition: all 0.2s;
+}
+.topbar-social:hover { background: rgba(255,255,255,0.15); border-color: #fff; }
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+.header {
+  position: sticky; top: 0; z-index: 100;
+  background: #fff; border-bottom: 1px solid var(--border);
+  height: 68px; display: flex; align-items: center;
+}
+.nav { display: flex; align-items: center; justify-content: space-between; width: 100%; }
+.nav-logo img { height: 40px; }
+.nav-menu { display: flex; gap: 28px; }
+.nav-menu a {
+  font-size: 13px; font-weight: 500; color: var(--dark);
+  padding: 4px 0; border-bottom: 2px solid transparent; transition: all 0.2s;
+}
+.nav-menu a:hover, .nav-menu a.active { color: var(--green); border-bottom-color: var(--green); }
+.nav-phone { font-size: 13px; font-weight: 700; color: var(--green); display: flex; align-items: center; gap: 6px; }
+.nav-phone span { font-size: 16px; }
+
+/* ============================================================
+   BREADCRUMB
+   ============================================================ */
+.breadcrumb {
+  padding: 12px 0; border-bottom: 1px solid var(--border);
+  background: var(--bg);
+}
+.breadcrumb-inner { display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--light); }
+.breadcrumb-inner a { color: var(--light); transition: color 0.2s; }
+.breadcrumb-inner a:hover { color: var(--green); }
+.breadcrumb-inner span { color: var(--dark); font-weight: 500; }
+
+/* ============================================================
+   HERO SECTION
+   ============================================================ */
+.hero-about {
+  background: #1a2e15; padding: 80px 0 0;
+  overflow: hidden;
+}
+.hero-about-inner {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 60px; align-items: end;
+}
+.hero-about-text { padding-bottom: 60px; }
+.hero-about-eyebrow {
+  font-size: 11px; font-weight: 700; letter-spacing: 0.14em;
+  text-transform: uppercase; color: #a8d89a; margin-bottom: 16px;
+}
+.hero-about-title {
+  font-family: 'Lora', serif;
+  font-size: clamp(30px, 4.5vw, 52px);
+  color: #fff; line-height: 1.2; font-weight: 500; margin-bottom: 20px;
+}
+.hero-about-desc { color: rgba(255,255,255,0.75); font-size: 15px; line-height: 1.75; margin-bottom: 28px; }
+.hero-about-link {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 13px; font-weight: 600; color: #a8d89a;
+  border-bottom: 1px solid rgba(168,216,154,0.4); padding-bottom: 2px;
+  transition: gap 0.2s;
+}
+.hero-about-link:hover { gap: 14px; color: #c8f0b0; }
+
+/* Two images stacked / overlapping */
+.hero-about-imgs {
+  position: relative; display: flex; flex-direction: column; gap: 0; align-self: end;
+}
+.hero-about-img1 {
+  width: 85%; margin-left: auto;
+  border-radius: 14px 14px 0 0; overflow: hidden;
+  aspect-ratio: 4/3;
+}
+.hero-about-img1 img { width: 100%; height: 100%; object-fit: cover; }
+.hero-about-img2 {
+  position: absolute; bottom: -40px; left: 0;
+  width: 58%; border-radius: 14px; overflow: hidden;
+  border: 4px solid #1a2e15;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+  aspect-ratio: 1/1;
+}
+.hero-about-img2 img { width: 100%; height: 100%; object-fit: cover; }
+
+/* ============================================================
+   INTRO QUOTE SECTION
+   ============================================================ */
+.intro-quote {
+  background: var(--green-pale); padding: 100px 0 80px;
+}
+.intro-quote-inner { text-align: center; max-width: 900px; margin: 0 auto; }
+.intro-quote-text {
+  font-family: 'Lora', serif;
+  font-size: clamp(18px, 2.8vw, 30px);
+  font-weight: 400; color: #1a2e15;
+  line-height: 1.6; font-style: italic;
+}
+.intro-quote-text strong { font-style: normal; font-weight: 600; color: var(--green); }
+
+/* ============================================================
+   TEAM SECTION
+   ============================================================ */
+.team { background: #fff; }
+.team-header { text-align: center; margin-bottom: 56px; }
+.team-header .section-sub { margin: 14px auto 0; text-align: center; }
+.team-grid {
+  display: grid; grid-template-columns: repeat(6, 1fr); gap: 24px;
+}
+.team-card {
+  text-align: center; cursor: pointer;
+}
+.team-card-img-wrap {
+  position: relative; overflow: hidden;
+  border-radius: 50%;
+  width: 100%; aspect-ratio: 1/1;
+  margin-bottom: 14px;
+  border: 3px solid var(--border);
+  transition: border-color 0.3s;
+}
+.team-card:hover .team-card-img-wrap { border-color: var(--green); }
+.team-card-img-wrap img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform 0.45s ease;
+}
+.team-card:hover .team-card-img-wrap img { transform: scale(1.08); }
+/* Overlay */
+.team-card-overlay {
+  position: absolute; inset: 0; border-radius: 50%;
+  background: rgba(45,90,39,0.72);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  opacity: 0; transition: opacity 0.3s;
+}
+.team-card:hover .team-card-overlay { opacity: 1; }
+.team-card-overlay svg { width: 22px; height: 22px; stroke: #fff; fill: none; margin-bottom: 6px; }
+.team-card-overlay span { font-size: 11px; color: rgba(255,255,255,0.9); font-weight: 600; letter-spacing: 0.06em; }
+.team-card-name { font-size: 14px; font-weight: 600; color: var(--dark); margin-bottom: 3px; }
+.team-card-role { font-size: 12px; color: var(--light); }
+
+/* ============================================================
+   WHY US SECTION
+   ============================================================ */
+.why-us { background: var(--bg); }
+.why-us-header { margin-bottom: 48px; }
+.why-us-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+.why-card {
+  background: #fff; border-radius: 14px; padding: 28px 28px 24px;
+  border: 1px solid var(--border);
+  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+  display: flex; gap: 18px; align-items: flex-start;
+}
+.why-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 36px rgba(0,0,0,0.08);
+  border-color: #b8d9a0;
+}
+.why-icon {
+  width: 48px; height: 48px; border-radius: 12px; flex-shrink: 0;
+  background: var(--green-pale);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px; transition: background 0.3s;
+}
+.why-card:hover .why-icon { background: #c8eab0; }
+.why-body h4 { font-size: 16px; font-weight: 600; margin-bottom: 8px; color: var(--dark); }
+.why-body p { font-size: 13px; color: var(--mid); line-height: 1.7; }
+.why-us-banner {
+  margin-top: 48px; border-radius: 16px; overflow: hidden;
+  position: relative; aspect-ratio: 21/6;
+}
+.why-us-banner img { width: 100%; height: 100%; object-fit: cover; }
+.why-us-banner-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(90deg, rgba(20,40,15,0.7) 0%, rgba(20,40,15,0.1) 60%);
+  display: flex; align-items: center; padding: 0 48px;
+}
+.why-us-banner-text { color: #fff; }
+.why-us-banner-text h3 {
+  font-family: 'Lora', serif; font-size: clamp(20px, 3vw, 34px);
+  margin-bottom: 14px; line-height: 1.3;
+}
+
+/* ============================================================
+   JOURNEY SECTION (Avatar Stack + Counter)
+   ============================================================ */
+.journey { background: #fff; }
+.journey-inner {
+  display: grid; grid-template-columns: 1fr 1.1fr;
+  gap: 80px; align-items: center;
+}
+.journey-left .tag-pill { margin-bottom: 18px; }
+.journey-left .section-title { margin-bottom: 16px; }
+.journey-left .section-sub { margin-top: 0; margin-bottom: 28px; }
+/* Avatar stack */
+.avatar-stack { display: flex; align-items: center; margin-bottom: 28px; }
+.avatar-stack-img {
+  width: 48px; height: 48px; border-radius: 50%;
+  border: 3px solid #fff; overflow: hidden;
+  margin-left: -14px; transition: transform 0.2s;
+}
+.avatar-stack-img:first-child { margin-left: 0; }
+.avatar-stack-img:hover { transform: scale(1.1); z-index: 2; }
+.avatar-stack-img img { width: 100%; height: 100%; object-fit: cover; }
+.avatar-stack-info { margin-left: 14px; }
+.avatar-stack-count {
+  font-size: 22px; font-weight: 700; color: var(--green); line-height: 1;
+}
+.avatar-stack-label { font-size: 12px; color: var(--light); margin-top: 2px; }
+/* Stats counters */
+.stats-row { display: flex; gap: 40px; }
+.stat-item { }
+.stat-num {
+  font-family: 'Lora', serif;
+  font-size: 52px; font-weight: 600; color: #1a2e15; line-height: 1;
+  display: flex; align-items: baseline; gap: 2px;
+}
+.stat-num span { font-size: 28px; color: var(--green); }
+.stat-label { font-size: 13px; color: var(--mid); margin-top: 6px; max-width: 160px; line-height: 1.5; }
+.journey-right {
+  position: relative;
+}
+.journey-img-main {
+  border-radius: 16px; overflow: hidden; aspect-ratio: 4/5;
+}
+.journey-img-main img { width: 100%; height: 100%; object-fit: cover; }
+.journey-img-badge {
+  position: absolute; top: 24px; left: -20px;
+  background: var(--green); color: #fff; border-radius: 12px;
+  padding: 14px 18px; font-size: 13px; font-weight: 600;
+  box-shadow: 0 8px 24px rgba(45,90,39,0.35);
+  display: flex; align-items: center; gap: 10px;
+}
+.journey-img-badge-icon { font-size: 22px; }
+
+/* ============================================================
+   FAQ SECTION
+   ============================================================ */
+.faq { background: var(--bg); }
+.faq-header { margin-bottom: 40px; }
+.faq-list { display: flex; flex-direction: column; gap: 0; border-radius: 14px; overflow: hidden; border: 1px solid var(--border); }
+.faq-item { border-bottom: 1px solid var(--border); background: #fff; }
+.faq-item:last-child { border-bottom: none; }
+.faq-question {
+  width: 100%; background: none; border: none; cursor: pointer;
+  padding: 20px 24px; display: flex; align-items: center;
+  justify-content: space-between; gap: 16px;
+  text-align: left; font-family: 'Inter', sans-serif;
+  transition: background 0.15s;
+}
+.faq-question:hover { background: var(--green-pale); }
+.faq-question.open { background: var(--green-pale); }
+.faq-question-num {
+  font-size: 12px; font-weight: 700; color: var(--green);
+  min-width: 28px;
+}
+.faq-question-text {
+  flex: 1; font-size: 15px; font-weight: 600; color: var(--dark); line-height: 1.4;
+}
+.faq-icon {
+  width: 28px; height: 28px; border-radius: 50%;
+  border: 1.5px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px; color: var(--green); font-weight: 300; flex-shrink: 0;
+  transition: all 0.25s; background: #fff;
+}
+.faq-question.open .faq-icon { background: var(--green); color: #fff; border-color: var(--green); transform: rotate(45deg); }
+.faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+.faq-answer.open { max-height: 300px; }
+.faq-answer-inner {
+  padding: 0 24px 20px 68px;
+  font-size: 14px; color: var(--mid); line-height: 1.75;
+}
+.faq-answer-inner a { color: var(--green); text-decoration: underline; }
+
+/* ============================================================
+   FANPAGE CTA SECTION
+   ============================================================ */
+.fanpage-cta { background: var(--green); padding: 64px 0; }
+.fanpage-cta-inner {
+  display: flex; align-items: center;
+  justify-content: space-between; gap: 32px; flex-wrap: wrap;
+}
+.fanpage-cta-left h2 {
+  font-family: 'Lora', serif;
+  font-size: clamp(22px, 3vw, 36px); color: #fff;
+  font-weight: 500; margin-bottom: 20px;
+}
+/* Avatar stack in fanpage */
+.fanpage-avatars { display: flex; align-items: center; }
+.fanpage-avatar {
+  width: 44px; height: 44px; border-radius: 50%;
+  border: 3px solid var(--green); overflow: hidden;
+  margin-left: -12px; box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+.fanpage-avatar:first-child { margin-left: 0; }
+.fanpage-avatar img { width: 100%; height: 100%; object-fit: cover; }
+.fanpage-meta { margin-left: 16px; }
+.fanpage-meta-count { font-size: 18px; font-weight: 700; color: #fff; line-height: 1; }
+.fanpage-meta-label { font-size: 12px; color: rgba(255,255,255,0.7); margin-top: 2px; }
+.btn-fb {
+  background: #1877f2; color: #fff; border-color: #1877f2;
+  display: flex; align-items: center; gap: 8px;
+}
+.btn-fb:hover { background: #1565d8; border-color: #1565d8; }
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.footer { background: #111; color: rgba(255,255,255,0.65); padding: 56px 0 28px; }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; margin-bottom: 40px; }
+.footer-brand img { height: 36px; filter: brightness(0) invert(1); margin-bottom: 16px; }
+.footer-brand p { font-size: 13px; line-height: 1.7; max-width: 280px; }
+.footer-social { display: flex; gap: 10px; margin-top: 18px; }
+.footer-social a {
+  width: 32px; height: 32px; border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.2);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px; font-weight: 700; color: rgba(255,255,255,0.65);
+  transition: all 0.2s;
+}
+.footer-social a:hover { border-color: var(--green); color: #a8d89a; }
+.footer-col h4 { font-size: 12px; font-weight: 700; color: #fff; margin-bottom: 14px; text-transform: uppercase; letter-spacing: 0.1em; }
+.footer-col ul { display: flex; flex-direction: column; gap: 10px; }
+.footer-col ul li a { font-size: 13px; color: rgba(255,255,255,0.55); transition: color 0.2s; }
+.footer-col ul li a:hover { color: #a8d89a; }
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.1); padding-top: 24px;
+  text-align: center; font-size: 12px; color: rgba(255,255,255,0.35);
+}
+
+/* ============================================================
+   FLOATING ZALO
+   ============================================================ */
+.float-zalo {
+  position: fixed; bottom: 24px; right: 24px; z-index: 999;
+  width: 52px; height: 52px; border-radius: 50%;
+  background: #0068ff; display: flex; align-items: center; justify-content: center;
+  color: #fff; font-size: 13px; font-weight: 800;
+  box-shadow: 0 4px 20px rgba(0,104,255,0.45);
+  animation: zPulse 2.2s ease-in-out infinite;
+}
+@keyframes zPulse {
+  0%,100% { box-shadow: 0 4px 20px rgba(0,104,255,0.45); }
+  50%      { box-shadow: 0 4px 32px rgba(0,104,255,0.7); }
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 960px) {
+  .hero-about-inner { grid-template-columns: 1fr; }
+  .hero-about-imgs { display: none; }
+  .team-grid { grid-template-columns: repeat(3, 1fr); }
+  .why-us-grid { grid-template-columns: 1fr; }
+  .journey-inner { grid-template-columns: 1fr; gap: 40px; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 640px) {
+  :root { --py: 56px; }
+  .team-grid { grid-template-columns: repeat(2, 1fr); }
+  .stats-row { flex-direction: column; gap: 24px; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .nav-menu { display: none; }
+  .topbar-left { gap: 12px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     TOPBAR
+     ============================================================ -->
+<div class="topbar">
+  <div class="container">
+    <div class="topbar-inner">
+      <div class="topbar-left">
+        <div class="topbar-item">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          02 Đỗ Quang, P. Thanh Khê, TP. Đà Nẵng
+        </div>
+        <div class="topbar-item">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          Thứ 2 – Thứ 7: 8h00-17h00
+        </div>
+        <div class="topbar-item">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          info@oakfarm.vn
+        </div>
+      </div>
+      <div class="topbar-right">
+        <a class="topbar-social" href="https://www.facebook.com/oakfarm.vn">f</a>
+        <a class="topbar-social" href="https://www.instagram.com/oakfarm.vn">in</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     HEADER
+     ============================================================ -->
+<header class="header">
+  <div class="container">
+    <nav class="nav">
+      <a class="nav-logo" href="/">
+        <img src="https://oakfarm.vn/wp-content/uploads/2025/08/logo-2025-normal-2.png" alt="Oak Farm">
+      </a>
+      <ul class="nav-menu">
+        <li><a href="/">Trang chủ</a></li>
+        <li><a href="#" class="active">Chúng tôi</a></li>
+        <li><a href="#">Dự án</a></li>
+        <li><a href="#">Báo giá thiết kế Farm</a></li>
+        <li><a href="#">Blog</a></li>
+      </ul>
+      <div class="nav-phone">
+        <span>📞</span>
+        <a href="tel:0901122022">(+84) 901.122.022</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- ============================================================
+     BREADCRUMB
+     ============================================================ -->
+<div class="breadcrumb">
+  <div class="container">
+    <div class="breadcrumb-inner">
+      <a href="/">Trang chủ</a>
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+      <span>Chúng tôi</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     HERO ABOUT SECTION
+     ============================================================ -->
+<section class="hero-about">
+  <div class="container">
+    <div class="hero-about-inner">
+      <div class="hero-about-text reveal">
+        <p class="hero-about-eyebrow">Đơn vị thiết kế Farmstay hàng đầu Việt Nam</p>
+        <h1 class="hero-about-title">Oak Farm phân chia ra nhiều giai đoạn thiết kế phù hợp với ngân sách</h1>
+        <p class="hero-about-desc">Phù hợp với ngân sách và phân bổ giai đoạn thực hiện của chủ đầu tư. Từ ý tưởng đến thực tế, Oak Farm đồng hành cùng bạn trong mọi giai đoạn.</p>
+        <a class="hero-about-link" href="#">Tìm hiểu về 7 giai đoạn thiết kế →</a>
+      </div>
+      <div class="hero-about-imgs reveal reveal-delay-2">
+        <div class="hero-about-img1">
+          <img src="https://oakfarm.vn/wp-content/uploads/2026/03/oak-farm-1-scaled.jpg" alt="Oak Farm dự án" loading="lazy">
+        </div>
+        <div class="hero-about-img2">
+          <img src="https://oakfarm.vn/wp-content/uploads/2026/03/A1-Copy-scaled.jpg" alt="Oak Farm thiết kế" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     INTRO QUOTE SECTION
+     ============================================================ -->
+<section class="intro-quote">
+  <div class="container">
+    <div class="intro-quote-inner reveal">
+      <p class="intro-quote-text">
+        Mô hình <strong>farmstay đang là một xu hướng</strong> kinh doanh và nghỉ dưỡng gia đình đang hot, phát triển mạnh và nở rộ ở <strong>Việt Nam</strong> hiện nay.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     TEAM SECTION
+     ============================================================ -->
+<section class="section team">
+  <div class="container">
+    <div class="team-header reveal">
+      <div class="tag-pill">🌿 Oak Teams</div>
+      <h2 class="section-title">Đội ngũ thiết kế Oak Farm</h2>
+      <p class="section-sub">Đội ngũ thiết kế Oak Farm là những người nhiệt huyết, chuyên nghiệp và có kỹ năng đa dạng. Chúng tôi luôn làm việc tận tâm, sáng tạo, mang lại giá trị tốt nhất cho khách hàng.</p>
+    </div>
+    <div class="team-grid">
+      <div class="team-card reveal reveal-delay-1">
+        <div class="team-card-img-wrap">
+          <img src="https://oakfarm.vn/wp-content/uploads/2025/08/Hai-1-Oak.png" alt="Quốc Hải">
+          <div class="team-card-overlay">
+            <svg viewBox="0 0 24 24" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            <span>Xem profile</span>
+          </div>
+        </div>
+        <div class="team-card-name">Quốc Hải</div>
+        <div class="team-card-role">Founder</div>
+      </div>
+      <div class="team-card reveal reveal-delay-2">
+        <div class="team-card-img-wrap">
+          <img src="https://oakfarm.vn/wp-content/uploads/2025/08/Huong-Oak.png" alt="Hương Lê">
+          <div class="team-card-overlay">
+            <svg viewBox="0 0 24 24" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            <span>Xem profile</span>
+          </div>
+        </div>
+        <div class="team-card-name">Hương Lê</div>
+        <div class="team-card-role">Administrator</div>
+      </div>
+      <div class="team-card reveal reveal-delay-3">
+        <div class="team-card-img-wrap">
+          <img src="https://oakfarm.vn/wp-content/uploads/2025/08/Nhan-Oak.png" alt="Bệ Ngạn">
+          <div class="team-card-overlay">
+            <svg viewBox="0 0 24 24" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            <span>Xem profile</span>
+          </div>
+        </div>
+        <div class="team-card-name">Bệ Ngạn</div>
+        <div class="team-card-role">Team Leader</div>
+      </div>
+      <div class="team-card reveal reveal-delay-1">
+        <div class="team-card-img-wrap">
+          <img src="https://oakfarm.vn/wp-content/uploads/2025/08/Duong-Oak.png" alt="Thùy Dương">
+          <div class="team-card-overlay">
+            <svg viewBox="0 0 24 24" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            <span>Xem profile</span>
+          </div>
+        </div>
+        <div class="team-card-name">Thùy Dương</div>
+        <div class="team-card-role">Architect</div>
+      </div>
+      <div class="team-card reveal reveal-delay-2">
+        <div class="team-card-img-wrap">
+          <img src="https://oakfarm.vn/wp-content/uploads/2025/08/Vu-Oak.png" alt="Jay Nguyen">
+          <div class="team-card-overlay">
+            <svg viewBox="0 0 24 24" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            <span>Xem profile</span>
+          </div>
+        </div>
+        <div class="team-card-name">Jay Nguyen</div>
+        <div class="team-card-role">Architect</div>
+      </div>
+      <div class="team-card reveal reveal-delay-3">
+        <div class="team-card-img-wrap">
+          <img src="https://oakfarm.vn/wp-content/uploads/2025/08/Hang-Oak.png" alt="Hằng Cận">
+          <div class="team-card-overlay">
+            <svg viewBox="0 0 24 24" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            <span>Xem profile</span>
+          </div>
+        </div>
+        <div class="team-card-name">Hằng Cận</div>
+        <div class="team-card-role">Architect</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WHY US SECTION
+     ============================================================ -->
+<section class="section why-us">
+  <div class="container">
+    <div class="why-us-header reveal">
+      <div class="tag-pill">🌿 Tại sao là chúng tôi</div>
+      <h2 class="section-title">Tại sao Oak Farm là sự lựa chọn tốt nhất</h2>
+      <p class="section-sub">Tại Oak Farm, chúng tôi kết hợp kinh nghiệm và sự sáng tạo để mang đến cho khách hàng những giải pháp thiết kế phù hợp với địa hình, bản sắc vùng miền và ngân sách dự án.</p>
+    </div>
+    <div class="why-us-grid">
+      <div class="why-card reveal reveal-delay-1">
+        <div class="why-icon">💬</div>
+        <div class="why-body">
+          <h4>Tư vấn miễn phí</h4>
+          <p>Đội ngũ tư vấn Oak Farm luôn sẵn sàng tư vấn, họp online với khách hàng bất cứ lúc nào và hoàn toàn miễn phí.</p>
+        </div>
+      </div>
+      <div class="why-card reveal reveal-delay-2">
+        <div class="why-icon">🔍</div>
+        <div class="why-body">
+          <h4>Khảo sát tận nơi</h4>
+          <p>Tất cả các dự án Oak Farm tham gia đều được khảo sát tận nơi để có cái nhìn trực quan nhất về khu đất.</p>
+        </div>
+      </div>
+      <div class="why-card reveal reveal-delay-3">
+        <div class="why-icon">📐</div>
+        <div class="why-body">
+          <h4>7 Giai đoạn thiết kế</h4>
+          <p>Oak Farm phân chia ra nhiều giai đoạn thiết kế để phù hợp với ngân sách và phân bổ giai đoạn thực hiện của chủ đầu tư.</p>
+        </div>
+      </div>
+      <div class="why-card reveal reveal-delay-4">
+        <div class="why-icon">✨</div>
+        <div class="why-body">
+          <h4>Mô hình độc bản</h4>
+          <p>Mỗi dự án là một mô hình thiết kế độc bản, không giống bất cứ thiết kế nào. Thể hiện rõ cá tính và bản sắc của từng dự án.</p>
+        </div>
+      </div>
+    </div>
+    <!-- Banner -->
+    <div class="why-us-banner reveal" style="margin-top:40px;">
+      <img src="https://oakfarm.vn/wp-content/uploads/2025/07/contact-banner-2-1.png" alt="Oak Farm banner" loading="lazy">
+      <div class="why-us-banner-overlay">
+        <div class="why-us-banner-text">
+          <h3>Bắt đầu hành trình<br>thiết kế Farm cùng chúng tôi</h3>
+          <a href="#" class="btn btn-green">Nhận báo giá ngay</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     JOURNEY / STATS SECTION
+     ============================================================ -->
+<section class="section journey">
+  <div class="container">
+    <div class="journey-inner">
+      <div class="journey-left">
+        <div class="tag-pill">🌿 Hành trình</div>
+        <h2 class="section-title reveal">Hành trình khám phá</h2>
+        <p class="section-sub reveal reveal-delay-1">Nhờ sự tin tưởng từ chủ đầu tư mà Oak Farm đã có thể đến với những vùng đất mới, gặp những người bạn và học hỏi thêm nhiều kiến thức mới.</p>
+
+        <!-- Avatar stack + follower count -->
+        <div class="avatar-stack reveal reveal-delay-2">
+          <div class="avatar-stack-img">
+            <img src="https://oakfarm.vn/wp-content/uploads/2025/08/avatar-2.jpg" alt="">
+          </div>
+          <div class="avatar-stack-img">
+            <img src="https://oakfarm.vn/wp-content/uploads/2025/08/avatar-3.jpg" alt="">
+          </div>
+          <div class="avatar-stack-img">
+            <img src="https://oakfarm.vn/wp-content/uploads/2025/08/avatar-1.jpg" alt="">
+          </div>
+          <div class="avatar-stack-info">
+            <div class="avatar-stack-count" id="followerCount">0K+</div>
+            <div class="avatar-stack-label">Followers trên Facebook</div>
+          </div>
+        </div>
+
+        <!-- Stats counters -->
+        <div class="stats-row reveal reveal-delay-3">
+          <div class="stat-item">
+            <div class="stat-num">
+              <span id="countProjects">0</span><span>+</span>
+            </div>
+            <div class="stat-label">Dự án hoàn thành trên khắp cả nước</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">
+              <span id="countProvinces">0</span><span>+</span>
+            </div>
+            <div class="stat-label">Tỉnh thành ở mọi miền Tổ Quốc</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="journey-right reveal reveal-right">
+        <div class="journey-img-main">
+          <img src="https://oakfarm.vn/wp-content/uploads/2025/08/avatar-1.jpg" alt="Hành trình Oak Farm" loading="lazy">
+        </div>
+        <div class="journey-img-badge">
+          <div class="journey-img-badge-icon">🏆</div>
+          <div>
+            <div style="font-size:11px;opacity:0.8;">Cột mốc đạt được</div>
+            <div>Dự án trên 20 tỉnh thành</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FAQ SECTION
+     ============================================================ -->
+<section class="section faq">
+  <div class="container">
+    <div class="faq-header reveal">
+      <div class="tag-pill">🌿 Hỏi và trả lời</div>
+      <h2 class="section-title">Những câu hỏi thường gặp</h2>
+    </div>
+    <div class="faq-list reveal">
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+          <span class="faq-question-num">01.</span>
+          <span class="faq-question-text">Oak Farm có khảo sát và thiết kế ở xa không?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Văn phòng Oak Farm tại Đà Nẵng, tuy nhiên chúng tôi chuyên khảo sát, tư vấn thiết kế các dự án trên mọi miền đất nước. Sẵn sàng đến tận nơi khảo sát để mang lại cái nhìn trực quan và chi tiết nhất về dự án.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+          <span class="faq-question-num">02.</span>
+          <span class="faq-question-text">Khảo sát bao gồm công việc gì?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Khảo sát dự án nhằm tiếp cận thực tế khu đất cùng chủ đầu tư: bay Flycam, ghi nhận địa hình, địa mạo, view nhìn, họp trao đổi ý tưởng trực tiếp và lập báo cáo ý tưởng sau khảo sát.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+          <span class="faq-question-num">03.</span>
+          <span class="faq-question-text">Chi phí khảo sát như thế nào?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Chi phí cho mỗi lần khảo sát từ 14-22 triệu/ dự án tùy vào khoảng cách di chuyển. Tuy nhiên, nếu kết hợp trong thời gian Oak Farm có chuyến khảo sát cùng địa điểm, chi phí sẽ giảm từ 30% đến 50%.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+          <span class="faq-question-num">04.</span>
+          <span class="faq-question-text">Oak Farm có áp dụng ưu đãi gì không?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Tùy vào từng thời điểm trong năm (từ 1 đến 2 lần), Oak Farm sẽ có gói ưu đãi giảm giá chi phí thiết kế từ 10%-20% tùy vào từng giai đoạn thiết kế.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+          <span class="faq-question-num">05.</span>
+          <span class="faq-question-text">Tôi cần báo giá thiết kế Farm?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Anh/chị vui lòng điền thông tin vào biểu mẫu bên dưới, Oak Farm nhận thông tin về dự án và sẽ gửi báo giá ngay. <a href="https://oakfarm.vn/bao-gia/">oakfarm.vn/bao-gia</a></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FANPAGE CTA SECTION
+     ============================================================ -->
+<section class="fanpage-cta">
+  <div class="container">
+    <div class="fanpage-cta-inner">
+      <div class="fanpage-cta-left">
+        <h2>Ghé thăm Fanpage Oak Farm</h2>
+        <div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;">
+          <div class="fanpage-avatars">
+            <div class="fanpage-avatar"><img src="https://oakfarm.vn/wp-content/uploads/2025/08/avatar-1.jpg" alt=""></div>
+            <div class="fanpage-avatar"><img src="https://oakfarm.vn/wp-content/uploads/2025/08/avatar-3.jpg" alt=""></div>
+            <div class="fanpage-avatar"><img src="https://oakfarm.vn/wp-content/uploads/2025/08/avatar-2.jpg" alt=""></div>
+          </div>
+          <div class="fanpage-meta">
+            <div class="fanpage-meta-count" id="fbFollowers">0K+</div>
+            <div class="fanpage-meta-label">Followers</div>
+          </div>
+        </div>
+      </div>
+      <a href="https://www.facebook.com/oakfarm.vn" class="btn btn-fb">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+        Theo dõi trên Facebook
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="https://oakfarm.vn/wp-content/uploads/2025/06/logo-2025-light1.png" alt="Oak Farm">
+        <p>Oak Farm là một trong những đơn vị thiết kế Farmstay hàng đầu Việt Nam. Với nhiều dự án trải dài trên 20 tỉnh thành và các dự án tại Thái Lan.</p>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/oakfarm.vn">f</a>
+          <a href="https://www.instagram.com/oakfarm.vn">in</a>
+          <a href="https://zalo.me/0901122022">Z</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Dịch vụ</h4>
+        <ul>
+          <li><a href="#">Farm-Homestay</a></li>
+          <li><a href="#">Cảnh quan nhà vườn</a></li>
+          <li><a href="#">Resort nghỉ dưỡng</a></li>
+          <li><a href="#">Quy hoạch dự án</a></li>
+          <li><a href="#">Du lịch trải nghiệm</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Liên hệ</h4>
+        <ul>
+          <li><a href="#">02 Đỗ Quang, Đà Nẵng</a></li>
+          <li><a href="tel:0901122022">0901.122.022</a></li>
+          <li><a href="mailto:info@oakfarm.vn">info@oakfarm.vn</a></li>
+          <li><a href="#">Thứ 2 – Thứ 7: 8h-17h</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2025 Oak Farm. All Rights Reserved.</div>
+  </div>
+</footer>
+
+<a class="float-zalo" href="https://zalo.me/0901122022">Z</a>
+
+<!-- ============================================================
+     JAVASCRIPT
+     ============================================================ -->
+<script>
+/* ---- SCROLL REVEAL ---- */
+const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+const revealObs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+}, { threshold: 0.1 });
+revealEls.forEach(el => revealObs.observe(el));
+
+/* ---- FAQ ACCORDION ---- */
+function toggleFAQ(btn) {
+  const isOpen = btn.classList.contains('open');
+  // Close all
+  document.querySelectorAll('.faq-question').forEach(b => {
+    b.classList.remove('open');
+    b.nextElementSibling.classList.remove('open');
+  });
+  // Open clicked (if was closed)
+  if (!isOpen) {
+    btn.classList.add('open');
+    btn.nextElementSibling.classList.add('open');
+  }
+}
+
+/* ---- COUNT-UP ANIMATION ---- */
+function countUp(el, target, duration, suffix) {
+  let start = 0;
+  const step = target / (duration / 16);
+  const timer = setInterval(() => {
+    start += step;
+    if (start >= target) {
+      el.textContent = target + suffix;
+      clearInterval(timer);
+    } else {
+      el.textContent = Math.floor(start) + suffix;
+    }
+  }, 16);
+}
+
+let counted = false;
+const statsSection = document.querySelector('.journey');
+const statsObs = new IntersectionObserver(entries => {
+  if (entries[0].isIntersecting && !counted) {
+    counted = true;
+    countUp(document.getElementById('countProjects'), 50, 1800, '');
+    countUp(document.getElementById('countProvinces'), 20, 1800, '');
+    // Follower counter
+    let f = 0;
+    const fEl = document.getElementById('followerCount');
+    const fEl2 = document.getElementById('fbFollowers');
+    const fTimer = setInterval(() => {
+      f += 0.1;
+      if (f >= 5) {
+        fEl.textContent = '5K+';
+        if (fEl2) fEl2.textContent = '5K+';
+        clearInterval(fTimer);
+      } else {
+        const display = f.toFixed(1) + 'K+';
+        fEl.textContent = display;
+        if (fEl2) fEl2.textContent = display;
+      }
+    }, 40);
+  }
+}, { threshold: 0.3 });
+statsObs.observe(statsSection);
+</script>
+</body>
+</html>

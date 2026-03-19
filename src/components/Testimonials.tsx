@@ -10,7 +10,7 @@ const reviews = [
     role: 'Chủ đầu tư - Lâm Đồng',
     project: 'Dự án Farmstay bản địa',
     content:
-      'Oak Farm đã giúp tôi hiện thực hóa ý tưởng về một Farmstay mang hơi thở bản địa. Quy trình làm việc rất chuyên nghiệp và thấu hiểu khách hàng.',
+      'Son Hai Landscape đã giúp tôi hiện thực hóa ý tưởng về một Farmstay mang hơi thở bản địa. Quy trình làm việc rất chuyên nghiệp và thấu hiểu khách hàng.',
     visuals: [
       '/images/content/h1-testimonial-1-27912072eb28.jpg',
       '/images/content/h1-testimonial-2-e5820839e5e3.jpg',
@@ -36,7 +36,7 @@ const reviews = [
     role: 'Chủ đầu tư - Đồng Nai',
     project: 'Dự án quy hoạch nông trại',
     content:
-      'Hồ sơ kỹ thuật chi tiết và dễ hiểu cho đội thi công. Oak Farm giúp tôi tiết kiệm nhiều chi phí phát sinh, đồng thời giữ được tính thẩm mỹ cho toàn bộ dự án.',
+      'Hồ sơ kỹ thuật chi tiết và dễ hiểu cho đội thi công. Son Hai Landscape giúp tôi tiết kiệm nhiều chi phí phát sinh, đồng thời giữ được tính thẩm mỹ cho toàn bộ dự án.',
     visuals: [
       '/images/content/h1-testimonial-3-2bb6f6abf603.jpg',
       '/images/content/h1-testimonial-1-27912072eb28.jpg',
