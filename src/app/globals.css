@@ -617,6 +617,16 @@ img {
   z-index: 1;
 }
 
+.hero-bg-slide {
+  position: absolute;
+  inset: 0;
+}
+
+.hero-bg-slide img {
+  filter: saturate(0.92) brightness(0.82);
+  transform: scale(1.03);
+}
+
 .hero-overlay {
   position: absolute;
   inset: 0;
@@ -5824,5 +5834,115 @@ img {
   .team-grid-v2 { grid-template-columns: 1fr; }
   .values-grid-v2 { grid-template-columns: 1fr; }
   .cta-flex-btns { flex-direction: column; }
+}
+
+/* ============================================================
+   ABOUT PAGE ADDITIONS (Philosophy, Values v2, FAQ)
+   ============================================================ */
+
+.about-philosophy-simple {
+  background: white;
+  padding: 6rem 0;
+}
+
+.philosophy-text-card {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.philosophy-text-card p {
+  font-size: 1.8rem;
+  line-height: 1.6;
+  color: var(--primary-dark);
+  font-family: 'Outfit', sans-serif;
+  font-weight: 300;
+}
+
+.values-v2-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 4rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 2rem;
+}
+
+.values-grid-v2 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2.5rem;
+}
+
+.val-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* FAQ v2 Styles */
+.faq-v2-grid {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  gap: 6rem;
+}
+
+.faq-v2-info h2 {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  color: var(--primary-dark);
+}
+
+.faq-v2-item {
+  border-bottom: 1px solid #eee;
+  padding: 1.5rem 0;
+  cursor: pointer;
+}
+
+.faq-v2-q {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.q-num {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--secondary);
+  font-family: 'Outfit', sans-serif;
+}
+
+.faq-v2-q h4 {
+  flex: 1;
+  font-size: 1.15rem;
+  margin: 0;
+  transition: color 0.3s;
+}
+
+.faq-v2-item.active .faq-v2-q h4 {
+  color: var(--secondary);
+}
+
+.q-arrow {
+  font-size: 1.5rem;
+  font-family: 'Outfit', sans-serif;
+  color: #ccc;
+}
+
+.faq-v2-a p {
+  padding: 1rem 0 1rem 3rem;
+  color: #666;
+  line-height: 1.7;
+  font-size: 1.05rem;
+}
+
+@media (max-width: 991px) {
+  .faq-v2-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .philosophy-text-card p { font-size: 1.4rem; }
+  .values-grid-v2 { grid-template-columns: repeat(2, 1fr); }
+  .values-v2-header { flex-direction: column; align-items: flex-start; gap: 2rem; }
+}
+
+@media (max-width: 640px) {
+  .values-grid-v2 { grid-template-columns: 1fr; }
 }
 

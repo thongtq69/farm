@@ -1,11 +1,13 @@
 'use client';
 
-import React, { useMemo } from 'react';
+import React, { useMemo, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const AboutPage = () => {
+  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
+
   const teamMembers = useMemo(() => [
     {
       name: 'Võ Hữu Hải',
@@ -34,9 +36,41 @@ const AboutPage = () => {
   ], []);
 
   const coreValues = [
-    { title: 'Tâm Huyết', desc: 'Mọi công trình đều được chăm chút từ những chi tiết nhỏ nhất.' },
-    { title: 'Sáng Tạo', desc: 'Không ngừng đổi mới để mang lại giải pháp kiến trúc độc bản.' },
-    { title: 'Bền Vững', desc: 'Thiết kế thuận tự nhiên, hướng tới giá trị sử dụng lâu dài.' }
+    { 
+      icon: '📐', 
+      title: 'Tư vấn Chuyên sâu', 
+      desc: 'Đội ngũ kiến trúc sư Sơn Hải Landscape luôn sẵn sàng lắng nghe, thấu hiểu để đưa ra giải pháp quy hoạch tối ưu nhất cho khu đất của bạn.' 
+    },
+    { 
+      icon: '⛰️', 
+      title: 'Đọc vị Địa hình', 
+      desc: 'Mỗi dự án đều được khảo sát thực tế để ghi nhận địa hình, hướng nắng, gió và đặc thù thổ nhưỡng, đảm bảo thiết kế thuận tự nhiên.' 
+    },
+    { 
+      icon: '📜', 
+      title: 'Hồ sơ Chi tiết', 
+      desc: 'Chúng tôi cung cấp bộ hồ sơ thiết kế kỹ thuật hoàn chỉnh, từ quy hoạch tổng thể đến chi tiết cấu tạo, giúp thi công chính xác nhất.' 
+    },
+    { 
+      icon: '✨', 
+      title: 'Bản sắc Độc bản', 
+      desc: 'Không sao chép, không rập khuôn. Mỗi công trình là một tác phẩm nghệ thuật mang đậm dấu ấn cá nhân của chủ sở hữu.' 
+    }
+  ];
+
+  const faqItems = [
+    {
+      question: 'Sơn Hải Landscape có nhận dự án ở các tỉnh xa không?',
+      answer: 'Chúng tôi có trụ sở tại Đà Nẵng nhưng hoạt động trên toàn quốc. Đội ngũ sẵn sàng di chuyển đến trực tiếp khu đất để khảo sát và làm việc.'
+    },
+    {
+      question: 'Quy trình tư vấn thiết kế tại đây như thế nào?',
+      answer: 'Quy trình gồm 7 giai đoạn: Tiếp nhận thông tin -> Khảo sát thực tế -> Ý tưởng sơ phác -> Quy hoạch 1/500 -> Thiết kế kiến trúc -> Thiết kế cảnh quan -> Bàn giao hồ sơ.'
+    },
+    {
+      question: 'Chi phí khảo sát được tính như thế nào?',
+      answer: 'Chi phí này phụ thuộc vào vị trí và quy mô khu đất. Chúng tôi sẽ báo giá minh bạch trước khi thực hiện để quý khách chủ động ngân sách.'
+    }
   ];
 
   return (
@@ -67,6 +101,22 @@ const AboutPage = () => {
         </div>
       </section>
 
+      {/* 1.1 PHILOSOPHY TEXT BLOCK */}
+      <section className="about-philosophy-simple section-tight">
+        <div className="container">
+          <motion.div 
+            className="philosophy-text-card"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <p>
+              "Chúng tôi tin rằng kiến trúc thực thụ phải bắt nguồn từ sự thấu hiểu sâu sắc về <strong>Đất, Người và Thời điểm</strong>. Mỗi dự án của Sơn Hải Landscape là một lời giải độc bản cho bài toán cân bằng giữa công năng và cảm xúc."
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
       {/* 2. VISION & MISSION WITH IMAGE BACKGROUND */}
       <section className="about-vision-v2">
         <div className="vision-image-side">
@@ -87,7 +137,7 @@ const AboutPage = () => {
             <span className="subtitle">TẦM NHÌN & SỨ MỆNH</span>
             <h2>Kiến tạo sự cân bằng giữa Con người & Thiên nhiên</h2>
             <p>
-              Chúng tôi tin rằng kiến trúc thực thụ phải bắt nguồn từ sự thấu hiểu sâu sắc về Đất, Người và Thời điểm. Sứ mệnh của Sơn Hải Landscape là mang thiên nhiên vào từng nhịp sống hiện đại qua những giải pháp quy hoạch thông minh.
+              Chúng tôi không chỉ phối phối cảnh, chúng tôi quy hoạch những giá trị sống dài hạn. Sứ mệnh của Sơn Hải Landscape là mang thiên nhiên vào từng nhịp sống hiện đại qua những giải pháp thiết kế "Slow Thinking".
             </p>
             <div className="vision-stats">
               <div className="stat-item">
@@ -106,9 +156,14 @@ const AboutPage = () => {
       {/* 3. CORE VALUES WITH DARK BACKGROUND */}
       <section className="about-values-v2 section-dark">
         <div className="container">
-          <div className="text-center mb-5">
-            <span className="subtitle" style={{ color: '#c5a059' }}>GIÁ TRỊ CỐT LÕI</span>
-            <h2 style={{ color: 'white' }}>Nền tảng của sự tin cậy</h2>
+          <div className="values-v2-header">
+            <div className="v-header-left">
+              <span className="subtitle" style={{ color: '#c5a059' }}>OUR VALUES</span>
+              <h2 style={{ color: 'white' }}>Giá Trị Làm Nên Khác Biệt</h2>
+            </div>
+            <div className="v-header-right">
+               <Link href="/project" className="btn-modern-outline-white">Khám phá phong cách thiết kế</Link>
+            </div>
           </div>
           <div className="values-grid-v2">
             {coreValues.map((val, idx) => (
@@ -118,9 +173,9 @@ const AboutPage = () => {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: idx * 0.2 }}
+                transition={{ delay: idx * 0.1 }}
               >
-                <div className="val-num">0{idx + 1}</div>
+                <div className="val-icon">{val.icon}</div>
                 <h3>{val.title}</h3>
                 <p>{val.desc}</p>
               </motion.div>
@@ -145,7 +200,7 @@ const AboutPage = () => {
                 transition={{ type: 'spring', stiffness: 300 }}
               >
                 <div className="member-portrait">
-                  <Image src={member.image} alt={member.name} fill style={{ objectFit: 'cover' }} />
+                  <Image src={member.image} alt={member.name} fill />
                 </div>
                 <div className="member-bio">
                   <h3>{member.name}</h3>
@@ -158,7 +213,49 @@ const AboutPage = () => {
         </div>
       </section>
 
-      {/* 5. FINAL CTA SECTION WITH BACKGROUND */}
+      {/* 5. Q&A SECTION */}
+      <section className="about-faq-v2 section-tight bg-light">
+        <div className="container">
+          <div className="faq-v2-grid">
+            <div className="faq-v2-info">
+              <span className="subtitle" style={{ color: '#c5a059' }}>Q&A</span>
+              <h2>Bạn còn <br/> thắc mắc?</h2>
+              <p>Chúng tôi luôn minh bạch trong quy trình làm việc để khách hàng hoàn toàn yên tâm khi đồng hành.</p>
+            </div>
+            <div className="faq-v2-list">
+              {faqItems.map((item, index) => (
+                <div 
+                  key={index} 
+                  className={`faq-v2-item ${openFaqIndex === index ? 'active' : ''}`}
+                  onClick={() => setOpenFaqIndex(openFaqIndex === index ? null : index)}
+                >
+                  <div className="faq-v2-q">
+                    <span className="q-num">0{index + 1}</span>
+                    <h4>{item.question}</h4>
+                    <span className="q-arrow">{openFaqIndex === index ? '−' : '+'}</span>
+                  </div>
+                  <AnimatePresence>
+                    {openFaqIndex === index && (
+                      <motion.div 
+                        className="faq-v2-a"
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: 'auto', opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                      >
+                        <div className="faq-a-inner">
+                          <p>{item.answer}</p>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 6. FINAL CTA SECTION WITH BACKGROUND */}
       <section className="about-cta-v2">
         <Image 
           src="/images/projects/coverr-oak-farm-2b0707e1d7e2.jpg" 
