@@ -2,24 +2,14 @@ import React from 'react';
 import ProjectDetail from '@/components/ProjectDetail';
 import ProjectCatalog from '@/components/ProjectCatalog';
 import { notFound } from 'next/navigation';
-import pagesProjects from '../../../../clone_ready/pages_projects.json';
+import { categorySlugs, getProjectBySlug, projects } from '@/data/projects';
 
 interface PageProps {
   params: Promise<{ slug: string }>;
 }
 
-const categorySlugs = [
-  'san-vuon-ho-koi',
-  'farm-du-lich-nghi-duong',
-  'da-nhan-tao-nghe-thuat'
-] as const;
-
 export async function generateStaticParams() {
-  const projectParams = pagesProjects
-    .filter((p) => p.url.includes('/project/'))
-    .map((p) => ({
-      slug: p.url.split('/project/')[1].replace('/', '')
-    }));
+  const projectParams = projects.map((project) => ({ slug: project.slug }));
 
   const categoryParams = categorySlugs.map((slug) => ({ slug }));
 
@@ -51,7 +41,7 @@ const ProjectPage = async ({ params }: PageProps) => {
   }
   
   // Find project in the manifest
-  const project = pagesProjects.find((p) => p.url.includes(`/project/${slug}/`));
+  const project = getProjectBySlug(slug);
 
   if (!project) {
     return notFound();

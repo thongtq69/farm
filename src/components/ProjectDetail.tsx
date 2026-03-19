@@ -4,31 +4,32 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import assetsProjects from '../../clone_ready/assets_projects.json';
+import { getProjectBySlug } from '@/data/projects';
 
 interface ProjectDetailProps {
   slug: string;
   projectSummary: {
     title: string;
     meta_description: string | null;
+    image?: string;
+    gallery?: string[];
   };
 }
 
 const ProjectDetail = ({ slug, projectSummary }: ProjectDetailProps) => {
-  // Map relevant images from assets_projects.json
-  const projectUrl = `https://oakfarm.vn/project/${slug}/`;
-  const projectImages = assetsProjects
-    .filter((asset: any) => asset.page_url === projectUrl)
-    .map((asset: any) => {
-      const fileName = asset.local_path.split('/').pop();
-      return `/images/projects/${fileName}`;
-    });
+  const fallbackProject = getProjectBySlug(slug);
+  const projectImages = projectSummary.gallery?.length
+    ? projectSummary.gallery
+    : fallbackProject?.gallery?.length
+      ? fallbackProject.gallery
+      : [projectSummary.image || fallbackProject?.image || '/images/projects/1-3-b1caaea5db89.jpg'];
 
   const mainTitle = projectSummary.title.replace(' - Oak Farm', '');
-  const description = projectSummary.meta_description || "Sơn Hải Landscape vinh dự được làm đơn vị đồng hành cùng chủ đầu tư trong thiết kế và kiến trúc.";
-  const heroImage = projectImages[0] || '/images/projects/1-3-b1caaea5db89.jpg';
+  const description =
+    projectSummary.meta_description ||
+    'Sơn Hải Landscape vinh dự được làm đơn vị đồng hành cùng chủ đầu tư trong thiết kế và kiến trúc.';
+  const heroImage = projectImages[0] || projectSummary.image || fallbackProject?.image || '/images/projects/1-3-b1caaea5db89.jpg';
 
-  // Extract info from title/slug if possible or use generic placeholders
   const projectInfo = [
     { label: 'QUY MÔ', value: 'Farmstay & Homestay' },
     { label: 'ĐỊA ĐIỂM', value: 'Việt Nam' },
@@ -38,25 +39,14 @@ const ProjectDetail = ({ slug, projectSummary }: ProjectDetailProps) => {
 
   return (
     <div className="project-detail-modern">
-      {/* Hero Section */}
       <section className="project-hero">
         <div className="hero-bg-wrapper">
-          <Image 
-            src={heroImage} 
-            alt={mainTitle} 
-            fill 
-            className="hero-img-parallax"
-            priority 
-          />
+          <Image src={heroImage} alt={mainTitle} fill className="hero-img-parallax" priority />
           <div className="hero-overlay-project"></div>
         </div>
-        
+
         <div className="container project-hero-content">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
+          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
             <span className="project-category-badge">ARCHITECTURE & LANDSCAPE</span>
             <h1 className="project-main-title">{mainTitle}</h1>
             <p className="project-subtitle-desc">{description}</p>
@@ -64,7 +54,6 @@ const ProjectDetail = ({ slug, projectSummary }: ProjectDetailProps) => {
         </div>
       </section>
 
-      {/* Info Grid Section */}
       <section className="project-info-section bg-secondary">
         <div className="container">
           <div className="project-info-grid">
@@ -78,7 +67,6 @@ const ProjectDetail = ({ slug, projectSummary }: ProjectDetailProps) => {
         </div>
       </section>
 
-      {/* Image Gallery */}
       <section className="project-gallery section">
         <div className="container">
           <div className="gallery-header text-center">
@@ -88,9 +76,9 @@ const ProjectDetail = ({ slug, projectSummary }: ProjectDetailProps) => {
 
           <div className="gallery-layout-modern">
             {projectImages.map((img, index) => (
-              <motion.div 
+              <motion.div
                 className={`gallery-item ${index % 5 === 0 ? 'large' : index % 3 === 0 ? 'medium' : 'regular'}`}
-                key={index}
+                key={`${img}-${index}`}
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
@@ -98,10 +86,10 @@ const ProjectDetail = ({ slug, projectSummary }: ProjectDetailProps) => {
                 whileHover={{ y: -10 }}
               >
                 <div className="gallery-img-wrapper">
-                  <Image 
-                    src={img} 
-                    alt={`Project visualization ${index + 1}`} 
-                    fill 
+                  <Image
+                    src={img}
+                    alt={`Project visualization ${index + 1}`}
+                    fill
                     className="gallery-img"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
@@ -115,7 +103,6 @@ const ProjectDetail = ({ slug, projectSummary }: ProjectDetailProps) => {
         </div>
       </section>
 
-      {/* Bottom CTA */}
       <section className="project-related-cta section">
         <div className="container">
           <div className="cta-modern-dark">
