@@ -48,7 +48,6 @@ const Footer = () => {
             <li><Link href="/">Trang chủ</Link></li>
             <li><Link href="/chung-toi">Chúng tôi</Link></li>
             <li><Link href="/project">Dự án</Link></li>
-            <li><Link href="/blog">Blog</Link></li>
             <li><Link href="/bao-gia-thiet-ke-farm">Báo giá thiết kế Farm</Link></li>
           </ul>
         </div>

@@ -5445,3 +5445,374 @@ img {
   .quote-form-panel { padding: 4rem 2rem; }
 }
 
+
+/* ============================================================
+   REELS PAGE STYLES
+   ============================================================ */
+
+.reels-page-main {
+  padding-top: var(--header-height);
+  background: white;
+}
+
+.reels-header {
+  padding: 6rem 0 4rem;
+}
+
+.reels-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(3rem, 6vw, 4.5rem);
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+  color: #1a1a1a;
+}
+
+.reels-intro {
+  font-size: 1.25rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Reels Grid */
+.reels-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  padding-bottom: 8rem;
+}
+
+.reel-card {
+  position: relative;
+  aspect-ratio: 9/16;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.reel-thumbnail {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.reel-play-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+}
+
+.play-icon {
+  width: 60px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  transition: all 0.3s ease;
+}
+
+.reel-card:hover .play-icon {
+  transform: scale(1.15);
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.reel-content-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 2.5rem 1.5rem 1.5rem;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+  color: white;
+  z-index: 10;
+}
+
+.reel-category {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  opacity: 0.7;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.reel-title-text {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 0.4rem;
+  line-height: 1.2;
+}
+
+.reel-duration {
+  font-size: 0.75rem;
+  opacity: 0.6;
+}
+
+@media (max-width: 1200px) {
+  .reels-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .reels-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+  .reels-header { padding: 4rem 0 2rem; }
+}
+
+@media (max-width: 480px) {
+  .reels-grid { grid-template-columns: 1fr; }
+}
+
+
+/* ============================================================
+   ABOUT PAGE V2 - IMMERSIVE BACKGROUND DESIGN
+   ============================================================ */
+
+.about-v2 {
+  overflow: hidden;
+}
+
+.about-hero-v2 {
+  position: relative;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hero-bg-img {
+  object-fit: cover;
+  z-index: 1;
+}
+
+.hero-overlay-dark {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(22, 50, 10, 0.8) 0%, rgba(22, 50, 10, 0.4) 60%, transparent 100%);
+  z-index: 2;
+}
+
+.hero-glass-box {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  padding: 5rem;
+  border-radius: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  max-width: 700px;
+  color: white;
+}
+
+.hero-glass-box h1 {
+  font-size: clamp(3.5rem, 8vw, 6rem);
+  font-weight: 300;
+  margin-bottom: 2rem;
+  line-height: 1;
+}
+
+.hero-glass-box p {
+  font-size: 1.25rem;
+  line-height: 1.8;
+  opacity: 0.9;
+}
+
+/* Vision Section */
+.about-vision-v2 {
+  display: flex;
+  min-height: 700px;
+}
+
+.vision-image-side {
+  flex: 1;
+  position: relative;
+}
+
+.vision-content-side {
+  flex: 1;
+  background: white;
+  display: flex;
+  align-items: center;
+  padding: 6rem;
+}
+
+.vision-text-box h2 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  color: var(--primary-dark);
+}
+
+.vision-text-box p {
+  font-size: 1.15rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+}
+
+.vision-stats {
+  display: flex;
+  gap: 4rem;
+  margin-top: 3rem;
+}
+
+.stat-item strong {
+  display: block;
+  font-size: 3rem;
+  font-family: 'Outfit', sans-serif;
+  color: var(--secondary);
+  line-height: 1;
+}
+
+.stat-item span {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #999;
+}
+
+/* Values v2 */
+.values-grid-v2 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  margin-top: 4rem;
+}
+
+.value-card-v2 {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 4rem 3rem;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.4s;
+}
+
+.value-card-v2:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: var(--secondary);
+}
+
+.value-card-v2 .val-num {
+  font-family: 'Overlock', cursive;
+  font-size: 3rem;
+  color: var(--secondary);
+  opacity: 0.4;
+  margin-bottom: 1.5rem;
+}
+
+.value-card-v2 h3 {
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.value-card-v2 p {
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.6;
+}
+
+/* Team v2 */
+.team-grid-v2 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2.5rem;
+  margin-top: 4rem;
+}
+
+.member-card-v2 {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.member-portrait {
+  position: relative;
+  height: 350px;
+}
+
+.member-bio {
+  padding: 2rem;
+}
+
+.member-bio h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.25rem;
+}
+
+.member-role {
+  display: block;
+  color: var(--secondary);
+  font-weight: 700;
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.member-bio p {
+  font-size: 0.95rem;
+  color: #777;
+  line-height: 1.5;
+}
+
+/* CTA v2 */
+.about-cta-v2 {
+  position: relative;
+  padding: 10rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.cta-overlay-v2 {
+  position: absolute;
+  inset: 0;
+  background: rgba(22, 50, 10, 0.85);
+  z-index: 2;
+}
+
+.cta-bg-img {
+  object-fit: cover;
+  z-index: 1;
+}
+
+.about-cta-v2 h2 {
+  font-size: 3.5rem;
+  margin-bottom: 2rem;
+  color: white !important;
+}
+
+.about-cta-v2 p {
+  font-size: 1.2rem;
+  opacity: 0.8;
+  margin-bottom: 3rem;
+  max-width: 700px;
+  margin-inline: auto;
+}
+
+.cta-flex-btns {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+@media (max-width: 1200px) {
+  .team-grid-v2 { grid-template-columns: repeat(2, 1fr); }
+  .values-grid-v2 { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 991px) {
+  .about-vision-v2 { flex-direction: column; }
+  .vision-image-side { min-height: 400px; }
+  .vision-content-side { padding: 4rem 2rem; }
+  .hero-glass-box { padding: 3rem; border-radius: 20px; }
+}
+
+@media (max-width: 640px) {
+  .team-grid-v2 { grid-template-columns: 1fr; }
+  .values-grid-v2 { grid-template-columns: 1fr; }
+  .cta-flex-btns { flex-direction: column; }
+}
+
