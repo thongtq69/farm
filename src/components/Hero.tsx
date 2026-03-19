@@ -1,12 +1,19 @@
 'use client';
 
-import React, { useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
+const heroSlides = [
+  '/images/beforeafter/ChatGPT Image 08_19_42 18 thg 3, 2026.png',
+  '/images/beforeafter/dfd.jpg',
+  '/images/beforeafter/ChatGPT Image 08_06_17 18 thg 3, 2026.png'
+];
+
 const Hero = () => {
   const ref = useRef(null);
+  const [activeSlide, setActiveSlide] = useState(0);
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start start", "end start"]
@@ -14,16 +21,34 @@ const Hero = () => {
   
   const yBg = useTransform(scrollYProgress, [0, 1], ["0%", "40%"]);
 
+  useEffect(() => {
+    const timer = window.setInterval(() => {
+      setActiveSlide((current) => (current + 1) % heroSlides.length);
+    }, 3200);
+
+    return () => window.clearInterval(timer);
+  }, []);
+
   return (
     <section className="hero" ref={ref}>
       <motion.div className="hero-bg" style={{ y: yBg }}>
-        <Image 
-          src="/images/projects/1-3-b1caaea5db89.jpg" 
-          alt="Son Hai Landscape Architecture" 
-          fill
-          style={{ objectFit: 'cover', opacity: 0.7 }}
-          priority
-        />
+        {heroSlides.map((slide, index) => (
+          <motion.div
+            key={slide}
+            className="hero-bg-slide"
+            initial={false}
+            animate={{ opacity: activeSlide === index ? 1 : 0 }}
+            transition={{ duration: 1.2, ease: 'easeInOut' }}
+          >
+            <Image
+              src={slide}
+              alt={`Son Hai Landscape Architecture ${index + 1}`}
+              fill
+              style={{ objectFit: 'cover' }}
+              priority={index === 0}
+            />
+          </motion.div>
+        ))}
         <div className="hero-overlay"></div>
       </motion.div>
 

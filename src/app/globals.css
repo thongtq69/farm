@@ -5729,6 +5729,16 @@ img {
 .member-portrait {
   position: relative;
   height: 350px;
+  background: #fbfcfb; /* Subtle light background to replace checkerboard if transparent */
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.member-portrait img {
+  object-fit: contain !important;
+  width: 100% !important;
+  height: 100% !important;
 }
 
 .member-bio {
