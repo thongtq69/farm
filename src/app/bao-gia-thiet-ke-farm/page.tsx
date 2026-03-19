@@ -82,16 +82,16 @@ export default function PricingPage() {
       </section>
 
       {/* Bottom Banner */}
-      <section className="cta-banner-pricing section">
-        <div className="container">
-          <div className="dark-card-banner text-center" style={{ background: '#16320a', borderRadius: '40px', padding: '5rem' }}>
-            <h3 style={{ color: 'white', fontSize: '2.5rem', marginBottom: '2rem' }}>Khởi đầu cho một dự án bền vững</h3>
-            <p style={{ color: 'rgba(255,255,255,0.7)', marginBottom: '3rem', maxWidth: '600px', marginInline: 'auto' }}>
+      <section className="cta-banner-pricing section" style={{ padding: '0 1.5rem 4rem' }}>
+        <div className="container" style={{ padding: 0 }}>
+          <div className="dark-card-banner text-center" style={{ background: 'var(--primary-dark)', borderRadius: '30px', padding: 'clamp(2.5rem, 6vw, 5rem) clamp(1.5rem, 4vw, 3rem)' }}>
+            <h3 style={{ color: 'white', fontSize: 'clamp(1.8rem, 5vw, 2.5rem)', marginBottom: '1rem', fontFamily: 'Outfit, sans-serif', fontWeight: 600 }}>Khởi đầu cho một dự án bền vững</h3>
+            <p style={{ color: 'rgba(255,255,255,0.7)', marginBottom: '2.5rem', maxWidth: '600px', marginInline: 'auto', fontSize: '1rem', lineHeight: '1.6' }}>
               Mọi công trình đều bắt đầu từ một ý tưởng hay và một bản quy hoạch đúng đắn. Hãy để chúng tôi đồng hành cùng anh/chị.
             </p>
-            <div className="cta-btns" style={{ display: 'flex', gap: '1.5rem', justifyContent: 'center' }}>
-              <a href="https://zalo.me/0888220044" className="btn-modern-primary">Liên hệ Zalo</a>
-              <a href="/project" className="btn-modern-outline-white">Xem mẫu hồ sơ</a>
+            <div className="cta-btns-mobile" style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+              <a href="https://zalo.me/0888220044" className="btn-modern-primary" style={{ flex: '1 1 auto', textAlign: 'center' }}>Liên hệ Zalo</a>
+              <a href="/project" className="btn-modern-outline-white" style={{ flex: '1 1 auto', textAlign: 'center' }}>Xem mẫu hồ sơ</a>
             </div>
           </div>
         </div>

@@ -1837,7 +1837,7 @@ img {
 }
 
 .footer-logo img {
-  width: 280px;
+  width: 400px;
   max-width: 100%;
   height: auto;
 }
@@ -3823,7 +3823,7 @@ img {
 
 @media (max-width: 640px) {
   .footer-logo img {
-    width: 220px;
+    width: 280px;
   }
 }
 
@@ -3834,18 +3834,43 @@ img {
 }
 
 .social-links-modern a {
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.05);
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.06);
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
-  font-size: 14px;
-  font-style: normal;
   border: 1px solid rgba(255,255,255,0.1);
   text-decoration: none;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.16);
+}
+
+.social-links-modern a svg {
+  width: 22px;
+  height: 22px;
+}
+
+.social-links-modern a img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+
+.social-links-modern a.is-facebook:hover {
+  background: #1877f2;
+  border-color: #1877f2;
+}
+
+.social-links-modern a.is-zalo:hover {
+  background: #0068ff;
+  border-color: #0068ff;
+}
+
+.social-links-modern a.is-instagram:hover {
+  background: linear-gradient(135deg, #f58529 0%, #dd2a7b 55%, #8134af 100%);
+  border-color: transparent;
 }
 
 .footer-section h3 {
@@ -5450,9 +5475,36 @@ img {
 }
 
 @media (max-width: 1200px) {
-  .quote-grid-premium { grid-template-columns: 1fr; }
-  .quote-branding-panel { justify-content: flex-start; padding: 6rem 2rem; }
-  .quote-form-panel { padding: 4rem 2rem; }
+  .quote-grid-premium { grid-template-columns: 1fr; min-height: auto; }
+  .quote-branding-panel { justify-content: flex-start; padding: 5rem 3rem; }
+  .quote-form-panel { padding: 4rem 3rem; }
+}
+
+@media (max-width: 991px) {
+  .quote-branding-panel {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 3.5rem 1.5rem;
+    gap: 3rem;
+  }
+  .quote-left-info, .coop-badge, .panel-inner-content {
+    width: 100%;
+    max-width: 100%;
+  }
+  .modern-b-item {
+    gap: 1rem;
+    flex-wrap: wrap; /* Prevent squishing text next to number */
+  }
+  .quote-form-panel {
+    padding: 3rem 1.5rem;
+  }
+  .panel-title {
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+  }
+  .benefit-list-modern {
+    margin-bottom: 2.5rem;
+  }
 }
 
 
@@ -5944,4 +5996,117 @@ img {
 
 @media (max-width: 640px) {
   .values-grid-v2 { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   HERO MOBILE FIXES
+   ============================================================ */
+
+@media (max-width: 991px) {
+  .hero {
+    height: auto;
+    min-height: 100vh;
+    padding-top: 80px; /* Adjust for header */
+    display: flex !important;
+    align-items: center !important;
+  }
+
+  .hero-container {
+    padding: 2rem 1.5rem 0;
+    flex-direction: column !important;
+    align-items: center !important;
+    min-height: auto;
+    justify-content: flex-start !important;
+    position: relative;
+    z-index: 10;
+  }
+
+  .hero-glass-panel {
+    background: rgba(14, 42, 4, 0.65); /* Use primary color with opacity */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 2rem 1.5rem;
+    border-radius: 24px;
+    margin-bottom: 0; /* Removing margin to use negative margin on foreground */
+    text-align: center;
+    max-width: 100%;
+    width: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 10;
+  }
+
+  .hero-title {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    line-height: 1.15;
+  }
+
+  .hero-description {
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-description p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    opacity: 0.9;
+  }
+
+  .hero-btns-wrapper-new {
+    flex-direction: column; /* Stack buttons! It's better for narrow screens */
+    gap: 0.75rem;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero-btns-wrapper-new .btn-modern-primary,
+  .hero-btns-wrapper-new .btn-modern-outline-white {
+    width: 100%;
+    flex: none;
+    padding: 1rem;
+    font-size: 1rem;
+    letter-spacing: 0;
+  }
+
+  .hero-foreground {
+    position: relative;
+    width: 85%;
+    max-width: 380px;
+    height: auto;
+    left: auto;
+    bottom: auto;
+    right: auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin: 0 auto;
+    z-index: 15; /* Put it in front if it overlaps slightly */
+    opacity: 1;
+    margin-top: -1.5rem; /* Overlap the glass panel just a little bit */
+  }
+
+  .hero-foreground img {
+    width: 100% !important;
+    height: auto !important;
+    object-fit: contain;
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.3));
+    display: block;
+  }
+  
+  .hero-bg {
+    transform: none !important;
+  }
+
+  .hero-overlay {
+    background: linear-gradient(to bottom, rgba(14, 42, 4, 0.65) 0%, rgba(14, 42, 4, 0.8) 100%);
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2.2rem;
+  }
+  
+  .hero-glass-panel {
+    padding: 2rem 1.25rem;
+  }
 }

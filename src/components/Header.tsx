@@ -35,8 +35,8 @@ const Header = () => {
             <Image 
               src="/images/branding/logofarm.png" 
               alt="Son Hai Landscape Logo" 
-              width={180} 
-              height={60} 
+              width={220} 
+              height={72} 
               priority
             />
           </Link>
