@@ -5,20 +5,20 @@ import Image from 'next/image';
 
 const cases = [
   {
-    name: 'Quy hoạch Farmstay Nghỉ Dưỡng',
-    location: 'Sơn Hải Landscape Execution',
+    name: 'Thiết kế Sân Vườn Biệt Thự',
+    location: 'Dự án thực tế 2025',
     before: '/images/beforeafter/dfr.jpg',
     after: '/images/beforeafter/dfd.jpg'
   },
   {
-    name: 'Thiết kế Sân Vườn Biệt Thự',
-    location: 'Dự án thực tế 2025',
+    name: 'Cảnh quan Hồ Koi & Đá Nghệ Thuật',
+    location: 'Công trình tiêu biểu',
     before: '/images/beforeafter/ChatGPT Image 08_03_18 18 thg 3, 2026.png',
     after: '/images/beforeafter/ChatGPT Image 08_06_17 18 thg 3, 2026.png'
   },
   {
-    name: 'Cảnh quan Hồ Koi & Đá Nghệ Thuật',
-    location: 'Công trình tiêu biểu',
+    name: 'Quy hoạch Farmstay Nghỉ Dưỡng',
+    location: 'Sơn Hải Landscape Execution',
     before: '/images/beforeafter/ChatGPT Image 08_23_37 18 thg 3, 2026.png',
     after: '/images/beforeafter/ChatGPT Image 08_19_42 18 thg 3, 2026.png'
   }
