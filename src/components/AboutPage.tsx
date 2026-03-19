@@ -78,7 +78,7 @@ const AboutPage = () => {
       {/* 1. HERO WITH BACKGROUND */}
       <section className="about-hero-v2">
         <Image 
-          src="/images/projects/1-3-b1caaea5db89.jpg" 
+          src="/images/home/project-1.jpg" 
           alt="About Us Background" 
           fill 
           className="hero-bg-img"
@@ -121,7 +121,7 @@ const AboutPage = () => {
       <section className="about-vision-v2">
         <div className="vision-image-side">
           <Image 
-            src="/images/projects/1-4-1971866182c4.jpg" 
+            src="/images/home/project-3.png" 
             alt="Our Vision" 
             fill 
             style={{ objectFit: 'cover' }}
@@ -258,7 +258,7 @@ const AboutPage = () => {
       {/* 6. FINAL CTA SECTION WITH BACKGROUND */}
       <section className="about-cta-v2">
         <Image 
-          src="/images/projects/coverr-oak-farm-2b0707e1d7e2.jpg" 
+          src="/images/home/project-4.png" 
           alt="Contact Background" 
           fill 
           className="cta-bg-img"
