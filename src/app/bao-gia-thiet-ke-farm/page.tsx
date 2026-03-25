@@ -52,8 +52,8 @@ export default function PricingPage() {
 
             <div className="pricing-support" style={{ marginTop: '5rem', display: 'flex', alignItems: 'center', gap: '1.5rem', borderTop: '1px solid #e2e8f0', paddingTop: '2.5rem' }}>
               <div className="support-avatars" style={{ display: 'flex' }}>
-                 <Image src="https://res.cloudinary.com/dwalymiy3/image/upload/v1774426510/farm/images/team/huzpuv69shnux7lscshk.jpg" alt="Support" width={50} height={50} style={{ borderRadius: '50%', border: '4px solid white', marginRight: '-15px' }} />
-                 <Image src="https://res.cloudinary.com/dwalymiy3/image/upload/v1774426510/farm/images/team/huzpuv69shnux7lscshk.jpg" alt="Support" width={50} height={50} style={{ borderRadius: '50%', border: '4px solid white' }} />
+                 <Image src="https://res.cloudinary.com/dwalymiy3/image/upload/v1774426595/farm/images/projects/nymwhku7vdxhge1isoly.jpg" alt="Support" width={50} height={50} style={{ borderRadius: '50%', border: '4px solid white', marginRight: '-15px', objectFit: 'cover' }} />
+                 <Image src="https://res.cloudinary.com/dwalymiy3/image/upload/v1774426462/farm/images/projects/h2kf73vgyvthd3lxzsbq.jpg" alt="Support" width={50} height={50} style={{ borderRadius: '50%', border: '4px solid white', objectFit: 'cover' }} />
               </div>
               <div>
                 <p style={{ fontSize: '0.9rem', color: '#666', fontWeight: 500, marginBottom: '0.2rem' }}>Đội ngũ KTS trực tuyến</p>
