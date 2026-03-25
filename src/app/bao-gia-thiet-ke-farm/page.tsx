@@ -4,11 +4,6 @@ import React from 'react';
 import QuoteForm from '../../components/QuoteForm';
 import Image from 'next/image';
 
-export const metadata = {
-  title: 'Đăng Ký Nhận Tư Vấn | Son Hai Landscape',
-  description: 'Nhận tư vấn thiết kế Farmstay, sân vườn, hồ koi tức thì. Sơn Hải Landscape cung cấp quy trình thiết kế chuyên nghiệp qua 7 giai đoạn.',
-};
-
 export default function PricingPage() {
   return (
     <main className="pricing-page-v2" style={{ background: '#f8fafc', minHeight: '100vh', paddingTop: '10rem', paddingBottom: '10rem' }}>
