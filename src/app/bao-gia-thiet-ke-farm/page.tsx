@@ -1,5 +1,6 @@
 import React from 'react';
 import QuoteForm from '../../components/QuoteForm';
+import Image from 'next/image';
 
 export const metadata = {
   title: 'Đăng Ký Nhận Tư Vấn | Son Hai Landscape',
@@ -8,94 +9,85 @@ export const metadata = {
 
 export default function PricingPage() {
   return (
-    <main className="pricing-page">
-      {/* Header */}
-      <section className="page-header section-dark">
-        <div className="container">
-          <div className="page-header-content text-center">
-            <span className="subtitle" style={{ color: '#c5a059' }}>MINH BẠCH & CHUYÊN NGHIỆP</span>
-            <h1 className="page-title" style={{ fontSize: 'clamp(3rem, 6vw, 5rem)', marginBottom: '1.5rem' }}>
-              Đăng ký nhận tư vấn
+    <main className="pricing-page-v2" style={{ background: '#f8fafc', minHeight: '100vh', paddingTop: '10rem', paddingBottom: '10rem' }}>
+      <div className="container">
+        <div className="pricing-grid-v2" style={{ display: 'grid', gridTemplateColumns: 'minmax(400px, 1fr) 550px', gap: '6rem', alignItems: 'center' }}>
+          
+          {/* Left: Content */}
+          <div className="pricing-content-left">
+            <span className="subtitle" style={{ color: '#00c689', background: 'rgba(0,198,137,0.1)', padding: '0.6rem 1.8rem', borderRadius: '50px', display: 'inline-block', marginBottom: '1.5rem', fontWeight: 700, fontSize: '1rem' }}>TƯ VẤN CHUYÊN SÂU 1:1</span>
+            
+            <h1 style={{ 
+              fontSize: 'clamp(3rem, 6vw, 4.5rem)', 
+              color: '#0d3f32', 
+              fontFamily: 'Outfit, sans-serif', 
+              fontWeight: 800, 
+              lineHeight: 1.1,
+              marginBottom: '2rem' 
+            }}>
+              Khởi tạo <br /> không gian <br /> <span style={{ color: '#00c689' }}>bền vững</span>
             </h1>
-            <p className="page-desc" style={{ margin: '0 auto', maxWidth: '700px', fontSize: '1.1rem', opacity: 0.9 }}>
-              Anh/Chị vui lòng điền thông tin đăng ký tư vấn theo mẫu dưới đây. Sơn Hải Landscape sẽ tiếp nhận và liên hệ tư vấn cụ thể theo từng nhu cầu dự án.
+            
+            <p style={{ fontSize: '1.25rem', color: '#444', lineHeight: 1.6, marginBottom: '3.5rem', maxWidth: '550px' }}>
+              Chúng tôi không chỉ thi công, chúng tôi cùng anh chị kiến tạo giải pháp quy hoạch tổng thể mang đậm dấu ấn cá nhân và tôn trọng thiên nhiên.
             </p>
-          </div>
-        </div>
-      </section>
 
-      {/* Quote Form Section */}
-      <section className="quote-section">
-        <div className="container-fluid no-padding">
-          <div className="quote-grid-premium">
-            {/* Left Column: Branding & Info */}
-            <div className="quote-branding-panel section-dark" data-aos="fade-right">
-              <div className="quote-left-info">
-                <span className="subtitle" style={{ color: 'var(--secondary)' }}>MINH BẠCH & CHUYÊN NGHIỆP</span>
-                <h1 className="arsenal">NHẬN BÁO GIÁ <br /> THIẾT KẾ & THI CÔNG</h1>
-                <p className="page-desc-panel">
-                  Chúng tôi cung cấp giải pháp quy hoạch tổng thể và thiết kế chi tiết cho mọi mô hình FarmStay, Garden và Nghỉ dưỡng.
-                </p>
-              </div>
-              <div className="coop-badge">
-                <span className="subtitle" style={{ color: 'var(--secondary)' }}>TƯ VẤN CHUYÊN SÂU</span>
-                
-                <div className="benefit-list-modern">
-                  <div className="modern-b-item">
-                    <div className="b-num">01</div>
-                    <div className="b-text">
-                      <h4>Giải pháp tối ưu</h4>
-                      <p>Kiến tạo không gian hài hòa giữa thẩm mỹ kiến trúc và công năng sử dụng thực tế.</p>
-                    </div>
-                  </div>
-                  <div className="modern-b-item">
-                    <div className="b-num">02</div>
-                    <div className="b-text">
-                      <h4>Minh bạch chi phí</h4>
-                      <p>Báo giá chi tiết từng hạng mục, cam kết không phát sinh chi phí ngoài dự toán.</p>
-                    </div>
-                  </div>
-                  <div className="modern-b-item">
-                    <div className="b-num">03</div>
-                    <div className="b-text">
-                      <h4>Đồng hành bền vững</h4>
-                      <p>Hỗ trợ pháp lý, giám sát thi công và bảo trì cảnh quan trọn đời dự án.</p>
-                    </div>
-                  </div>
+            <div className="benefit-stack" style={{ display: 'flex', flexDirection: 'column', gap: '2.5rem' }}>
+              <div className="benefit-item-v2" style={{ display: 'flex', gap: '1.5rem' }}>
+                <div className="benefit-icon-v2" style={{ width: '48px', height: '48px', background: '#0d3f32', color: 'white', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                  <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V9h2v7zm4 0h-2V7h2v9z"/></svg>
                 </div>
-
-                <div className="panel-cta-box">
-                  <p>Hỗ trợ tư vấn trực tiếp 24/7</p>
-                  <a href="tel:0888220044" className="panel-phone">0888.22.00.44</a>
+                <div>
+                  <h4 style={{ fontSize: '1.2rem', fontWeight: 700, color: '#0d3f32', marginBottom: '0.5rem' }}>Giải pháp quy hoạch 4.0</h4>
+                  <p style={{ color: '#666' }}>Tối ưu hóa công năng trên từng mét vuông diện tích.</p>
+                </div>
+              </div>
+              <div className="benefit-item-v2" style={{ display: 'flex', gap: '1.5rem' }}>
+                <div className="benefit-icon-v2" style={{ width: '48px', height: '48px', background: '#0d3f32', color: 'white', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                  <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M12 3L2 12h3v8h6v-6h2v6h6v-8h3L12 3z"/></svg>
+                </div>
+                <div>
+                  <h4 style={{ fontSize: '1.2rem', fontWeight: 700, color: '#0d3f32', marginBottom: '0.5rem' }}>Thực tế & Bền vững</h4>
+                  <p style={{ color: '#666' }}>Cam kết sử dụng vật liệu tự nhiên, hệ sinh thái tự cân bằng.</p>
                 </div>
               </div>
             </div>
 
-            {/* Right Column: Interactive Form */}
-            <div className="quote-form-panel" data-aos="fade-left">
-              <div className="form-panel-wrapper">
-                <QuoteForm />
+            <div className="pricing-support" style={{ marginTop: '5rem', display: 'flex', alignItems: 'center', gap: '1.5rem', borderTop: '1px solid #e2e8f0', paddingTop: '2.5rem' }}>
+              <div className="support-avatars" style={{ display: 'flex' }}>
+                 <Image src="https://res.cloudinary.com/dwalymiy3/image/upload/v1774426510/farm/images/team/huzpuv69shnux7lscshk.jpg" alt="Support" width={50} height={50} style={{ borderRadius: '50%', border: '4px solid white', marginRight: '-15px' }} />
+                 <Image src="https://res.cloudinary.com/dwalymiy3/image/upload/v1774426510/farm/images/team/huzpuv69shnux7lscshk.jpg" alt="Support" width={50} height={50} style={{ borderRadius: '50%', border: '4px solid white' }} />
+              </div>
+              <div>
+                <p style={{ fontSize: '0.9rem', color: '#666', fontWeight: 500, marginBottom: '0.2rem' }}>Đội ngũ KTS trực tuyến</p>
+                <a href="tel:0888220044" style={{ fontSize: '1.2rem', fontWeight: 800, color: '#0d3f32', textDecoration: 'none' }}>0888.22.00.44</a>
               </div>
             </div>
           </div>
-        </div>
-      </section>
 
-      {/* Bottom Banner */}
-      <section className="cta-banner-pricing section" style={{ padding: '0 1.5rem 4rem' }}>
-        <div className="container" style={{ padding: 0 }}>
-          <div className="dark-card-banner text-center" style={{ background: 'var(--primary-dark)', borderRadius: '30px', padding: 'clamp(2.5rem, 6vw, 5rem) clamp(1.5rem, 4vw, 3rem)' }}>
-            <h3 style={{ color: 'white', fontSize: 'clamp(1.8rem, 5vw, 2.5rem)', marginBottom: '1rem', fontFamily: 'Outfit, sans-serif', fontWeight: 600 }}>Khởi đầu cho một dự án bền vững</h3>
-            <p style={{ color: 'rgba(255,255,255,0.7)', marginBottom: '2.5rem', maxWidth: '600px', marginInline: 'auto', fontSize: '1rem', lineHeight: '1.6' }}>
-              Mọi công trình đều bắt đầu từ một ý tưởng hay và một bản quy hoạch đúng đắn. Hãy để chúng tôi đồng hành cùng anh/chị.
-            </p>
-            <div className="cta-btns-mobile" style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-              <a href="https://zalo.me/0888220044" className="btn-modern-primary" style={{ flex: '1 1 auto', textAlign: 'center' }}>Liên hệ Zalo</a>
-              <a href="/project" className="btn-modern-outline-white" style={{ flex: '1 1 auto', textAlign: 'center' }}>Xem mẫu hồ sơ</a>
-            </div>
+          {/* Right: Premium Form */}
+          <div className="pricing-form-right" style={{ position: 'relative' }}>
+             <QuoteForm />
+             {/* Decorative element */}
+             <div className="form-decoration" style={{ position: 'absolute', top: '-40px', right: '-40px', width: '200px', height: '200px', background: 'radial-gradient(circle, #00c689 0%, transparent 70%)', opacity: 0.1, zIndex: -1 }}></div>
           </div>
+
         </div>
-      </section>
+      </div>
+
+      {/* Mobile styling in global.css to handle grid-template-columns: 1fr */}
+      <style jsx>{`
+        @media (max-width: 1024px) {
+          .pricing-grid-v2 {
+            grid-template-columns: 1fr !important;
+            gap: 4rem !important;
+          }
+          .pricing-page-v2 {
+            padding-top: 6rem !important;
+            padding-bottom: 6rem !important;
+          }
+        }
+      `}</style>
     </main>
   );
 }
