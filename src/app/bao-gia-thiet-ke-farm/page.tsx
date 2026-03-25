@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import QuoteForm from '../../components/QuoteForm';
 import Image from 'next/image';
