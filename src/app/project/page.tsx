@@ -8,21 +8,7 @@ export const metadata = {
 
 export default function ProjectsPage() {
   return (
-    <main className="projects-page-main">
-      <div className="page-header section-dark">
-        <div className="container">
-          <div className="page-header-content" data-aos="fade-up">
-            <span className="subtitle" style={{ color: '#E9D28B' }}>CHÚNG TÔI ĐÃ THỰC HIỆN</span>
-            <h1 className="page-title" style={{ fontSize: 'clamp(3rem, 6vw, 5rem)', marginBottom: '1.5rem' }}>
-              Dự án thiết kế
-            </h1>
-            <p className="page-desc arsenal" style={{ maxWidth: '700px', fontSize: '1.2rem', opacity: 0.9 }}>
-              Với hơn 45 dự án trải dài trên khắp các tỉnh thành Việt Nam, Son Hai Landscape tự hào mang đến những giải pháp quy hoạch và kiến trúc bền vững, tôn trọng thiên nhiên.
-            </p>
-          </div>
-        </div>
-      </div>
-      
+    <main className="projects-page-main" style={{ background: '#f8fafc', minHeight: '100vh', padding: '6rem 0' }}>
       <ProjectCatalog />
     </main>
   );
