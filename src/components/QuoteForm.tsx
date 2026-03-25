@@ -6,114 +6,96 @@ const QuoteForm = () => {
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
-    email: '',
-    location: '',
-    area: '',
-    service: 'farmstay',
-    message: ''
+    propertyType: '',
+    investment: ''
   });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log('Sending quote request:', formData);
-    alert('Cảm ơn anh/chị! Chúng tôi sẽ liên hệ lại ngay để gửi báo giá chi tiết.');
+    alert('Cảm ơn bạn đã đăng ký! Chúng tôi sẽ liên hệ trong thời gian sớm nhất.');
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   return (
-    <div className="quote-form-card">
-      <div className="form-head">
-        <h3>Điền thông tin</h3>
-        <p>Báo giá sẽ được gửi qua Zalo/Email sau 24h.</p>
+    <div className="quote-form-card popup-styled-form">
+      <div className="form-head text-center">
+        <h3 style={{ fontFamily: 'Outfit, sans-serif', fontSize: '2rem', marginBottom: '1rem', color: '#1a2a1b', fontWeight: 800 }}>ĐĂNG KÝ NHẬN TƯ VẤN</h3>
+        <p style={{ color: '#666', marginBottom: '2rem' }}>Điền thông tin của bạn để chúng tôi hỗ trợ nhanh nhất.</p>
       </div>
       
-      <form onSubmit={handleSubmit} className="pricing-form-content">
-        <div className="form-group-pricing">
-          <label>Họ & Tên *</label>
+      <form onSubmit={handleSubmit} className="popup-form form-light-theme">
+        <div className="form-group">
+          <label style={{ color: '#333' }}>Họ và tên *</label>
           <input 
             type="text" 
             name="name" 
-            placeholder="Ví dụ: Anh Hải" 
+            placeholder="Nguyễn Văn A" 
             required 
             onChange={handleChange}
-            className="input-modern"
+            style={{ border: '1px solid #ddd', background: '#f9f9f9' }}
           />
         </div>
 
-        <div className="form-row-pricing">
-          <div className="form-group-pricing">
-            <label>Điện thoại / Zalo *</label>
-            <input 
-              type="tel" 
-              name="phone" 
-              placeholder="0888 22 00 44" 
-              required 
-              onChange={handleChange}
-              className="input-modern"
-            />
-          </div>
-          <div className="form-group-pricing">
-            <label>Địa điểm khu đất *</label>
-            <input 
-              type="text" 
-              name="location" 
-              placeholder="Ví dụ: Lâm Đồng" 
-              required 
-              onChange={handleChange}
-              className="input-modern"
-            />
-          </div>
-        </div>
-
-        <div className="form-row-pricing">
-          <div className="form-group-pricing">
-            <label>Diện tích dự kiến (m2/ha) *</label>
-            <input 
-              type="text" 
-              name="area" 
-              placeholder="5000m2" 
-              required 
-              onChange={handleChange}
-              className="input-modern"
-            />
-          </div>
-          <div className="form-group-pricing">
-            <label>Dịch vụ quan tâm</label>
-            <select name="service" onChange={handleChange} className="select-modern">
-              <option value="farmstay">Thiết kế Farm & Du lịch</option>
-              <option value="homestay">Thiết kế Homestay / Nghỉ dưỡng</option>
-              <option value="garden">Thiết kế Sân vườn / Hồ Koi</option>
-              <option value="landscape">Quy hoạch Cảnh quan tổng thể</option>
-            </select>
-          </div>
-        </div>
-
-        <div className="form-group-pricing">
-          <label>Email liên hệ</label>
+        <div className="form-group">
+          <label style={{ color: '#333' }}>Số điện thoại *</label>
           <input 
-            type="email" 
-            name="email" 
-            placeholder="example@gmail.com" 
+            type="tel" 
+            name="phone" 
+            placeholder="0938 386 679" 
+            required 
             onChange={handleChange}
-            className="input-modern"
+            style={{ border: '1px solid #ddd', background: '#f9f9f9' }}
           />
         </div>
 
-        <div className="form-group-pricing">
-          <label>Lời nhắn của anh/chị</label>
-          <textarea 
-            name="message" 
-            placeholder="Chia sẻ thêm nếu có yêu cầu đặc biệt..." 
-            rows={4}
+        <div className="form-group">
+          <label style={{ color: '#333' }}>Loại công trình *</label>
+          <select 
+            name="propertyType" 
+            required 
+            defaultValue=""
             onChange={handleChange}
-            className="textarea-modern"
-          ></textarea>
+            style={{ border: '1px solid #ddd', background: '#f9f9f9', color: '#333' }}
+          >
+            <option value="" disabled>-- Chọn loại --</option>
+            <option value="san_vuon">Sân vườn biệt thự</option>
+            <option value="ho_koi">Hồ cá Koi</option>
+            <option value="farm">Farm & Khu Nghỉ Dưỡng</option>
+            <option value="da_nhan_tao">Đá nhân tạo nghệ thuật</option>
+            <option value="khac">Khác</option>
+          </select>
         </div>
 
-        <button type="submit" className="btn-modern-primary full-width">Gửi yêu cầu & Nhận báo giá</button>
+        <div className="form-group">
+          <label style={{ color: '#333' }}>Mức đầu tư *</label>
+          <select 
+            name="investment" 
+            required 
+            defaultValue=""
+            onChange={handleChange}
+            style={{ border: '1px solid #ddd', background: '#f9f9f9', color: '#333' }}
+          >
+            <option value="" disabled>-- Chọn mức đầu tư --</option>
+            <option value="duoi_500">Dưới 500 triệu</option>
+            <option value="500_1000">500 triệu - 1 tỷ</option>
+            <option value="1000_3000">1 tỷ - 3 tỷ</option>
+            <option value="tren_3000">Trên 3 tỷ</option>
+          </select>
+        </div>
+
+        <button type="submit" className="popup-submit-btn" style={{ width: '100%', marginTop: '2rem' }}>
+          TƯ VẤN NGAY
+        </button>
+
+        <div className="popup-footer" style={{ color: '#666', marginTop: '1.5rem' }}>
+          <span>✓ Hoàn toàn miễn phí</span>
+          <span className="divider">|</span>
+          <span>✓ Phản hồi nhanh chóng</span>
+        </div>
       </form>
     </div>
   );

@@ -2,6 +2,7 @@
 
 import React, { useEffect } from 'react';
 import Hero from '@/components/Hero';
+import HomeHighlights from '@/components/HomeHighlights';
 import Services from '@/components/Services';
 import Mission from '@/components/Mission';
 import Projects from '@/components/Projects';
@@ -42,6 +43,7 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <HomeHighlights />
       <Services />
       <Mission />
       <Projects />

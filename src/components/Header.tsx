@@ -24,7 +24,7 @@ const Header = () => {
     { name: 'Chúng tôi', href: '/chung-toi' },
     { name: 'Dự án', href: '/project', dropdown: true },
     { name: 'Reels', href: '/reels' },
-    { name: 'Báo giá thiết kế', href: '/bao-gia-thiet-ke-farm' },
+    { name: 'Báo giá ngay', href: '/bao-gia-thiet-ke-farm' },
   ];
 
   return (
@@ -110,7 +110,7 @@ const Header = () => {
               </ul>
             </li>
 
-            <li><Link href="/bao-gia-thiet-ke-farm" onClick={() => setIsMenuOpen(false)}>Báo giá thiết kế Farm</Link></li>
+            <li><Link href="/bao-gia-thiet-ke-farm" onClick={() => setIsMenuOpen(false)}>Báo giá ngay</Link></li>
           </ul>
         </div>
       </div>

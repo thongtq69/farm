@@ -2,8 +2,8 @@ import React from 'react';
 import QuoteForm from '../../components/QuoteForm';
 
 export const metadata = {
-  title: 'Báo Giá Thiết Kế Farmstay | Son Hai Landscape',
-  description: 'Nhận báo giá thiết kế Farmstay, sân vườn, hồ koi tức thì. Sơn Hải Landscape cung cấp quy trình thiết kế chuyên nghiệp qua 7 giai đoạn.',
+  title: 'Đăng Ký Nhận Tư Vấn | Son Hai Landscape',
+  description: 'Nhận tư vấn thiết kế Farmstay, sân vườn, hồ koi tức thì. Sơn Hải Landscape cung cấp quy trình thiết kế chuyên nghiệp qua 7 giai đoạn.',
 };
 
 export default function PricingPage() {
@@ -15,10 +15,10 @@ export default function PricingPage() {
           <div className="page-header-content text-center">
             <span className="subtitle" style={{ color: '#c5a059' }}>MINH BẠCH & CHUYÊN NGHIỆP</span>
             <h1 className="page-title" style={{ fontSize: 'clamp(3rem, 6vw, 5rem)', marginBottom: '1.5rem' }}>
-              Báo giá thiết kế
+              Đăng ký nhận tư vấn
             </h1>
             <p className="page-desc" style={{ margin: '0 auto', maxWidth: '700px', fontSize: '1.1rem', opacity: 0.9 }}>
-              Anh/Chị vui lòng điền thông tin đăng ký báo giá theo mẫu dưới đây. Sơn Hải Landscape sẽ tiếp nhận và gửi báo giá cụ thể theo từng giai đoạn dự án.
+              Anh/Chị vui lòng điền thông tin đăng ký tư vấn theo mẫu dưới đây. Sơn Hải Landscape sẽ tiếp nhận và liên hệ tư vấn cụ thể theo từng nhu cầu dự án.
             </p>
           </div>
         </div>
