@@ -12,10 +12,10 @@ const reviews = [
     content:
       'Son Hai Landscape đã giúp tôi hiện thực hóa ý tưởng về một Farmstay mang hơi thở bản địa. Quy trình làm việc rất chuyên nghiệp và thấu hiểu khách hàng.',
     visuals: [
-      '/images/content/h1-testimonial-1-27912072eb28.jpg',
-      '/images/content/h1-testimonial-2-e5820839e5e3.jpg',
-      '/images/content/h1-testimonial-3-2bb6f6abf603.jpg',
-      '/images/content/h1-testimonial-4-f4fd4192e822.jpg'
+      'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426298/farm/images/content/umebvn2mg2rygene4ni9.jpg',
+      'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426300/farm/images/content/acvfcxnm7qvwhk0whzb5.jpg',
+      'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426301/farm/images/content/tc3zvjlxg99jmbpgcrfy.jpg',
+      'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426302/farm/images/content/py88hwi7fq9xcuutwtns.jpg'
     ]
   },
   {
@@ -25,10 +25,10 @@ const reviews = [
     content:
       'Professional landscape planning. They understand the terrain and elevation challenges very well, then translate everything into a clear and workable master plan.',
     visuals: [
-      '/images/content/h1-testimonial-2-e5820839e5e3.jpg',
-      '/images/content/h1-testimonial-4-f4fd4192e822.jpg',
-      '/images/content/h1-testimonial-1-27912072eb28.jpg',
-      '/images/content/h1-testimonial-3-2bb6f6abf603.jpg'
+      'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426300/farm/images/content/acvfcxnm7qvwhk0whzb5.jpg',
+      'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426302/farm/images/content/py88hwi7fq9xcuutwtns.jpg',
+      'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426298/farm/images/content/umebvn2mg2rygene4ni9.jpg',
+      'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426301/farm/images/content/tc3zvjlxg99jmbpgcrfy.jpg'
     ]
   },
   {
@@ -38,10 +38,10 @@ const reviews = [
     content:
       'Hồ sơ kỹ thuật chi tiết và dễ hiểu cho đội thi công. Son Hai Landscape giúp tôi tiết kiệm nhiều chi phí phát sinh, đồng thời giữ được tính thẩm mỹ cho toàn bộ dự án.',
     visuals: [
-      '/images/content/h1-testimonial-3-2bb6f6abf603.jpg',
-      '/images/content/h1-testimonial-1-27912072eb28.jpg',
-      '/images/content/h1-testimonial-4-f4fd4192e822.jpg',
-      '/images/content/h1-testimonial-2-e5820839e5e3.jpg'
+      'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426301/farm/images/content/tc3zvjlxg99jmbpgcrfy.jpg',
+      'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426298/farm/images/content/umebvn2mg2rygene4ni9.jpg',
+      'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426302/farm/images/content/py88hwi7fq9xcuutwtns.jpg',
+      'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426300/farm/images/content/acvfcxnm7qvwhk0whzb5.jpg'
     ]
   }
 ];

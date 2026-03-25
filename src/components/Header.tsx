@@ -33,8 +33,8 @@ const Header = () => {
         <div className="container header-container">
           <Link href="/" className="logo">
             <Image 
-              src="/images/branding/logofarm.png" 
-              alt="Son Hai Landscape Logo" 
+              src="https://res.cloudinary.com/dwalymiy3/image/upload/v1774426297/farm/images/branding/u9s3pfkvpu63s8luvrtq.png" 
+              alt="Son Hai Landscape logo" 
               width={220} 
               height={72} 
               priority
@@ -118,15 +118,15 @@ const Header = () => {
       {/* Bottom Sticky Bar for Mobile */}
       <div className="bottom-bar mobile-only">
         <a href="tel:0888220044" className="bottom-bar-item">
-          <img src="/images/icons/hotline_v1.png" alt="Hotline" width="24" height="24" />
+          <img src="https://res.cloudinary.com/dwalymiy3/image/upload/v1774426318/farm/images/icons/jzt39vkzupa2hodvar0v.png" alt="Hotline" width="24" height="24" />
           <span>Hotline</span>
         </a>
         <a href="https://zalo.me/0888220044" className="bottom-bar-item" target="_blank" rel="noopener noreferrer">
-          <img src="/images/icons/zalo_v1.png" alt="Zalo" width="24" height="24" />
+          <img src="https://res.cloudinary.com/dwalymiy3/image/upload/v1774426324/farm/images/icons/lxewxwkms3nmys826ywn.png" alt="Zalo" width="24" height="24" />
           <span>Zalo</span>
         </a>
         <a href="#" className="bottom-bar-item">
-          <img src="/images/icons/messenger_v1.png" alt="Messenger" width="24" height="24" />
+          <img src="https://res.cloudinary.com/dwalymiy3/image/upload/v1774426320/farm/images/icons/imizhfugb45bymlulgow.png" alt="Messenger" width="24" height="24" />
           <span>Messenger</span>
         </a>
       </div>

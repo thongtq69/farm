@@ -7,20 +7,20 @@ const cases = [
   {
     name: 'Thiết kế Sân Vườn Biệt Thự',
     location: 'Dự án thực tế 2025',
-    before: '/images/beforeafter/dfr.jpg',
-    after: '/images/beforeafter/dfd.jpg'
+    before: 'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426281/farm/images/beforeafter/safynyrs2dtzxlewmeux.jpg',
+    after: 'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426280/farm/images/beforeafter/vngvkvqvm1zhvq00zaog.jpg'
   },
   {
     name: 'Cảnh quan Hồ Koi & Đá Nghệ Thuật',
     location: 'Công trình tiêu biểu',
-    before: '/images/beforeafter/ChatGPT Image 08_03_18 18 thg 3, 2026.png',
-    after: '/images/beforeafter/ChatGPT Image 08_06_17 18 thg 3, 2026.png'
+    before: 'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426275/farm/images/beforeafter/hc9vsxfqvlsnerqzvtfh.png',
+    after: 'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426276/farm/images/beforeafter/wvhc6pdkyp248tytrmko.png'
   },
   {
     name: 'Quy hoạch Farmstay Nghỉ Dưỡng',
     location: 'Sơn Hải Landscape Execution',
-    before: '/images/beforeafter/ChatGPT Image 08_23_37 18 thg 3, 2026.png',
-    after: '/images/beforeafter/ChatGPT Image 08_19_42 18 thg 3, 2026.png'
+    before: 'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426279/farm/images/beforeafter/n4mehqwtzql491dt2uyx.png',
+    after: 'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426277/farm/images/beforeafter/tw93p66rxwxqgzp19i9s.png'
   }
 ];
 

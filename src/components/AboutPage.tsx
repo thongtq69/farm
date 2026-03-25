@@ -12,25 +12,25 @@ const AboutPage = () => {
     {
       name: 'Võ Hữu Hải',
       role: 'Founder / CEO',
-      image: '/images/team/Founder.png',
+      image: 'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426798/farm/images/team/kn8jajqxkny8x8gzvgwc.png',
       desc: 'Chuyên gia quy hoạch và kiến trúc cảnh quan với hơn 10 năm kinh nghiệm.'
     },
     {
       name: 'Quản Lý Dự Án',
       role: 'Project Manager',
-      image: '/images/team/Manager.png',
+      image: 'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426800/farm/images/team/whaeefot3wjuvk7evmb1.png',
       desc: 'Điều hành và đảm bảo tiến độ, chất lượng cho mọi dự án tại Sơn Hải.'
     },
     {
       name: 'Kiến Trúc Sư',
       role: 'Lead Architect',
-      image: '/images/team/Architect.png',
+      image: 'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426797/farm/images/team/gpbvglcd3lba445isgim.png',
       desc: 'Người thổi hồn vào các bản vẽ thiết kế kiến trúc và không gian xanh.'
     },
     {
       name: 'Hành Chính',
       role: 'Finance & Admin',
-      image: '/images/team/Administrator.png',
+      image: 'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426796/farm/images/team/iyl2gm5vmy62xgn1pg9f.png',
       desc: 'Quản lý vận hành và hỗ trợ tối đa cho đội ngũ kỹ thuật.'
     }
   ], []);
@@ -78,7 +78,7 @@ const AboutPage = () => {
       {/* 1. HERO WITH BACKGROUND */}
       <section className="about-hero-v2">
         <Image 
-          src="/images/home/project-1.jpg" 
+          src="https://res.cloudinary.com/dwalymiy3/image/upload/v1774426305/farm/images/home/jyus2a8osiab88cnjf7c.jpg" 
           alt="About Us Background" 
           fill 
           className="hero-bg-img"
@@ -117,11 +117,47 @@ const AboutPage = () => {
         </div>
       </section>
 
-      {/* 2. VISION & MISSION WITH IMAGE BACKGROUND */}
+      {/* 2. TEAM SECTION */}
+      <section className="about-team-v2 section">
+        <div className="container">
+          <div className="section-header text-center team-header-v2">
+            <span className="subtitle">ĐỘI NGŨ CỦA CHÚNG TÔI</span>
+            <h2>Gặp gỡ những chuyên gia kiến tạo</h2>
+          </div>
+          <div className="team-grid-v2">
+            {teamMembers.map((member, i) => (
+              <motion.div
+                className="member-card-v2"
+                key={i}
+                whileHover={{ y: -15 }}
+                transition={{ type: 'spring', stiffness: 300 }}
+              >
+                <div className="member-portrait">
+                  <Image
+                    src="/images/home/project-3.png"
+                    alt="Project background"
+                    fill
+                    className="member-portrait-bg"
+                  />
+                  <div className="member-portrait-glow"></div>
+                  <Image src={member.image} alt={member.name} fill />
+                </div>
+                <div className="member-bio">
+                  <h3>{member.name}</h3>
+                  <span className="member-role">{member.role}</span>
+                  <p>{member.desc}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 3. VISION & MISSION WITH IMAGE BACKGROUND */}
       <section className="about-vision-v2">
         <div className="vision-image-side">
           <Image 
-            src="/images/home/project-3.png" 
+            src="https://res.cloudinary.com/dwalymiy3/image/upload/v1774426308/farm/images/home/d0fm45pnqx6b5cmege6l.png" 
             alt="Our Vision" 
             fill 
             style={{ objectFit: 'cover' }}
@@ -153,7 +189,7 @@ const AboutPage = () => {
         </div>
       </section>
 
-      {/* 3. CORE VALUES WITH DARK BACKGROUND */}
+      {/* 4. CORE VALUES WITH DARK BACKGROUND */}
       <section className="about-values-v2 section-dark">
         <div className="container">
           <div className="values-v2-header">
@@ -178,35 +214,6 @@ const AboutPage = () => {
                 <div className="val-icon">{val.icon}</div>
                 <h3>{val.title}</h3>
                 <p>{val.desc}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 4. TEAM SECTION */}
-      <section className="about-team-v2 section">
-        <div className="container">
-          <div className="section-header text-center">
-            <span className="subtitle">ĐỘI NGŨ CỦA CHÚNG TÔI</span>
-            <h2>Gặp gỡ những chuyên gia kiến tạo</h2>
-          </div>
-          <div className="team-grid-v2">
-            {teamMembers.map((member, i) => (
-              <motion.div 
-                className="member-card-v2" 
-                key={i}
-                whileHover={{ y: -15 }}
-                transition={{ type: 'spring', stiffness: 300 }}
-              >
-                <div className="member-portrait">
-                  <Image src={member.image} alt={member.name} fill />
-                </div>
-                <div className="member-bio">
-                  <h3>{member.name}</h3>
-                  <span className="member-role">{member.role}</span>
-                  <p>{member.desc}</p>
-                </div>
               </motion.div>
             ))}
           </div>
@@ -258,7 +265,7 @@ const AboutPage = () => {
       {/* 6. FINAL CTA SECTION WITH BACKGROUND */}
       <section className="about-cta-v2">
         <Image 
-          src="/images/home/project-4.png" 
+          src="https://res.cloudinary.com/dwalymiy3/image/upload/v1774426309/farm/images/home/ms7wepswrge3qodzefez.png" 
           alt="Contact Background" 
           fill 
           className="cta-bg-img"

@@ -7,17 +7,17 @@ const services = [
   {
     title: 'Sân Vườn - Hồ Koi',
     desc: 'Chuyên thiết kế, thi công và vận hành – bảo trì hồ cá Koi cùng cảnh quan sân vườn trên toàn quốc.',
-    image: '/images/home/service-1.jpg'
+    image: 'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426311/farm/images/home/ef1xlo8bmxyhzywabywq.jpg'
   },
   {
     title: 'Farm & Du Lịch',
     desc: 'Chuyên tư vấn, thiết kế và thi công farm nghỉ dưỡng, khu du lịch sinh thái và cảnh quan đồng bộ.',
-    image: '/images/home/service-2.jpg'
+    image: 'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426312/farm/images/home/og0lbibbyepj00simsjx.jpg'
   },
   {
     title: 'Đá Nhân Tạo & Tiểu cảnh',
     desc: 'Chuyên thiết kế, thi công đá nhân tạo nghệ thuật và tiểu cảnh, tạo điểm nhấn thẩm mỹ cho không gian cảnh quan.',
-    image: '/images/home/service-3.jpg'
+    image: 'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426313/farm/images/home/btqwh4ldz8nrg3ijlrno.jpg'
   }
 ];
 

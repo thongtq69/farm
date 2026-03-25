@@ -64,7 +64,7 @@ const ProjectCatalog = ({ initialCategory }: { initialCategory?: string }) => {
             {filteredProjects.map((project, index) => (
               <Link key={project.slug} href={project.url} className="project-card-item" data-aos="fade-up" data-aos-delay={index * 50}>
                 <div className="project-card-image">
-                  <Image src={project.image || '/images/projects/coverr-oak-farm-2b0707e1d7e2.jpg'} alt={project.title} fill style={{ objectFit: 'cover' }} />
+                  <Image src={project.image || 'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426773/farm/images/projects/molvc1tmfxfobqqhagnf.jpg'} alt={project.title} fill style={{ objectFit: 'cover' }} />
                   <div className="project-card-overlay">
                     <span className="view-details">XEM CHI TIẾT</span>
                   </div>

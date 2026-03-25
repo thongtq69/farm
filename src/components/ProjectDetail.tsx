@@ -22,13 +22,13 @@ const ProjectDetail = ({ slug, projectSummary }: ProjectDetailProps) => {
     ? projectSummary.gallery
     : fallbackProject?.gallery?.length
       ? fallbackProject.gallery
-      : [projectSummary.image || fallbackProject?.image || '/images/projects/1-3-b1caaea5db89.jpg'];
+      : [projectSummary.image || fallbackProject?.image || 'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426383/farm/images/projects/pza6uvhukxq0x5hzi2nh.jpg'];
 
   const mainTitle = projectSummary.title.replace(' - Oak Farm', '');
   const description =
     projectSummary.meta_description ||
     'Sơn Hải Landscape vinh dự được làm đơn vị đồng hành cùng chủ đầu tư trong thiết kế và kiến trúc.';
-  const heroImage = projectImages[0] || projectSummary.image || fallbackProject?.image || '/images/projects/1-3-b1caaea5db89.jpg';
+  const heroImage = projectImages[0] || projectSummary.image || fallbackProject?.image || 'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426383/farm/images/projects/pza6uvhukxq0x5hzi2nh.jpg';
 
   const projectInfo = [
     { label: 'QUY MÔ', value: 'Farmstay & Homestay' },

@@ -14,7 +14,7 @@ const steps = [
       'Phân tích, góp ý, định hướng',
       'Báo giá chi phí thiết kế'
     ],
-    image: '/images/other/giaidoan-1-abbc2ad16d98.jpg'
+    image: 'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426335/farm/images/other/snu6ibzzuu1z7etqutjf.jpg'
   },
   {
     number: '02',
@@ -27,7 +27,7 @@ const steps = [
       'Họp trực tiếp cùng CĐT tại khu đất',
       'Báo cáo ý tưởng sau khảo sát'
     ],
-    image: '/images/other/giaidoan-2-2384864c094a.jpg'
+    image: 'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426336/farm/images/other/loqf22jlrsmvfwisl4sg.jpg'
   },
   {
     number: '03',
@@ -38,7 +38,7 @@ const steps = [
       'Phác họa vẽ tay định vị phân khu, giao thông',
       'Định vị sơ bộ các hạng mục xây dựng'
     ],
-    image: '/images/other/giaidoan-3-2867ce958d5f.jpg'
+    image: 'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426338/farm/images/other/pnfziowk4igowmpprgty.jpg'
   },
   {
     number: '04',
@@ -49,7 +49,7 @@ const steps = [
       'Bản vẽ quy hoạch kiến trúc cảnh quan',
       'Bản vẽ quy hoạch giao thông, hạ tầng kỹ thuật'
     ],
-    image: '/images/other/thietke-bd5c76f42e38.jpg'
+    image: 'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426347/farm/images/other/rwhhetrk6jcsheqsow6o.jpg'
   },
   {
     number: '05',
@@ -60,7 +60,7 @@ const steps = [
       'Các view chi tiết tiểu cảnh',
       'Phối cảnh tổng thể toàn dự án'
     ],
-    image: '/images/other/khaosat1-1ff678c29115.jpg'
+    image: 'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426343/farm/images/other/baentyl6pxjdhxdgxmvc.jpg'
   },
   {
     number: '06',
@@ -71,7 +71,7 @@ const steps = [
       'Phối cảnh 3D nội thất các phòng cụ thể',
       'Nghiên cứu vật liệu hoàn thiện công trình'
     ],
-    image: '/images/other/ho-so-1-d6f4ac33bb75.jpg'
+    image: 'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426341/farm/images/other/f33gqysez7onn72v13i2.jpg'
   },
   {
     number: '07',
@@ -83,7 +83,7 @@ const steps = [
       'Hồ sơ triển khai hệ thống điện, nước, thông tin liên lạc',
       'Hồ sơ triển khai hạ tầng kỹ thuật'
     ],
-    image: '/images/other/giaidoan-7-bf4a153a8516.jpg'
+    image: 'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426339/farm/images/other/yl3jcvogaizw0wsxvthw.jpg'
   }
 ];
 

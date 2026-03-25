@@ -9,7 +9,7 @@ const projects = [
     title: 'Vườn thiên nhiên',
     location: 'Hồ Tràm, Xuyên Mộc',
     description: 'Tọa lạc tại Hồ Tràm, Xuyên Mộc, dự án là một farmstay rộng 1000m2 kết hợp vườn cây ăn trái và không gian cảnh quan thư giãn. Thiết kế hướng đến sự gần gũi tự nhiên với suối đá, hồ nước và hệ thực vật nhiệt đới phong phú.',
-    image: '/images/home/project-1.jpg',
+    image: 'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426305/farm/images/home/jyus2a8osiab88cnjf7c.jpg',
     href: '/project'
   },
   {
@@ -17,7 +17,7 @@ const projects = [
     title: 'Sân vườn nhà Lan',
     location: 'Bình Trưng, Hồ Chí Minh',
     description: 'Dự án là sân vườn nhà phố thiết kế theo phong cách vườn Nhật hiện đại. Không gian tổ chức khéo léo với lối dạo stepping stone, sỏi rải, cụm đá tự nhiên và đèn đá truyền thống, kết hợp cây bonsai tinh tế.',
-    image: '/images/home/project-2.jpg',
+    image: 'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426306/farm/images/home/uvswzhekilaf4yzbuctc.jpg',
     href: '/project'
   },
   {
@@ -25,7 +25,7 @@ const projects = [
     title: 'Cà phê Thị',
     location: 'Nhơn Trạch, Đồng Nai',
     description: 'Không gian cà phê sân vườn uốn lượn tự nhiên, kết hợp giữa khu ngồi ngoài trời và cảnh quan mặt nước. Hồ cá trung tâm đóng vai trò điểm nhấn, liên kết các khu vực bàn ngồi và lối dạo xung quanh.',
-    image: '/images/home/project-3.png',
+    image: 'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426308/farm/images/home/d0fm45pnqx6b5cmege6l.png',
     href: '/project'
   },
   {
@@ -33,7 +33,7 @@ const projects = [
     title: 'Hồ Koi Trí Lâm',
     location: 'Tp Buôn Ma Thuột',
     description: 'Thiết kế theo phong cách vườn Nhật hiện đại, tập trung vào sự tinh giản và cân bằng không gian. Hồ koi kết hợp thác đá tự nhiên, đèn đá truyền thống và hệ cây bonsai mang đến không gian thư giãn tinh tế.',
-    image: '/images/home/project-4.png',
+    image: 'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426309/farm/images/home/ms7wepswrge3qodzefez.png',
     href: '/project'
   }
 ];

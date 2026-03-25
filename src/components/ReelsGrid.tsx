@@ -1,49 +1,13 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
-import { motion } from 'framer-motion';
-
-const reelsData = [
-  {
-    category: 'CONSTRUCTION',
-    title: 'Waterfall Build Process',
-    duration: '0:45',
-    thumbnail: '/images/projects/1-3-b1caaea5db89.jpg'
-  },
-  {
-    category: 'GARDEN TOUR',
-    title: 'Japanese Garden Tour',
-    duration: '1:20',
-    thumbnail: '/images/projects/1-4-1971866182c4.jpg'
-  },
-  {
-    category: 'BEFORE & AFTER',
-    title: 'Pool Landscape Reveal',
-    duration: '0:55',
-    thumbnail: '/images/projects/1-5-dead6d916e0d.jpg'
-  },
-  {
-    category: 'TIME-LAPSE',
-    title: 'Zen Garden in 60 Seconds',
-    duration: '1:00',
-    thumbnail: '/images/projects/2-3-94083ecb8ca1.jpg'
-  },
-  {
-    category: 'GARDEN TOUR',
-    title: 'Koi Pond Serenity',
-    duration: '1:15',
-    thumbnail: '/images/projects/3-4-64bd8db952ad.jpg'
-  },
-  {
-    category: 'CONSTRUCTION',
-    title: 'Night Lighting Setup',
-    duration: '0:50',
-    thumbnail: '/images/projects/4-3-b7e017ae281d.jpg'
-  }
-];
+import { motion, AnimatePresence } from 'framer-motion';
+import { reelsData, ReelItem } from '@/data/reels';
 
 const ReelsGrid = () => {
+  const [selectedReel, setSelectedReel] = useState<ReelItem | null>(null);
+
   return (
     <section className="reels-grid-section section-tight">
       <div className="container">
@@ -57,6 +21,7 @@ const ReelsGrid = () => {
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
               whileHover={{ scale: 1.02 }}
+              onClick={() => reel.videoUrl && setSelectedReel(reel)}
             >
               <div className="reel-thumbnail">
                 <Image 
@@ -86,6 +51,45 @@ const ReelsGrid = () => {
           ))}
         </div>
       </div>
+
+      {/* Video Modal */}
+      <AnimatePresence>
+        {selectedReel && (
+          <motion.div 
+            className="video-modal-overlay"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setSelectedReel(null)}
+          >
+            <motion.div 
+              className="video-modal-content"
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button 
+                className="video-modal-close"
+                onClick={() => setSelectedReel(null)}
+              >
+                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" strokeWidth="2" fill="none">
+                  <line x1="18" y1="6" x2="6" y2="18"></line>
+                  <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+              </button>
+
+              <video 
+                src={selectedReel.videoUrl}
+                className="reel-video-player"
+                controls
+                autoPlay
+                playsInline
+              />
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 };

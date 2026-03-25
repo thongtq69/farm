@@ -125,7 +125,7 @@ export default function AboutPage() {
             <div className="team-card-about reveal-about reveal-delay-1">
               <div className="team-card-img-wrap-about">
                 <Image
-                  src="/images/team/Founder.png"
+                  src="https://res.cloudinary.com/dwalymiy3/image/upload/v1774426798/farm/images/team/kn8jajqxkny8x8gzvgwc.png"
                   alt="Võ Hữu Hải"
                   width={250}
                   height={250}
@@ -141,7 +141,7 @@ export default function AboutPage() {
             <div className="team-card-about reveal-about reveal-delay-2">
               <div className="team-card-img-wrap-about">
                 <Image
-                  src="/images/team/Manager.png"
+                  src="https://res.cloudinary.com/dwalymiy3/image/upload/v1774426800/farm/images/team/whaeefot3wjuvk7evmb1.png"
                   alt="Manager"
                   width={250}
                   height={250}
@@ -154,7 +154,7 @@ export default function AboutPage() {
             <div className="team-card-about reveal-about reveal-delay-3">
               <div className="team-card-img-wrap-about">
                 <Image
-                  src="/images/team/Architect.png"
+                  src="https://res.cloudinary.com/dwalymiy3/image/upload/v1774426797/farm/images/team/gpbvglcd3lba445isgim.png"
                   alt="Architect"
                   width={250}
                   height={250}
@@ -167,7 +167,7 @@ export default function AboutPage() {
             <div className="team-card-about reveal-about reveal-delay-3">
               <div className="team-card-img-wrap-about">
                 <Image
-                  src="/images/team/Administrator.png"
+                  src="https://res.cloudinary.com/dwalymiy3/image/upload/v1774426796/farm/images/team/iyl2gm5vmy62xgn1pg9f.png"
                   alt="Administrator"
                   width={250}
                   height={250}
@@ -315,7 +315,7 @@ export default function AboutPage() {
             <div className="journey-right-about reveal-about reveal-right">
               <div className="journey-img-main-about">
                 <Image
-                  src="/images/other/coverr-oak-farm.jpg"
+                  src="https://res.cloudinary.com/dwalymiy3/image/upload/v1774426332/farm/images/other/ntpp2uqfd61jpnhxpzm7.jpg"
                   alt="Hành trình Son Hai Landscape"
                   fill
                   style={{ objectFit: "cover" }}

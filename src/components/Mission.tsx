@@ -24,7 +24,7 @@ const Mission = () => {
           <div className="mission-features">
             <div className="feature-item">
               <div className="feature-icon glass-effect">
-                 <Image src="/images/icons/hotline.png" alt="Icon" width={30} height={30} style={{ filter: 'brightness(0) saturate(100%) invert(26%) sepia(35%) saturate(738%) hue-rotate(69deg) brightness(96%) contrast(89%)' }} />
+                 <Image src="https://res.cloudinary.com/dwalymiy3/image/upload/v1774426317/farm/images/icons/xbcpud1rwcre6oprnuae.png" alt="Icon" width={30} height={30} style={{ filter: 'brightness(0) saturate(100%) invert(26%) sepia(35%) saturate(738%) hue-rotate(69deg) brightness(96%) contrast(89%)' }} />
               </div>
               <div className="feature-text">
                 <h3>Quản trị rủi ro</h3>
@@ -33,7 +33,7 @@ const Mission = () => {
             </div>
             <div className="feature-item">
                <div className="feature-icon glass-effect">
-                 <Image src="/images/icons/footer-icon-2-240be6c70168.png" alt="Icon" width={30} height={30} style={{ filter: 'brightness(0) saturate(100%) invert(26%) sepia(35%) saturate(738%) hue-rotate(69deg) brightness(96%) contrast(89%)' }} />
+                 <Image src="https://res.cloudinary.com/dwalymiy3/image/upload/v1774426316/farm/images/icons/weraoflu7t86ft9p1kso.png" alt="Icon" width={30} height={30} style={{ filter: 'brightness(0) saturate(100%) invert(26%) sepia(35%) saturate(738%) hue-rotate(69deg) brightness(96%) contrast(89%)' }} />
               </div>
               <div className="feature-text">
                 <h3>Thẩm mỹ riêng biệt</h3>
@@ -63,7 +63,7 @@ const Mission = () => {
         >
           <div className="image-wrapper">
             <Image 
-              src="/images/banners/h1-banner01-c38f6e852c91.png" 
+              src="https://res.cloudinary.com/dwalymiy3/image/upload/v1774426270/farm/images/banners/xqh8hfat7lsie0no5d8l.png" 
               alt="Võ Hữu Hải - Son Hai Landscape" 
               width={700}
               height={900}

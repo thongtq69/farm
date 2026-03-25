@@ -6,9 +6,9 @@ import Link from 'next/link';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
 const heroSlides = [
-  '/images/beforeafter/ChatGPT Image 08_19_42 18 thg 3, 2026.png',
-  '/images/beforeafter/dfd.jpg',
-  '/images/beforeafter/ChatGPT Image 08_06_17 18 thg 3, 2026.png'
+  'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426277/farm/images/beforeafter/tw93p66rxwxqgzp19i9s.png',
+  'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426280/farm/images/beforeafter/vngvkvqvm1zhvq00zaog.jpg',
+  'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426276/farm/images/beforeafter/wvhc6pdkyp248tytrmko.png'
 ];
 
 const Hero = () => {
@@ -88,7 +88,7 @@ const Hero = () => {
           transition={{ delay: 0.4, duration: 1.5 }}
         >
           <Image 
-            src="/images/home/hero-main.png" 
+            src="https://res.cloudinary.com/dwalymiy3/image/upload/v1774426303/farm/images/home/jhfe2t09sjur4xnj1ui1.png" 
             alt="Son Hai Landscape Professional Service" 
             width={1200}
             height={1300}

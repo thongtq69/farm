@@ -9,19 +9,19 @@ const items = [
     num: '01',
     title: 'Khảo sát',
     desc: 'Từ bước đầu tiên là khảo sát kỹ lưỡng thực tế, Son Hai Landscape đã nắm rõ được diện mạo khu đất, gặp gỡ CĐT và hiểu hơn về mong muốn của CĐT về dự án để đời của họ.',
-    image: '/images/other/khaosat1-1ff678c29115.jpg'
+    image: 'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426343/farm/images/other/baentyl6pxjdhxdgxmvc.jpg'
   },
   {
     num: '02',
     title: 'Thiết kế',
     desc: 'Trong quá trình thiết kế Farm, các KTS và khách hàng luôn có sự trao đổi liền mạch và liên tục. Bất cứ sự thay đổi nào cũng được chúng tôi cập nhật để đi đến phương án tối ưu nhất.',
-    image: '/images/other/thietke-bd5c76f42e38.jpg'
+    image: 'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426347/farm/images/other/rwhhetrk6jcsheqsow6o.jpg'
   },
   {
     num: '03',
     title: 'Thi công',
     desc: 'Son Hai Landscape luôn đồng hành cùng CĐT trên mọi phương diện từ trao đổi online cho đến giám sát tác giả tại dự án cho đến khi dự án được hoàn thiện.',
-    image: '/images/icons/thicong-152dc7bb4009.jpg'
+    image: 'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426321/farm/images/icons/wkj2wrrqrudawumi7hrw.jpg'
   }
 ];
 

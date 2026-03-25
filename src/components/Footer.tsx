@@ -22,7 +22,7 @@ const socialLinks = [
     className: 'is-zalo',
     icon: (
       <Image
-        src="/images/icons/zalo.png"
+        src="https://res.cloudinary.com/dwalymiy3/image/upload/v1774426323/farm/images/icons/v6zrrayw9uxpxonxjxyi.png"
         alt="Zalo"
         width={22}
         height={22}
@@ -52,8 +52,8 @@ const Footer = () => {
           >
             <Link href="/" className="footer-logo">
               <Image 
-                src="/images/branding/logofarm.png" 
-                alt="Son Hai Landscape Light Logo" 
+                src="https://res.cloudinary.com/dwalymiy3/image/upload/v1774426297/farm/images/branding/u9s3pfkvpu63s8luvrtq.png" 
+                alt="Son Hai Landscape logo" 
                 width={400} 
                 height={128} 
               />
