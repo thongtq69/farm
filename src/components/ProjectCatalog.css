@@ -163,6 +163,7 @@
 @media (max-width: 768px) {
   .catalog-grid-v2 {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
   
   .nav-pill {
@@ -181,6 +182,7 @@
 
 @media (max-width: 1200px) {
   .catalog-grid-v2 {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: 1fr;
+    gap: 2rem;
   }
 }
