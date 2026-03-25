@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useMemo, useState } from 'react';
+import React, { useMemo, useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -24,8 +24,12 @@ const categoryMapping: Record<string, string> = {
 };
 
 const ProjectCatalog = () => {
-  const [viewMode, setViewMode] = useState<'image' | 'video' | '3d'>('image');
+  const [activeSection, setActiveSection] = useState<'image' | 'video' | '3d'>('image');
   const [selectedVideo, setSelectedVideo] = useState<ReelItem | null>(null);
+
+  const imageRef = useRef<HTMLElement>(null);
+  const videoRef = useRef<HTMLElement>(null);
+  const threeDRef = useRef<HTMLElement>(null);
 
   const projects = useMemo<Project[]>(
     () =>
@@ -39,130 +43,153 @@ const ProjectCatalog = () => {
   // For 3D mode, just filter to a specific category or show a subset to simulate
   const threeDProjects = useMemo(() => projects.filter(p => p.category === 'farm-du-lich-nghi-duong').slice(0, 6), [projects]);
 
-  const renderHeader = () => {
-    switch (viewMode) {
-      case 'image':
-        return (
-          <div className="catalog-header text-center" style={{ marginBottom: '4rem' }}>
-            <span className="subtitle" style={{ color: '#0d3f32', background: '#d1e39b', padding: '0.5rem 1.5rem', borderRadius: '50px', display: 'inline-block', marginBottom: '1rem', fontWeight: 600 }}>Hình Ảnh Công Trình</span>
-            <h2 style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', color: '#0d3f32', fontFamily: 'Outfit, sans-serif', fontWeight: 800, marginBottom: '1rem' }}>
-              Hình Ảnh Công Trình Thực Tế
-            </h2>
-            <p style={{ color: '#666', fontSize: '1.2rem' }}>Những dự án tiêu biểu đã được Son Hai Landscape hoàn thành</p>
-          </div>
-        );
-      case 'video':
-        return (
-          <div className="catalog-header text-center" style={{ marginBottom: '4rem' }}>
-            <span className="subtitle" style={{ color: '#0d3f32', background: '#d1e39b', padding: '0.5rem 1.5rem', borderRadius: '50px', display: 'inline-block', marginBottom: '1rem', fontWeight: 600 }}>Video Thi Công</span>
-            <h2 style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', color: '#0d3f32', fontFamily: 'Outfit, sans-serif', fontWeight: 800, marginBottom: '1rem' }}>
-              Video Thi Công & Thực Tế
-            </h2>
-            <p style={{ color: '#666', fontSize: '1.2rem' }}>Xem quy trình thi công thực tế các dự án đã hoàn thành</p>
-          </div>
-        );
-      case '3d':
-        return (
-          <div className="catalog-header text-center" style={{ marginBottom: '4rem' }}>
-            <span className="subtitle" style={{ color: '#0d3f32', background: '#d1e39b', padding: '0.5rem 1.5rem', borderRadius: '50px', display: 'inline-block', marginBottom: '1rem', fontWeight: 600 }}>Mô Hình 3D</span>
-            <h2 style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', color: '#0d3f32', fontFamily: 'Outfit, sans-serif', fontWeight: 800, marginBottom: '1rem' }}>
-              Phối Cảnh 3D & Quy Hoạch
-            </h2>
-            <p style={{ color: '#666', fontSize: '1.2rem' }}>Xem trước thiết kế qua mô hình chân thực trước khi thi công</p>
-          </div>
-        );
-    }
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + window.innerHeight / 2;
+      
+      const imageTop = imageRef.current?.offsetTop || 0;
+      const videoTop = videoRef.current?.offsetTop || 0;
+      const threeDTop = threeDRef.current?.offsetTop || 0;
+
+      if (scrollPosition >= threeDTop && threeDTop > 0) {
+        setActiveSection('3d');
+      } else if (scrollPosition >= videoTop && videoTop > 0) {
+        setActiveSection('video');
+      } else {
+        setActiveSection('image');
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToSection = (section: 'image' | 'video' | '3d') => {
+    let top = 0;
+    if (section === 'image' && imageRef.current) top = imageRef.current.offsetTop - 100;
+    if (section === 'video' && videoRef.current) top = videoRef.current.offsetTop - 100;
+    if (section === '3d' && threeDRef.current) top = threeDRef.current.offsetTop - 100;
+
+    window.scrollTo({
+      top,
+      behavior: 'smooth'
+    });
   };
 
   return (
     <div className="project-catalog-v2">
       <div className="container">
-        {renderHeader()}
+        
+        {/* Section: Hình Ảnh */}
+        <section ref={imageRef} className="catalog-section" style={{ paddingTop: '2rem', paddingBottom: '4rem' }}>
+          <div className="catalog-header text-center" style={{ marginBottom: '3rem' }}>
+            <span className="subtitle" style={{ color: '#00c689', background: 'rgba(0,198,137,0.1)', padding: '0.5rem 1.5rem', borderRadius: '50px', display: 'inline-block', marginBottom: '1rem', fontWeight: 600 }}>Hình Ảnh Công Trình</span>
+            <h2 style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', color: '#0d3f32', fontFamily: 'Outfit, sans-serif', fontWeight: 800, marginBottom: '1rem' }}>
+              Hình Ảnh Công Trình Thực Tế
+            </h2>
+            <p style={{ color: '#666', fontSize: '1.2rem' }}>Những dự án tiêu biểu đã được Son Hai Landscape hoàn thành</p>
+          </div>
 
-        <motion.div 
-          key={viewMode}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4 }}
-          className="catalog-grid-v2"
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))',
-            gap: '2rem',
-            paddingBottom: '8rem'
-          }}
-        >
-          {viewMode === 'image' && projects.map((project, index) => (
-            <Link key={project.slug} href={project.url} className="catalog-card-v2">
-              <div className="card-image-wrapper">
-                <Image src={project.image || 'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426773/farm/images/projects/molvc1tmfxfobqqhagnf.jpg'} alt={project.title} fill style={{ objectFit: 'cover' }} />
-                <div className="card-overlay-hover">
-                  <div className="eye-icon">
-                    <svg viewBox="0 0 24 24" width="32" height="32" fill="white">
-                      <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
-                    </svg>
+          <div className="catalog-grid-v2" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))', gap: '2rem' }}>
+            {projects.map((project, index) => (
+              <Link key={`img-${project.slug}`} href={project.url} className="catalog-card-v2">
+                <div className="card-image-wrapper">
+                  <Image src={project.image || 'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426773/farm/images/projects/molvc1tmfxfobqqhagnf.jpg'} alt={project.title} fill style={{ objectFit: 'cover' }} />
+                  <div className="card-overlay-hover">
+                    <div className="eye-icon">
+                      <svg viewBox="0 0 24 24" width="32" height="32" fill="white">
+                        <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+                      </svg>
+                    </div>
+                  </div>
+                  <div className="card-title-bottom">
+                    <h3>{project.title}</h3>
                   </div>
                 </div>
-                <div className="card-title-bottom">
-                  <h3>{project.title}</h3>
-                </div>
-              </div>
-            </Link>
-          ))}
+              </Link>
+            ))}
+          </div>
+        </section>
 
-          {viewMode === 'video' && reelsData.map((reel, index) => (
-            <div key={index} className="catalog-card-v2" onClick={() => reel.videoUrl && setSelectedVideo(reel)}>
-              <div className="card-image-wrapper">
-                <Image src={reel.thumbnail} alt={reel.title} fill style={{ objectFit: 'cover' }} />
-                <div className="card-overlay-play">
-                  <div className="play-icon-circle">
-                    <svg viewBox="0 0 24 24" width="36" height="36" fill="white">
-                      <path d="M8 5v14l11-7z" />
-                    </svg>
+        {/* Section: Video */}
+        <section ref={videoRef} className="catalog-section" style={{ paddingTop: '4rem', paddingBottom: '4rem' }}>
+          <div className="catalog-header text-center" style={{ marginBottom: '3rem' }}>
+            <span className="subtitle" style={{ color: '#00c689', background: 'rgba(0,198,137,0.1)', padding: '0.5rem 1.5rem', borderRadius: '50px', display: 'inline-block', marginBottom: '1rem', fontWeight: 600 }}>Video Thi Công</span>
+            <h2 style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', color: '#0d3f32', fontFamily: 'Outfit, sans-serif', fontWeight: 800, marginBottom: '1rem' }}>
+              Video Thi Công & Thực Tế
+            </h2>
+            <p style={{ color: '#666', fontSize: '1.2rem' }}>Xem quy trình thi công thực tế các dự án đã hoàn thành</p>
+          </div>
+
+          <div className="catalog-grid-v2" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))', gap: '2rem' }}>
+            {reelsData.map((reel, index) => (
+              <div key={`vid-${index}`} className="catalog-card-v2" onClick={() => reel.videoUrl && setSelectedVideo(reel)}>
+                <div className="card-image-wrapper">
+                  <Image src={reel.thumbnail} alt={reel.title} fill style={{ objectFit: 'cover' }} />
+                  <div className="card-overlay-play">
+                    <div className="play-icon-circle">
+                      <svg viewBox="0 0 24 24" width="36" height="36" fill="white">
+                        <path d="M8 5v14l11-7z" />
+                      </svg>
+                    </div>
+                  </div>
+                  <div className="video-duration">{reel.duration}</div>
+                  <div className="card-title-bottom" style={{ zIndex: 10 }}>
+                    <h3>{reel.title}</h3>
                   </div>
                 </div>
-                <div className="video-duration">{reel.duration}</div>
-                <div className="card-title-bottom" style={{ zIndex: 10 }}>
-                  <h3>{reel.title}</h3>
-                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
+        </section>
 
-          {viewMode === '3d' && threeDProjects.map((project, index) => (
-             <div key={project.slug} className="catalog-card-v2" onClick={() => alert('Mở trình xem 3D hoặc Popup video 3D')}>
-              <div className="card-image-wrapper">
-                <Image src={project.image || ''} alt={project.title} fill style={{ objectFit: 'cover' }} />
-                <div className="card-overlay-play">
-                  <div className="play-icon-circle" style={{ background: 'rgba(215, 66, 245, 0.8)' }}>
-                    <svg viewBox="0 0 24 24" width="36" height="36" fill="white">
-                      <path d="M8 5v14l11-7z" />
-                    </svg>
+        {/* Section: 3D */}
+        <section ref={threeDRef} className="catalog-section" style={{ paddingTop: '4rem', paddingBottom: '8rem' }}>
+          <div className="catalog-header text-center" style={{ marginBottom: '3rem' }}>
+            <span className="subtitle" style={{ color: '#00c689', background: 'rgba(0,198,137,0.1)', padding: '0.5rem 1.5rem', borderRadius: '50px', display: 'inline-block', marginBottom: '1rem', fontWeight: 600 }}>Mô Hình 3D</span>
+            <h2 style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', color: '#0d3f32', fontFamily: 'Outfit, sans-serif', fontWeight: 800, marginBottom: '1rem' }}>
+              Phối Cảnh 3D & Quy Hoạch
+            </h2>
+            <p style={{ color: '#666', fontSize: '1.2rem' }}>Xem trước thiết kế qua mô hình chân thực trước khi thi công</p>
+          </div>
+
+          <div className="catalog-grid-v2" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))', gap: '2rem' }}>
+            {threeDProjects.map((project, index) => (
+               <div key={`3d-${project.slug}`} className="catalog-card-v2" onClick={() => alert('Mở trình xem 3D hoặc Popup video 3D')}>
+                <div className="card-image-wrapper">
+                  <Image src={project.image || ''} alt={project.title} fill style={{ objectFit: 'cover' }} />
+                  <div className="card-overlay-play">
+                    <div className="play-icon-circle" style={{ background: 'rgba(100, 100, 100, 0.8)' }}>
+                      <svg viewBox="0 0 24 24" width="36" height="36" fill="white">
+                        <path d="M8 5v14l11-7z" />
+                      </svg>
+                    </div>
+                  </div>
+                  <div className="video-duration">3:20</div>
+                  <div className="card-title-bottom" style={{ zIndex: 10 }}>
+                    <h3>{project.title} (Bản vẽ 3D)</h3>
                   </div>
                 </div>
-                <div className="video-duration">3:20</div>
-                <div className="card-title-bottom" style={{ zIndex: 10 }}>
-                  <h3>{project.title} (Bản vẽ 3D)</h3>
-                </div>
               </div>
-            </div>
-          ))}
-        </motion.div>
+            ))}
+          </div>
+        </section>
+
       </div>
 
       {/* Sticky Bottom Navigation */}
       <div className="sticky-bottom-nav">
         <div className="nav-pill">
-          <button className={`nav-btn ${viewMode === 'image' ? 'active' : ''}`} onClick={() => setViewMode('image')}>
+          <button className={`nav-btn ${activeSection === 'image' ? 'active' : ''}`} onClick={() => scrollToSection('image')}>
             <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" style={{ marginRight: '8px' }}><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>
             Hình Ảnh
           </button>
-          <button className={`nav-btn ${viewMode === 'video' ? 'active' : ''}`} onClick={() => setViewMode('video')}>
+          <button className={`nav-btn ${activeSection === 'video' ? 'active' : ''}`} onClick={() => scrollToSection('video')}>
             <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" style={{ marginRight: '8px' }}><path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z"/></svg>
             Video Thực Tế
           </button>
-          <button className={`nav-btn ${viewMode === '3d' ? 'active' : ''}`} onClick={() => setViewMode('3d')}>
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" style={{ marginRight: '8px' }}><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2z"/></svg>
+          <button className={`nav-btn ${activeSection === '3d' ? 'active' : ''}`} onClick={() => scrollToSection('3d')}>
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" style={{ marginRight: '8px' }}><circle cx="12" cy="12" r="8" /></svg>
             Phối Cảnh 3D
           </button>
         </div>
