@@ -5775,9 +5775,30 @@ img {
 
 /* Team v2 */
 .about-team-v2 {
+  position: relative;
+  overflow: hidden;
   background:
     radial-gradient(circle at top, rgba(210, 234, 193, 0.32), transparent 40%),
     linear-gradient(180deg, #fffdf8 0%, #f6f7ef 100%);
+}
+
+.about-team-bg {
+  object-fit: cover;
+  opacity: 0.12;
+  transform: scale(1.04);
+}
+
+.about-team-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(255, 253, 248, 0.88) 0%, rgba(246, 247, 239, 0.92) 100%),
+    radial-gradient(circle at center, rgba(210, 234, 193, 0.18), transparent 52%);
+}
+
+.about-team-v2 .container {
+  position: relative;
+  z-index: 1;
 }
 
 .team-header-v2 {
@@ -5809,19 +5830,9 @@ img {
   isolation: isolate;
 }
 
-.member-portrait-bg,
 .member-portrait-glow {
   position: absolute;
   pointer-events: none;
-}
-
-.member-portrait-bg {
-  inset: 0;
-  object-fit: cover !important;
-  opacity: 0.18;
-  transform: scale(1.08);
-  filter: saturate(0.75) blur(1px);
-  z-index: 0;
 }
 
 .member-portrait::after {
@@ -5829,8 +5840,8 @@ img {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(180deg, rgba(248, 251, 243, 0.6) 0%, rgba(238, 244, 228, 0.38) 55%, rgba(238, 244, 228, 0.75) 100%),
-    radial-gradient(circle at center top, rgba(214, 231, 189, 0.3), transparent 48%);
+    linear-gradient(180deg, rgba(248, 251, 243, 0.52) 0%, rgba(238, 244, 228, 0.24) 55%, rgba(238, 244, 228, 0.58) 100%),
+    radial-gradient(circle at center top, rgba(214, 231, 189, 0.16), transparent 48%);
   z-index: 1;
 }
 

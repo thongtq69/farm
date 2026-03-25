@@ -119,6 +119,13 @@ const AboutPage = () => {
 
       {/* 2. TEAM SECTION */}
       <section className="about-team-v2 section">
+        <Image
+          src="/images/home/project-3.png"
+          alt="Team section background"
+          fill
+          className="about-team-bg"
+        />
+        <div className="about-team-overlay"></div>
         <div className="container">
           <div className="section-header text-center team-header-v2">
             <span className="subtitle">ĐỘI NGŨ CỦA CHÚNG TÔI</span>
@@ -133,12 +140,6 @@ const AboutPage = () => {
                 transition={{ type: 'spring', stiffness: 300 }}
               >
                 <div className="member-portrait">
-                  <Image
-                    src="/images/home/project-3.png"
-                    alt="Project background"
-                    fill
-                    className="member-portrait-bg"
-                  />
                   <div className="member-portrait-glow"></div>
                   <Image src={member.image} alt={member.name} fill />
                 </div>
