@@ -78,7 +78,7 @@ const ProjectCatalog = () => {
 
   return (
     <div className="project-catalog-v2">
-      <div className="container">
+      <div style={{ width: '100%', maxWidth: '1600px', margin: '0 auto', padding: '0 2rem' }}>
         
         {/* Section: Hình Ảnh */}
         <section ref={imageRef} className="catalog-section" style={{ paddingTop: '2rem', paddingBottom: '4rem' }}>
@@ -90,7 +90,7 @@ const ProjectCatalog = () => {
             <p style={{ color: '#666', fontSize: '1.2rem' }}>Những dự án tiêu biểu đã được Son Hai Landscape hoàn thành</p>
           </div>
 
-          <div className="catalog-grid-v2" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))', gap: '2rem' }}>
+          <div className="catalog-grid-v2">
             {projects.map((project, index) => (
               <Link key={`img-${project.slug}`} href={project.url} className="catalog-card-v2">
                 <div className="card-image-wrapper">
@@ -121,7 +121,7 @@ const ProjectCatalog = () => {
             <p style={{ color: '#666', fontSize: '1.2rem' }}>Xem quy trình thi công thực tế các dự án đã hoàn thành</p>
           </div>
 
-          <div className="catalog-grid-v2" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))', gap: '2rem' }}>
+          <div className="catalog-grid-v2">
             {reelsData.map((reel, index) => (
               <div key={`vid-${index}`} className="catalog-card-v2" onClick={() => reel.videoUrl && setSelectedVideo(reel)}>
                 <div className="card-image-wrapper">
@@ -153,7 +153,7 @@ const ProjectCatalog = () => {
             <p style={{ color: '#666', fontSize: '1.2rem' }}>Xem trước thiết kế qua mô hình chân thực trước khi thi công</p>
           </div>
 
-          <div className="catalog-grid-v2" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))', gap: '2rem' }}>
+          <div className="catalog-grid-v2">
             {threeDProjects.map((project, index) => (
                <div key={`3d-${project.slug}`} className="catalog-card-v2" onClick={() => alert('Mở trình xem 3D hoặc Popup video 3D')}>
                 <div className="card-image-wrapper">

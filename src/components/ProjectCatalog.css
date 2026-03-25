@@ -3,6 +3,13 @@
   min-height: 80vh;
 }
 
+.catalog-grid-v2 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2rem;
+  align-items: stretch;
+}
+
 .catalog-card-v2 {
   position: relative;
   border-radius: 16px;
@@ -155,7 +162,7 @@
 
 @media (max-width: 768px) {
   .catalog-grid-v2 {
-    grid-template-columns: 1fr !important;
+    grid-template-columns: 1fr;
   }
   
   .nav-pill {
@@ -169,5 +176,11 @@
   
   .nav-btn svg {
     display: none; /* Hide icons on small screens to fit text */
+  }
+}
+
+@media (max-width: 1200px) {
+  .catalog-grid-v2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
