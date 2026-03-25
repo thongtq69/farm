@@ -175,8 +175,8 @@
     font-size: 0.85rem;
   }
   
-  .nav-btn svg {
-    display: none; /* Hide icons on small screens to fit text */
+  .sticky-bottom-nav {
+    bottom: 6rem;
   }
 }
 
