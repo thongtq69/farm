@@ -30,7 +30,7 @@ const QuoteForm = () => {
     }}>
       <div className="form-head-v2" style={{ marginBottom: '2.5rem' }}>
         <h3 style={{ 
-          fontFamily: 'Outfit, sans-serif', 
+          fontFamily: "'Playfair Display', serif", 
           fontSize: '2rem', 
           marginBottom: '0.75rem', 
           color: '#0d3f32', 

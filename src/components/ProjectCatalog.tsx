@@ -100,7 +100,7 @@ const ProjectCatalog = ({ initialCategory }: ProjectCatalogProps) => {
         <section ref={imageRef} className="catalog-section" style={{ paddingTop: '2rem', paddingBottom: '4rem' }}>
           <div className="catalog-header text-center" style={{ marginBottom: '3rem' }}>
             <span className="subtitle" style={{ color: '#00c689', background: 'rgba(0,198,137,0.1)', padding: '0.5rem 1.5rem', borderRadius: '50px', display: 'inline-block', marginBottom: '1rem', fontWeight: 600 }}>Hình Ảnh Công Trình</span>
-            <h2 style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', color: '#0d3f32', fontFamily: 'Outfit, sans-serif', fontWeight: 800, marginBottom: '1rem' }}>
+            <h2 style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', color: '#0d3f32', fontFamily: 'Playfair Display, serif', fontWeight: 800, marginBottom: '1rem' }}>
               Hình Ảnh Công Trình Thực Tế
             </h2>
             <p style={{ color: '#666', fontSize: '1.2rem' }}>Những dự án tiêu biểu đã được Son Hai Landscape hoàn thành</p>
@@ -150,7 +150,7 @@ const ProjectCatalog = ({ initialCategory }: ProjectCatalogProps) => {
         <section ref={videoRef} className="catalog-section" style={{ paddingTop: '4rem', paddingBottom: '4rem' }}>
           <div className="catalog-header text-center" style={{ marginBottom: '3rem' }}>
             <span className="subtitle" style={{ color: '#00c689', background: 'rgba(0,198,137,0.1)', padding: '0.5rem 1.5rem', borderRadius: '50px', display: 'inline-block', marginBottom: '1rem', fontWeight: 600 }}>Video Thi Công</span>
-            <h2 style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', color: '#0d3f32', fontFamily: 'Outfit, sans-serif', fontWeight: 800, marginBottom: '1rem' }}>
+            <h2 style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', color: '#0d3f32', fontFamily: 'Playfair Display, serif', fontWeight: 800, marginBottom: '1rem' }}>
               Video Thi Công & Thực Tế
             </h2>
             <p style={{ color: '#666', fontSize: '1.2rem' }}>Xem quy trình thi công thực tế các dự án đã hoàn thành</p>
@@ -182,7 +182,7 @@ const ProjectCatalog = ({ initialCategory }: ProjectCatalogProps) => {
         <section ref={threeDRef} className="catalog-section" style={{ paddingTop: '4rem', paddingBottom: '8rem' }}>
           <div className="catalog-header text-center" style={{ marginBottom: '3rem' }}>
             <span className="subtitle" style={{ color: '#00c689', background: 'rgba(0,198,137,0.1)', padding: '0.5rem 1.5rem', borderRadius: '50px', display: 'inline-block', marginBottom: '1rem', fontWeight: 600 }}>Mô Hình 3D</span>
-            <h2 style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', color: '#0d3f32', fontFamily: 'Outfit, sans-serif', fontWeight: 800, marginBottom: '1rem' }}>
+            <h2 style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', color: '#0d3f32', fontFamily: 'Playfair Display, serif', fontWeight: 800, marginBottom: '1rem' }}>
               Phối Cảnh 3D & Quy Hoạch
             </h2>
             <p style={{ color: '#666', fontSize: '1.2rem' }}>Xem trước thiết kế qua mô hình chân thực trước khi thi công</p>

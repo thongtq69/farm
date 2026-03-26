@@ -109,30 +109,11 @@ const Header = () => {
                 <li><Link href="/project/da-nhan-tao-nghe-thuat" onClick={() => setIsMenuOpen(false)}>Đá Nhân Tạo Nghệ Thuật</Link></li>
               </ul>
             </li>
-
+            <li><Link href="/reels" onClick={() => setIsMenuOpen(false)}>Reels</Link></li>
             <li><Link href="/bao-gia-thiet-ke-farm" onClick={() => setIsMenuOpen(false)}>Báo giá ngay</Link></li>
           </ul>
         </div>
       </div>
-
-      {/* Bottom Sticky Bar for Mobile */}
-      <div className="bottom-bar mobile-only">
-        <a href="tel:0888220044" className="bottom-bar-item">
-          <img src="https://res.cloudinary.com/dwalymiy3/image/upload/v1774426318/farm/images/icons/jzt39vkzupa2hodvar0v.png" alt="Hotline" width="24" height="24" />
-          <span>Hotline</span>
-        </a>
-        <a href="https://zalo.me/0888220044" className="bottom-bar-item" target="_blank" rel="noopener noreferrer">
-          <img src="https://res.cloudinary.com/dwalymiy3/image/upload/v1774426324/farm/images/icons/lxewxwkms3nmys826ywn.png" alt="Zalo" width="24" height="24" />
-          <span>Zalo</span>
-        </a>
-        <a href="#" className="bottom-bar-item">
-          <img src="https://res.cloudinary.com/dwalymiy3/image/upload/v1774426320/farm/images/icons/imizhfugb45bymlulgow.png" alt="Messenger" width="24" height="24" />
-          <span>Messenger</span>
-        </a>
-      </div>
-
-
-
     </>
   );
 };
