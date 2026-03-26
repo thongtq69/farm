@@ -9,12 +9,12 @@ export default function ConsultationPopup() {
   useEffect(() => {
     // Show popup after 15 seconds
     const timer = setTimeout(() => {
-      // Check if user already submitted or dismissed recently using localStorage
-      const hasSeenPopup = localStorage.getItem('hasSeenConsultationPopup');
-      if (!hasSeenPopup) {
+      // Temporarily bypass localStorage to ensure user can see it for testing
+      // const hasSeenPopup = localStorage.getItem('hasSeenConsultationPopup');
+      // if (!hasSeenPopup) {
         setIsOpen(true);
-      }
-    }, 15000);
+      // }
+    }, 5000);
 
     return () => clearTimeout(timer);
   }, []);
