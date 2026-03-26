@@ -17,15 +17,26 @@ type Project = {
   category?: string;
 };
 
+const categoryOrder = [
+  'san-vuon-ho-koi',
+  'farm-du-lich-nghi-duong',
+  'da-nhan-tao-nghe-thuat'
+] as const;
+
 const categoryMapping: Record<string, string> = {
   'san-vuon-ho-koi': 'Sân Vườn & Hồ Koi',
   'farm-du-lich-nghi-duong': 'Farm & Du Lịch Nghỉ Dưỡng',
   'da-nhan-tao-nghe-thuat': 'Đá Nhân Tạo Nghệ Thuật'
 };
 
-const ProjectCatalog = () => {
+interface ProjectCatalogProps {
+  initialCategory?: string;
+}
+
+const ProjectCatalog = ({ initialCategory }: ProjectCatalogProps) => {
   const [activeSection, setActiveSection] = useState<'image' | 'video' | '3d'>('image');
   const [selectedVideo, setSelectedVideo] = useState<ReelItem | null>(null);
+  const [activeCategory, setActiveCategory] = useState<string>(initialCategory || 'all');
 
   const imageRef = useRef<HTMLElement>(null);
   const videoRef = useRef<HTMLElement>(null);
@@ -39,6 +50,11 @@ const ProjectCatalog = () => {
       })),
     []
   );
+
+  const filteredProjects = useMemo(() => {
+    if (activeCategory === 'all') return projects;
+    return projects.filter(p => p.category === activeCategory);
+  }, [projects, activeCategory]);
 
   // For 3D mode, just filter to a specific category or show a subset to simulate
   const threeDProjects = useMemo(() => projects.filter(p => p.category === 'farm-du-lich-nghi-duong').slice(0, 6), [projects]);
@@ -90,8 +106,27 @@ const ProjectCatalog = () => {
             <p style={{ color: '#666', fontSize: '1.2rem' }}>Những dự án tiêu biểu đã được Son Hai Landscape hoàn thành</p>
           </div>
 
+          {/* Category Filter Tabs */}
+          <div className="category-filter-tabs">
+            <button
+              className={`category-tab ${activeCategory === 'all' ? 'active' : ''}`}
+              onClick={() => setActiveCategory('all')}
+            >
+              Tất Cả Dự Án
+            </button>
+            {categoryOrder.map((catSlug) => (
+              <button
+                key={catSlug}
+                className={`category-tab ${activeCategory === catSlug ? 'active' : ''}`}
+                onClick={() => setActiveCategory(catSlug)}
+              >
+                {categoryMapping[catSlug]}
+              </button>
+            ))}
+          </div>
+
           <div className="catalog-grid-v2">
-            {projects.map((project, index) => (
+            {filteredProjects.map((project, index) => (
               <Link key={`img-${project.slug}`} href={project.url} className="catalog-card-v2">
                 <div className="card-image-wrapper">
                   <Image src={project.image || 'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426773/farm/images/projects/molvc1tmfxfobqqhagnf.jpg'} alt={project.title} fill style={{ objectFit: 'cover' }} />
