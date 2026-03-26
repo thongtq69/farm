@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useCallback, useEffect, useMemo, useState } from 'react';
+import React, { useCallback, useMemo, useState } from 'react';
 import Image from 'next/image';
 
 const services = [
@@ -23,7 +23,6 @@ const services = [
 
 const Services = () => {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   const showCount = 3;
@@ -43,18 +42,6 @@ const Services = () => {
 
   const featuredIndex = hoveredIndex;
 
-  useEffect(() => {
-    if (isPaused) {
-      return undefined;
-    }
-
-    const interval = window.setInterval(() => {
-      goNext();
-    }, 3200);
-
-    return () => window.clearInterval(interval);
-  }, [goNext, isPaused]);
-
   return (
     <section className="services section bg-pattern">
       <div className="container">
@@ -68,9 +55,7 @@ const Services = () => {
 
         <div
           className="services-carousel"
-          onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => {
-            setIsPaused(false);
             setHoveredIndex(null);
           }}
         >
@@ -81,11 +66,9 @@ const Services = () => {
                 key={`${index}-${service.title}`}
                 onMouseEnter={() => setHoveredIndex(index)}
                 onFocus={() => {
-                  setIsPaused(true);
                   setHoveredIndex(index);
                 }}
                 onBlur={() => {
-                  setIsPaused(false);
                   setHoveredIndex(null);
                 }}
                 tabIndex={0}
