@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect, useMemo } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 
@@ -17,6 +17,34 @@ type MissionProps = {
 };
 
 const Mission = ({ content }: MissionProps) => {
+  const pdfViewerHref = useMemo(() => {
+    if (typeof window === 'undefined') {
+      return '/docs/sach.pdf';
+    }
+
+    const { hostname, origin } = window.location;
+
+    if (hostname === 'localhost' || hostname === '127.0.0.1') {
+      return '/docs/sach.pdf';
+    }
+
+    const pdfUrl = encodeURIComponent(`${origin}/docs/sach.pdf`);
+    return `https://docs.google.com/gview?embedded=1&url=${pdfUrl}`;
+  }, []);
+
+  useEffect(() => {
+    const preloadLink = document.createElement('link');
+    preloadLink.rel = 'prefetch';
+    preloadLink.href = '/docs/sach.pdf';
+    document.head.appendChild(preloadLink);
+
+    fetch('/docs/sach.pdf', { cache: 'force-cache' }).catch(() => undefined);
+
+    return () => {
+      document.head.removeChild(preloadLink);
+    };
+  }, []);
+
   return (
     <section className="mission section">
       <div className="container mission-container">
@@ -58,6 +86,9 @@ const Mission = ({ content }: MissionProps) => {
               sizes="(max-width: 991px) 100vw, 50vw" 
               style={{ width: '100%', height: 'auto', display: 'block', borderRadius: 0 }} 
             />
+          </div>
+          <div className="mission-image-actions">
+            <a href={pdfViewerHref} className="view-pdf-btn" target="_blank" rel="noopener noreferrer">Xem ngay</a>
           </div>
         </motion.div>
       </div>

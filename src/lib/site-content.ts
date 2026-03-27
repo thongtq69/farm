@@ -405,6 +405,31 @@ export type ProjectItem = (typeof seededProjects)[number] & {
 };
 export type ReelItem = (typeof seededReels)[number];
 
+function deepMerge<T>(base: T, override: unknown): T {
+  if (Array.isArray(base)) {
+    return ((Array.isArray(override) ? override : base) as T);
+  }
+
+  if (base && typeof base === 'object') {
+    const result: Record<string, unknown> = { ...(base as Record<string, unknown>) };
+    const source = override && typeof override === 'object' ? (override as Record<string, unknown>) : {};
+
+    for (const key of Object.keys(result)) {
+      result[key] = deepMerge(result[key], source[key]);
+    }
+
+    for (const key of Object.keys(source)) {
+      if (!(key in result)) {
+        result[key] = source[key];
+      }
+    }
+
+    return result as T;
+  }
+
+  return ((override ?? base) as T);
+}
+
 async function seedCollections() {
   await dbConnect();
 
@@ -444,7 +469,7 @@ export const ensureSeededContent = cache(async () => {
 export const getSiteContent = cache(async (): Promise<SiteContent> => {
   await ensureSeededContent();
   const doc = await SiteContent.findOne({ key: 'global' }).lean<{ data: SiteContent }>();
-  return doc?.data || defaultSiteContent;
+  return deepMerge(defaultSiteContent, doc?.data);
 });
 
 export const getProjects = cache(async (): Promise<ProjectItem[]> => {

@@ -1204,10 +1204,17 @@ img {
   color: var(--accent);
   font-family: 'Playfair Display', serif;
   letter-spacing: 0.05em;
+  text-decoration: none;
 }
 
 .mission-image {
   position: relative;
+}
+
+.mission-image-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
 }
 
 /* Image Wrapper Fidelity */
@@ -2169,11 +2176,17 @@ img {
   .services-grid {
     grid-template-columns: 1fr;
   }
+  .home-highlights {
+    background: #1f5550;
+  }
   .home-highlights-shell {
     margin-top: 0;
     padding: 2.5rem 1.5rem;
     border-radius: 0;
-    margin-inline: -1.5rem; /* Match container padding for 991px */
+    margin-inline: 0;
+  }
+  .home-highlights-shell::before {
+    display: none;
   }
   .home-highlights-grid {
     grid-template-columns: 1fr;
@@ -2243,6 +2256,15 @@ img {
   .view-pdf-btn {
     width: 100%;
     justify-content: center;
+    text-align: center;
+  }
+
+  .mission-image-actions {
+    width: 100%;
+  }
+
+  .cta-phone {
+    text-align: center;
   }
 
   .hero-foreground {
@@ -6040,11 +6062,17 @@ img {
 }
 
 @media (max-width: 640px) {
+  .home-highlights {
+    background: #1f5550;
+  }
   .home-highlights-shell {
     margin-top: 0;
     margin-inline: 0;
     padding: 2rem 0;
     border-radius: 0;
+  }
+  .home-highlights-shell::before {
+    display: none;
   }
   .home-highlights-grid {
     width: 100%;

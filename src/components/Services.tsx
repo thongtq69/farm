@@ -2,7 +2,7 @@
 
 import React, { useCallback, useMemo, useState } from 'react';
 import Image from 'next/image';
-import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 
 type ServiceItem = { title: string; desc: string; image: string; href?: string };
 
@@ -16,7 +16,6 @@ type ServicesProps = {
 };
 
 const Services = ({ content }: ServicesProps) => {
-  const router = useRouter();
   const [activeIndex, setActiveIndex] = useState(0);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const showCount = 3;
@@ -44,21 +43,13 @@ const Services = ({ content }: ServicesProps) => {
         <div className="services-carousel" onMouseLeave={() => setHoveredIndex(null)}>
           <div className="services-grid">
             {visibleServices.map((service, index) => (
-              <div
+              <Link
                 className={`service-card${index === featuredIndex ? ' is-featured' : ''}`}
                 key={`${index}-${service.title}`}
+                href={service.href || '/project'}
                 onMouseEnter={() => setHoveredIndex(index)}
                 onFocus={() => setHoveredIndex(index)}
                 onBlur={() => setHoveredIndex(null)}
-                onClick={() => router.push(service.href || '/project')}
-                onKeyDown={(event) => {
-                  if (event.key === 'Enter' || event.key === ' ') {
-                    event.preventDefault();
-                    router.push(service.href || '/project');
-                  }
-                }}
-                tabIndex={0}
-                role="link"
               >
                 <div className="service-image">
                   <Image src={service.image} alt={service.title} fill priority={index === 0} sizes="(max-width: 991px) 100vw, 33vw" style={{ objectFit: 'cover' }} />
@@ -72,7 +63,7 @@ const Services = ({ content }: ServicesProps) => {
                     </>
                   )}
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
 
