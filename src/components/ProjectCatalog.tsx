@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { projects as projectList } from '@/data/projects';
 import { reelsData, ReelItem } from '@/data/reels';
+import ToastNotification from './ToastNotification';
 import './ProjectCatalog.css';
 
 type Project = {
@@ -37,6 +38,12 @@ const ProjectCatalog = ({ initialCategory }: ProjectCatalogProps) => {
   const [activeSection, setActiveSection] = useState<'image' | 'video' | '3d'>('image');
   const [selectedVideo, setSelectedVideo] = useState<ReelItem | null>(null);
   const [activeCategory, setActiveCategory] = useState<string>(initialCategory || 'all');
+  const [notification, setNotification] = useState<{ isVisible: boolean; message: string; subMessage?: string; type: 'success' | 'error' | 'info' }>({ 
+    isVisible: false, 
+    message: '', 
+    subMessage: '', 
+    type: 'success' 
+  });
 
   const imageRef = useRef<HTMLElement>(null);
   const videoRef = useRef<HTMLElement>(null);
@@ -94,6 +101,14 @@ const ProjectCatalog = ({ initialCategory }: ProjectCatalogProps) => {
 
   return (
     <div className="project-catalog-v2">
+      <ToastNotification 
+        isVisible={notification.isVisible}
+        message={notification.message}
+        subMessage={notification.subMessage}
+        type={notification.type}
+        onClose={() => setNotification({ ...notification, isVisible: false })}
+      />
+
       <div className="catalog-container">
         
         {/* Section: Hình Ảnh */}
@@ -190,7 +205,7 @@ const ProjectCatalog = ({ initialCategory }: ProjectCatalogProps) => {
 
           <div className="catalog-grid-v2">
             {threeDProjects.map((project, index) => (
-               <div key={`3d-${project.slug}`} className="catalog-card-v2" onClick={() => alert('Mở trình xem 3D hoặc Popup video 3D')}>
+               <div key={`3d-${project.slug}`} className="catalog-card-v2" onClick={() => setNotification({ isVisible: true, message: 'Tính năng 3D Đang Phát Triển', subMessage: 'Hệ thống đang hoàn thiện mô hình 3D thực tế ảo cho dự án này. Vui lòng quay lại sau!', type: 'info' })}>
                 <div className="card-image-wrapper">
                   <Image src={project.image || ''} alt={project.title} fill style={{ objectFit: 'cover' }} />
                   <div className="card-overlay-play">
