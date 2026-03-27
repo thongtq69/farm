@@ -42,29 +42,43 @@ const Services = ({ content }: ServicesProps) => {
 
         <div className="services-carousel" onMouseLeave={() => setHoveredIndex(null)}>
           <div className="services-grid">
-            {visibleServices.map((service, index) => (
-              <Link
-                className={`service-card${index === featuredIndex ? ' is-featured' : ''}`}
-                key={`${index}-${service.title}`}
-                href={service.href || '/project'}
-                onMouseEnter={() => setHoveredIndex(index)}
-                onFocus={() => setHoveredIndex(index)}
-                onBlur={() => setHoveredIndex(null)}
-              >
-                <div className="service-image">
-                  <Image src={service.image} alt={service.title} fill priority={index === 0} sizes="(max-width: 991px) 100vw, 33vw" style={{ objectFit: 'cover' }} />
-                </div>
-                <div className="service-info service-info-static">
-                  <h3>{service.title}</h3>
-                  {index === featuredIndex && (
-                    <>
-                      <p>{service.desc}</p>
-                      <span className="service-card-arrow" aria-label={`Chi tiết ${service.title}`}>&rarr;</span>
-                    </>
-                  )}
-                </div>
-              </Link>
-            ))}
+              {visibleServices.map((service, index) => {
+                // Ensure link points to the specific category for sub-navigation
+                let targetHref = service.href || '/project';
+                if (targetHref === '/project') {
+                  if (service.title.toLowerCase().includes('sân vườn') || service.title.toLowerCase().includes('hồ koi')) {
+                    targetHref = '/project/san-vuon-ho-koi';
+                  } else if (service.title.toLowerCase().includes('farm') || service.title.toLowerCase().includes('du lịch')) {
+                    targetHref = '/project/farm-du-lich-nghi-duong';
+                  } else if (service.title.toLowerCase().includes('đá nhân tạo')) {
+                    targetHref = '/project/da-nhan-tao-nghe-thuat';
+                  }
+                }
+
+                return (
+                  <Link
+                    className={`service-card${index === featuredIndex ? ' is-featured' : ''}`}
+                    key={`${index}-${service.title}`}
+                    href={targetHref}
+                    onMouseEnter={() => setHoveredIndex(index)}
+                    onFocus={() => setHoveredIndex(index)}
+                    onBlur={() => setHoveredIndex(null)}
+                  >
+                    <div className="service-image">
+                      <Image src={service.image} alt={service.title} fill priority={index === 0} sizes="(max-width: 991px) 100vw, 33vw" style={{ objectFit: 'cover' }} />
+                    </div>
+                    <div className="service-info service-info-static">
+                      <h3>{service.title}</h3>
+                      {index === featuredIndex && (
+                        <>
+                          <p>{service.desc}</p>
+                          <span className="service-card-arrow" aria-label={`Chi tiết ${service.title}`}>&rarr;</span>
+                        </>
+                      )}
+                    </div>
+                  </Link>
+                );
+              })}
           </div>
 
           <div className="services-controls">
