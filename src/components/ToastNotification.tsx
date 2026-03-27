@@ -91,7 +91,7 @@ const ToastNotification = ({
             />
           </motion.div>
 
-          <style jsx>{`
+          <style dangerouslySetInnerHTML={{ __html: `
             .notification-wrapper {
               position: fixed;
               top: 2rem;
@@ -125,7 +125,7 @@ const ToastNotification = ({
               border-radius: 14px;
               display: flex;
               align-items: center;
-              justifyContent: center;
+              justify-content: center;
               flex-shrink: 0;
             }
             .notification-icon.success {
@@ -198,7 +198,7 @@ const ToastNotification = ({
                 width: 100%;
               }
             }
-          `}</style>
+          `}} />
         </div>
       )}
     </AnimatePresence>

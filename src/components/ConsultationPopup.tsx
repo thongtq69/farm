@@ -274,7 +274,7 @@ export default function ConsultationPopup({ content }: ConsultationPopupProps) {
           </div>
         )}
       </AnimatePresence>
-      <style jsx>{`
+      <style dangerouslySetInnerHTML={{ __html: `
         .loader-dots {
           width: 8px;
           height: 8px;
@@ -307,7 +307,7 @@ export default function ConsultationPopup({ content }: ConsultationPopupProps) {
         .popup-submit-btn:active:not(:disabled) {
           transform: translateY(0);
         }
-      `}</style>
+      `}} />
     </>
   );
 }
