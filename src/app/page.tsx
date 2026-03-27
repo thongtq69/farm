@@ -1,6 +1,4 @@
-'use client';
-
-import React, { useEffect } from 'react';
+import React from 'react';
 import Hero from '@/components/Hero';
 import HomeHighlights from '@/components/HomeHighlights';
 import Services from '@/components/Services';
@@ -9,47 +7,20 @@ import Projects from '@/components/Projects';
 import BeforeAfter from '@/components/BeforeAfter';
 import Testimonials from '@/components/Testimonials';
 import Companion from '@/components/Companion';
+import { getSiteContent } from '@/lib/site-content';
 
-export default function Home() {
-  useEffect(() => {
-    // Simple intersection observer for AOS-like effect
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('aos-animate');
-        }
-      });
-    }, { 
-      threshold: 0.05,
-      rootMargin: '0px 0px -50px 0px' // Trigger slightly before it enters fully
-    });
-
-    // Small delay to ensure styles are applied
-    const timer = setTimeout(() => {
-      const elements = document.querySelectorAll('[data-aos]');
-      elements.forEach(el => {
-        el.classList.add('aos-init');
-        observer.observe(el);
-      });
-    }, 100);
-
-    return () => {
-      observer.disconnect();
-      clearTimeout(timer);
-    };
-
-  }, []);
-
+export default async function Home() {
+  const siteContent = await getSiteContent();
   return (
     <>
-      <Hero />
-      <HomeHighlights />
-      <Services />
-      <Mission />
-      <Projects />
-      <BeforeAfter />
-      <Testimonials />
-      <Companion />
+      <Hero content={siteContent.home.hero} />
+      <HomeHighlights items={siteContent.home.highlights} />
+      <Services content={siteContent.home.services} />
+      <Mission content={siteContent.home.mission} />
+      <Projects content={siteContent.home.featuredProjects} />
+      <BeforeAfter content={siteContent.home.beforeAfter} />
+      <Testimonials content={siteContent.home.testimonials} />
+      <Companion content={siteContent.home.companion} />
     </>
   );
 }

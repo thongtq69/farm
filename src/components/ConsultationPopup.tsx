@@ -1,19 +1,26 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-export default function ConsultationPopup() {
+type ConsultationPopupProps = {
+  content: {
+    title: string;
+    submitLabel: string;
+    successMessage: string;
+    footerBadges: string[];
+    propertyTypeOptions: Array<{ value: string; label: string }>;
+    investmentOptions: Array<{ value: string; label: string }>;
+  };
+};
+
+export default function ConsultationPopup({ content }: ConsultationPopupProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const [formData, setFormData] = useState({ name: '', phone: '', propertyType: '', investment: '' });
 
   useEffect(() => {
-    // Show popup after 15 seconds
     const timer = setTimeout(() => {
-      // Temporarily bypass localStorage to ensure user can see it for testing
-      // const hasSeenPopup = localStorage.getItem('hasSeenConsultationPopup');
-      // if (!hasSeenPopup) {
-        setIsOpen(true);
-      // }
+      setIsOpen(true);
     }, 5000);
 
     return () => clearTimeout(timer);
@@ -21,26 +28,41 @@ export default function ConsultationPopup() {
 
   const handleClose = () => {
     setIsOpen(false);
-    // Don't show again in the same session
     localStorage.setItem('hasSeenConsultationPopup', 'true');
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    alert('Cảm ơn bạn đã đăng ký! Chúng tôi sẽ liên hệ trong thời gian sớm nhất.');
-    handleClose();
+
+    try {
+      const response = await fetch('/api/quote-requests', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...formData, source: 'consultation-popup' })
+      });
+
+      if (!response.ok) {
+        throw new Error('submit-failed');
+      }
+
+      alert(content.successMessage);
+      handleClose();
+      setFormData({ name: '', phone: '', propertyType: '', investment: '' });
+    } catch {
+      alert('Có lỗi khi gửi biểu mẫu. Anh/chị vui lòng thử lại.');
+    }
   };
 
   return (
     <AnimatePresence>
       {isOpen && (
         <div className="consultation-popup-overlay">
-          <motion.div 
+          <motion.div
             className="consultation-popup-content"
             initial={{ opacity: 0, scale: 0.8, y: 50 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.8, y: 50 }}
-            transition={{ type: "spring", damping: 25, stiffness: 300 }}
+            transition={{ type: 'spring', damping: 25, stiffness: 300 }}
           >
             <button className="popup-close" onClick={handleClose}>
               <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" strokeWidth="2" fill="none">
@@ -49,51 +71,47 @@ export default function ConsultationPopup() {
               </svg>
             </button>
 
-            <h2 className="popup-title">ĐĂNG KÝ NHẬN TƯ VẤN</h2>
+            <h2 className="popup-title">{content.title}</h2>
 
             <form onSubmit={handleSubmit} className="popup-form">
               <div className="form-group">
                 <label>Họ và tên *</label>
-                <input type="text" placeholder="Nguyễn Văn A" required />
+                <input type="text" placeholder="Nguyễn Văn A" required value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} />
               </div>
 
               <div className="form-group">
                 <label>Số điện thoại *</label>
-                <input type="tel" placeholder="0938 386 679" required />
+                <input type="tel" placeholder="0938 386 679" required value={formData.phone} onChange={(e) => setFormData({ ...formData, phone: e.target.value })} />
               </div>
 
               <div className="form-group">
                 <label>Loại công trình *</label>
-                <select required defaultValue="">
+                <select required value={formData.propertyType} onChange={(e) => setFormData({ ...formData, propertyType: e.target.value })}>
                   <option value="" disabled>-- Chọn loại --</option>
-                  <option value="san_vuon">Sân vườn biệt thự</option>
-                  <option value="ho_koi">Hồ cá Koi</option>
-                  <option value="farm">Farm & Khu Nghỉ Dưỡng</option>
-                  <option value="quan_ca_phe">Quán cà phê</option>
-                  <option value="da_nhan_tao">Đá nhân tạo nghệ thuật</option>
-                  <option value="khac">Khác</option>
+                  {content.propertyTypeOptions.map((option) => (
+                    <option key={option.value} value={option.value}>{option.label}</option>
+                  ))}
                 </select>
               </div>
 
               <div className="form-group">
                 <label>Mức đầu tư *</label>
-                <select required defaultValue="">
+                <select required value={formData.investment} onChange={(e) => setFormData({ ...formData, investment: e.target.value })}>
                   <option value="" disabled>-- Chọn mức đầu tư --</option>
-                  <option value="duoi_500">Dưới 500 triệu</option>
-                  <option value="500_1000">500 triệu - 1 tỷ</option>
-                  <option value="1000_3000">1 tỷ - 3 tỷ</option>
-                  <option value="tren_3000">Trên 3 tỷ</option>
+                  {content.investmentOptions.map((option) => (
+                    <option key={option.value} value={option.value}>{option.label}</option>
+                  ))}
                 </select>
               </div>
 
               <button type="submit" className="popup-submit-btn">
-                TƯ VẤN NGAY
+                {content.submitLabel}
               </button>
 
               <div className="popup-footer">
-                <span>✓ Hoàn toàn miễn phí</span>
+                <span>{content.footerBadges[0]}</span>
                 <span className="divider">|</span>
-                <span>✓ Phản hồi nhanh chóng</span>
+                <span>{content.footerBadges[1]}</span>
               </div>
             </form>
           </motion.div>

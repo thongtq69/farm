@@ -68,10 +68,10 @@
 
 .catalog-card-v2 {
   position: relative;
-  border-radius: 16px;
+  border-radius: 0;
   overflow: hidden;
   cursor: pointer;
-  aspect-ratio: 16/10;
+  aspect-ratio: 5 / 4;
   box-shadow: 0 4px 20px rgba(0,0,0,0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: block;
@@ -223,8 +223,8 @@
   }
 
   .catalog-card-v2 {
-    aspect-ratio: 4 / 5;
-    border-radius: 22px;
+    aspect-ratio: 5 / 4;
+    border-radius: 0;
   }
 
   .category-filter-tabs {
@@ -305,20 +305,47 @@
   }
 }
 
-@media (max-width: 1200px) {
+/* Grid Responsive Rules */
+@media (max-width: 1400px) {
   .catalog-grid-v2 {
-    grid-template-columns: 1fr;
-    gap: 2rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
   }
-  .catalog-card-v2 {
-    aspect-ratio: 4 / 5;
-    border-radius: 0; /* Remove radius for full-width blocky look or keep it? */
+}
+
+@media (max-width: 1100px) {
+  .catalog-grid-v2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
   }
 }
 
 @media (max-width: 768px) {
+  .catalog-grid-v2 {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
   .catalog-card-v2 {
-    aspect-ratio: 16 / 9;
-    border-radius: 22px;
+    aspect-ratio: 5 / 4;
+    border-radius: 20px;
+  }
+
+  .category-filter-tabs {
+    display: flex;
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding-bottom: 0.5rem;
+    scrollbar-width: none;
+    border-bottom: 2px solid #e5e7eb;
+  }
+  
+  .category-tab {
+    padding: 0.8rem 1.2rem;
+    font-size: 0.85rem;
+  }
+
+  .catalog-container {
+    padding: 0 1rem;
   }
 }

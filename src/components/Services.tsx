@@ -2,95 +2,73 @@
 
 import React, { useCallback, useMemo, useState } from 'react';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 
-const services = [
-  {
-    title: 'Sân Vườn - Hồ Koi',
-    desc: 'Chuyên thiết kế, thi công và vận hành – bảo trì hồ cá Koi cùng cảnh quan sân vườn trên toàn quốc.',
-    image: 'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426311/farm/images/home/ef1xlo8bmxyhzywabywq.jpg'
-  },
-  {
-    title: 'Farm & Du Lịch',
-    desc: 'Chuyên tư vấn, thiết kế và thi công farm nghỉ dưỡng, khu du lịch sinh thái và cảnh quan đồng bộ.',
-    image: 'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426312/farm/images/home/og0lbibbyepj00simsjx.jpg'
-  },
-  {
-    title: 'Đá Nhân Tạo & Tiểu cảnh',
-    desc: 'Chuyên thiết kế, thi công đá nhân tạo nghệ thuật và tiểu cảnh, tạo điểm nhấn thẩm mỹ cho không gian cảnh quan.',
-    image: 'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426313/farm/images/home/btqwh4ldz8nrg3ijlrno.jpg'
-  }
-];
+type ServiceItem = { title: string; desc: string; image: string; href?: string };
 
-const Services = () => {
+type ServicesProps = {
+  content: {
+    eyebrow: string;
+    title: string;
+    description: string;
+    items: ServiceItem[];
+  };
+};
+
+const Services = ({ content }: ServicesProps) => {
+  const router = useRouter();
   const [activeIndex, setActiveIndex] = useState(0);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-
   const showCount = 3;
 
   const goNext = useCallback(() => {
-    setActiveIndex((current) => (current + 1) % services.length);
-  }, []);
+    setActiveIndex((current) => (current + 1) % content.items.length);
+  }, [content.items.length]);
 
   const goPrev = useCallback(() => {
-    setActiveIndex((current) => (current - 1 + services.length) % services.length);
-  }, []);
+    setActiveIndex((current) => (current - 1 + content.items.length) % content.items.length);
+  }, [content.items.length]);
 
-  const visibleServices = useMemo(
-    () => Array.from({ length: showCount }, (_, offset) => services[(activeIndex + offset) % services.length]),
-    [activeIndex]
-  );
-
+  const visibleServices = useMemo(() => Array.from({ length: showCount }, (_, offset) => content.items[(activeIndex + offset) % content.items.length]), [activeIndex, content.items]);
   const featuredIndex = hoveredIndex;
 
   return (
     <section className="services section bg-pattern">
       <div className="container">
         <div className="section-header" data-aos="fade-up">
-          <span className="subtitle">Dịch vụ Son Hai Landscape</span>
-          <h2 className="section-title">Dịch vụ Chuyên nghiệp</h2>
-          <p className="section-subtitle">
-            Chúng tôi kiến tạo những không gian hài hòa giữa thẩm mỹ và công năng, đảm bảo chất lượng cho từng dự án.
-          </p>
+          <span className="subtitle">{content.eyebrow}</span>
+          <h2 className="section-title">{content.title}</h2>
+          <p className="section-subtitle">{content.description}</p>
         </div>
 
-        <div
-          className="services-carousel"
-          onMouseLeave={() => {
-            setHoveredIndex(null);
-          }}
-        >
+        <div className="services-carousel" onMouseLeave={() => setHoveredIndex(null)}>
           <div className="services-grid">
             {visibleServices.map((service, index) => (
               <div
                 className={`service-card${index === featuredIndex ? ' is-featured' : ''}`}
                 key={`${index}-${service.title}`}
                 onMouseEnter={() => setHoveredIndex(index)}
-                onFocus={() => {
-                  setHoveredIndex(index);
-                }}
-                onBlur={() => {
-                  setHoveredIndex(null);
+                onFocus={() => setHoveredIndex(index)}
+                onBlur={() => setHoveredIndex(null)}
+                onClick={() => router.push(service.href || '/project')}
+                onKeyDown={(event) => {
+                  if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault();
+                    router.push(service.href || '/project');
+                  }
                 }}
                 tabIndex={0}
+                role="link"
               >
                 <div className="service-image">
-                  <Image
-                    src={service.image}
-                    alt={service.title}
-                    fill
-                    priority={index === 0}
-                    sizes="(max-width: 991px) 100vw, 33vw"
-                    style={{ objectFit: 'cover' }}
-                  />
+                  <Image src={service.image} alt={service.title} fill priority={index === 0} sizes="(max-width: 991px) 100vw, 33vw" style={{ objectFit: 'cover' }} />
                 </div>
                 <div className="service-info service-info-static">
                   <h3>{service.title}</h3>
                   {index === featuredIndex && (
                     <>
                       <p>{service.desc}</p>
-                      <a href="#" className="service-card-arrow" aria-label={`Chi tiết ${service.title}`}>
-                        &rarr;
-                      </a>
+                      <span className="service-card-arrow" aria-label={`Chi tiết ${service.title}`}>&rarr;</span>
                     </>
                   )}
                 </div>
@@ -100,12 +78,8 @@ const Services = () => {
 
           <div className="services-controls">
             <span className="services-controls-line" />
-            <button type="button" className="services-control-btn" onClick={goPrev} aria-label="Dự án trước">
-              &larr;
-            </button>
-            <button type="button" className="services-control-btn" onClick={goNext} aria-label="Dự án tiếp theo">
-              &rarr;
-            </button>
+            <button type="button" className="services-control-btn" onClick={goPrev} aria-label="Dự án trước">&larr;</button>
+            <button type="button" className="services-control-btn" onClick={goNext} aria-label="Dự án tiếp theo">&rarr;</button>
             <span className="services-controls-line" />
           </div>
         </div>
