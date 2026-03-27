@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import Image from 'next/image';
 import { AnimatePresence, motion } from 'framer-motion';
 
 const reviews = [
@@ -11,12 +10,6 @@ const reviews = [
     project: 'Dự án Farmstay bản địa',
     content:
       'Son Hai Landscape đã giúp tôi hiện thực hóa ý tưởng về một Farmstay mang hơi thở bản địa. Quy trình làm việc rất chuyên nghiệp và thấu hiểu khách hàng.',
-    visuals: [
-      'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426298/farm/images/content/umebvn2mg2rygene4ni9.jpg',
-      'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426300/farm/images/content/acvfcxnm7qvwhk0whzb5.jpg',
-      'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426301/farm/images/content/tc3zvjlxg99jmbpgcrfy.jpg',
-      'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426302/farm/images/content/py88hwi7fq9xcuutwtns.jpg'
-    ]
   },
   {
     author: 'Mr. David Smith',
@@ -24,12 +17,6 @@ const reviews = [
     project: 'Dự án nghỉ dưỡng đồi dốc',
     content:
       'Professional landscape planning. They understand the terrain and elevation challenges very well, then translate everything into a clear and workable master plan.',
-    visuals: [
-      'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426300/farm/images/content/acvfcxnm7qvwhk0whzb5.jpg',
-      'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426302/farm/images/content/py88hwi7fq9xcuutwtns.jpg',
-      'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426298/farm/images/content/umebvn2mg2rygene4ni9.jpg',
-      'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426301/farm/images/content/tc3zvjlxg99jmbpgcrfy.jpg'
-    ]
   },
   {
     author: 'Mr. Hoàng Nam',
@@ -37,12 +24,6 @@ const reviews = [
     project: 'Dự án quy hoạch nông trại',
     content:
       'Hồ sơ kỹ thuật chi tiết và dễ hiểu cho đội thi công. Son Hai Landscape giúp tôi tiết kiệm nhiều chi phí phát sinh, đồng thời giữ được tính thẩm mỹ cho toàn bộ dự án.',
-    visuals: [
-      'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426301/farm/images/content/tc3zvjlxg99jmbpgcrfy.jpg',
-      'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426298/farm/images/content/umebvn2mg2rygene4ni9.jpg',
-      'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426302/farm/images/content/py88hwi7fq9xcuutwtns.jpg',
-      'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426300/farm/images/content/acvfcxnm7qvwhk0whzb5.jpg'
-    ]
   }
 ];
 
@@ -84,6 +65,13 @@ const Testimonials = () => {
   };
 
   const activeReview = reviews[currentIndex];
+  const avatarLabel = activeReview.author
+    .replace(/^(Mr\.?|Ms\.?|Mrs\.?|Anh|Chị)\s+/i, '')
+    .split(/\s+/)
+    .filter(Boolean)
+    .slice(0, 2)
+    .map((part) => part[0]?.toUpperCase())
+    .join('');
 
   return (
     <section className="testimonials section section-dark-alt" style={{ overflow: 'hidden' }}>
@@ -103,26 +91,11 @@ const Testimonials = () => {
               exit={{ opacity: 0, y: -28 }}
               transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
             >
-              <div className="testimonial-visual testimonial-visual-left">
-                <Image src={activeReview.visuals[0]} alt={activeReview.author} fill style={{ objectFit: 'cover' }} />
-              </div>
-
-              <div className="testimonial-visual testimonial-visual-right-top">
-                <Image src={activeReview.visuals[1]} alt={activeReview.project} fill style={{ objectFit: 'cover' }} />
-              </div>
-
-              <div className="testimonial-visual testimonial-visual-bottom-left">
-                <Image src={activeReview.visuals[2]} alt={activeReview.role} fill style={{ objectFit: 'cover' }} />
-              </div>
-
-              <div className="testimonial-visual testimonial-visual-bottom-right">
-                <Image src={activeReview.visuals[3]} alt={activeReview.project} fill style={{ objectFit: 'cover' }} />
-              </div>
-
               <div className="testimonial-copy">
                 <div className="testimonial-quote-mark">“</div>
                 <p className="testimonial-content">{activeReview.content}</p>
                 <div className="testimonial-meta">
+                  <div className="testimonial-avatar" aria-hidden="true">{avatarLabel}</div>
                   <h3>{activeReview.author}</h3>
                   <span>{activeReview.project}</span>
                   <strong>{activeReview.role}</strong>

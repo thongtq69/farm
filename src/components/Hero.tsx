@@ -75,7 +75,7 @@ const Hero = () => {
             <Link href="/bao-gia-thiet-ke-farm" className="btn-modern-primary">
               Nhận Báo Giá
             </Link>
-            <Link href="/project" className="btn-modern-outline-white">
+            <Link href="/project" className="btn-modern-outline-white hero-btn-secondary">
               Xem dự án
             </Link>
           </div>

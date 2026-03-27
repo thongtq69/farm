@@ -94,12 +94,12 @@ const ProjectCatalog = ({ initialCategory }: ProjectCatalogProps) => {
 
   return (
     <div className="project-catalog-v2">
-      <div style={{ width: '100%', maxWidth: '1600px', margin: '0 auto', padding: '0 2rem' }}>
+      <div className="catalog-container">
         
         {/* Section: Hình Ảnh */}
         <section ref={imageRef} className="catalog-section" style={{ paddingTop: '2rem', paddingBottom: '4rem' }}>
           <div className="catalog-header text-center" style={{ marginBottom: '3rem' }}>
-            <span className="subtitle" style={{ color: '#00c689', background: 'rgba(0,198,137,0.1)', padding: '0.5rem 1.5rem', borderRadius: '50px', display: 'inline-block', marginBottom: '1rem', fontWeight: 600 }}>Hình Ảnh Công Trình</span>
+            <span className="subtitle subtitle-pill" style={{ color: '#00c689', background: 'rgba(0,198,137,0.1)', padding: '0.5rem 1.5rem', borderRadius: '50px', display: 'inline-block', marginBottom: '1rem', fontWeight: 600 }}>Hình Ảnh Công Trình</span>
             <h2 style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', color: '#0d3f32', fontFamily: 'Playfair Display, serif', fontWeight: 800, marginBottom: '1rem' }}>
               Hình Ảnh Công Trình Thực Tế
             </h2>
@@ -149,7 +149,7 @@ const ProjectCatalog = ({ initialCategory }: ProjectCatalogProps) => {
         {/* Section: Video */}
         <section ref={videoRef} className="catalog-section" style={{ paddingTop: '4rem', paddingBottom: '4rem' }}>
           <div className="catalog-header text-center" style={{ marginBottom: '3rem' }}>
-            <span className="subtitle" style={{ color: '#00c689', background: 'rgba(0,198,137,0.1)', padding: '0.5rem 1.5rem', borderRadius: '50px', display: 'inline-block', marginBottom: '1rem', fontWeight: 600 }}>Video Thi Công</span>
+            <span className="subtitle subtitle-pill" style={{ color: '#00c689', background: 'rgba(0,198,137,0.1)', padding: '0.5rem 1.5rem', borderRadius: '50px', display: 'inline-block', marginBottom: '1rem', fontWeight: 600 }}>Video Thi Công</span>
             <h2 style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', color: '#0d3f32', fontFamily: 'Playfair Display, serif', fontWeight: 800, marginBottom: '1rem' }}>
               Video Thi Công & Thực Tế
             </h2>
@@ -181,7 +181,7 @@ const ProjectCatalog = ({ initialCategory }: ProjectCatalogProps) => {
         {/* Section: 3D */}
         <section ref={threeDRef} className="catalog-section" style={{ paddingTop: '4rem', paddingBottom: '8rem' }}>
           <div className="catalog-header text-center" style={{ marginBottom: '3rem' }}>
-            <span className="subtitle" style={{ color: '#00c689', background: 'rgba(0,198,137,0.1)', padding: '0.5rem 1.5rem', borderRadius: '50px', display: 'inline-block', marginBottom: '1rem', fontWeight: 600 }}>Mô Hình 3D</span>
+            <span className="subtitle subtitle-pill" style={{ color: '#00c689', background: 'rgba(0,198,137,0.1)', padding: '0.5rem 1.5rem', borderRadius: '50px', display: 'inline-block', marginBottom: '1rem', fontWeight: 600 }}>Mô Hình 3D</span>
             <h2 style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', color: '#0d3f32', fontFamily: 'Playfair Display, serif', fontWeight: 800, marginBottom: '1rem' }}>
               Phối Cảnh 3D & Quy Hoạch
             </h2>

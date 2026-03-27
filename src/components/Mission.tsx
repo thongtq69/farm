@@ -3,6 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import gioiThieuSachImage from '../../gioithieusach.jpg';
 
 const Mission = () => {
   return (
@@ -63,11 +64,11 @@ const Mission = () => {
         >
           <div className="image-wrapper">
             <Image 
-              src="https://res.cloudinary.com/dwalymiy3/image/upload/v1774426270/farm/images/banners/xqh8hfat7lsie0no5d8l.png" 
+              src={gioiThieuSachImage}
               alt="Võ Hữu Hải - Son Hai Landscape" 
-              width={700}
-              height={900}
-              style={{ objectFit: 'contain', objectPosition: 'bottom' }}
+              fill
+              sizes="(max-width: 991px) 100vw, 50vw"
+              style={{ objectFit: 'contain', objectPosition: 'center center' }}
             />
             <motion.div 
               className="mission-badge"

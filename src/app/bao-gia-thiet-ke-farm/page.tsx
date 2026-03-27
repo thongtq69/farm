@@ -12,7 +12,7 @@ export default function PricingPage() {
           
           {/* Left: Content */}
           <div className="pricing-content-left">
-            <span className="subtitle" style={{ color: '#00c689', background: 'rgba(0,198,137,0.1)', padding: '0.6rem 1.8rem', borderRadius: '50px', display: 'inline-block', marginBottom: '1.5rem', fontWeight: 700, fontSize: '1rem' }}>TƯ VẤN CHUYÊN SÂU 1:1</span>
+            <span className="subtitle subtitle-pill" style={{ color: '#00c689', background: 'rgba(0,198,137,0.1)', padding: '0.6rem 1.8rem', borderRadius: '50px', display: 'inline-block', marginBottom: '1.5rem', fontWeight: 700, fontSize: '1rem' }}>TƯ VẤN CHUYÊN SÂU 1:1</span>
             
             <h1 style={{ 
               fontSize: 'clamp(3rem, 6vw, 4.5rem)', 
