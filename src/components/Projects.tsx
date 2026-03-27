@@ -49,9 +49,18 @@ const Projects = ({ content }: ProjectsProps) => {
           <div className="projects-header-left">
             <span className="projects-badge">{content.badge}</span>
             <h2 className="projects-main-title" style={{ color: 'white' }} dangerouslySetInnerHTML={{ __html: content.titleHtml }} />
+            <p className="projects-header-caption">Những dự án được chọn lọc để thể hiện rõ tư duy thiết kế, chất lượng thi công và bản sắc riêng của Son Hai Landscape.</p>
           </div>
           <div className="projects-header-right">
-            <p style={{ color: 'rgba(255,255,255,0.7)' }}>{content.description}</p>
+            <div className="projects-header-panel">
+              <span className="projects-header-kicker">Timeless Design</span>
+              <p>{content.description}</p>
+              <div className="projects-header-tags">
+                <span>Cảnh quan</span>
+                <span>Hồ koi</span>
+                <span>Nghỉ dưỡng</span>
+              </div>
+            </div>
           </div>
         </div>
 
