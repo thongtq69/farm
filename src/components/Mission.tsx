@@ -72,7 +72,7 @@ const Mission = ({ content }: MissionProps) => {
               <p>{content.cta.title}</p>
               <span>{content.cta.subtitle}</span>
             </div>
-            <a href={content.cta.phoneHref} className="cta-phone">{content.cta.phoneLabel}</a>
+            <a href={pdfViewerHref} className="view-pdf-btn mission-read-btn" target="_blank" rel="noopener noreferrer">Đọc ngay</a>
           </motion.div>
         </motion.div>
 
@@ -86,9 +86,6 @@ const Mission = ({ content }: MissionProps) => {
               sizes="(max-width: 991px) 100vw, 50vw" 
               style={{ width: '100%', height: 'auto', display: 'block', borderRadius: 0 }} 
             />
-          </div>
-          <div className="mission-image-actions">
-            <a href={pdfViewerHref} className="view-pdf-btn" target="_blank" rel="noopener noreferrer">Xem ngay</a>
           </div>
         </motion.div>
       </div>
