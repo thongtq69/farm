@@ -23,7 +23,7 @@ const Header = () => {
     { name: 'Trang chủ', href: '/' },
     { name: 'Chúng tôi', href: '/chung-toi' },
     { name: 'Dự án', href: '/project', dropdown: true },
-    { name: 'Reels', href: '/reels' },
+    { name: 'Video', href: '/reels' },
     { name: 'Báo giá ngay', href: '/bao-gia-thiet-ke-farm' },
   ];
 
@@ -109,7 +109,7 @@ const Header = () => {
                 <li><Link href="/project/da-nhan-tao-nghe-thuat" onClick={() => setIsMenuOpen(false)}>Đá Nhân Tạo Nghệ Thuật</Link></li>
               </ul>
             </li>
-            <li><Link href="/reels" onClick={() => setIsMenuOpen(false)}>Reels</Link></li>
+            <li><Link href="/reels" onClick={() => setIsMenuOpen(false)}>Video</Link></li>
             <li><Link href="/bao-gia-thiet-ke-farm" onClick={() => setIsMenuOpen(false)}>Báo giá ngay</Link></li>
           </ul>
         </div>
