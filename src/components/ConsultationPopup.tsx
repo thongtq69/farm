@@ -69,6 +69,7 @@ export default function ConsultationPopup() {
                   <option value="san_vuon">Sân vườn biệt thự</option>
                   <option value="ho_koi">Hồ cá Koi</option>
                   <option value="farm">Farm & Khu Nghỉ Dưỡng</option>
+                  <option value="quan_ca_phe">Quán cà phê</option>
                   <option value="da_nhan_tao">Đá nhân tạo nghệ thuật</option>
                   <option value="khac">Khác</option>
                 </select>

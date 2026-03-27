@@ -79,6 +79,7 @@ const QuoteForm = () => {
             <option value="san_vuon">Sân vườn biệt thự</option>
             <option value="ho_koi">Hồ cá Koi nghệ thuật</option>
             <option value="farm">Farmstay & Khu Nghỉ Dưỡng</option>
+            <option value="quan_ca_phe">Quán cà phê</option>
             <option value="da_nhan_tao">Đá nhân tạo nghệ thuật</option>
             <option value="khac">Yêu cầu khác</option>
           </select>
