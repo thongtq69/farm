@@ -19,16 +19,22 @@ export default function ConsultationPopup({ content }: ConsultationPopupProps) {
   const [formData, setFormData] = useState({ name: '', phone: '', propertyType: '', investment: '' });
 
   useEffect(() => {
-    const timer = setTimeout(() => {
+    const initialTimer = setTimeout(() => {
       setIsOpen(true);
     }, 5000);
 
-    return () => clearTimeout(timer);
+    const interval = setInterval(() => {
+      setIsOpen(true);
+    }, 60000);
+
+    return () => {
+      clearTimeout(initialTimer);
+      clearInterval(interval);
+    };
   }, []);
 
   const handleClose = () => {
     setIsOpen(false);
-    localStorage.setItem('hasSeenConsultationPopup', 'true');
   };
 
   const handleSubmit = async (e: React.FormEvent) => {

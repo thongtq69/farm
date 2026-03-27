@@ -67,13 +67,18 @@ const Mission = ({ content }: MissionProps) => {
             ))}
           </div>
 
-          <motion.div className="mission-cta" whileHover={{ scale: 1.02 }}>
+          <motion.div className="mission-cta" whileHover={{ y: -2 }}>
             <div className="cta-txt">
-              <p>{content.cta.title}</p>
-              <span>{content.cta.subtitle}</span>
+              <p>Giới thiệu sách</p>
+              <span>20 phút biết làm hồ koi</span>
             </div>
-            <a href={pdfViewerHref} className="view-pdf-btn mission-read-btn" target="_blank" rel="noopener noreferrer">Đọc ngay</a>
           </motion.div>
+
+          <div className="mission-book-intro">
+            <p>
+              Cuốn sách <strong>“20 phút biết làm hồ koi”</strong> của Hữu Hải là sự đúc kết ngắn gọn những kiến thức và kỹ thuật tiêu chuẩn thiết kế, thi công hồ koi trong hơn 15 năm làm việc, giúp bạn đọc nhanh chóng nắm được nguyên lý cốt lõi để làm hồ đúng và bền vững.
+            </p>
+          </div>
         </motion.div>
 
         <motion.div className="mission-image" initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 1.2 }}>
@@ -86,6 +91,9 @@ const Mission = ({ content }: MissionProps) => {
               sizes="(max-width: 991px) 100vw, 50vw" 
               style={{ width: '100%', height: 'auto', display: 'block', borderRadius: 0 }} 
             />
+          </div>
+          <div className="mission-image-actions">
+            <a href={pdfViewerHref} className="view-pdf-btn mission-read-btn" target="_blank" rel="noopener noreferrer">Xem thử sách</a>
           </div>
         </motion.div>
       </div>
