@@ -90,6 +90,25 @@ const QuoteForm = ({ content }: QuoteFormProps) => {
           overflow: 'hidden'
         }}
       >
+        {isSubmitting && (
+          <div style={{
+            position: 'absolute',
+            inset: 0,
+            background: 'rgba(255, 255, 255, 0.8)',
+            backdropFilter: 'blur(4px)',
+            zIndex: 10,
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: '1rem',
+            borderRadius: '32px'
+          }}>
+            <div className="loader-spinner"></div>
+            <span style={{ fontWeight: 700, color: '#0e2a04', fontFamily: "'Be Vietnam Pro', sans-serif" }}>Đang xử lý yêu cầu...</span>
+          </div>
+        )}
+
         <div className="form-head-v2" style={{ marginBottom: '3rem', textAlign: 'center' }}>
           <h3
             style={{
@@ -159,7 +178,7 @@ const QuoteForm = ({ content }: QuoteFormProps) => {
             padding: '1.4rem', 
             fontSize: '1rem', 
             fontWeight: 800, 
-            cursor: 'pointer', 
+            cursor: isSubmitting ? 'not-allowed' : 'pointer', 
             boxShadow: '0 15px 35px rgba(14, 42, 4, 0.25)', 
             transition: 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)', 
             opacity: isSubmitting ? 0.8 : 1,
@@ -209,12 +228,12 @@ const QuoteForm = ({ content }: QuoteFormProps) => {
             background: white !important;
             box-shadow: 0 0 0 4px rgba(0, 198, 137, 0.1);
           }
-          .submit-btn-v3:hover {
+          .submit-btn-v3:hover:not(:disabled) {
             background: #00c689;
             transform: translateY(-5px);
             box-shadow: 0 20px 40px rgba(0, 198, 137, 0.3);
           }
-          .submit-btn-v3:active {
+          .submit-btn-v3:active:not(:disabled) {
             transform: translateY(-2px);
           }
           .loader-dots {
@@ -229,6 +248,18 @@ const QuoteForm = ({ content }: QuoteFormProps) => {
             from { transform: scale(0.8); opacity: 0.5; }
             to { transform: scale(1.2); opacity: 1; }
           }
+          .loader-spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #00c689;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+          }
+          @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+          }
         `}</style>
       </div>
     </>
@@ -236,3 +267,4 @@ const QuoteForm = ({ content }: QuoteFormProps) => {
 };
 
 export default QuoteForm;
+

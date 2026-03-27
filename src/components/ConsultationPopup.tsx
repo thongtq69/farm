@@ -116,9 +116,29 @@ export default function ConsultationPopup({ content }: ConsultationPopupProps) {
                 borderRadius: '32px',
                 padding: '3rem',
                 position: 'relative',
-                boxShadow: '0 40px 100px rgba(0,0,0,0.2)'
+                boxShadow: '0 40px 100px rgba(0,0,0,0.2)',
+                overflow: 'hidden'
               }}
             >
+              {isSubmitting && (
+                <div style={{
+                  position: 'absolute',
+                  inset: 0,
+                  background: 'rgba(255, 255, 255, 0.8)',
+                  backdropFilter: 'blur(4px)',
+                  zIndex: 10,
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  gap: '1rem',
+                  borderRadius: '32px'
+                }}>
+                  <div className="loader-spinner"></div>
+                  <span style={{ fontWeight: 700, color: '#0e2a04', fontFamily: "'Be Vietnam Pro', sans-serif" }}>Đang xử lý yêu cầu...</span>
+                </div>
+              )}
+
               <button 
                 className="popup-close" 
                 onClick={handleClose}
@@ -135,7 +155,8 @@ export default function ConsultationPopup({ content }: ConsultationPopupProps) {
                   alignItems: 'center',
                   justifyContent: 'center',
                   cursor: 'pointer',
-                  color: '#666'
+                  color: '#666',
+                  zIndex: 2
                 }}
               >
                 <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" strokeWidth="2.5" fill="none">
@@ -151,10 +172,12 @@ export default function ConsultationPopup({ content }: ConsultationPopupProps) {
                 color: '#0e2a04',
                 marginBottom: '2rem',
                 textAlign: 'center',
-                letterSpacing: '-0.02em'
+                letterSpacing: '-0.02em',
+                position: 'relative',
+                zIndex: 2
               }}>{content.title}</h2>
 
-              <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+              <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', position: 'relative', zIndex: 2 }}>
                 <div className="form-group">
                   <label style={{ display: 'block', fontSize: '0.9rem', fontWeight: 700, color: '#444', marginBottom: '0.6rem' }}>Họ và tên *</label>
                   <input 
@@ -212,6 +235,7 @@ export default function ConsultationPopup({ content }: ConsultationPopupProps) {
                 <button 
                   type="submit" 
                   disabled={isSubmitting}
+                  className="popup-submit-btn"
                   style={{ 
                     width: '100%', 
                     padding: '1.25rem', 
@@ -222,13 +246,22 @@ export default function ConsultationPopup({ content }: ConsultationPopupProps) {
                     fontWeight: 800, 
                     fontSize: '1rem', 
                     marginTop: '0.5rem', 
-                    cursor: 'pointer',
+                    cursor: isSubmitting ? 'not-allowed' : 'pointer',
                     boxShadow: '0 10px 25px rgba(14, 42, 4, 0.2)',
                     transition: 'all 0.3s',
-                    opacity: isSubmitting ? 0.8 : 1
+                    opacity: isSubmitting ? 0.8 : 1,
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    gap: '12px'
                   }}
                 >
-                  {isSubmitting ? 'ĐANG XỬ LÝ...' : content.submitLabel}
+                  {isSubmitting ? (
+                    <>
+                      <span className="loader-dots"></span>
+                      ĐANG XỬ LÝ...
+                    </>
+                  ) : content.submitLabel}
                 </button>
 
                 <div className="popup-footer" style={{ display: 'flex', justifyContent: 'center', gap: '1rem', marginTop: '1.5rem', fontSize: '0.85rem', color: '#888', fontWeight: 600 }}>
@@ -241,6 +274,40 @@ export default function ConsultationPopup({ content }: ConsultationPopupProps) {
           </div>
         )}
       </AnimatePresence>
+      <style jsx>{`
+        .loader-dots {
+          width: 8px;
+          height: 8px;
+          background: white;
+          border-radius: 50%;
+          display: inline-block;
+          animation: pulse 1s infinite alternate;
+        }
+        @keyframes pulse {
+          from { transform: scale(0.8); opacity: 0.5; }
+          to { transform: scale(1.2); opacity: 1; }
+        }
+        .loader-spinner {
+          width: 40px;
+          height: 40px;
+          border: 4px solid #f3f3f3;
+          border-top: 4px solid #00c689;
+          border-radius: 50%;
+          animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+        }
+        .popup-submit-btn:hover:not(:disabled) {
+          background: #00c689;
+          transform: translateY(-2px);
+          box-shadow: 0 15px 30px rgba(0, 198, 137, 0.3);
+        }
+        .popup-submit-btn:active:not(:disabled) {
+          transform: translateY(0);
+        }
+      `}</style>
     </>
   );
 }
