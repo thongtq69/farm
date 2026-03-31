@@ -1,5 +1,5 @@
 import React from 'react';
-import ReelsGrid from '../../components/ReelsGrid';
+import ReelsGrid from '@/components/ReelsGrid';
 import { getReels, getSiteContent } from '@/lib/site-content';
 
 export const metadata = {

@@ -5,7 +5,7 @@ import { importMap } from '../importMap'
 
 type Args = {
   params: Promise<{
-    payload: string[]
+    payload?: string[]
   }>
   searchParams: Promise<{
     [key: string]: string | string[]
@@ -16,10 +16,12 @@ export const generateMetadata = ({ params, searchParams }: Args) =>
   generatePageMetadata({ config, params, searchParams })
 
 const Page = async ({ params, searchParams }: Args) => {
+  const rootParams = params.then(({ payload = [] }) => ({ segments: payload }))
+
   return RootPage({
     config,
     importMap,
-    params,
+    params: rootParams,
     searchParams,
   })
 }

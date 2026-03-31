@@ -5,13 +5,19 @@ import { importMap } from '../importMap'
 
 type Args = {
   params: Promise<{
-    payload: string[]
+    payload?: string[]
   }>
   searchParams: Promise<{
     [key: string]: string | string[]
   }>
 }
 
-const Page = ({ params, searchParams }: Args) => NotFoundPage({ config, importMap, params, searchParams })
+const Page = ({ params, searchParams }: Args) =>
+  NotFoundPage({
+    config,
+    importMap,
+    params: params.then(({ payload = [] }) => ({ segments: payload })),
+    searchParams,
+  })
 
 export default Page
