@@ -10,7 +10,7 @@ export async function GET() {
     const users = await payload.find({
       collection: 'users',
       where: {
-        email: { equals: 'admin@thuychi.com' }
+        email: { equals: 'admin@sonhai.com' }
       }
     });
 
@@ -23,16 +23,16 @@ export async function GET() {
           password: 'Password123!',
         }
       });
-      return NextResponse.json({ message: 'Reset password for admin@thuychi.com to Password123!' });
+      return NextResponse.json({ message: 'Reset password for admin@sonhai.com to Password123!' });
     } else {
       await payload.create({
         collection: 'users',
         data: {
-          email: 'admin@thuychi.com',
+          email: 'admin@sonhai.com',
           password: 'Password123!'
         }
       });
-      return NextResponse.json({ message: 'Created admin@thuychi.com / Password123!' });
+      return NextResponse.json({ message: 'Created admin@sonhai.com / Password123!' });
     }
   } catch (err: any) {
     return NextResponse.json({ error: err.message }, { status: 500 });
