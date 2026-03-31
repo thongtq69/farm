@@ -1,5 +1,5 @@
 import React from 'react';
-import QuoteForm from '../../components/QuoteForm';
+import QuoteForm from '@/components/QuoteForm';
 import Image from 'next/image';
 import { getSiteContent } from '@/lib/site-content';
 

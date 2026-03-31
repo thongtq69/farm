@@ -1,7 +1,8 @@
 'use client';
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { createPortal } from 'react-dom';
 
 type NotificationProps = {
   message: string;
@@ -10,6 +11,7 @@ type NotificationProps = {
   isVisible: boolean;
   onClose: () => void;
   duration?: number;
+  theme?: 'light' | 'dark-green';
 };
 
 const ToastNotification = ({ 
@@ -18,9 +20,15 @@ const ToastNotification = ({
   type = 'success', 
   isVisible, 
   onClose, 
-  duration = 5000 
+  duration = 5000,
+  theme = 'light'
 }: NotificationProps) => {
+  const [mounted, setMounted] = useState(false);
   
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   useEffect(() => {
     if (isVisible && duration > 0) {
       const timer = setTimeout(() => {
@@ -57,12 +65,14 @@ const ToastNotification = ({
     )
   };
 
-  return (
+  if (!mounted) return null;
+
+  const content = (
     <AnimatePresence>
       {isVisible && (
-        <div className="notification-wrapper">
+        <div className={`notification-wrapper theme-${theme}`}>
           <motion.div
-            className={`notification-card ${type}`}
+            className={`notification-card ${type} theme-${theme}`}
             initial={{ opacity: 0, scale: 0.9, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20, transition: { duration: 0.2 } }}
@@ -96,12 +106,15 @@ const ToastNotification = ({
               position: fixed;
               top: 2rem;
               right: 2rem;
-              z-index: 9999;
+              z-index: 10000;
               pointer-events: none;
+            }
+            .notification-wrapper.theme-dark-green {
+              z-index: 100000;
             }
             .notification-card {
               pointer-events: auto;
-              min-width: 320px;
+              min-width: 340px;
               max-width: 450px;
               background: white;
               padding: 1.5rem;
@@ -109,10 +122,16 @@ const ToastNotification = ({
               box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
               display: flex;
               align-items: center;
-              gap: 1rem;
+              gap: 1.25rem;
               position: relative;
               overflow: hidden;
               border: 1px solid rgba(0, 0, 0, 0.05);
+            }
+            .notification-card.theme-dark-green {
+              background: linear-gradient(180deg, #0b5a44 0%, #094735 100%);
+              border: 1px solid rgba(255, 255, 255, 0.2);
+              box-shadow: 0 30px 70px rgba(0, 0, 0, 0.5);
+              color: white;
             }
             .notification-content {
               display: flex;
@@ -132,13 +151,28 @@ const ToastNotification = ({
               background: #f0fdf4;
               color: #10b981;
             }
+            .theme-dark-green .notification-icon.success {
+              background: rgba(16, 185, 129, 0.2);
+              color: #10b981;
+              border: 1px solid rgba(16, 185, 129, 0.3);
+            }
             .notification-icon.error {
               background: #fef2f2;
               color: #ef4444;
             }
+            .theme-dark-green .notification-icon.error {
+              background: rgba(239, 68, 68, 0.2);
+              color: #ef4444;
+              border: 1px solid rgba(239, 68, 68, 0.3);
+            }
             .notification-icon.info {
               background: #eff6ff;
               color: #3b82f6;
+            }
+            .theme-dark-green .notification-icon.info {
+              background: rgba(59, 130, 246, 0.2);
+              color: #3b82f6;
+              border: 1px solid rgba(59, 130, 246, 0.3);
             }
             .notification-text {
               flex: 1;
@@ -151,11 +185,17 @@ const ToastNotification = ({
               line-height: 1.3;
               font-family: inherit;
             }
+            .theme-dark-green .notification-title {
+              color: white;
+            }
             .notification-subtitle {
               font-size: 0.9rem;
               color: #666;
               margin: 0.25rem 0 0 0;
               line-height: 1.4;
+            }
+            .theme-dark-green .notification-subtitle {
+              color: rgba(255, 255, 255, 0.8);
             }
             .notification-close {
               position: absolute;
@@ -168,10 +208,17 @@ const ToastNotification = ({
               padding: 4px;
               transition: all 0.2s;
             }
+            .theme-dark-green .notification-close {
+              color: rgba(255, 255, 255, 0.5);
+            }
             .notification-close:hover {
               color: #666;
               background: #f5f5f5;
               border-radius: 5px;
+            }
+            .theme-dark-green .notification-close:hover {
+              color: white;
+              background: rgba(255, 255, 255, 0.1);
             }
             .notification-progress {
               position: absolute;
@@ -203,6 +250,8 @@ const ToastNotification = ({
       )}
     </AnimatePresence>
   );
+
+  return createPortal(content, document.body);
 };
 
 export default ToastNotification;

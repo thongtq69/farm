@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ToastNotification from './ToastNotification';
 
 type QuoteFormProps = {
@@ -29,6 +29,11 @@ const QuoteForm = ({ content }: QuoteFormProps) => {
     subMessage: '', 
     type: 'success' 
   });
+
+  useEffect(() => {
+    // Pre-warm the API route to ensure immediate submission later
+    fetch('/api/quote-requests').catch(() => {});
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -75,6 +80,7 @@ const QuoteForm = ({ content }: QuoteFormProps) => {
         message={notification.message}
         subMessage={notification.subMessage}
         type={notification.type}
+        theme="dark-green"
         onClose={() => setNotification({ ...notification, isVisible: false })}
       />
       
@@ -90,35 +96,20 @@ const QuoteForm = ({ content }: QuoteFormProps) => {
           overflow: 'hidden'
         }}
       >
-        {isSubmitting && (
-          <div style={{
-            position: 'absolute',
-            inset: 0,
-            background: 'rgba(255, 255, 255, 0.8)',
-            backdropFilter: 'blur(4px)',
-            zIndex: 10,
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'center',
-            gap: '1rem',
-            borderRadius: '32px'
-          }}>
-            <div className="loader-spinner"></div>
-            <span style={{ fontWeight: 700, color: '#0e2a04', fontFamily: "'Be Vietnam Pro', sans-serif" }}>Đang xử lý yêu cầu...</span>
-          </div>
-        )}
+        {/* Removed full-screen loader for better UX and speed */}
 
         <div className="form-head-v2" style={{ marginBottom: '3rem', textAlign: 'center' }}>
           <h3
             style={{
-              fontFamily: "'Be Vietnam Pro', sans-serif",
+              fontFamily: "'Be Vietnam Pro', 'Inter', 'Segoe UI', Roboto, sans-serif",
               fontSize: '2.2rem',
               marginBottom: '1rem',
               color: '#0e2a04',
               fontWeight: 800,
-              letterSpacing: '-0.03em',
-              lineHeight: 1.2
+              letterSpacing: '-0.02em',
+              lineHeight: 1.2,
+              textRendering: 'optimizeLegibility',
+              WebkitFontSmoothing: 'antialiased'
             }}
           >
             {content.title}

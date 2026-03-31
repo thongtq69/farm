@@ -27,13 +27,16 @@ export default function ConsultationPopup({ content }: ConsultationPopupProps) {
   });
 
   useEffect(() => {
+    // Warm up the API route and database connection
+    fetch('/api/quote-requests').catch(() => {});
+
     const initialTimer = setTimeout(() => {
       setIsOpen(true);
-    }, 15000); // Increased initial delay to be less intrusive
+    }, 15000);
 
     const interval = setInterval(() => {
       setIsOpen(true);
-    }, 120000); // 2 minutes
+    }, 120000);
 
     return () => {
       clearTimeout(initialTimer);
@@ -87,6 +90,7 @@ export default function ConsultationPopup({ content }: ConsultationPopupProps) {
         message={notification.message}
         subMessage={notification.subMessage}
         type={notification.type}
+        theme="dark-green"
         onClose={() => setNotification({ ...notification, isVisible: false })}
       />
 
@@ -110,34 +114,19 @@ export default function ConsultationPopup({ content }: ConsultationPopupProps) {
               exit={{ opacity: 0, scale: 0.8, y: 50 }}
               transition={{ type: 'spring', damping: 25, stiffness: 300 }}
               style={{
-                backgroundColor: 'white',
+                background: 'linear-gradient(180deg, #0b5a44 0%, #094735 100%)',
                 width: '100%',
                 maxWidth: '480px',
-                borderRadius: '32px',
-                padding: '3rem',
+                borderRadius: '24px',
+                padding: '3rem 2.5rem',
                 position: 'relative',
-                boxShadow: '0 40px 100px rgba(0,0,0,0.2)',
-                overflow: 'hidden'
+                boxShadow: '0 30px 60px rgba(0, 0, 0, 0.4)',
+                overflow: 'hidden',
+                color: 'white',
+                border: '1px solid rgba(255,255,255,0.2)'
               }}
             >
-              {isSubmitting && (
-                <div style={{
-                  position: 'absolute',
-                  inset: 0,
-                  background: 'rgba(255, 255, 255, 0.8)',
-                  backdropFilter: 'blur(4px)',
-                  zIndex: 10,
-                  display: 'flex',
-                  flexDirection: 'column',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  gap: '1rem',
-                  borderRadius: '32px'
-                }}>
-                  <div className="loader-spinner"></div>
-                  <span style={{ fontWeight: 700, color: '#0e2a04', fontFamily: "'Be Vietnam Pro', sans-serif" }}>Đang xử lý yêu cầu...</span>
-                </div>
-              )}
+              {/* Removed full-screen loader for more immediate feel */}
 
               <button 
                 className="popup-close" 
@@ -146,7 +135,7 @@ export default function ConsultationPopup({ content }: ConsultationPopupProps) {
                   position: 'absolute',
                   top: '1.5rem',
                   right: '1.5rem',
-                  background: '#f5f5f5',
+                  background: 'transparent',
                   border: 'none',
                   borderRadius: '50%',
                   width: '40px',
@@ -155,7 +144,7 @@ export default function ConsultationPopup({ content }: ConsultationPopupProps) {
                   alignItems: 'center',
                   justifyContent: 'center',
                   cursor: 'pointer',
-                  color: '#666',
+                  color: 'rgba(255,255,255,0.8)',
                   zIndex: 2
                 }}
               >
@@ -166,49 +155,51 @@ export default function ConsultationPopup({ content }: ConsultationPopupProps) {
               </button>
 
               <h2 style={{
-                fontFamily: "'Be Vietnam Pro', sans-serif",
+                fontFamily: "'Be Vietnam Pro', 'Inter', 'Segoe UI', Roboto, sans-serif",
                 fontSize: '2rem',
                 fontWeight: 800,
-                color: '#0e2a04',
+                color: 'rgba(255, 255, 255, 0.96)',
                 marginBottom: '2rem',
                 textAlign: 'center',
-                letterSpacing: '-0.02em',
+                letterSpacing: '-0.01em',
                 position: 'relative',
-                zIndex: 2
+                zIndex: 2,
+                textRendering: 'optimizeLegibility',
+                WebkitFontSmoothing: 'antialiased'
               }}>{content.title}</h2>
 
               <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', position: 'relative', zIndex: 2 }}>
                 <div className="form-group">
-                  <label style={{ display: 'block', fontSize: '0.9rem', fontWeight: 700, color: '#444', marginBottom: '0.6rem' }}>Họ và tên *</label>
+                  <label style={{ display: 'block', fontSize: '0.9rem', fontWeight: 700, color: 'rgba(255, 255, 255, 0.95)', marginBottom: '0.6rem' }}>Họ và tên *</label>
                   <input 
                     type="text" 
                     placeholder="Nguyễn Văn A" 
                     required 
                     value={formData.name} 
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })} 
-                    style={{ width: '100%', padding: '1.1rem 1.4rem', borderRadius: '14px', border: '1.5px solid #eee', background: '#fcfcfc', color: '#1a1a1a', outline: 'none', transition: 'all 0.2s' }}
+                    style={{ width: '100%', padding: '1rem 1.25rem', borderRadius: '50px', border: 'none', background: 'white', color: '#333', outline: 'none', transition: 'box-shadow 0.2s' }}
                   />
                 </div>
 
                 <div className="form-group">
-                  <label style={{ display: 'block', fontSize: '0.9rem', fontWeight: 700, color: '#444', marginBottom: '0.6rem' }}>Số điện thoại *</label>
+                  <label style={{ display: 'block', fontSize: '0.9rem', fontWeight: 700, color: 'rgba(255, 255, 255, 0.95)', marginBottom: '0.6rem' }}>Số điện thoại *</label>
                   <input 
                     type="tel" 
                     placeholder="0938 123 456" 
                     required 
                     value={formData.phone} 
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })} 
-                    style={{ width: '100%', padding: '1.1rem 1.4rem', borderRadius: '14px', border: '1.5px solid #eee', background: '#fcfcfc', color: '#1a1a1a', outline: 'none' }}
+                    style={{ width: '100%', padding: '1rem 1.25rem', borderRadius: '50px', border: 'none', background: 'white', color: '#333', outline: 'none' }}
                   />
                 </div>
 
                 <div className="form-group">
-                  <label style={{ display: 'block', fontSize: '0.9rem', fontWeight: 700, color: '#444', marginBottom: '0.6rem' }}>Loại công trình *</label>
+                  <label style={{ display: 'block', fontSize: '0.9rem', fontWeight: 700, color: 'rgba(255, 255, 255, 0.95)', marginBottom: '0.6rem' }}>Loại công trình *</label>
                   <select 
                     required 
                     value={formData.propertyType} 
                     onChange={(e) => setFormData({ ...formData, propertyType: e.target.value })}
-                    style={{ width: '100%', padding: '1.1rem 1.4rem', borderRadius: '14px', border: '1.5px solid #eee', background: '#fcfcfc', color: '#1a1a1a', outline: 'none', appearance: 'none' }}
+                    style={{ width: '100%', padding: '1rem 1.25rem', borderRadius: '50px', border: 'none', background: 'white', color: '#333', outline: 'none', appearance: 'auto' }}
                   >
                     <option value="" disabled>-- Chọn loại --</option>
                     {content.propertyTypeOptions.map((option) => (
@@ -218,12 +209,12 @@ export default function ConsultationPopup({ content }: ConsultationPopupProps) {
                 </div>
 
                 <div className="form-group">
-                  <label style={{ display: 'block', fontSize: '0.9rem', fontWeight: 700, color: '#444', marginBottom: '0.6rem' }}>Mức đầu tư *</label>
+                  <label style={{ display: 'block', fontSize: '0.9rem', fontWeight: 700, color: 'rgba(255, 255, 255, 0.95)', marginBottom: '0.6rem' }}>Mức đầu tư *</label>
                   <select 
                     required 
                     value={formData.investment} 
                     onChange={(e) => setFormData({ ...formData, investment: e.target.value })}
-                    style={{ width: '100%', padding: '1.1rem 1.4rem', borderRadius: '14px', border: '1.5px solid #eee', background: '#fcfcfc', color: '#1a1a1a', outline: 'none', appearance: 'none' }}
+                    style={{ width: '100%', padding: '1rem 1.25rem', borderRadius: '50px', border: 'none', background: 'white', color: '#333', outline: 'none', appearance: 'auto' }}
                   >
                     <option value="" disabled>-- Chọn mức đầu tư --</option>
                     {content.investmentOptions.map((option) => (
@@ -238,17 +229,17 @@ export default function ConsultationPopup({ content }: ConsultationPopupProps) {
                   className="popup-submit-btn"
                   style={{ 
                     width: '100%', 
-                    padding: '1.25rem', 
-                    borderRadius: '14px', 
+                    padding: '1.2rem', 
+                    borderRadius: '50px', 
                     border: 'none', 
-                    background: '#0e2a04', 
-                    color: 'white', 
+                    background: '#9b8118', 
+                    color: '#1a2a1b', 
                     fontWeight: 800, 
-                    fontSize: '1rem', 
-                    marginTop: '0.5rem', 
+                    fontSize: '1.1rem', 
+                    marginTop: '1rem', 
                     cursor: isSubmitting ? 'not-allowed' : 'pointer',
-                    boxShadow: '0 10px 25px rgba(14, 42, 4, 0.2)',
-                    transition: 'all 0.3s',
+                    boxShadow: 'none',
+                    transition: 'background 0.3s, transform 0.2s',
                     opacity: isSubmitting ? 0.8 : 1,
                     display: 'flex',
                     alignItems: 'center',
@@ -264,9 +255,9 @@ export default function ConsultationPopup({ content }: ConsultationPopupProps) {
                   ) : content.submitLabel}
                 </button>
 
-                <div className="popup-footer" style={{ display: 'flex', justifyContent: 'center', gap: '1rem', marginTop: '1.5rem', fontSize: '0.85rem', color: '#888', fontWeight: 600 }}>
+                <div className="popup-footer" style={{ display: 'flex', justifyContent: 'center', gap: '1rem', marginTop: '1.5rem', fontSize: '0.85rem', color: 'rgba(255,255,255,0.8)', fontWeight: 600 }}>
                   <span>{content.footerBadges[0]}</span>
-                  <span className="divider" style={{ color: '#ddd' }}>|</span>
+                  <span className="divider" style={{ color: 'rgba(255,255,255,0.5)' }}>|</span>
                   <span>{content.footerBadges[1]}</span>
                 </div>
               </form>
@@ -300,9 +291,8 @@ export default function ConsultationPopup({ content }: ConsultationPopupProps) {
           100% { transform: rotate(360deg); }
         }
         .popup-submit-btn:hover:not(:disabled) {
-          background: #00c689;
+          background: #bd9f1e;
           transform: translateY(-2px);
-          box-shadow: 0 15px 30px rgba(0, 198, 137, 0.3);
         }
         .popup-submit-btn:active:not(:disabled) {
           transform: translateY(0);
