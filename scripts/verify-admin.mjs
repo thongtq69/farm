@@ -3,8 +3,8 @@ import mongoose from 'mongoose';
 const uri = 'mongodb+srv://thame6868_db_user:8kIgcRztgxZRy5Od@cluster0.jninzmt.mongodb.net/?appName=Cluster0';
 
 async function main() {
-  await mongoose.connect(uri);
-  const db = mongoose.connection.client.db('test');
+  await mongoose.connect(uri, { dbName: 'farm' });
+  const db = mongoose.connection.client.db('farm');
 
   const res = await db.collection('users').updateOne(
     { email: 'admin@sonhai.com' },

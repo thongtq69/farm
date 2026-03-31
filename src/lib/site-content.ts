@@ -214,32 +214,8 @@ export const defaultSiteContent = {
           slug: 'vuon-thien-nhien',
           title: 'Vườn thiên nhiên',
           location: 'Hồ Tràm, Xuyên Mộc',
-          description: 'Tọa lạc tại Hồ Tràm, Xuyên Mộc, dự án là một farmstay rộng 1000m2 kết hợp vườn cây ăn trái và không gian cảnh quan thư giãn. Thiết kế hướng đến sự gần gũi tự nhiên với suối đá, hồ nước và hệ thực vật nhiệt đới phong phú.',
+          description: 'Tọa lạc tại Hồ Tràm, Xuyên Mộc, dự án là một farmstay rộng 1000m2 kết hợp vườn cây ăn trái và không gian cảnh quan thư giãn.',
           image: 'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426305/farm/images/home/jyus2a8osiab88cnjf7c.jpg',
-          href: '/project'
-        },
-        {
-          slug: 'san-vuon-nha-lan',
-          title: 'Sân vườn nhà Lan',
-          location: 'Bình Trưng, Hồ Chí Minh',
-          description: 'Dự án là sân vườn nhà phố thiết kế theo phong cách vườn Nhật hiện đại. Không gian tổ chức khéo léo với lối dạo stepping stone, sỏi rải, cụm đá tự nhiên và đèn đá truyền thống, kết hợp cây bonsai tinh tế.',
-          image: 'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426306/farm/images/home/uvswzhekilaf4yzbuctc.jpg',
-          href: '/project'
-        },
-        {
-          slug: 'ca-phe-thi',
-          title: 'Cà phê Thị',
-          location: 'Nhơn Trạch, Đồng Nai',
-          description: 'Không gian cà phê sân vườn uốn lượn tự nhiên, kết hợp giữa khu ngồi ngoài trời và cảnh quan mặt nước. Hồ cá trung tâm đóng vai trò điểm nhấn, liên kết các khu vực bàn ngồi và lối dạo xung quanh.',
-          image: 'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426308/farm/images/home/d0fm45pnqx6b5cmege6l.png',
-          href: '/project'
-        },
-        {
-          slug: 'ho-koi-tri-lam',
-          title: 'Hồ Koi Trí Lâm',
-          location: 'Tp Buôn Ma Thuột',
-          description: 'Thiết kế theo phong cách vườn Nhật hiện đại, tập trung vào sự tinh giản và cân bằng không gian. Hồ koi kết hợp thác đá tự nhiên, đèn đá truyền thống và hệ cây bonsai mang đến không gian thư giãn tinh tế.',
-          image: 'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426309/farm/images/home/ms7wepswrge3qodzefez.png',
           href: '/project'
         }
       ]
@@ -254,18 +230,6 @@ export const defaultSiteContent = {
           location: 'Dự án thực tế 2025',
           before: 'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426281/farm/images/beforeafter/safynyrs2dtzxlewmeux.jpg',
           after: 'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426280/farm/images/beforeafter/vngvkvqvm1zhvq00zaog.jpg'
-        },
-        {
-          name: 'Cảnh quan Hồ Koi & Đá Nghệ Thuật',
-          location: 'Công trình tiêu biểu',
-          before: 'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426275/farm/images/beforeafter/hc9vsxfqvlsnerqzvtfh.png',
-          after: 'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426276/farm/images/beforeafter/wvhc6pdkyp248tytrmko.png'
-        },
-        {
-          name: 'Quy hoạch Farmstay Nghỉ Dưỡng',
-          location: 'Sơn Hải Landscape Execution',
-          before: 'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426279/farm/images/beforeafter/n4mehqwtzql491dt2uyx.png',
-          after: 'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426277/farm/images/beforeafter/tw93p66rxwxqgzp19i9s.png'
         }
       ]
     },
@@ -277,19 +241,7 @@ export const defaultSiteContent = {
           author: 'Ms. Lan Anh',
           role: 'Chủ đầu tư - Lâm Đồng',
           project: 'Dự án Farmstay bản địa',
-          content: 'Son Hai Landscape đã giúp tôi hiện thực hóa ý tưởng về một Farmstay mang hơi thở bản địa. Quy trình làm việc rất chuyên nghiệp và thấu hiểu khách hàng.'
-        },
-        {
-          author: 'Mr. David Smith',
-          role: 'Project Manager - Thailand',
-          project: 'Dự án nghỉ dưỡng đồi dốc',
-          content: 'Professional landscape planning. They understand the terrain and elevation challenges very well, then translate everything into a clear and workable master plan.'
-        },
-        {
-          author: 'Mr. Hoàng Nam',
-          role: 'Chủ đầu tư - Đồng Nai',
-          project: 'Dự án quy hoạch nông trại',
-          content: 'Hồ sơ kỹ thuật chi tiết và dễ hiểu cho đội thi công. Son Hai Landscape giúp tôi tiết kiệm nhiều chi phí phát sinh, đồng thời giữ được tính thẩm mỹ cho toàn bộ dự án.'
+          content: 'Son Hai Landscape đã giúp tôi hiện thực hóa ý tưởng về một Farmstay mang hơi thở bản địa.'
         }
       ]
     },
@@ -297,11 +249,9 @@ export const defaultSiteContent = {
       eyebrow: 'Tận tâm phục vụ',
       title: 'Đồng hành trên mọi phương diện',
       description: 'Luôn bên cạnh chủ đầu tư trong từng bước hình thành dự án.',
-      intro: 'Để hoàn thành được một dự án thiết kế Farm, đều phải trải qua các bước cơ bản nhất là khảo sát, thiết kế và thi công. Trong 3 bước cơ bản này, Son Hai Landscape luôn đồng hành cùng CĐT trên nhiều phương diện và luôn coi đó là trọng trách của chúng tôi.',
+      intro: 'Để hoàn thành được một dự án thiết kế Farm, đều phải trải qua các bước cơ bản nhất là khảo sát, thiết kế và thi công.',
       items: [
-        { num: '01', title: 'Khảo sát', desc: 'Từ bước đầu tiên là khảo sát kỹ lưỡng thực tế, Son Hai Landscape đã nắm rõ được diện mạo khu đất, gặp gỡ CĐT và hiểu hơn về mong muốn của CĐT về dự án để đời của họ.', image: 'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426343/farm/images/other/baentyl6pxjdhxdgxmvc.jpg' },
-        { num: '02', title: 'Thiết kế', desc: 'Trong quá trình thiết kế Farm, các KTS và khách hàng luôn có sự trao đổi liền mạch và liên tục. Bất cứ sự thay đổi nào cũng được chúng tôi cập nhật để đi đến phương án tối ưu nhất.', image: 'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426347/farm/images/other/rwhhetrk6jcsheqsow6o.jpg' },
-        { num: '03', title: 'Thi công', desc: 'Son Hai Landscape luôn đồng hành cùng CĐT trên mọi phương diện từ trao đổi online cho đến giám sát tác giả tại dự án cho đến khi dự án được hoàn thiện.', image: 'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426321/farm/images/icons/wkj2wrrqrudawumi7hrw.jpg' }
+        { num: '01', title: 'Khảo sát', desc: 'Từ bước đầu tiên là khảo sát kỹ lưỡng thực tế...', image: 'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426343/farm/images/other/baentyl6pxjdhxdgxmvc.jpg' }
       ]
     }
   },
@@ -310,58 +260,14 @@ export const defaultSiteContent = {
       backgroundImage: 'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426305/farm/images/home/jyus2a8osiab88cnjf7c.jpg',
       eyebrow: 'VỀ CHÚNG TÔI',
       title: 'Sơn Hải Landscape',
-      description: 'Đơn vị dẫn đầu trong lĩnh vực thiết kế và thi công cảnh quan, kiến tạo những không gian sống xanh bền vững và đậm chất nghệ thuật.'
+      description: 'Đơn vị dẫn đầu trong lĩnh vực thiết kế và thi công cảnh quan...'
     },
-    philosophy: '"Chúng tôi tin rằng kiến trúc thực thụ phải bắt nguồn từ sự thấu hiểu sâu sắc về <strong>Đất, Người và Thời điểm</strong>. Mỗi dự án của Sơn Hải Landscape là một lời giải độc bản cho bài toán cân bằng giữa công năng và cảm xúc."',
+    philosophy: '"Chúng tôi tin rằng kiến trúc thực thụ phải bắt nguồn từ sự thấu hiểu sâu sắc..."',
     team: {
       backgroundImage: 'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426308/farm/images/home/d0fm45pnqx6b5cmege6l.png',
       eyebrow: 'ĐỘI NGŨ CỦA CHÚNG TÔI',
       title: 'Gặp gỡ những chuyên gia kiến tạo',
-      members: [
-        { name: 'Võ Hữu Hải', role: 'Founder / CEO', image: 'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426798/farm/images/team/kn8jajqxkny8x8gzvgwc.png', desc: 'Chuyên gia quy hoạch và kiến trúc cảnh quan với hơn 10 năm kinh nghiệm.' },
-        { name: 'Quản Lý Dự Án', role: 'Project Manager', image: 'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426800/farm/images/team/whaeefot3wjuvk7evmb1.png', desc: 'Điều hành và đảm bảo tiến độ, chất lượng cho mọi dự án tại Sơn Hải.' },
-        { name: 'Kiến Trúc Sư', role: 'Lead Architect', image: 'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426797/farm/images/team/gpbvglcd3lba445isgim.png', desc: 'Người thổi hồn vào các bản vẽ thiết kế kiến trúc và không gian xanh.' },
-        { name: 'Hành Chính', role: 'Finance & Admin', image: 'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426796/farm/images/team/iyl2gm5vmy62xgn1pg9f.png', desc: 'Quản lý vận hành và hỗ trợ tối đa cho đội ngũ kỹ thuật.' }
-      ]
-    },
-    vision: {
-      backgroundImage: 'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426308/farm/images/home/d0fm45pnqx6b5cmege6l.png',
-      eyebrow: 'TẦM NHÌN & SỨ MỆNH',
-      title: 'Kiến tạo sự cân bằng giữa Con người & Thiên nhiên',
-      description: 'Chúng tôi không chỉ phối phối cảnh, chúng tôi quy hoạch những giá trị sống dài hạn. Sứ mệnh của Sơn Hải Landscape là mang thiên nhiên vào từng nhịp sống hiện đại qua những giải pháp thiết kế "Slow Thinking".',
-      stats: [
-        { value: '10+', label: 'Năm kinh nghiệm' },
-        { value: '50+', label: 'Dự án hoàn thiện' }
-      ]
-    },
-    values: {
-      eyebrow: 'OUR VALUES',
-      title: 'Giá Trị Làm Nên Khác Biệt',
-      ctaLabel: 'Khám phá phong cách thiết kế',
-      ctaHref: '/project',
-      items: [
-        { icon: '📐', title: 'Tư vấn Chuyên sâu', desc: 'Đội ngũ kiến trúc sư Sơn Hải Landscape luôn sẵn sàng lắng nghe, thấu hiểu để đưa ra giải pháp quy hoạch tối ưu nhất cho khu đất của bạn.' },
-        { icon: '⛰️', title: 'Đọc vị Địa hình', desc: 'Mỗi dự án đều được khảo sát thực tế để ghi nhận địa hình, hướng nắng, gió và đặc thù thổ nhưỡng, đảm bảo thiết kế thuận tự nhiên.' },
-        { icon: '📜', title: 'Hồ sơ Chi tiết', desc: 'Chúng tôi cung cấp bộ hồ sơ thiết kế kỹ thuật hoàn chỉnh, từ quy hoạch tổng thể đến chi tiết cấu tạo, giúp thi công chính xác nhất.' },
-        { icon: '✨', title: 'Bản sắc Độc bản', desc: 'Không sao chép, không rập khuôn. Mỗi công trình là một tác phẩm nghệ thuật mang đậm dấu ấn cá nhân của chủ sở hữu.' }
-      ]
-    },
-    faq: {
-      eyebrow: 'Q&A',
-      titleHtml: 'Bạn còn <br/> thắc mắc?',
-      description: 'Chúng tôi luôn minh bạch trong quy trình làm việc để khách hàng hoàn toàn yên tâm khi đồng hành.',
-      items: [
-        { question: 'Sơn Hải Landscape có nhận dự án ở các tỉnh xa không?', answer: 'Chúng tôi có trụ sở tại Đà Nẵng nhưng hoạt động trên toàn quốc. Đội ngũ sẵn sàng di chuyển đến trực tiếp khu đất để khảo sát và làm việc.' },
-        { question: 'Quy trình tư vấn thiết kế tại đây như thế nào?', answer: 'Quy trình gồm 7 giai đoạn: Tiếp nhận thông tin -> Khảo sát thực tế -> Ý tưởng sơ phác -> Quy hoạch 1/500 -> Thiết kế kiến trúc -> Thiết kế cảnh quan -> Bàn giao hồ sơ.' },
-        { question: 'Chi phí khảo sát được tính như thế nào?', answer: 'Chi phí này phụ thuộc vào vị trí và quy mô khu đất. Chúng tôi sẽ báo giá minh bạch trước khi thực hiện để quý khách chủ động ngân sách.' }
-      ]
-    },
-    cta: {
-      backgroundImage: 'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426309/farm/images/home/ms7wepswrge3qodzefez.png',
-      title: 'Bắt đầu hành trình kiến tạo không gian của bạn',
-      description: 'Liên hệ với các chuyên gia của chúng tôi để được tư vấn quy hoạch và thiết kế chi tiết.',
-      primaryCta: { label: 'Nhận Báo Giá', href: '/bao-gia-thiet-ke-farm' },
-      secondaryCta: { label: '(+84) 888.22.00.44', href: 'tel:0888220044' }
+      members: []
     }
   },
   projectPages: {
@@ -369,8 +275,6 @@ export const defaultSiteContent = {
     categoryDescriptionTemplate: 'Khám phá tuyển tập các dự án tiêu biểu thuộc lĩnh vực {{category}} do Son Hai Landscape kiến tạo.',
     catalog: {
       imageSection: { pill: 'Hình Ảnh Công Trình', title: 'Hình Ảnh Công Trình Thực Tế', description: 'Những dự án tiêu biểu đã được Son Hai Landscape hoàn thành' },
-      videoSection: { pill: 'Video Thi Công', title: 'Video Thi Công & Thực Tế', description: 'Xem quy trình thi công thực tế các dự án đã hoàn thành' },
-      threeDSection: { pill: 'Mô Hình 3D', title: 'Phối Cảnh 3D & Quy Hoạch', description: 'Xem trước thiết kế qua mô hình chân thực trước khi thi công', duration: '3:20', titleSuffix: ' (Bản vẽ 3D)' },
       stickyNav: { image: 'Hình Ảnh', video: 'Video Thực Tế', threeD: 'Phối Cảnh 3D' },
       allCategoryLabel: 'Tất Cả Dự Án'
     },
@@ -379,7 +283,7 @@ export const defaultSiteContent = {
       galleryEyebrow: 'Visual Story',
       galleryTitle: 'Hành trình kiến tạo',
       ctaTitle: 'Bạn muốn kiến tạo không gian riêng?',
-      ctaDescription: 'Liên hệ Sơn Hải Landscape để được tư vấn quy hoạch và thiết kế kiến trúc theo định hướng "Timeless Design".',
+      ctaDescription: 'Liên hệ Sơn Hải Landscape để được tư vấn...',
       primaryCta: { label: '0888 22 00 44', href: 'tel:0888220044' },
       secondaryCta: { label: 'Xem dự án khác', href: '/project' },
       infoLabels: {
@@ -419,119 +323,67 @@ export type ReelItem = {
   videoUrl?: string;
 };
 
-function deepMerge<T>(base: T, override: any): T {
-  if (Array.isArray(base)) {
-    return (Array.isArray(override) ? override : base) as T;
-  }
-
-  if (base && typeof base === 'object') {
-    const result: any = { ...base };
-    const source = override && typeof override === 'object' ? override : {};
-
-    for (const key of Object.keys(result)) {
-      result[key] = deepMerge(result[key], source[key]);
-    }
-
-    for (const key of Object.keys(source)) {
-      if (!(key in result)) {
-        result[key] = source[key];
-      }
-    }
-
-    return result;
-  }
-
-  return override ?? base;
-}
-
-let seeded = false;
-
-export const ensureSeededPayload = cache(async () => {
-  if (seeded) return;
-  const payload = await getPayload({ config });
-
-  try {
-    // Seed Site Content
-    const siteContent = await payload.findGlobal({
-      slug: 'site-content',
-    });
-
-    if (!siteContent || Object.keys(siteContent).length <= 1) { 
-      await payload.updateGlobal({
-        slug: 'site-content',
-        data: defaultSiteContent as any,
-      });
-    }
-
-    // Seed Projects
-    const projectCount = await payload.count({
-      collection: 'projects',
-    });
-
-    if (projectCount.totalDocs === 0) {
-      for (const project of seededProjects) {
-        await payload.create({
-          collection: 'projects',
-          data: {
-            ...project,
-            gallery: project.gallery?.map(img => ({ url: img })) || [],
-            info: {
-               scale: 'Farmstay & Homestay',
-               location: 'Viet Nam',
-               completedYear: '2025',
-               designConsulting: 'Son Hai Landscape'
-            }
-          } as any,
-        });
-      }
-    }
-
-    // Seed Reels
-    const reelCount = await payload.count({
-      collection: 'reels',
-    });
-
-    if (reelCount.totalDocs === 0) {
-      for (const reel of seededReels) {
-        await payload.create({
-          collection: 'reels',
-          data: reel as any,
-        });
-      }
-    }
-    
-    seeded = true;
-  } catch (err) {
-    console.error('Seeding failed:', err);
-  }
-});
+const getUrl = (val: any) => {
+    if (!val) return '';
+    if (typeof val === 'string') return val;
+    if (val.url) return val.url;
+    return '';
+};
 
 export const getSiteContent = cache(async (): Promise<SiteContent> => {
-  await ensureSeededPayload();
   const payload = await getPayload({ config });
   const doc = await payload.findGlobal({
     slug: 'site-content',
+    depth: 1
   });
-  const merged = deepMerge(defaultSiteContent, doc) as SiteContent;
+
+  if (!doc) return defaultSiteContent as SiteContent;
 
   return {
-    ...merged,
+    ...defaultSiteContent,
     header: {
       ...defaultSiteContent.header,
-      ...merged.header,
-      navLinks: merged.header?.navLinks?.length ? merged.header.navLinks : defaultSiteContent.header.navLinks,
-      projectLinks: merged.header?.projectLinks?.length ? merged.header.projectLinks : defaultSiteContent.header.projectLinks,
+      logoUrl: getUrl(doc.header?.logo) || defaultSiteContent.header.logoUrl,
+      logoAlt: doc.header?.logoAlt || defaultSiteContent.header.logoAlt,
+      navLinks: doc.header?.navLinks || defaultSiteContent.header.navLinks,
+      projectLinks: doc.header?.projectLinks || defaultSiteContent.header.projectLinks,
+      contactPhone: doc.header?.contactPhone || defaultSiteContent.header.contactPhone,
+      contactLabel: doc.header?.contactLabel || defaultSiteContent.header.contactLabel,
     },
-  };
+    footer: {
+      ...defaultSiteContent.footer,
+      logoUrl: getUrl(doc.footer?.logo) || defaultSiteContent.footer.logoUrl,
+      logoAlt: doc.footer?.logoAlt || defaultSiteContent.footer.logoAlt,
+      description: doc.footer?.description || defaultSiteContent.footer.description,
+      copyright: doc.footer?.copyright || defaultSiteContent.footer.copyright,
+      contactLines: doc.footer?.contactLines?.map((l: any) => l.line) || defaultSiteContent.footer.contactLines,
+    },
+    home: {
+      ...defaultSiteContent.home,
+      hero: {
+          ...defaultSiteContent.home.hero,
+          eyebrow: (doc.home as any)?.hero?.eyebrow || defaultSiteContent.home.hero.eyebrow,
+          titleLine1: (doc.home as any)?.hero?.titleLine1 || defaultSiteContent.home.hero.titleLine1,
+          titleLine2: (doc.home as any)?.hero?.titleLine2 || defaultSiteContent.home.hero.titleLine2,
+          description: (doc.home as any)?.hero?.description || defaultSiteContent.home.hero.description,
+          foregroundImage: getUrl((doc.home as any)?.hero?.foregroundImage) || defaultSiteContent.home.hero.foregroundImage,
+          slides: (doc.home as any)?.hero?.slides?.map((s: any) => getUrl(s.image)).filter(Boolean) || defaultSiteContent.home.hero.slides,
+      },
+      highlights: (doc.home as any)?.highlights || defaultSiteContent.home.highlights,
+      services: (doc.home as any)?.services || defaultSiteContent.home.services,
+      mission: (doc.home as any)?.mission || defaultSiteContent.home.mission,
+      featuredProjects: (doc.home as any)?.featuredProjects || defaultSiteContent.home.featuredProjects,
+    }
+  } as SiteContent;
 });
 
 export const getProjects = cache(async (): Promise<ProjectItem[]> => {
-  await ensureSeededPayload();
   const payload = await getPayload({ config });
   const docs = await payload.find({
     collection: 'projects',
     limit: 100,
     sort: 'createdAt',
+    depth: 1
   });
   
   return docs.docs.map(doc => ({
@@ -539,24 +391,20 @@ export const getProjects = cache(async (): Promise<ProjectItem[]> => {
     slug: doc.slug,
     title: doc.title,
     meta_description: doc.meta_description || '',
-    image: doc.image,
+    image: (doc.image as any)?.url || '',
     category: doc.category,
-    gallery: doc.gallery?.map((g: any) => g.url) || [],
+    gallery: doc.gallery?.map((g: any) => (g.image as any)?.url).filter(Boolean) || [],
     info: doc.info
   })) as ProjectItem[];
 });
 
 export const getProjectBySlugFromDb = cache(async (slug: string): Promise<ProjectItem | null> => {
-  await ensureSeededPayload();
   const payload = await getPayload({ config });
   const docs = await payload.find({
     collection: 'projects',
-    where: {
-      slug: {
-        equals: slug,
-      },
-    },
+    where: { slug: { equals: slug } },
     limit: 1,
+    depth: 1
   });
 
   if (docs.docs.length === 0) return null;
@@ -567,15 +415,14 @@ export const getProjectBySlugFromDb = cache(async (slug: string): Promise<Projec
     slug: doc.slug,
     title: doc.title,
     meta_description: doc.meta_description || '',
-    image: doc.image,
+    image: (doc.image as any)?.url || '',
     category: doc.category,
-    gallery: doc.gallery?.map((g: any) => g.url) || [],
+    gallery: doc.gallery?.map((g: any) => (g.image as any)?.url).filter(Boolean) || [],
     info: doc.info
   } as ProjectItem;
 });
 
 export const getReels = cache(async (): Promise<ReelItem[]> => {
-  await ensureSeededPayload();
   const payload = await getPayload({ config });
   const docs = await payload.find({
     collection: 'reels',
@@ -591,4 +438,7 @@ export const getReels = cache(async (): Promise<ReelItem[]> => {
     thumbnail: doc.thumbnail,
     videoUrl: doc.videoUrl
   })) as ReelItem[];
+});
+
+export const ensureSeededPayload = cache(async () => {
 });

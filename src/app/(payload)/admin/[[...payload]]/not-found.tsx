@@ -16,8 +16,8 @@ const Page = ({ params, searchParams }: Args) =>
   NotFoundPage({
     config,
     importMap,
-    params: params.then(({ payload = [] }) => ({ segments: payload })),
-    searchParams,
+    params: params ? params.then(({ payload = [] }) => ({ segments: payload })) : Promise.resolve({ segments: [] }),
+    searchParams: searchParams || Promise.resolve({}),
   })
 
 export default Page
