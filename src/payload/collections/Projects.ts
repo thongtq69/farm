@@ -39,8 +39,7 @@ export const Projects: CollectionConfig = {
     },
     {
       name: 'image',
-      type: 'upload',
-      relationTo: 'media',
+      type: 'text',
       required: true,
     },
     {
@@ -48,9 +47,8 @@ export const Projects: CollectionConfig = {
       type: 'array',
       fields: [
         {
-          name: 'image',
-          type: 'upload',
-          relationTo: 'media',
+          name: 'url',
+          type: 'text',
           required: true,
         },
       ],
