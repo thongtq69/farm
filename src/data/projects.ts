@@ -174,12 +174,95 @@ const baseProjects: ProjectItem[] = [
     meta_description: 'Phuong an quy hoach homestay tren dia hinh doc, su dung view tu nhien nhu mot tai san trung tam.',
     image: 'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426453/farm/images/projects/m935t2pe2hfcbjekowsa.jpg',
     category: 'farm-du-lich-nghi-duong'
+  },
+  {
+    slug: 'vuon-thien-nhien',
+    title: 'Vườn thiên nhiên',
+    meta_description: 'Tọa lạc tại Hồ Tràm, Xuyên Mộc, dự án là một farmstay rộng 1000m2 kết hợp vườn cây ăn trái và không gian cảnh quan thư giãn.',
+    image: 'https://res.cloudinary.com/dwalymiy3/image/upload/v1775304947/farm/images/projects/custom/1/ChatGPT_Image_09_15_50_12_thg_3_2026_t3yneh.jpg',
+    category: 'farm-du-lich-nghi-duong',
+    gallery: [
+      "https://res.cloudinary.com/dwalymiy3/image/upload/v1775304947/farm/images/projects/custom/1/ChatGPT_Image_09_15_50_12_thg_3_2026_t3yneh.jpg",
+      "https://res.cloudinary.com/dwalymiy3/image/upload/v1775304950/farm/images/projects/custom/1/ChatGPT_Image_09_15_57_12_thg_3_2026_spwovo.jpg",
+      "https://res.cloudinary.com/dwalymiy3/image/upload/v1775304953/farm/images/projects/custom/1/ChatGPT_Image_09_18_30_12_thg_3_2026_twyku8.jpg",
+      "https://res.cloudinary.com/dwalymiy3/image/upload/v1775304957/farm/images/projects/custom/1/ChatGPT_Image_09_19_58_12_thg_3_2026_z9mbcg.jpg",
+      "https://res.cloudinary.com/dwalymiy3/image/upload/v1775304961/farm/images/projects/custom/1/ChatGPT_Image_09_21_46_12_thg_3_2026_z1ohze.jpg",
+      "https://res.cloudinary.com/dwalymiy3/image/upload/v1775304965/farm/images/projects/custom/1/ChatGPT_Image_09_22_31_12_thg_3_2026_ckk2zn.jpg",
+      "https://res.cloudinary.com/dwalymiy3/image/upload/v1775304969/farm/images/projects/custom/1/ChatGPT_Image_09_22_35_12_thg_3_2026_tat8os.jpg",
+      "https://res.cloudinary.com/dwalymiy3/image/upload/v1775304974/farm/images/projects/custom/1/ChatGPT_Image_09_22_38_12_thg_3_2026_f1wsem.jpg",
+      "https://res.cloudinary.com/dwalymiy3/image/upload/v1775304979/farm/images/projects/custom/1/ChatGPT_Image_09_23_26_12_thg_3_2026_zrwyyi.jpg",
+      "https://res.cloudinary.com/dwalymiy3/image/upload/v1775304983/farm/images/projects/custom/1/ChatGPT_Image_09_24_35_12_thg_3_2026_b5rpmm.jpg",
+      "https://res.cloudinary.com/dwalymiy3/image/upload/v1775304985/farm/images/projects/custom/1/ChatGPT_Image_09_25_13_12_thg_3_2026_f5pduf.jpg",
+      "https://res.cloudinary.com/dwalymiy3/image/upload/v1775304987/farm/images/projects/custom/1/ChatGPT_Image_09_26_36_12_thg_3_2026_la3tot.jpg",
+      "https://res.cloudinary.com/dwalymiy3/image/upload/v1775304988/farm/images/projects/custom/1/ChatGPT_Image_09_26_46_12_thg_3_2026_ypqlpe.jpg",
+      "https://res.cloudinary.com/dwalymiy3/image/upload/v1775304990/farm/images/projects/custom/1/ChatGPT_Image_09_26_56_12_thg_3_2026_hkwdw5.jpg",
+      "https://res.cloudinary.com/dwalymiy3/image/upload/v1775304991/farm/images/projects/custom/1/ChatGPT_Image_09_29_08_12_thg_3_2026_sbcaeu.jpg"
+    ]
+  },
+  {
+    slug: 'san-vuon-nha-lan',
+    title: 'Sân vườn nhà Lan',
+    meta_description: 'Dự án là sân vườn nhà phố thiết kế theo phong cách vườn Nhật hiện đại.',
+    image: 'https://res.cloudinary.com/dwalymiy3/image/upload/v1775304993/farm/images/projects/custom/2/0_yfpw0r.jpg',
+    category: 'san-vuon-ho-koi',
+    gallery: [
+      "https://res.cloudinary.com/dwalymiy3/image/upload/v1775304993/farm/images/projects/custom/2/0_yfpw0r.jpg",
+      "https://res.cloudinary.com/dwalymiy3/image/upload/v1775304994/farm/images/projects/custom/2/1_ahaeqn.jpg",
+      "https://res.cloudinary.com/dwalymiy3/image/upload/v1775304996/farm/images/projects/custom/2/2_fayp3j.jpg",
+      "https://res.cloudinary.com/dwalymiy3/image/upload/v1775304998/farm/images/projects/custom/2/3_jwmapr.jpg",
+      "https://res.cloudinary.com/dwalymiy3/image/upload/v1775305000/farm/images/projects/custom/2/4_gxiekp.jpg",
+      "https://res.cloudinary.com/dwalymiy3/image/upload/v1775305001/farm/images/projects/custom/2/5_vr9irn.jpg",
+      "https://res.cloudinary.com/dwalymiy3/image/upload/v1775305003/farm/images/projects/custom/2/6_babns3.jpg",
+      "https://res.cloudinary.com/dwalymiy3/image/upload/v1775305004/farm/images/projects/custom/2/ChatGPT_Image_12_17_34_9_thg_3_2026_pfhwlf.jpg",
+      "https://res.cloudinary.com/dwalymiy3/image/upload/v1775305007/farm/images/projects/custom/2/ChatGPT_Image_12_17_42_9_thg_3_2026_hi8za3.jpg",
+      "https://res.cloudinary.com/dwalymiy3/image/upload/v1775305009/farm/images/projects/custom/2/ChatGPT_Image_12_17_57_9_thg_3_2026_r0oypp.jpg",
+      "https://res.cloudinary.com/dwalymiy3/image/upload/v1775305012/farm/images/projects/custom/2/ChatGPT_Image_12_32_25_9_thg_3_2026_tnoi6u.jpg",
+      "https://res.cloudinary.com/dwalymiy3/image/upload/v1775305015/farm/images/projects/custom/2/ChatGPT_Image_12_32_29_9_thg_3_2026_sti1as.jpg"
+    ]
+  },
+  {
+    slug: 'ca-phe-thi',
+    title: 'Cà phê Thị',
+    meta_description: 'Không gian cà phê sân vườn uốn lượn tự nhiên, kết hợp giữa khu ngồi ngoài trời và cảnh quan mặt nước.',
+    image: 'https://res.cloudinary.com/dwalymiy3/image/upload/v1775305018/farm/images/projects/custom/3/20260129_1652_Photorealistic_Courtyard_Transformation_remix_01kg4jmhfpf1z9tvjvck1jgjaa_moaowp.jpg',
+    category: 'san-vuon-ho-koi',
+    gallery: [
+      "https://res.cloudinary.com/dwalymiy3/image/upload/v1775305018/farm/images/projects/custom/3/20260129_1652_Photorealistic_Courtyard_Transformation_remix_01kg4jmhfpf1z9tvjvck1jgjaa_moaowp.jpg",
+      "https://res.cloudinary.com/dwalymiy3/image/upload/v1775305021/farm/images/projects/custom/3/20260129_1655_Outdoor_Dining_Terrace_remix_01kg4js65mfghapc21zqq9m5x6_mk7pah.jpg",
+      "https://res.cloudinary.com/dwalymiy3/image/upload/v1775305023/farm/images/projects/custom/3/20260129_1656_Image_Generation_remix_01kg4jwky6f409nwvzb8t5h5a7_owltik.jpg",
+      "https://res.cloudinary.com/dwalymiy3/image/upload/v1775305026/farm/images/projects/custom/3/20260129_1657_Image_Generation_remix_01kg4jx4pnfw3t3t5cx8d5w9g2_h46ofn.jpg",
+      "https://res.cloudinary.com/dwalymiy3/image/upload/v1775305028/farm/images/projects/custom/3/20260129_1701_Ultra-Realistic_Courtyard_Scene_remix_01kg4k5aagfv8sqhb31tg8vte9_nntnb6.jpg",
+      "https://res.cloudinary.com/dwalymiy3/image/upload/v1775305030/farm/images/projects/custom/3/20260129_1709_Image_Generation_remix_01kg4kkczyerprqt2vrs355trs_jnitcs.jpg",
+      "https://res.cloudinary.com/dwalymiy3/image/upload/v1775305032/farm/images/projects/custom/3/20260129_1712_Image_Generation_remix_01kg4ks2q8ft7txms18hv1tcjv_g2gtlz.jpg"
+    ]
+  },
+  {
+    slug: 'ho-koi-tri-lam',
+    title: 'Hồ Koi Trí Lâm',
+    meta_description: 'Thiết kế theo phong cách vườn Nhật hiện đại, tập trung vào sự tinh giản và cân bằng không gian.',
+    image: 'https://res.cloudinary.com/dwalymiy3/image/upload/v1775305038/farm/images/projects/custom/4/ChatGPT_Image_19_42_50_16_thg_3_2026_obtza5.png',
+    category: 'san-vuon-ho-koi',
+    gallery: [
+      "https://res.cloudinary.com/dwalymiy3/image/upload/v1775305038/farm/images/projects/custom/4/ChatGPT_Image_19_42_50_16_thg_3_2026_obtza5.png",
+      "https://res.cloudinary.com/dwalymiy3/image/upload/v1775305041/farm/images/projects/custom/4/ChatGPT_Image_19_42_55_16_thg_3_2026_emligy.png",
+      "https://res.cloudinary.com/dwalymiy3/image/upload/v1775305045/farm/images/projects/custom/4/ChatGPT_Image_19_43_04_16_thg_3_2026_atgtzo.png",
+      "https://res.cloudinary.com/dwalymiy3/image/upload/v1775305050/farm/images/projects/custom/4/ChatGPT_Image_19_43_11_16_thg_3_2026_abx0pb.png",
+      "https://res.cloudinary.com/dwalymiy3/image/upload/v1775305055/farm/images/projects/custom/4/ChatGPT_Image_19_43_23_16_thg_3_2026_le6xfk.png",
+      "https://res.cloudinary.com/dwalymiy3/image/upload/v1775305060/farm/images/projects/custom/4/ChatGPT_Image_19_44_09_16_thg_3_2026_h0lenx.png",
+      "https://res.cloudinary.com/dwalymiy3/image/upload/v1775305065/farm/images/projects/custom/4/ChatGPT_Image_19_45_10_16_thg_3_2026_rxxqlr.png",
+      "https://res.cloudinary.com/dwalymiy3/image/upload/v1775305070/farm/images/projects/custom/4/ChatGPT_Image_19_46_26_16_thg_3_2026_jmo3m6.png",
+      "https://res.cloudinary.com/dwalymiy3/image/upload/v1775305073/farm/images/projects/custom/4/ChatGPT_Image_19_47_51_16_thg_3_2026_lsvhjz.png",
+      "https://res.cloudinary.com/dwalymiy3/image/upload/v1775305076/farm/images/projects/custom/4/ChatGPT_Image_19_47_56_16_thg_3_2026_uvjrg0.png",
+      "https://res.cloudinary.com/dwalymiy3/image/upload/v1775305080/farm/images/projects/custom/4/ChatGPT_Image_19_48_00_16_thg_3_2026_c9acr7.png"
+    ]
   }
 ];
 
 export const projects: ProjectItem[] = baseProjects.map((project) => ({
   ...project,
-  gallery: [project.image, project.image, project.image]
+  gallery: project.gallery && project.gallery.length > 0 
+    ? project.gallery 
+    : [project.image, project.image, project.image]
 }));
 
 export function getProjectBySlug(slug: string) {

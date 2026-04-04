@@ -56,9 +56,9 @@ const Projects = ({ content }: ProjectsProps) => {
               <span className="projects-header-kicker">Timeless Design</span>
               <p>{content.description}</p>
               <div className="projects-header-tags">
-                <span>Cảnh quan</span>
                 <span>Hồ koi</span>
-                <span>Nghỉ dưỡng</span>
+                <span>Đá nhân tạo</span>
+                <span>Farm</span>
               </div>
             </div>
           </div>

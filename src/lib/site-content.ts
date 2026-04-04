@@ -137,7 +137,7 @@ export const defaultSiteContent = {
       titleLine1: 'Slow thinking.',
       titleLine2: 'Timeless design.',
       description:
-        'Sơn Hải Landscape cung cấp dịch vụ tư vấn, thiết kế và thi công cảnh quan chuyên nghiệp, bao gồm sân vườn, hồ koi, farm, homestay và công viên. Chúng tôi kiến tạo những không gian hài hòa giữa thẩm mỹ và công năng, đảm bảo chất lượng thi công và giá trị bền vững cho từng dự án.',
+        'Sơn Hải Landscape chuyên thiết kế và thi công <strong>hồ koi sân vườn</strong>, đồng thời nổi bật với giải pháp <strong>đá nhân tạo</strong> và <strong>quy hoạch farm</strong>. Chúng tôi mang đến các công trình cảnh quan hài hòa giữa thẩm mỹ và công năng, đảm bảo chất lượng thi công và giá trị bền vững.',
       primaryCta: { label: 'Nhận Báo Giá', href: '/bao-gia-thiet-ke-farm' },
       secondaryCta: { label: 'Xem dự án', href: '/project' },
       foregroundImage: 'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426303/farm/images/home/jhfe2t09sjur4xnj1ui1.png',
@@ -160,7 +160,7 @@ export const defaultSiteContent = {
         {
           title: 'Sân Vườn - Hồ Koi',
           desc: 'Chuyên thiết kế, thi công và vận hành – bảo trì hồ cá Koi cùng cảnh quan sân vườn trên toàn quốc.',
-          image: 'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426311/farm/images/home/ef1xlo8bmxyhzywabywq.jpg',
+          image: '/sanvuonhokoi.png',
           href: '/project/san-vuon-ho-koi'
         },
         {
@@ -215,32 +215,32 @@ export const defaultSiteContent = {
           title: 'Vườn thiên nhiên',
           location: 'Hồ Tràm, Xuyên Mộc',
           description: 'Tọa lạc tại Hồ Tràm, Xuyên Mộc, dự án là một farmstay rộng 1000m2 kết hợp vườn cây ăn trái và không gian cảnh quan thư giãn. Thiết kế hướng đến sự gần gũi tự nhiên với suối đá, hồ nước và hệ thực vật nhiệt đới phong phú.',
-          image: 'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426305/farm/images/home/jyus2a8osiab88cnjf7c.jpg',
-          href: '/project'
+          image: 'https://res.cloudinary.com/dwalymiy3/image/upload/v1775304947/farm/images/projects/custom/1/ChatGPT_Image_09_15_50_12_thg_3_2026_t3yneh.jpg',
+          href: '/project/vuon-thien-nhien'
         },
         {
           slug: 'san-vuon-nha-lan',
           title: 'Sân vườn nhà Lan',
           location: 'Bình Trưng, Hồ Chí Minh',
           description: 'Dự án là sân vườn nhà phố thiết kế theo phong cách vườn Nhật hiện đại. Không gian tổ chức khéo léo với lối dạo stepping stone, sỏi rải, cụm đá tự nhiên và đèn đá truyền thống, kết hợp cây bonsai tinh tế.',
-          image: 'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426306/farm/images/home/uvswzhekilaf4yzbuctc.jpg',
-          href: '/project'
+          image: 'https://res.cloudinary.com/dwalymiy3/image/upload/v1775304993/farm/images/projects/custom/2/0_yfpw0r.jpg',
+          href: '/project/san-vuon-nha-lan'
         },
         {
           slug: 'ca-phe-thi',
           title: 'Cà phê Thị',
           location: 'Nhơn Trạch, Đồng Nai',
           description: 'Không gian cà phê sân vườn uốn lượn tự nhiên, kết hợp giữa khu ngồi ngoài trời và cảnh quan mặt nước. Hồ cá trung tâm đóng vai trò điểm nhấn, liên kết các khu vực bàn ngồi và lối dạo xung quanh.',
-          image: 'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426308/farm/images/home/d0fm45pnqx6b5cmege6l.png',
-          href: '/project'
+          image: 'https://res.cloudinary.com/dwalymiy3/image/upload/v1775305018/farm/images/projects/custom/3/20260129_1652_Photorealistic_Courtyard_Transformation_remix_01kg4jmhfpf1z9tvjvck1jgjaa_moaowp.jpg',
+          href: '/project/ca-phe-thi'
         },
         {
           slug: 'ho-koi-tri-lam',
           title: 'Hồ Koi Trí Lâm',
           location: 'Tp Buôn Ma Thuột',
           description: 'Thiết kế theo phong cách vườn Nhật hiện đại, tập trung vào sự tinh giản và cân bằng không gian. Hồ koi kết hợp thác đá tự nhiên, đèn đá truyền thống và hệ cây bonsai mang đến không gian thư giãn tinh tế.',
-          image: 'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426309/farm/images/home/ms7wepswrge3qodzefez.png',
-          href: '/project'
+          image: 'https://res.cloudinary.com/dwalymiy3/image/upload/v1775305038/farm/images/projects/custom/4/ChatGPT_Image_19_42_50_16_thg_3_2026_obtza5.png',
+          href: '/project/ho-koi-tri-lam'
         }
       ]
     },

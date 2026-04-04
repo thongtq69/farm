@@ -53,7 +53,7 @@ const Hero = ({ content }: HeroProps) => {
           </h1>
 
           <div className="hero-description">
-            <p>{content.description}</p>
+            <p dangerouslySetInnerHTML={{ __html: content.description }} />
           </div>
 
           <div className="hero-btns-wrapper-new">
