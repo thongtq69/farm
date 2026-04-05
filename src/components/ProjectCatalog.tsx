@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { projects as projectList } from '@/data/projects';
 import { reelsData, ReelItem } from '@/data/reels';
 import ToastNotification from './ToastNotification';
+import { defaultSiteContent } from '@/lib/site-content-static';
 import './ProjectCatalog.css';
 
 type Project = {
@@ -48,6 +49,7 @@ const ProjectCatalog = ({ initialCategory }: ProjectCatalogProps) => {
   const imageRef = useRef<HTMLElement>(null);
   const videoRef = useRef<HTMLElement>(null);
   const threeDRef = useRef<HTMLElement>(null);
+  const { catalog } = defaultSiteContent.projectPages;
 
   const projects = useMemo<Project[]>(
     () =>
@@ -114,11 +116,11 @@ const ProjectCatalog = ({ initialCategory }: ProjectCatalogProps) => {
         {/* Section: Hình Ảnh */}
         <section ref={imageRef} className="catalog-section" style={{ paddingTop: '2rem', paddingBottom: '4rem' }}>
           <div className="catalog-header text-center" style={{ marginBottom: '3rem' }}>
-            <span className="subtitle subtitle-pill" style={{ color: '#00c689', background: 'rgba(0,198,137,0.1)', padding: '0.5rem 1.5rem', borderRadius: '50px', display: 'inline-block', marginBottom: '1rem', fontWeight: 600 }}>Hình Ảnh Công Trình</span>
+            <span className="subtitle subtitle-pill" style={{ color: '#00c689', background: 'rgba(0,198,137,0.1)', padding: '0.5rem 1.5rem', borderRadius: '50px', display: 'inline-block', marginBottom: '1rem', fontWeight: 600 }}>{catalog.imageSection.pill}</span>
             <h2 style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', color: '#0d3f32', fontFamily: 'Playfair Display, serif', fontWeight: 800, marginBottom: '1rem' }}>
-              Hình Ảnh Công Trình Thực Tế
+              {catalog.imageSection.title}
             </h2>
-            <p style={{ color: '#666', fontSize: '1.2rem' }}>Những dự án tiêu biểu đã được Son Hai Landscape hoàn thành</p>
+            <p style={{ color: '#666', fontSize: '1.2rem' }}>{catalog.imageSection.description}</p>
           </div>
 
           {/* Category Filter Tabs */}
@@ -164,11 +166,11 @@ const ProjectCatalog = ({ initialCategory }: ProjectCatalogProps) => {
         {/* Section: Video */}
         <section ref={videoRef} className="catalog-section" style={{ paddingTop: '4rem', paddingBottom: '4rem' }}>
           <div className="catalog-header text-center" style={{ marginBottom: '3rem' }}>
-            <span className="subtitle subtitle-pill" style={{ color: '#00c689', background: 'rgba(0,198,137,0.1)', padding: '0.5rem 1.5rem', borderRadius: '50px', display: 'inline-block', marginBottom: '1rem', fontWeight: 600 }}>Video Thi Công</span>
+            <span className="subtitle subtitle-pill" style={{ color: '#00c689', background: 'rgba(0,198,137,0.1)', padding: '0.5rem 1.5rem', borderRadius: '50px', display: 'inline-block', marginBottom: '1rem', fontWeight: 600 }}>{catalog.videoSection.pill}</span>
             <h2 style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', color: '#0d3f32', fontFamily: 'Playfair Display, serif', fontWeight: 800, marginBottom: '1rem' }}>
-              Video Thi Công & Thực Tế
+              {catalog.videoSection.title}
             </h2>
-            <p style={{ color: '#666', fontSize: '1.2rem' }}>Xem quy trình thi công thực tế các dự án đã hoàn thành</p>
+            <p style={{ color: '#666', fontSize: '1.2rem' }}>{catalog.videoSection.description}</p>
           </div>
 
           <div className="catalog-grid-v2">
@@ -196,11 +198,11 @@ const ProjectCatalog = ({ initialCategory }: ProjectCatalogProps) => {
         {/* Section: 3D */}
         <section ref={threeDRef} className="catalog-section" style={{ paddingTop: '4rem', paddingBottom: '8rem' }}>
           <div className="catalog-header text-center" style={{ marginBottom: '3rem' }}>
-            <span className="subtitle subtitle-pill" style={{ color: '#00c689', background: 'rgba(0,198,137,0.1)', padding: '0.5rem 1.5rem', borderRadius: '50px', display: 'inline-block', marginBottom: '1rem', fontWeight: 600 }}>Mô Hình 3D</span>
+            <span className="subtitle subtitle-pill" style={{ color: '#00c689', background: 'rgba(0,198,137,0.1)', padding: '0.5rem 1.5rem', borderRadius: '50px', display: 'inline-block', marginBottom: '1rem', fontWeight: 600 }}>{catalog.threeDSection.pill}</span>
             <h2 style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', color: '#0d3f32', fontFamily: 'Playfair Display, serif', fontWeight: 800, marginBottom: '1rem' }}>
-              Phối Cảnh 3D & Quy Hoạch
+              {catalog.threeDSection.title}
             </h2>
-            <p style={{ color: '#666', fontSize: '1.2rem' }}>Xem trước thiết kế qua mô hình chân thực trước khi thi công</p>
+            <p style={{ color: '#666', fontSize: '1.2rem' }}>{catalog.threeDSection.description}</p>
           </div>
 
           <div className="catalog-grid-v2">
@@ -215,9 +217,9 @@ const ProjectCatalog = ({ initialCategory }: ProjectCatalogProps) => {
                       </svg>
                     </div>
                   </div>
-                  <div className="video-duration">3:20</div>
+                  <div className="video-duration">{catalog.threeDSection.duration}</div>
                   <div className="card-title-bottom" style={{ zIndex: 10 }}>
-                    <h3>{project.title} (Bản vẽ 3D)</h3>
+                    <h3>{project.title}{catalog.threeDSection.titleSuffix}</h3>
                   </div>
                 </div>
               </div>
@@ -232,15 +234,15 @@ const ProjectCatalog = ({ initialCategory }: ProjectCatalogProps) => {
         <div className="nav-pill">
           <button className={`nav-btn ${activeSection === 'image' ? 'active' : ''}`} onClick={() => scrollToSection('image')}>
             <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" style={{ marginRight: '8px' }}><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>
-            Hình Ảnh
+            {catalog.stickyNav.image}
           </button>
           <button className={`nav-btn ${activeSection === 'video' ? 'active' : ''}`} onClick={() => scrollToSection('video')}>
             <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" style={{ marginRight: '8px' }}><path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z"/></svg>
-            Video Thực Tế
+            {catalog.stickyNav.video}
           </button>
           <button className={`nav-btn ${activeSection === '3d' ? 'active' : ''}`} onClick={() => scrollToSection('3d')}>
             <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" style={{ marginRight: '8px' }}><circle cx="12" cy="12" r="8" /></svg>
-            Phối Cảnh 3D
+            {catalog.stickyNav.threeD}
           </button>
         </div>
       </div>

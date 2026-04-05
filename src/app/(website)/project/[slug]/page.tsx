@@ -3,6 +3,7 @@ import ProjectDetail from '@/components/ProjectDetail';
 import ProjectCatalog from '@/components/ProjectCatalog';
 import { notFound } from 'next/navigation';
 import { categorySlugs, getProjectBySlug, projects } from '@/data/projects';
+import { categoryLabels, defaultSiteContent } from '@/lib/site-content';
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -20,6 +21,9 @@ const ProjectPage = async ({ params }: PageProps) => {
   const { slug } = await params;
 
   if (categorySlugs.includes(slug as (typeof categorySlugs)[number])) {
+    const categoryName = categoryLabels[slug as keyof typeof categoryLabels] || slug.replace(/-/g, ' ');
+    const description = defaultSiteContent.projectPages.categoryDescriptionTemplate.replace('{{category}}', categoryName);
+
     return (
       <main className="projects-page-main">
         <div className="page-header section-dark">
@@ -27,10 +31,10 @@ const ProjectPage = async ({ params }: PageProps) => {
             <div className="page-header-content" data-aos="fade-up">
               <span className="subtitle" style={{ color: '#E9D28B' }}>DỰ ÁN THEO CHUYÊN MỤC</span>
               <h1 className="page-title" style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', marginBottom: '1.5rem', textTransform: 'uppercase' }}>
-                {slug.replace(/-/g, ' ')}
+                {categoryName}
               </h1>
               <p className="page-desc arsenal" style={{ maxWidth: '700px', fontSize: '1.2rem', opacity: 0.9 }}>
-                Khám phá tuyển tập các dự án tiêu biểu thuộc lĩnh vực {slug.replace(/-/g, ' ')} do Son Hai Landscape kiến tạo.
+                {description}
               </p>
             </div>
           </div>

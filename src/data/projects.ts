@@ -9,8 +9,8 @@ export type ProjectItem = {
 
 export const categorySlugs = [
   'san-vuon-ho-koi',
-  'farm-du-lich-nghi-duong',
-  'da-nhan-tao-nghe-thuat'
+  'da-nhan-tao-nghe-thuat',
+  'farm-du-lich-nghi-duong'
 ] as const;
 
 const baseProjects: ProjectItem[] = [

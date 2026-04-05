@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
-import type { ReelItem } from '@/lib/site-content';
+import type { ReelItem } from '@/lib/site-content-static';
 
 const ReelsGrid = ({ reels }: { reels: ReelItem[] }) => {
   const [selectedReel, setSelectedReel] = useState<ReelItem | null>(null);
