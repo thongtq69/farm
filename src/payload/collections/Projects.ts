@@ -35,6 +35,7 @@ export const Projects: CollectionConfig = {
         { label: 'Sân Vườn & Hồ Koi', value: 'san-vuon-ho-koi' },
         { label: 'Farm & Du Lịch Nghỉ Dưỡng', value: 'farm-du-lich-nghi-duong' },
         { label: 'Đá Nhân Tạo Nghệ Thuật', value: 'da-nhan-tao-nghe-thuat' },
+        { label: 'Mẫu đá 3D', value: 'mau-da-3d' },
       ],
     },
     {

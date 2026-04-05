@@ -4,10 +4,8 @@ import React, { useMemo, useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
-import { projects as projectList, ProjectItem } from '@/data/projects';
-import { reelsData, ReelItem } from '@/data/reels';
 import ToastNotification from './ToastNotification';
-import { defaultSiteContent } from '@/lib/site-content-static';
+import { defaultSiteContent, ProjectItem, ReelItem } from '@/lib/site-content-static';
 import './ProjectCatalog.css';
 
 type Project = ProjectItem & {
@@ -28,9 +26,11 @@ const categoryMapping: Record<string, string> = {
 
 interface ProjectCatalogProps {
   initialCategory?: string;
+  projects?: ProjectItem[];
+  reels?: ReelItem[];
 }
 
-const ProjectCatalog = ({ initialCategory }: ProjectCatalogProps) => {
+const ProjectCatalog = ({ initialCategory, projects: projectList = [], reels: reelsData = [] }: ProjectCatalogProps) => {
   const [activeSection, setActiveSection] = useState<'image' | 'video' | '3d'>('image');
   const [selectedVideo, setSelectedVideo] = useState<ReelItem | null>(null);
   const [selectedGalleryImage, setSelectedGalleryImage] = useState<string | null>(null);

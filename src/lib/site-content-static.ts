@@ -179,7 +179,7 @@ export const defaultSiteContent = {
         {
           title: 'Sân Vườn - Hồ Koi',
           desc: 'Chuyên thiết kế, thi công và vận hành – bảo trì hồ cá Koi cùng cảnh quan sân vườn trên toàn quốc.',
-          image: '/sanvuonhokoi.png',
+          image: 'https://res.cloudinary.com/dwalymiy3/image/upload/v1775395862/farm/images/home/shyanbgxwtpoxmb5m1ba.png',
           href: '/project/san-vuon-ho-koi'
         },
         {
@@ -324,9 +324,9 @@ export const defaultSiteContent = {
       description: 'Luôn sát cánh cùng chủ đầu tư trong suốt quá trình hình thành dự án.',
       intro: 'Để hoàn thiện một dự án cảnh quan, cần trải qua 3 giai đoạn cốt lõi: khảo sát, thiết kế và thi công. Ở mỗi giai đoạn, Sơn Hải Landscape luôn đồng hành chặt chẽ cùng CĐT và xem đó là trách nhiệm xuyên suốt của mình.',
       items: [
-        { num: '01', title: 'Khảo sát', desc: 'Từ bước đầu, Sơn Hải Landscape tiến hành khảo sát thực tế kỹ lưỡng, đánh giá hiện trạng và lắng nghe nhu cầu của CĐT nhằm định hướng giải pháp phù hợp cho từng công trình.', image: '/Đồng hành/1.png' },
-        { num: '02', title: 'Thiết kế', desc: 'Trong quá trình thiết kế, đội ngũ luôn trao đổi liên tục với CĐT để hoàn thiện phương án tối ưu về thẩm mỹ và công năng, đảm bảo tính khả thi và hiệu quả lâu dài.', image: '/Đồng hành/2.png' },
-        { num: '03', title: 'Thi công', desc: 'Sơn Hải Landscape trực tiếp triển khai và đồng hành cùng CĐT từ giai đoạn trao đổi đến giám sát chi tiết tại công trình, đảm bảo chất lượng thi công và tiến độ hoàn thiện.', image: '/Đồng hành/3.png' }
+        { num: '01', title: 'Khảo sát', desc: 'Từ bước đầu, Sơn Hải Landscape tiến hành khảo sát thực tế kỹ lưỡng, đánh giá hiện trạng và lắng nghe nhu cầu của CĐT nhằm định hướng giải pháp phù hợp cho từng công trình.', image: 'https://res.cloudinary.com/dwalymiy3/image/upload/v1775395864/farm/images/dong-hanh/as9hrrgptwbukfmtjw3m.png' },
+        { num: '02', title: 'Thiết kế', desc: 'Trong quá trình thiết kế, đội ngũ luôn trao đổi liên tục với CĐT để hoàn thiện phương án tối ưu về thẩm mỹ và công năng, đảm bảo tính khả thi và hiệu quả lâu dài.', image: 'https://res.cloudinary.com/dwalymiy3/image/upload/v1775395866/farm/images/dong-hanh/liscu7h1f1ow8xdsiyj3.png' },
+        { num: '03', title: 'Thi công', desc: 'Sơn Hải Landscape trực tiếp triển khai và đồng hành cùng CĐT từ giai đoạn trao đổi đến giám sát chi tiết tại công trình, đảm bảo chất lượng thi công và tiến độ hoàn thiện.', image: 'https://res.cloudinary.com/dwalymiy3/image/upload/v1775395868/farm/images/dong-hanh/bolfbyusrlyqlo9ja5xx.png' }
       ]
     }
   },
