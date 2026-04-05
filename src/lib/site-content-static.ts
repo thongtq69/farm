@@ -1,7 +1,7 @@
 export const categoryLabels = {
   'san-vuon-ho-koi': 'Sân Vườn & Hồ Koi',
-  'farm-du-lich-nghi-duong': 'Farm & Du Lịch Nghỉ Dưỡng',
-  'da-nhan-tao-nghe-thuat': 'Đá Nhân Tạo Nghệ Thuật'
+  'da-nhan-tao-nghe-thuat': 'Đá Nhân Tạo Nghệ Thuật',
+  'farm-du-lich-nghi-duong': 'Farm & Du Lịch Nghỉ Dưỡng'
 } as const;
 
 export type ProjectItem = {
@@ -85,9 +85,9 @@ export const defaultSiteContent = {
     propertyTypeOptions: [
       { value: 'san_vuon', label: 'Sân vườn biệt thự' },
       { value: 'ho_koi', label: 'Hồ cá Koi' },
+      { value: 'da_nhan_tao', label: 'Đá nhân tạo nghệ thuật' },
       { value: 'farm', label: 'Farm & Khu Nghỉ Dưỡng' },
       { value: 'quan_ca_phe', label: 'Quán cà phê' },
-      { value: 'da_nhan_tao', label: 'Đá nhân tạo nghệ thuật' },
       { value: 'khac', label: 'Khác' }
     ],
     investmentOptions: [
@@ -106,9 +106,9 @@ export const defaultSiteContent = {
     propertyTypeOptions: [
       { value: 'san_vuon', label: 'Sân vườn biệt thự' },
       { value: 'ho_koi', label: 'Hồ cá Koi nghệ thuật' },
+      { value: 'da_nhan_tao', label: 'Đá nhân tạo nghệ thuật' },
       { value: 'farm', label: 'Farmstay & Khu Nghỉ Dưỡng' },
       { value: 'quan_ca_phe', label: 'Quán cà phê' },
-      { value: 'da_nhan_tao', label: 'Đá nhân tạo nghệ thuật' },
       { value: 'khac', label: 'Yêu cầu khác' }
     ],
     investmentOptions: [
@@ -230,14 +230,6 @@ export const defaultSiteContent = {
       cta: { label: 'Khám Phá Thêm Dự Án', href: '/project' },
       items: [
         {
-          slug: 'vuon-thien-nhien',
-          title: 'Vườn thiên nhiên',
-          location: 'Hồ Tràm, Xuyên Mộc',
-          description: 'Tọa lạc tại Hồ Tràm, Xuyên Mộc, dự án là một farmstay rộng 1000m2 kết hợp vườn cây ăn trái và không gian cảnh quan thư giãn. Thiết kế hướng đến sự gần gũi tự nhiên với suối đá, hồ nước và hệ thực vật nhiệt đới phong phú.',
-          image: 'https://res.cloudinary.com/dwalymiy3/image/upload/v1775304947/farm/images/projects/custom/1/ChatGPT_Image_09_15_50_12_thg_3_2026_t3yneh.jpg',
-          href: '/project/vuon-thien-nhien'
-        },
-        {
           slug: 'san-vuon-nha-lan',
           title: 'Sân vườn nhà Lan',
           location: 'Bình Trưng, Hồ Chí Minh',
@@ -260,6 +252,14 @@ export const defaultSiteContent = {
           description: 'Thiết kế theo phong cách vườn Nhật hiện đại, tập trung vào sự tinh giản và cân bằng không gian. Hồ koi kết hợp thác đá tự nhiên, đèn đá truyền thống và hệ cây bonsai mang đến không gian thư giãn tinh tế.',
           image: 'https://res.cloudinary.com/dwalymiy3/image/upload/v1775305038/farm/images/projects/custom/4/ChatGPT_Image_19_42_50_16_thg_3_2026_obtza5.png',
           href: '/project/ho-koi-tri-lam'
+        },
+        {
+          slug: 'vuon-thien-nhien',
+          title: 'Vườn thiên nhiên',
+          location: 'Hồ Tràm, Xuyên Mộc',
+          description: 'Tọa lạc tại Hồ Tràm, Xuyên Mộc, dự án là một farmstay rộng 1000m2 kết hợp vườn cây ăn trái và không gian cảnh quan thư giãn. Thiết kế hướng đến sự gần gũi tự nhiên với suối đá, hồ nước và hệ thực vật nhiệt đới phong phú.',
+          image: 'https://res.cloudinary.com/dwalymiy3/image/upload/v1775304947/farm/images/projects/custom/1/ChatGPT_Image_09_15_50_12_thg_3_2026_t3yneh.jpg',
+          href: '/project/vuon-thien-nhien'
         }
       ]
     },
@@ -343,10 +343,10 @@ export const defaultSiteContent = {
       eyebrow: 'ĐỘI NGŨ CỦA CHÚNG TÔI',
       title: 'Gặp gỡ những chuyên gia kiến tạo',
       members: [
-        { name: 'Võ Hữu Hải', role: 'Founder / CEO', image: 'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426798/farm/images/team/kn8jajqxkny8x8gzvgwc.png', desc: 'Chuyên gia quy hoạch và kiến trúc cảnh quan với hơn 10 năm kinh nghiệm.' },
-        { name: 'Lương Khải Hoàn', role: 'Project Manager', image: 'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426800/farm/images/team/whaeefot3wjuvk7evmb1.png', desc: 'Điều hành và đảm bảo tiến độ, chất lượng cho mọi dự án tại Sơn Hải.' },
-        { name: 'Trần Minh Hoài', role: 'Lead Architect', image: 'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426797/farm/images/team/gpbvglcd3lba445isgim.png', desc: 'Người thổi hồn vào các bản vẽ thiết kế kiến trúc và không gian xanh.' },
-        { name: 'Trần Thị Hương', role: 'Finance & Admin', image: 'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426796/farm/images/team/iyl2gm5vmy62xgn1pg9f.png', desc: 'Quản lý vận hành và hỗ trợ tối đa cho đội ngũ kỹ thuật.' }
+        { name: 'Võ Hữu Hải', role: 'Founder / CEO', image: 'https://res.cloudinary.com/dwalymiy3/image/upload/v1775382528/farm/team/v278flnpczwwlmrphwf6.png', desc: 'Chuyên gia quy hoạch và kiến trúc cảnh quan với hơn 10 năm kinh nghiệm.' },
+        { name: 'Lương Khải Hoàn', role: 'Project Manager', image: 'https://res.cloudinary.com/dwalymiy3/image/upload/v1775382526/farm/team/pargvytbsqjhnlpi8y7o.png', desc: 'Điều hành và đảm bảo tiến độ, chất lượng cho mọi dự án tại Sơn Hải.' },
+        { name: 'Trần Minh Hoài', role: 'Lead Architect', image: 'https://res.cloudinary.com/dwalymiy3/image/upload/v1775382530/farm/team/j6npsmoju7mald4aheoo.png', desc: 'Người thổi hồn vào các bản vẽ thiết kế kiến trúc và không gian xanh.' },
+        { name: 'Trần Thị Hương', role: 'Finance & Admin', image: 'https://res.cloudinary.com/dwalymiy3/image/upload/v1775382524/farm/team/rijfnp8u5ukldnwyq2mp.png', desc: 'Quản lý vận hành và hỗ trợ tối đa cho đội ngũ kỹ thuật.' }
       ]
     },
     vision: {

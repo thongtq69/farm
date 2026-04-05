@@ -4,25 +4,20 @@ import React, { useMemo, useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
-import { projects as projectList } from '@/data/projects';
+import { projects as projectList, ProjectItem } from '@/data/projects';
 import { reelsData, ReelItem } from '@/data/reels';
 import ToastNotification from './ToastNotification';
 import { defaultSiteContent } from '@/lib/site-content-static';
 import './ProjectCatalog.css';
 
-type Project = {
-  slug: string;
+type Project = ProjectItem & {
   url: string;
-  title: string;
-  meta_description: string | null;
-  image?: string;
-  category?: string;
 };
 
 const categoryOrder = [
   'san-vuon-ho-koi',
-  'farm-du-lich-nghi-duong',
-  'da-nhan-tao-nghe-thuat'
+  'da-nhan-tao-nghe-thuat',
+  'farm-du-lich-nghi-duong'
 ] as const;
 
 const categoryMapping: Record<string, string> = {
@@ -38,6 +33,7 @@ interface ProjectCatalogProps {
 const ProjectCatalog = ({ initialCategory }: ProjectCatalogProps) => {
   const [activeSection, setActiveSection] = useState<'image' | 'video' | '3d'>('image');
   const [selectedVideo, setSelectedVideo] = useState<ReelItem | null>(null);
+  const [selectedGalleryImage, setSelectedGalleryImage] = useState<string | null>(null);
   const [activeCategory, setActiveCategory] = useState<string>(initialCategory || 'all');
   const [notification, setNotification] = useState<{ isVisible: boolean; message: string; subMessage?: string; type: 'success' | 'error' | 'info' }>({ 
     isVisible: false, 
@@ -61,12 +57,44 @@ const ProjectCatalog = ({ initialCategory }: ProjectCatalogProps) => {
   );
 
   const filteredProjects = useMemo(() => {
-    if (activeCategory === 'all') return projects;
-    return projects.filter(p => p.category === activeCategory);
+    // Filter out 3D models from the main images grid
+    const list = projects.filter(p => p.category !== 'mau-da-3d');
+    if (activeCategory === 'all') return list;
+    return list.filter(p => p.category === activeCategory);
   }, [projects, activeCategory]);
 
-  // For 3D mode, just filter to a specific category or show a subset to simulate
-  const threeDProjects = useMemo(() => projects.filter(p => p.category === 'farm-du-lich-nghi-duong').slice(0, 6), [projects]);
+  const threeDProjects = useMemo(() => {
+    const all3D = projects.filter(p => p.category === 'mau-da-3d');
+    if (activeCategory === 'all') return all3D;
+    
+    // Filter 3D models relevant to the active category
+    if (activeCategory === 'san-vuon-ho-koi') {
+      return all3D.filter(p => !p.slug.includes('da-nhan-tao'));
+    }
+    if (activeCategory === 'da-nhan-tao-nghe-thuat') {
+      return all3D.filter(p => p.slug.includes('da-nhan-tao'));
+    }
+    return all3D;
+  }, [projects, activeCategory]);
+
+  const projectVideos = useMemo(() => {
+    if (activeCategory === 'all') return reelsData;
+    
+    if (activeCategory === 'san-vuon-ho-koi') {
+      return reelsData.filter(r => 
+        r.category.includes('Hồ Koi') || 
+        r.category.includes('Thi Công') || 
+        (!r.category.includes('Đá Nhân Tạo') && !r.category.includes('Farm'))
+      );
+    }
+    if (activeCategory === 'da-nhan-tao-nghe-thuat') {
+      return reelsData.filter(r => r.category.includes('Đá Nhân Tạo'));
+    }
+    if (activeCategory === 'farm-du-lich-nghi-duong') {
+      return reelsData.filter(r => r.category.includes('Farm'));
+    }
+    return reelsData;
+  }, [activeCategory]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -101,6 +129,13 @@ const ProjectCatalog = ({ initialCategory }: ProjectCatalogProps) => {
     });
   };
 
+  const handleProjectClick = (e: React.MouseEvent, project: Project) => {
+    if (project.isGalleryOnly) {
+      e.preventDefault();
+      setSelectedGalleryImage(project.image);
+    }
+  };
+
   return (
     <div className="project-catalog-v2">
       <ToastNotification 
@@ -123,7 +158,6 @@ const ProjectCatalog = ({ initialCategory }: ProjectCatalogProps) => {
             <p style={{ color: '#666', fontSize: '1.2rem' }}>{catalog.imageSection.description}</p>
           </div>
 
-          {/* Category Filter Tabs */}
           <div className="category-filter-tabs">
             <button
               className={`category-tab ${activeCategory === 'all' ? 'active' : ''}`}
@@ -144,7 +178,12 @@ const ProjectCatalog = ({ initialCategory }: ProjectCatalogProps) => {
 
           <div className="catalog-grid-v2">
             {filteredProjects.map((project, index) => (
-              <Link key={`img-${project.slug}`} href={project.url} className="catalog-card-v2">
+              <Link 
+                key={`img-${project.slug}`} 
+                href={project.url} 
+                className="catalog-card-v2"
+                onClick={(e) => handleProjectClick(e, project)}
+              >
                 <div className="card-image-wrapper">
                   <Image src={project.image || 'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426773/farm/images/projects/molvc1tmfxfobqqhagnf.jpg'} alt={project.title} fill style={{ objectFit: 'cover' }} />
                   <div className="card-overlay-hover">
@@ -174,7 +213,7 @@ const ProjectCatalog = ({ initialCategory }: ProjectCatalogProps) => {
           </div>
 
           <div className="catalog-grid-v2">
-            {reelsData.map((reel, index) => (
+            {projectVideos.map((reel, index) => (
               <div key={`vid-${index}`} className="catalog-card-v2" onClick={() => reel.videoUrl && setSelectedVideo(reel)}>
                 <div className="card-image-wrapper">
                   <Image src={reel.thumbnail} alt={reel.title} fill style={{ objectFit: 'cover' }} />
@@ -207,19 +246,18 @@ const ProjectCatalog = ({ initialCategory }: ProjectCatalogProps) => {
 
           <div className="catalog-grid-v2">
             {threeDProjects.map((project, index) => (
-               <div key={`3d-${project.slug}`} className="catalog-card-v2" onClick={() => setNotification({ isVisible: true, message: 'Tính năng 3D Đang Phát Triển', subMessage: 'Hệ thống đang hoàn thiện mô hình 3D thực tế ảo cho dự án này. Vui lòng quay lại sau!', type: 'info' })}>
+               <div key={`3d-${project.slug}`} className="catalog-card-v2" onClick={() => setSelectedGalleryImage(project.image)}>
                 <div className="card-image-wrapper">
                   <Image src={project.image || ''} alt={project.title} fill style={{ objectFit: 'cover' }} />
-                  <div className="card-overlay-play">
-                    <div className="play-icon-circle" style={{ background: 'rgba(100, 100, 100, 0.8)' }}>
-                      <svg viewBox="0 0 24 24" width="36" height="36" fill="white">
-                        <path d="M8 5v14l11-7z" />
+                  <div className="card-overlay-hover">
+                    <div className="eye-icon">
+                      <svg viewBox="0 0 24 24" width="32" height="32" fill="white">
+                        <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
                       </svg>
                     </div>
                   </div>
-                  <div className="video-duration">{catalog.threeDSection.duration}</div>
                   <div className="card-title-bottom" style={{ zIndex: 10 }}>
-                    <h3>{project.title}{catalog.threeDSection.titleSuffix}</h3>
+                    <h3>{project.title}</h3>
                   </div>
                 </div>
               </div>
@@ -247,7 +285,7 @@ const ProjectCatalog = ({ initialCategory }: ProjectCatalogProps) => {
         </div>
       </div>
 
-      {/* Video Modal (Reused) */}
+      {/* Video Modal */}
       <AnimatePresence>
         {selectedVideo && (
           <motion.div 
@@ -271,6 +309,38 @@ const ProjectCatalog = ({ initialCategory }: ProjectCatalogProps) => {
                 <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" strokeWidth="2" fill="none"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
               </button>
               <video src={selectedVideo.videoUrl} className="reel-video-player" controls autoPlay playsInline />
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Image Modal (Lightbox) */}
+      <AnimatePresence>
+        {selectedGalleryImage && (
+          <motion.div 
+            className="video-modal-overlay"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setSelectedGalleryImage(null)}
+          >
+            <motion.div 
+              className="video-modal-content"
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              style={{ maxWidth: '90vw', maxHeight: '90vh' }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button 
+                className="video-modal-close"
+                onClick={() => setSelectedGalleryImage(null)}
+              >
+                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" strokeWidth="2" fill="none"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+              </button>
+              <div style={{ position: 'relative', width: '100%', height: '80vh' }}>
+                <Image src={selectedGalleryImage} alt="Gallery view" fill style={{ objectFit: 'contain' }} unoptimized />
+              </div>
             </motion.div>
           </motion.div>
         )}
