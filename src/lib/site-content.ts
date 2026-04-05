@@ -274,6 +274,12 @@ export const defaultSiteContent = {
       title: 'Niềm tin gửi trao',
       items: [
         {
+          author: 'Ms. Hương',
+          role: 'Chủ đầu tư - Vũng Tàu',
+          project: 'Dự án vườn thiên nhiên',
+          content: 'Sơn Hải thi công rất tâm huyết, cảm ơn vì đã làm cho tôi một mảnh sân vườn hồ koi tuyệt vời'
+        },
+        {
           author: 'Ms. Lan Anh',
           role: 'Chủ đầu tư - Lâm Đồng',
           project: 'Dự án Farmstay bản địa',
@@ -295,13 +301,13 @@ export const defaultSiteContent = {
     },
     companion: {
       eyebrow: 'Tận tâm phục vụ',
-      title: 'Đồng hành trên mọi phương diện',
-      description: 'Luôn bên cạnh chủ đầu tư trong từng bước hình thành dự án.',
+      title: 'Đồng hành trọn vẹn trong từng công trình',
+      description: 'Luôn sát cánh cùng chủ đầu tư trong suốt quá trình hình thành dự án.',
       intro: 'Để hoàn thành được một dự án thiết kế Farm, đều phải trải qua các bước cơ bản nhất là khảo sát, thiết kế và thi công. Trong 3 bước cơ bản này, Son Hai Landscape luôn đồng hành cùng CĐT trên nhiều phương diện và luôn coi đó là trọng trách của chúng tôi.',
       items: [
-        { num: '01', title: 'Khảo sát', desc: 'Từ bước đầu tiên là khảo sát kỹ lưỡng thực tế, Son Hai Landscape đã nắm rõ được diện mạo khu đất, gặp gỡ CĐT và hiểu hơn về mong muốn của CĐT về dự án để đời của họ.', image: 'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426343/farm/images/other/baentyl6pxjdhxdgxmvc.jpg' },
-        { num: '02', title: 'Thiết kế', desc: 'Trong quá trình thiết kế Farm, các KTS và khách hàng luôn có sự trao đổi liền mạch và liên tục. Bất cứ sự thay đổi nào cũng được chúng tôi cập nhật để đi đến phương án tối ưu nhất.', image: 'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426347/farm/images/other/rwhhetrk6jcsheqsow6o.jpg' },
-        { num: '03', title: 'Thi công', desc: 'Son Hai Landscape luôn đồng hành cùng CĐT trên mọi phương diện từ trao đổi online cho đến giám sát tác giả tại dự án cho đến khi dự án được hoàn thiện.', image: 'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426321/farm/images/icons/wkj2wrrqrudawumi7hrw.jpg' }
+        { num: '01', title: 'Khảo sát', desc: 'Từ bước đầu, Sơn Hải Landscape tiến hành khảo sát thực tế kỹ lưỡng, đánh giá hiện trạng và lắng nghe nhu cầu của CĐT nhằm định hướng giải pháp phù hợp cho từng công trình.', image: '/Đồng hành/1.png' },
+        { num: '02', title: 'Thiết kế', desc: 'Trong quá trình thiết kế, đội ngũ luôn trao đổi liên tục với CĐT để hoàn thiện phương án tối ưu về thẩm mỹ và công năng, đảm bảo tính khả thi và hiệu quả lâu dài.', image: '/Đồng hành/2.png' },
+        { num: '03', title: 'Thi công', desc: 'Sơn Hải Landscape trực tiếp triển khai và đồng hành cùng CĐT từ giai đoạn trao đổi đến giám sát chi tiết tại công trình, đảm bảo chất lượng thi công và tiến độ hoàn thiện.', image: '/Đồng hành/3.png' }
       ]
     }
   },
