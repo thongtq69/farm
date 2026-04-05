@@ -6724,3 +6724,17 @@ img {
   color: #0d3f32 !important;
   font-size: 0.95rem !important;
 }
+/* ============================================================
+   OVERRIDE: BEFORE/AFTER CONTRAST
+   ============================================================ */
+.active-case-kicker {
+  color: #a8d89a !important;
+  font-weight: 700 !important;
+  opacity: 1 !important;
+}
+.active-case-info h3 {
+  font-family: "Playfair Display", serif !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.3) !important;
+}

@@ -13,6 +13,7 @@
     "@payloadcms/next": "^3.80.0",
     "@payloadcms/richtext-lexical": "^3.80.0",
     "cloudinary": "^2.9.0",
+    "dotenv": "^17.4.0",
     "framer-motion": "^12.37.0",
     "graphql": "^16.13.2",
     "mongoose": "^9.3.1",

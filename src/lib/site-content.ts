@@ -172,7 +172,7 @@ export const defaultSiteContent = {
         {
           title: 'Đá Nhân Tạo & Tiểu cảnh',
           desc: 'Chuyên thiết kế, thi công đá nhân tạo nghệ thuật và tiểu cảnh, tạo điểm nhấn thẩm mỹ cho không gian cảnh quan.',
-          image: 'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426313/farm/images/home/btqwh4ldz8nrg3ijlrno.jpg',
+          image: 'https://res.cloudinary.com/dwalymiy3/image/upload/v1775309154/farm/images/beforeafter/custom/isk7sbrhkjkbq1qzfgqx.jpg',
           href: '/project/da-nhan-tao-nghe-thuat'
         }
       ]
@@ -250,10 +250,10 @@ export const defaultSiteContent = {
       description: 'Sử dụng thanh trượt để so sánh trực quan sự thay đổi từ hiện trạng đến quy hoạch chi tiết.',
       items: [
         {
-          name: 'Thiết kế Sân Vườn Biệt Thự',
+          name: 'Đá nhân tạo',
           location: 'Dự án thực tế 2025',
-          before: 'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426281/farm/images/beforeafter/safynyrs2dtzxlewmeux.jpg',
-          after: 'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426280/farm/images/beforeafter/vngvkvqvm1zhvq00zaog.jpg'
+          before: 'https://res.cloudinary.com/dwalymiy3/image/upload/v1775309153/farm/images/beforeafter/custom/ea2kgwofn1h6zlne6bqu.png',
+          after: 'https://res.cloudinary.com/dwalymiy3/image/upload/v1775309154/farm/images/beforeafter/custom/isk7sbrhkjkbq1qzfgqx.jpg'
         },
         {
           name: 'Cảnh quan Hồ Koi & Đá Nghệ Thuật',
