@@ -6786,8 +6786,11 @@ img {
   padding: 1.2rem 3rem !important;
   background: #a8d89a !important;
   color: #0a1d06 !important;
-  font-weight: 800 !important;
-  font-size: 1.1rem !important;
+  font-family: 'Outfit', sans-serif !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.1em !important;
+  font-size: 0.95rem !important;
   border-radius: 100px !important;
   box-shadow: 0 10px 30px rgba(168, 216, 154, 0.3) !important;
   text-decoration: none !important;
@@ -6807,8 +6810,11 @@ img {
   padding: 1.2rem 3rem !important;
   border: 2px solid rgba(255,255,255,0.4) !important;
   color: white !important;
+  font-family: 'Outfit', sans-serif !important;
   font-weight: 700 !important;
-  font-size: 1.1rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.1em !important;
+  font-size: 0.95rem !important;
   border-radius: 100px !important;
   backdrop-filter: blur(10px) !important;
   -webkit-backdrop-filter: blur(10px) !important;
