@@ -55,7 +55,10 @@ export const defaultSiteContent = {
     description:
       'Son Hai Landscape kiến tạo nên những không gian nghỉ dưỡng đẳng cấp, chuẩn mực trong từng nét vẽ quy hoạch Farmstay hàng đầu Việt Nam.',
     officeTitle: 'Văn phòng',
-    officeAddress: 'VP HCM: 403A Nguyễn Duy Trinh, P. Bình Trưng Đông, Thủ Đức | VP HN: Số 2, ngõ 95/29 phố Việt Hưng, P. Việt Hưng, Q. Long Biên',
+    officeAddress: [
+      'VP HCM: 403A Nguyễn Duy Trinh, P. Bình Trưng Đông, Thủ Đức',
+      'VP HN: Số 2, ngõ 95/29 phố Việt Hưng, P. Việt Hưng, Q. Long Biên'
+    ],
     contactTitle: 'Liên hệ',
     contactLines: ['Hotline: 0888 22 00 44', 'Sáng: 7h30 - 11h30 | Chiều: 13h - 17h', 'MST: 0314350615', 'Email: vohuuhai2018@gmail.com'],
     menuTitle: 'Menu',

@@ -34,7 +34,11 @@ export const SiteContent: GlobalConfig = {
         { name: 'logoAlt', type: 'text', required: true },
         { name: 'description', type: 'textarea', required: true },
         { name: 'officeTitle', type: 'text', required: true },
-        { name: 'officeAddress', type: 'text', required: true },
+        {
+          name: 'officeAddress',
+          type: 'array',
+          fields: [{ name: 'address', type: 'text' }],
+        },
         { name: 'contactTitle', type: 'text', required: true },
         {
           name: 'contactLines',

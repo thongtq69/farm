@@ -6732,3 +6732,147 @@ img {
   color: #ffffff !important;
   text-shadow: 0 2px 10px rgba(0,0,0,0.3) !important;
 }
+
+/* ============================================================ 
+   CUSTOM FOOTER & CTA FIXES (MODERN RESPONSIVE)
+   ============================================================ */
+
+.footer-contact-info p {
+  margin-bottom: 0.8rem !important;
+  line-height: 1.6 !important;
+}
+
+.footer-cta-box {
+  background: #0a1d06 !important;
+  padding: 5rem 6rem !important;
+  border-radius: 40px !important;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.4) !important;
+  border: 1px solid rgba(255,255,255,0.05) !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  gap: 3rem !important;
+  margin: 4rem 0 !important;
+  overflow: hidden !important;
+}
+
+.footer-cta-box .cta-content h3 {
+  color: white !important;
+  font-family: 'Playfair Display', serif !important;
+  font-size: 2.5rem !important;
+  margin-bottom: 1.2rem !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.01em !important;
+  text-align: left !important;
+}
+
+.footer-cta-box .cta-content p {
+  color: rgba(255, 255, 255, 0.95) !important;
+  font-size: 1.25rem !important;
+  max-width: 650px !important;
+  line-height: 1.6 !important;
+  font-weight: 400 !important;
+  text-align: left !important;
+}
+
+.cta-actions {
+  display: flex !important;
+  gap: 1.5rem !important;
+  align-items: center !important;
+  flex-shrink: 0 !important;
+}
+
+.btn-modern-primary {
+  padding: 1.2rem 3rem !important;
+  background: #a8d89a !important;
+  color: #0a1d06 !important;
+  font-weight: 800 !important;
+  font-size: 1.1rem !important;
+  border-radius: 100px !important;
+  box-shadow: 0 10px 30px rgba(168, 216, 154, 0.3) !important;
+  text-decoration: none !important;
+  transition: all 0.3s !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  white-space: nowrap !important;
+}
+
+.btn-modern-primary:hover {
+  background: #c3e5b7 !important;
+  transform: translateY(-3px) !important;
+}
+
+.btn-modern-outline-white {
+  padding: 1.2rem 3rem !important;
+  border: 2px solid rgba(255,255,255,0.4) !important;
+  color: white !important;
+  font-weight: 700 !important;
+  font-size: 1.1rem !important;
+  border-radius: 100px !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  text-decoration: none !important;
+  transition: all 0.3s !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  white-space: nowrap !important;
+}
+
+.btn-modern-outline-white:hover {
+  background: white !important;
+  color: #0a1d06 !important;
+}
+
+/* Mobile responsive for CTA */
+@media (max-width: 991px) {
+  .footer-cta-box {
+    flex-direction: column !important;
+    padding: 3rem 1.5rem !important;
+    text-align: center !important;
+    gap: 2.5rem !important;
+    border-radius: 30px !important;
+    margin: 2rem 0 !important;
+  }
+  
+  .footer-cta-box .cta-content h3 {
+    font-size: clamp(1.8rem, 5vw, 2.2rem) !important;
+    text-align: center !important;
+  }
+  
+  .footer-cta-box .cta-content p {
+    font-size: 1.1rem !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+  }
+  
+  .cta-actions {
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 1.2rem !important;
+  }
+  
+  .btn-modern-primary, .btn-modern-outline-white {
+    width: 100% !important;
+    padding: 1.2rem 1.5rem !important;
+    font-size: 1.1rem !important;
+    border-radius: 50% !important; /* Make it a circle as requested by UI design if width=height, but text is 100% width, so it will be a pill */
+    aspect-ratio: auto !important; /* Reset to auto to prevent circle distortion if width is 100% */
+  }
+
+  /* Fix for circular button if requested - adding a "more-projects" specific style if needed, but for now pill is safer */
+  .btn-modern-primary, .btn-modern-outline-white {
+    border-radius: 100px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-container {
+    gap: 3rem !important;
+  }
+  .footer-section h3 {
+    margin-bottom: 1.2rem !important;
+    font-size: 1.4rem !important;
+  }
+}

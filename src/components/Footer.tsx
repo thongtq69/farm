@@ -19,7 +19,7 @@ type FooterProps = {
     logoAlt: string;
     description: string;
     officeTitle: string;
-    officeAddress: string;
+    officeAddress: string | string[];
     contactTitle: string;
     contactLines: string[];
     menuTitle: string;
@@ -80,11 +80,25 @@ const Footer = ({ content }: FooterProps) => {
 
         <div className="footer-section">
           <h3>{content.officeTitle}</h3>
-          <p>{content.officeAddress}</p>
-          <h3>{content.contactTitle}</h3>
-          {content.contactLines.map((line) => (
-            <p key={line}>{line}</p>
-          ))}
+          <div className="footer-contact-info">
+            {(() => {
+              const addresses = Array.isArray(content.officeAddress) 
+                ? content.officeAddress 
+                : typeof content.officeAddress === 'string' 
+                  ? (content.officeAddress as string).split('|').map(s => s.trim()) 
+                  : [];
+              return addresses.map((addr, idx) => (
+                <p key={idx}>{addr}</p>
+              ));
+            })()}
+          </div>
+          
+          <h3 style={{ marginTop: '2rem' }}>{content.contactTitle}</h3>
+          <div className="footer-contact-info">
+            {content.contactLines && Array.isArray(content.contactLines) && content.contactLines.map((line, idx) => (
+              <p key={idx}>{line}</p>
+            ))}
+          </div>
         </div>
 
         <div className="footer-section">

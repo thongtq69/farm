@@ -105,14 +105,14 @@ const ProjectDetail = ({ slug, projectSummary }: ProjectDetailProps) => {
 
       <section className="project-related-cta section">
         <div className="container">
-          <div className="cta-modern-dark" style={{ background: '#0a1d06', padding: '5rem 6rem', borderRadius: '40px', boxShadow: '0 30px 80px rgba(0,0,0,0.4)', border: '1px solid rgba(255,255,255,0.05)' }}>
+          <div className="cta-modern-dark footer-cta-box">
             <div className="cta-content">
-              <h3 style={{ color: 'white', fontFamily: 'Playfair Display, serif', fontSize: '2.5rem', marginBottom: '1.2rem', fontWeight: 700, letterSpacing: '-0.01em' }}>Bạn muốn kiến tạo không gian riêng?</h3>
-              <p style={{ color: 'rgba(255, 255, 255, 0.95)', fontSize: '1.25rem', maxWidth: '650px', lineHeight: '1.6', fontWeight: 400 }}>Liên hệ Sơn Hải Landscape để được tư vấn quy hoạch và thiết kế kiến trúc theo định hướng "Timeless Design".</p>
+              <h3>Bạn muốn kiến tạo không gian riêng?</h3>
+              <p>Liên hệ Sơn Hải Landscape để được tư vấn quy hoạch và thiết kế kiến trúc theo định hướng "Timeless Design".</p>
             </div>
-            <div className="cta-actions" style={{ display: 'flex', gap: '1.5rem', alignItems: 'center' }}>
-              <Link href="tel:0888220044" className="btn-modern-primary" style={{ padding: '1.2rem 3rem', background: '#a8d89a', color: '#0a1d06', fontWeight: 800, fontSize: '1.1rem', borderRadius: '100px', boxShadow: '0 10px 30px rgba(168, 216, 154, 0.3)' }}>0888 22 00 44</Link>
-              <Link href="/project" className="btn-modern-outline-white" style={{ padding: '1.2rem 3rem', border: '2px solid rgba(255,255,255,0.4)', color: 'white', fontWeight: 700, fontSize: '1.1rem', borderRadius: '100px', backdropFilter: 'blur(10px)', transition: 'all 0.3s' }}>Xem dự án khác</Link>
+            <div className="cta-actions">
+              <Link href="tel:0888220044" className="btn-modern-primary">0888 22 00 44</Link>
+              <Link href="/project" className="btn-modern-outline-white">Xem dự án khác</Link>
             </div>
           </div>
         </div>

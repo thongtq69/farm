@@ -110,6 +110,27 @@ export const getSiteContent = cache(async (): Promise<SiteContent> => {
       navLinks: merged.header?.navLinks?.length ? merged.header.navLinks : defaultSiteContent.header.navLinks,
       projectLinks: merged.header?.projectLinks?.length ? merged.header.projectLinks : defaultSiteContent.header.projectLinks,
     },
+    footer: {
+      ...merged.footer,
+      officeAddress: (() => {
+        if (Array.isArray(doc.footer?.officeAddress) && doc.footer.officeAddress.length > 0) {
+          const mapped = doc.footer.officeAddress.map((a: any) => typeof a === 'object' ? a.address : a).filter(Boolean);
+          if (mapped.length > 0) return mapped;
+        }
+        // If doc.footer.officeAddress is a non-empty string (backward compatibility)
+        if (typeof doc.footer?.officeAddress === 'string' && doc.footer.officeAddress.trim()) {
+           return doc.footer.officeAddress;
+        }
+        return defaultSiteContent.footer.officeAddress;
+      })(),
+      contactLines: (() => {
+        if (Array.isArray(doc.footer?.contactLines) && doc.footer.contactLines.length > 0) {
+          const mapped = doc.footer.contactLines.map((l: any) => typeof l === 'object' ? l.line : l).filter(Boolean);
+          if (mapped.length > 0) return mapped;
+        }
+        return defaultSiteContent.footer.contactLines;
+      })(),
+    }
   };
 });
 
