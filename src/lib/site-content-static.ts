@@ -399,7 +399,7 @@ export const defaultSiteContent = {
       imageSection: { pill: 'Hình Ảnh Công Trình', title: 'Hình Ảnh Công Trình Thực Tế', description: 'Những dự án tiêu biểu đã được Son Hai Landscape hoàn thành' },
       videoSection: { pill: 'Video Thi Công', title: 'Video Thi Công & Thực Tế', description: 'Xem quy trình thi công thực tế các dự án đã hoàn thành' },
       threeDSection: { pill: 'Mô Hình 3D', title: 'Mẫu đá 3D', description: 'Xem trước thiết kế qua mô hình chân thực trước khi thi công', duration: '3:20', titleSuffix: ' (Bản vẽ 3D)' },
-      stickyNav: { image: 'Hình Ảnh', video: 'Video Thực Tế', threeD: 'Phối Cảnh 3D' },
+      stickyNav: { image: 'Hình Ảnh', video: 'Video Thực Tế', threeD: 'Mẫu đá 3D' },
       allCategoryLabel: 'Tất Cả Dự Án'
     },
     detail: {
