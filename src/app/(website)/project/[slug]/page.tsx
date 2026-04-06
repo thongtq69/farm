@@ -2,29 +2,27 @@ import React from 'react';
 import ProjectDetail from '@/components/ProjectDetail';
 import ProjectCatalog from '@/components/ProjectCatalog';
 import { notFound } from 'next/navigation';
-import { categoryLabels, defaultSiteContent, getProjects, getProjectBySlugFromDb, getReels } from '@/lib/site-content';
+import { categorySlugs, getProjectBySlug, projects } from '@/data/projects';
+import { categoryLabels, defaultSiteContent } from '@/lib/site-content';
 
 interface PageProps {
   params: Promise<{ slug: string }>;
 }
 
 export async function generateStaticParams() {
-  const projectsList = await getProjects();
-  const projectParams = projectsList.map((project) => ({ slug: project.slug }));
-  const categoryParams = Object.keys(categoryLabels).map((slug) => ({ slug }));
+  const projectParams = projects.map((project) => ({ slug: project.slug }));
+
+  const categoryParams = categorySlugs.map((slug) => ({ slug }));
+
   return [...categoryParams, ...projectParams];
 }
 
 const ProjectPage = async ({ params }: PageProps) => {
   const { slug } = await params;
-  const categorySlugs = Object.keys(categoryLabels);
 
-  if (categorySlugs.includes(slug)) {
+  if (categorySlugs.includes(slug as (typeof categorySlugs)[number])) {
     const categoryName = categoryLabels[slug as keyof typeof categoryLabels] || slug.replace(/-/g, ' ');
     const description = defaultSiteContent.projectPages.categoryDescriptionTemplate.replace('{{category}}', categoryName);
-
-    const projectsList = await getProjects();
-    const reelsList = await getReels();
 
     return (
       <main className="projects-page-main">
@@ -41,13 +39,13 @@ const ProjectPage = async ({ params }: PageProps) => {
             </div>
           </div>
         </div>
-        <ProjectCatalog initialCategory={slug} projects={projectsList} reels={reelsList} />
+        <ProjectCatalog initialCategory={slug} />
       </main>
     );
   }
   
-  // Find project in the database
-  const project = await getProjectBySlugFromDb(slug);
+  // Find project in the manifest
+  const project = getProjectBySlug(slug);
 
   if (!project) {
     return notFound();

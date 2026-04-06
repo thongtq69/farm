@@ -4,6 +4,7 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import { getProjectBySlug } from '@/data/projects';
 
 interface ProjectDetailProps {
   slug: string;
@@ -16,15 +17,18 @@ interface ProjectDetailProps {
 }
 
 const ProjectDetail = ({ slug, projectSummary }: ProjectDetailProps) => {
+  const fallbackProject = getProjectBySlug(slug);
   const projectImages = projectSummary.gallery?.length
     ? projectSummary.gallery
-    : [projectSummary.image || 'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426383/farm/images/projects/pza6uvhukxq0x5hzi2nh.jpg'];
+    : fallbackProject?.gallery?.length
+      ? fallbackProject.gallery
+      : [projectSummary.image || fallbackProject?.image || 'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426383/farm/images/projects/pza6uvhukxq0x5hzi2nh.jpg'];
 
   const mainTitle = projectSummary.title.replace(' - Oak Farm', '');
   const description =
     projectSummary.meta_description ||
     'Sơn Hải Landscape vinh dự được làm đơn vị đồng hành cùng chủ đầu tư trong thiết kế và kiến trúc.';
-  const heroImage = projectImages[0] || projectSummary.image || 'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426383/farm/images/projects/pza6uvhukxq0x5hzi2nh.jpg';
+  const heroImage = projectImages[0] || projectSummary.image || fallbackProject?.image || 'https://res.cloudinary.com/dwalymiy3/image/upload/v1774426383/farm/images/projects/pza6uvhukxq0x5hzi2nh.jpg';
 
   const projectInfo = [
     { label: 'QUY MÔ', value: 'Farmstay & Homestay' },
