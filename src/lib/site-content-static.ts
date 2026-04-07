@@ -1,7 +1,8 @@
 export const categoryLabels = {
   'san-vuon-ho-koi': 'Sân Vườn & Hồ Koi',
   'da-nhan-tao-nghe-thuat': 'Đá Nhân Tạo Nghệ Thuật',
-  'farm-du-lich-nghi-duong': 'Farm & Du Lịch Nghỉ Dưỡng'
+  'farm-du-lich-nghi-duong': 'Farm & Du Lịch Nghỉ Dưỡng',
+  'mau-da-3d': 'Mẫu đá 3D'
 } as const;
 
 export type ProjectItem = {
@@ -398,7 +399,7 @@ export const defaultSiteContent = {
     catalog: {
       imageSection: { pill: 'Hình Ảnh Công Trình', title: 'Hình Ảnh Công Trình Thực Tế', description: 'Những dự án tiêu biểu đã được Son Hai Landscape hoàn thành' },
       videoSection: { pill: 'Video Thi Công', title: 'Video Thi Công & Thực Tế', description: 'Xem quy trình thi công thực tế các dự án đã hoàn thành' },
-      threeDSection: { pill: 'Mô Hình 3D', title: 'Mẫu đá 3D', description: 'Xem trước thiết kế qua mô hình chân thực trước khi thi công', duration: '3:20', titleSuffix: ' (Bản vẽ 3D)' },
+      threeDSection: { pill: 'Mẫu đá 3D', title: 'Mẫu đá 3D', description: 'Xem trước thiết kế qua mô hình chân thực trước khi thi công', duration: '3:20', titleSuffix: ' (Bản vẽ 3D)' },
       stickyNav: { image: 'Hình Ảnh', video: 'Video Thực Tế', threeD: 'Mẫu đá 3D' },
       allCategoryLabel: 'Tất Cả Dự Án'
     },

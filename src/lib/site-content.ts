@@ -192,12 +192,14 @@ export const getReels = cache(async (): Promise<ReelItem[]> => {
     sort: 'createdAt',
   });
 
-  return docs.docs.map(doc => ({
-    id: doc.id,
-    category: doc.category,
-    title: doc.title,
-    duration: doc.duration,
-    thumbnail: doc.thumbnail,
-    videoUrl: doc.videoUrl
-  })) as ReelItem[];
+  return docs.docs
+    .filter(doc => doc.videoUrl && doc.videoUrl.trim() !== '')
+    .map(doc => ({
+      id: doc.id,
+      category: doc.category,
+      title: doc.title,
+      duration: doc.duration,
+      thumbnail: doc.thumbnail,
+      videoUrl: doc.videoUrl
+    })) as ReelItem[];
 });

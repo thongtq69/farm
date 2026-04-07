@@ -78,22 +78,25 @@ const ProjectCatalog = ({ initialCategory }: ProjectCatalogProps) => {
   }, [projects, activeCategory]);
 
   const projectVideos = useMemo(() => {
-    if (activeCategory === 'all') return reelsData;
+    // Filter out reels that are missing a videoUrl
+    const validReels = reelsData.filter(r => r.videoUrl && r.videoUrl.trim() !== '');
+
+    if (activeCategory === 'all') return validReels;
     
     if (activeCategory === 'san-vuon-ho-koi') {
-      return reelsData.filter(r => 
+      return validReels.filter(r => 
         r.category.includes('Hồ Koi') || 
         r.category.includes('Thi Công') || 
         (!r.category.includes('Đá Nhân Tạo') && !r.category.includes('Farm'))
       );
     }
     if (activeCategory === 'da-nhan-tao-nghe-thuat') {
-      return reelsData.filter(r => r.category.includes('Đá Nhân Tạo'));
+      return validReels.filter(r => r.category.includes('Đá Nhân Tạo'));
     }
     if (activeCategory === 'farm-du-lich-nghi-duong') {
-      return reelsData.filter(r => r.category.includes('Farm'));
+      return validReels.filter(r => r.category.includes('Farm'));
     }
-    return reelsData;
+    return validReels;
   }, [activeCategory]);
 
   useEffect(() => {
