@@ -19,26 +19,26 @@ type MissionProps = {
 const Mission = ({ content }: MissionProps) => {
   const pdfViewerHref = useMemo(() => {
     if (typeof window === 'undefined') {
-      return '/docs/sach.pdf';
+      return '/docs/BOOK.pdf';
     }
 
     const { hostname, origin } = window.location;
 
     if (hostname === 'localhost' || hostname === '127.0.0.1') {
-      return '/docs/sach.pdf';
+      return '/docs/BOOK.pdf';
     }
 
-    const pdfUrl = encodeURIComponent(`${origin}/docs/sach.pdf`);
+    const pdfUrl = encodeURIComponent(`${origin}/docs/BOOK.pdf`);
     return `https://docs.google.com/gview?embedded=1&url=${pdfUrl}`;
   }, []);
 
   useEffect(() => {
     const preloadLink = document.createElement('link');
     preloadLink.rel = 'prefetch';
-    preloadLink.href = '/docs/sach.pdf';
+    preloadLink.href = '/docs/BOOK.pdf';
     document.head.appendChild(preloadLink);
 
-    fetch('/docs/sach.pdf', { cache: 'force-cache' }).catch(() => undefined);
+    fetch('/docs/BOOK.pdf', { cache: 'force-cache' }).catch(() => undefined);
 
     return () => {
       document.head.removeChild(preloadLink);
