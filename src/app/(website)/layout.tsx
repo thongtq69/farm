@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Son Hai Landscape - Thiết kế Farmstay & Cảnh quan hàng đầu Việt Nam",
     description: "Kiến tạo không gian sống xanh với dịch vụ thiết kế Farmstay và cảnh quan chuyên nghiệp.",
-    url: "https://sonhailandscape.vn", // Giả định domain này, bạn nên cập nhật đúng domain
+    url: "https://www.sonhailandscape.com",
     siteName: "Son Hai Landscape",
     locale: "vi_VN",
     type: "website",

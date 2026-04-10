@@ -20,8 +20,8 @@ export default async function Home() {
             "@context": "https://schema.org",
             "@type": "Organization",
             "name": "Son Hai Landscape",
-            "url": "https://sonhailandscape.vn",
-            "logo": "https://sonhailandscape.vn/logofarm.png",
+            "url": "https://www.sonhailandscape.com",
+            "logo": "https://www.sonhailandscape.com/logofarm.png",
             "description": "Son Hai Landscape chuyên thiết kế và thi công Farmstay, nhà vườn, cảnh quan sân vườn và hồ cá Koi chuyên nghiệp.",
             "contactPoint": {
               "@type": "ContactPoint",

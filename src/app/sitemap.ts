@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next'
 import { projects, categorySlugs } from '@/data/projects'
  
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://sonhailandscape.vn'
+  const baseUrl = 'https://www.sonhailandscape.com'
   
   // Main pages
   const staticPages = [
