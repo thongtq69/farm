@@ -3,9 +3,9 @@ import AboutPage from '@/components/AboutPage';
 import { getSiteContent } from '@/lib/site-content';
 
 export const metadata: Metadata = {
-  title: 'Chung toi - Son Hai Landscape',
+  title: 'Về Chúng Tôi | Son Hai Landscape - Đội ngũ Thiết kế Farmstay Chuyên nghiệp',
   description:
-    'Tim hieu ve Son Hai Landscape, doi ngu thiet ke Farmstay dong hanh cung chu dau tu tu y tuong, quy hoach den thiet ke hoan chinh.'
+    'Tìm hiểu về Son Hai Landscape, đội ngũ kiến trúc sư và chuyên gia thiết kế Farmstay hàng đầu. Chúng tôi đồng hành cùng chủ đầu tư từ ý tưởng, quy hoạch đến thiết kế hoàn chỉnh mang đậm bản sắc vùng miền.'
 };
 
 export default async function AboutUsPage() {

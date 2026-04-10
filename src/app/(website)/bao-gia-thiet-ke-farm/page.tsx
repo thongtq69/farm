@@ -2,6 +2,12 @@ import React from 'react';
 import QuoteForm from '@/components/QuoteForm';
 import Image from 'next/image';
 import { getSiteContent } from '@/lib/site-content';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Báo Giá Thiết Kế Farmstay & Cảnh Quan | Son Hai Landscape',
+  description: 'Nhận báo giá thiết kế Farmstay, nhà vườn và cảnh quan chi tiết. Son Hai Landscape cung cấp giải pháp thiết kế tối ưu, phù hợp với ngân sách và quy hoạch bền vững.'
+};
 
 export default async function PricingPage() {
   const siteContent = await getSiteContent();

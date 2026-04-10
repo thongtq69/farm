@@ -4,6 +4,36 @@ import ProjectCatalog from '@/components/ProjectCatalog';
 import { notFound } from 'next/navigation';
 import { categorySlugs, getProjectBySlug, projects } from '@/data/projects';
 import { categoryLabels, defaultSiteContent } from '@/lib/site-content';
+import { Metadata } from 'next';
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { slug } = await params;
+  
+  // Category Metadata
+  if (categorySlugs.includes(slug as (typeof categorySlugs)[number])) {
+    const categoryName = categoryLabels[slug as keyof typeof categoryLabels] || slug.replace(/-/g, ' ');
+    return {
+      title: `${categoryName} | Dự Án Son Hai Landscape`,
+      description: `Khám phá các dự án ${categoryName} nổi bật của Son Hai Landscape. Kiến tạo không gian sống xanh và bền vững.`,
+    };
+  }
+
+  // Project Metadata
+  const project = getProjectBySlug(slug);
+  if (project) {
+    return {
+      title: `${project.title} | Dự Án Son Hai Landscape`,
+      description: project.meta_description,
+      openGraph: {
+        images: [project.image],
+      },
+    };
+  }
+
+  return {
+    title: 'Dự Án | Son Hai Landscape',
+  };
+}
 
 interface PageProps {
   params: Promise<{ slug: string }>;

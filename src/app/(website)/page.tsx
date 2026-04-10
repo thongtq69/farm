@@ -13,6 +13,24 @@ export default async function Home() {
   const siteContent = await getSiteContent();
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Son Hai Landscape",
+            "url": "https://sonhailandscape.vn",
+            "logo": "https://sonhailandscape.vn/logofarm.png",
+            "description": "Son Hai Landscape chuyên thiết kế và thi công Farmstay, nhà vườn, cảnh quan sân vườn và hồ cá Koi chuyên nghiệp.",
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "telephone": "+84 905 555 555", // Cập nhật số điện thoại đúng
+              "contactType": "customer service"
+            }
+          })
+        }}
+      />
       <Hero content={siteContent.home.hero} />
       <HomeHighlights items={siteContent.home.highlights} />
       <Services content={siteContent.home.services} />
