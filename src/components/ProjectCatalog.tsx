@@ -101,30 +101,57 @@ const ProjectCatalog = ({ initialCategory }: ProjectCatalogProps) => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollPosition = window.scrollY + window.innerHeight / 2;
-      
-      const imageTop = imageRef.current?.offsetTop || 0;
-      const videoTop = videoRef.current?.offsetTop || 0;
-      const threeDTop = threeDRef.current?.offsetTop || 0;
+      const viewportHeight = window.visualViewport?.height || window.innerHeight;
+      const activationLine = Math.min(viewportHeight * 0.35, 220);
+      const videoTop = videoRef.current?.getBoundingClientRect().top ?? Number.POSITIVE_INFINITY;
+      const threeDTop = threeDRef.current?.getBoundingClientRect().top ?? Number.POSITIVE_INFINITY;
 
-      if (scrollPosition >= threeDTop && threeDTop > 0) {
+      if (threeDTop <= activationLine) {
         setActiveSection('3d');
-      } else if (scrollPosition >= videoTop && videoTop > 0) {
+      } else if (videoTop <= activationLine) {
         setActiveSection('video');
       } else {
         setActiveSection('image');
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('resize', handleScroll);
+    window.visualViewport?.addEventListener('resize', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleScroll);
+      window.visualViewport?.removeEventListener('resize', handleScroll);
+    };
   }, []);
 
   const scrollToSection = (section: 'image' | 'video' | '3d') => {
-    let top = 0;
-    if (section === 'image' && imageRef.current) top = imageRef.current.offsetTop - 100;
-    if (section === 'video' && videoRef.current) top = videoRef.current.offsetTop - 100;
-    if (section === '3d' && threeDRef.current) top = threeDRef.current.offsetTop - 100;
+    const isMobile = window.matchMedia('(max-width: 768px)').matches;
+    const headerOffset = isMobile ? 86 : 100;
+    let target: HTMLElement | null = null;
+
+    if (section === 'image' && imageRef.current) {
+      target = isMobile
+        ? imageRef.current.querySelector<HTMLElement>('.category-filter-tabs') || imageRef.current
+        : imageRef.current;
+    }
+
+    if (section === 'video' && videoRef.current) {
+      target = isMobile
+        ? videoRef.current.querySelector<HTMLElement>('.catalog-grid-v2') || videoRef.current
+        : videoRef.current;
+    }
+
+    if (section === '3d' && threeDRef.current) {
+      target = isMobile
+        ? threeDRef.current.querySelector<HTMLElement>('.catalog-grid-v2') || threeDRef.current
+        : threeDRef.current;
+    }
+
+    if (!target) return;
+
+    const top = window.scrollY + target.getBoundingClientRect().top - headerOffset;
 
     window.scrollTo({
       top,
@@ -180,7 +207,7 @@ const ProjectCatalog = ({ initialCategory }: ProjectCatalogProps) => {
           </div>
 
           <div className="catalog-grid-v2">
-            {filteredProjects.map((project, index) => (
+            {filteredProjects.map((project) => (
               <Link 
                 key={`img-${project.slug}`} 
                 href={project.url} 
@@ -248,7 +275,7 @@ const ProjectCatalog = ({ initialCategory }: ProjectCatalogProps) => {
           </div>
 
           <div className="catalog-grid-v2">
-            {threeDProjects.map((project, index) => (
+            {threeDProjects.map((project) => (
                <div key={`3d-${project.slug}`} className="catalog-card-v2" onClick={() => setSelectedGalleryImage(project.image)}>
                 <div className="card-image-wrapper">
                   <Image src={project.image || ''} alt={project.title} fill style={{ objectFit: 'cover' }} />
